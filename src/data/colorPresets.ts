@@ -1,4 +1,5 @@
 import type { ColorCategory, ColorPreset } from '../domain/colorMixing/types';
+import { pigmentForPreset } from './virtualPigments';
 
 export const categories: ReadonlyArray<{
   id: ColorCategory;
@@ -17,7 +18,7 @@ export const categories: ReadonlyArray<{
   { id: 'black', nameJa: '黒', nameEn: 'BLACK', hex: '#34383D' },
 ];
 
-export const colorPresets: readonly ColorPreset[] = [
+const swatches: readonly Omit<ColorPreset, 'pigment'>[] = [
   { id: 'red', category: 'red', nameJa: 'レッド', nameEn: 'Red', hex: '#E53935' },
   { id: 'scarlet', category: 'red', nameJa: 'スカーレット', nameEn: 'Scarlet', hex: '#D8253E' },
   { id: 'vermilion', category: 'red', nameJa: 'バーミリオン', nameEn: 'Vermilion', hex: '#E85C40' },
@@ -82,4 +83,7 @@ export const colorPresets: readonly ColorPreset[] = [
   { id: 'dim-gray', category: 'black', nameJa: 'ディムグレー', nameEn: 'Dim Gray', hex: '#70747A' },
 ];
 
+export const colorPresets: readonly ColorPreset[] = swatches.map((preset) => ({
+  ...preset, pigment: pigmentForPreset(preset.id, preset.hex, preset.category),
+}));
 export const presetsById = new Map(colorPresets.map((preset) => [preset.id, preset]));

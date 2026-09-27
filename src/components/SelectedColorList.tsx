@@ -1,4 +1,5 @@
 import type { ColorPreset, DropAmount, SelectedColor } from '../domain/colorMixing/types';
+import { EyedropperIcon } from './EyedropperIcon';
 
 export type ResolvedSelection = SelectedColor & { preset: ColorPreset };
 
@@ -15,11 +16,10 @@ export function SelectedColorList({ colors, pulseId, disabled, onAmount, onRemov
   return (
     <section className="selection" aria-labelledby="selection-title">
       <div className="selection__heading">
-        <div>
-          <span className="eyebrow">YOUR COLORS / 02</span>
-          <h2 id="selection-title">えらんだ色</h2>
+        <h2 id="selection-title">えらんだ色</h2>
+        <div className="selection__heading-actions">
+          <span className="selection__count" aria-label={`${colors.length}色えらんでいます`}>{colors.length} / 5</span>
         </div>
-        <span className="selection__count" aria-label={`${colors.length}色えらんでいます`}>{colors.length} / 5</span>
       </div>
 
       {colors.length === 0 ? (
@@ -37,17 +37,23 @@ export function SelectedColorList({ colors, pulseId, disabled, onAmount, onRemov
                 <strong>{preset.nameJa}</strong>
                 <span>{preset.nameEn}</span>
               </div>
-              <div className="drop-control" aria-label={`${preset.nameJa}の滴数`}>
-                <button type="button" disabled={disabled || amount === 1} onClick={() => onAmount(preset.id, (amount - 1) as DropAmount)} aria-label={`${preset.nameJa}を1滴減らす`}>−</button>
-                <span aria-live="off">{amount}<small>滴</small></span>
-                <button type="button" disabled={disabled || amount === 5} onClick={() => onAmount(preset.id, (amount + 1) as DropAmount)} aria-label={`${preset.nameJa}を1滴増やす`}>＋</button>
+              <div className="amount-picker">
+                <div className="eyedropper-rating" role="group" aria-label={`${preset.nameJa}の色の量を選ぶ`}>
+                  {([1, 2, 3, 4, 5] as const).map((value) => (
+                    <button className={`eyedropper-button${value <= amount ? ' eyedropper-button--filled' : ''}`}
+                      type="button" key={value} disabled={disabled} aria-pressed={value === amount}
+                      aria-label={`${preset.nameJa}の量をスポイト${value}本分にする`}
+                      onClick={() => onAmount(preset.id, value)}>
+                      <EyedropperIcon color={preset.hex} filled={value <= amount} />
+                    </button>
+                  ))}
+                </div>
               </div>
               <button className="remove-button" type="button" disabled={disabled} onClick={() => onRemove(preset.id)} aria-label={`${preset.nameJa}を削除`}>×</button>
             </div>
           ))}
         </div>
       )}
-      <p className="drop-note">※ 1滴は混ぜる割合の目安です。実際の絵の具の1滴の量とは異なります。</p>
     </section>
   );
 }

@@ -1,49 +1,69 @@
 import { Color } from 'spectral.js';
-import type { MixResult } from './types';
+import type { MixResult, VirtualPigment } from './types';
 import { findNearestColorName } from './findNearestColorName';
+import { calibrateIntuitiveMix, displayHexFromOklab } from './intuitivePalette';
 
-export type MixInput = { hex: `#${string}`; amount: number };
+export type MixInput = { pigment: VirtualPigment; amount: number };
+type Lab = readonly [number, number, number];
+const pureLabCache = new WeakMap<VirtualPigment, Lab>();
 
-/** Mix 2–5 estimated pigment spectra with drops as relative amounts. */
+function kmReflectance(absorption: number, scattering: number) {
+  const ks = absorption / scattering;
+  // Algebraically equivalent to 1 + ks - sqrt(ks² + 2ks), without cancellation.
+  return 1 / (1 + ks + Math.hypot(ks, Math.sqrt(2 * ks)));
+}
+
+function pureModelLab(pigment: VirtualPigment): Lab {
+  const cached = pureLabCache.get(pigment);
+  if (cached) return cached;
+  const pure = new Color(pigment.absorption.map((k, i) => kmReflectance(k, pigment.scattering[i]!))).OKLab;
+  const lab: Lab = [pure[0]!, pure[1]!, pure[2]!];
+  pureLabCache.set(pigment, lab);
+  return lab;
+}
+
+/** Opaque, infinite-thickness two-constant KM approximation; drops are relative mass. */
 export function mixPigments(inputs: readonly MixInput[]): MixResult {
   if (inputs.length < 2 || inputs.length > 5) {
     throw new RangeError('Choose between 2 and 5 colors.');
   }
 
-  for (const { hex, amount } of inputs) {
-    if (!/^#[0-9a-f]{6}$/i.test(hex) || !Number.isInteger(amount) || amount < 1 || amount > 5) {
-      throw new RangeError('Each color needs a six-digit HEX value and 1–5 drops.');
+  for (const { pigment, amount } of inputs) {
+    if (!Number.isInteger(amount) || amount < 1 || amount > 5) {
+      throw new RangeError('Each pigment needs 1–5 drops.');
+    }
+    if (pigment.model !== 'kubelka-munk-two-constant' ||
+        pigment.absorption.length !== 38 || pigment.scattering.length !== 38 ||
+        Array.from(pigment.absorption).some((k) => !Number.isFinite(k) || k < 0) ||
+        Array.from(pigment.scattering).some((s) => !Number.isFinite(s) || s <= 0) ||
+        !Array.isArray(pigment.displayOklab) || pigment.displayOklab.length !== 3 ||
+        pigment.displayOklab.some((component) => !Number.isFinite(component)) ||
+        (pigment.artistHue !== null && (!Number.isFinite(pigment.artistHue) ||
+          pigment.artistHue < 0 || pigment.artistHue >= 360))) {
+      throw new RangeError('Expected 38 finite K >= 0 and S > 0 samples on the 380–750 nm grid.');
     }
   }
 
-  const colors = inputs.map(({ hex, amount }) => ({ color: new Color(hex), amount }));
-  const total = colors.reduce((sum, { amount }) => sum + amount, 0);
-  const size = colors[0]?.color.KS.length ?? 0;
-
-  if (size === 0 || colors.some(({ color }) => color.KS.length !== size)) {
-    throw new Error('The spectral color data is incomplete.');
-  }
-
-  const reflectance = Array.from({ length: size }, (_, wavelength) => {
-    const ks = colors.reduce((sum, { color, amount }) => {
-      const value = color.KS[wavelength];
-      if (value === undefined || !Number.isFinite(value) || value < 0) {
-        throw new Error('The spectral color data contains an invalid K/S value.');
-      }
-      return sum + (value * amount) / total;
-    }, 0);
-
-    // This is algebraically equal to 1 + ks - sqrt(ks² + 2ks), but avoids
-    // cancellation when dark colors produce large K/S values.
-    const value = 1 / (1 + ks + Math.hypot(ks, Math.sqrt(2 * ks)));
+  const total = inputs.reduce((sum, { amount }) => sum + amount, 0);
+  const reflectance = Array.from({ length: 38 }, (_, wavelength) => {
+    let absorption = 0;
+    let scattering = 0;
+    for (const { pigment, amount } of inputs) {
+      const concentration = amount / total;
+      absorption += pigment.absorption[wavelength]! * concentration;
+      scattering += pigment.scattering[wavelength]! * concentration;
+    }
+    // Mix K and S separately: averaging K/S would erase white's scattering strength.
+    const value = kmReflectance(absorption, scattering);
     if (!Number.isFinite(value) || value < 0 || value > 1) {
       throw new Error('Pigment mixing produced an invalid reflectance.');
     }
     return value;
   });
 
-  const mixed = new Color(reflectance);
-  const hex = mixed.toString({ format: 'hex', method: 'map' }) as `#${string}`;
+  const rawLab = new Color(reflectance).OKLab;
+  const calibrated = calibrateIntuitiveMix([rawLab[0]!, rawLab[1]!, rawLab[2]!], inputs, pureModelLab);
+  const hex = displayHexFromOklab(calibrated);
   if (!/^#[0-9a-f]{6}$/i.test(hex)) {
     throw new Error('Pigment mixing produced an invalid display color.');
   }

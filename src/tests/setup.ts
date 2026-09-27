@@ -3,6 +3,9 @@ import { cleanup } from '@testing-library/react';
 import { afterEach, beforeEach, vi } from 'vitest';
 
 beforeEach(() => {
+  window.localStorage.clear();
+  // jsdom has no raster backend; drawing is checked separately with rendered frames.
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
   window.matchMedia = vi.fn().mockImplementation((query: string) => ({
     matches: false,
     media: query,

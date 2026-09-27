@@ -1,5 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="17" fill="#242629"/>
-  <circle cx="27" cy="28" r="15" fill="#d66d80"/>
-  <circle cx="39" cy="36" r="15" fill="#7185ce" fill-opacity=".84"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <radialGradient id="heart" cx="56%" cy="45%" r="57%">
+      <stop stop-color="#c48bf7"/>
+      <stop offset=".46" stop-color="#874de2"/>
+      <stop offset="1" stop-color="#3943c3"/>
+    </radialGradient>
+    <linearGradient id="pink" x1="25" y1="22" x2="79" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffa4bc"/>
+      <stop offset=".5" stop-color="#ff669a"/>
+      <stop offset="1" stop-color="#e64491"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="91" y1="23" x2="70" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8ddcff"/>
+      <stop offset=".42" stop-color="#55a4f9"/>
+      <stop offset=".78" stop-color="#3069f1"/>
+      <stop offset="1" stop-color="#344ee1"/>
+    </linearGradient>
+    <linearGradient id="white" x1="35" y1="59" x2="83" y2="107" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".48" stop-color="#eceafd"/>
+      <stop offset="1" stop-color="#9ba1fa"/>
+    </linearGradient>
+    <linearGradient id="pinkShine" x1="31" y1="27" x2="64" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#ffe5f1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="blueShine" x1="85" y1="28" x2="108" y2="57" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c8efff" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#d6f7ff" stop-opacity=".45"/>
+    </linearGradient>
+  </defs>
+  <path d="M37 51C44 39 63 32 75 44c13 13 8 31-5 38-13 7-29-1-33-14-2-7-2-11 0-17Z" fill="url(#heart)"/>
+  <path d="M79 24c22 9 33 28 29 47-2 11-9 18-19 19-8 1-12-4-20-8-6-3-11-3-15-10 12 8 22 5 28-4 9-13 9-28-3-40-3-3-2-5 0-4Z" fill="url(#blue)"/>
+  <path d="M81 27c13 6 22 16 26 28 3 10-1 11-5 9-5-2-7-7-12-16-3-6-9-12-11-17-1-3 0-5 2-4Z" fill="url(#blueShine)"/>
+  <path d="M24 42c8-15 25-24 42-22 14 1 16 10 14 23-1 8 4 14 3 21-4-11-11-19-22-20-14-2-24 7-32 19-5 8-10 7-9-2 0-6 1-13 4-19Z" fill="url(#pink)"/>
+  <path d="M31 35c9-8 22-13 35-12 8 0 10 4 7 6-2 2-10-1-20 2-9 2-17 7-23 12-8 6-12 4-8-2 2-3 5-5 9-6Z" fill="url(#pinkShine)"/>
+  <path d="M52 50c-8 7-8 18-3 26 5 9 17 15 33 15 7 0 9 5 5 10-7 10-27 7-43 0-15-7-19-15-16-26 3-11 11-21 24-26 4-2 6-2 0 1Z" fill="url(#white)" stroke="#8889d4" stroke-width="1.2" stroke-opacity=".7"/>
+  <path d="M37 63c4-5 9-9 15-11 2-1 4-1 3 0-10 9-11 19-5 28 7 11 20 15 35 15 4 0 5 2 2 4-7 5-23 2-37-4-14-6-21-16-18-26 1-2 3-4 5-6Z" fill="#fff" opacity=".34"/>
+  <path d="M55 71c8 11 25 11 32-5-2 15-10 21-21 19-5-1-9-6-11-14Z" fill="#8b75f5" opacity=".72"/>
 </svg>
