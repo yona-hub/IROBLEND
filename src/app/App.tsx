@@ -216,13 +216,7 @@ export default function App() {
         <div className="app-header__inner">
           <div className="brand">
             <img className="brand__mark" src="./favicon.svg?v=2" alt="" />
-            <span className="brand__word">IROBLEND</span>
           </div>
-          <button className="about-link" type="button" ref={aboutButtonRef} onClick={() => setAboutOpen(true)}>
-            <span className="about-link__icon" aria-hidden="true">!</span>
-            <span className="about-link__full">このアプリの色について</span>
-            <span className="about-link__short">色について</span>
-          </button>
           <button
             className="menu-button mobile-only"
             type="button"
@@ -244,13 +238,17 @@ export default function App() {
 
         <main className="main-content">
           <div className="main-content__inner">
-            <div className="hero-copy">
-              <h1>Let's いろ BLEND!</h1>
-              <p className="mix-guidance">2〜5色を選んで、色をまぜよう</p>
-            </div>
-
             <div className="workspace">
               <div className="stage-column">
+                <div className="hero-copy">
+                  <h1>Let's いろ BLEND!</h1>
+                  <button className="about-link" type="button" ref={aboutButtonRef} onClick={() => setAboutOpen(true)}>
+                    <span className="about-link__icon" aria-hidden="true">!</span>
+                    <span className="about-link__full">このアプリの色について</span>
+                    <span className="about-link__short">色について</span>
+                  </button>
+                  <p className="mix-guidance">2〜5色を選んで、色をまぜよう</p>
+                </div>
                 <MixingCanvas colors={colors} marks={marks} incoming={incoming} result={state.result}
                   pendingResult={state.pendingResult} status={state.status} reducedMotion={!!reducedMotion} />
                 <div className="stage-actions">
@@ -305,7 +303,6 @@ export default function App() {
         <button className="drawer-scrim" type="button" onClick={closeDrawer} tabIndex={-1} aria-label="色のメニューを閉じる" />
         <aside id="color-drawer" className="drawer" role="dialog" aria-modal="true" aria-label="色をえらぶ" ref={drawerRef} inert={!drawerOpen}>
           <div className="drawer__top">
-            <span className="drawer__brand">IROBLEND</span>
             <button className="icon-button" type="button" onClick={closeDrawer} aria-label="色のメニューを閉じる">×</button>
           </div>
           <ColorNavigation {...navProps} />

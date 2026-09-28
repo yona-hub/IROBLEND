@@ -128,6 +128,7 @@ describe('IROBLEND interface', () => {
     act(() => vi.advanceTimersByTime(840));
     fireEvent.click(screen.getByRole('button', { name: 'この色を保存する' }));
     expect(screen.getByRole('heading', { name: /保存した色 1/ })).toBeInTheDocument();
+    expect(screen.queryByText(/スカーレット 3本/)).not.toBeInTheDocument();
     fireEvent.click(within(actions).getByRole('button', { name: /さいしょから/ }));
     expect(screen.getByRole('button', { name: 'まぜる！' })).toBeDisabled();
     expect(within(actions).getByRole('button', { name: /さいしょから/ })).toBeDisabled();
