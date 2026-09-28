@@ -14,14 +14,7 @@ type Props = {
 
 export function SelectedColorList({ colors, pulseId, disabled, onAmount, onRemove, onChoose }: Props) {
   return (
-    <section className="selection" aria-labelledby="selection-title">
-      <div className="selection__heading">
-        <h2 id="selection-title">えらんだ色</h2>
-        <div className="selection__heading-actions">
-          <span className="selection__count" aria-label={`${colors.length}色えらんでいます`}>{colors.length} / 5</span>
-        </div>
-      </div>
-
+    <section className="selection" aria-label="えらんだ色">
       {colors.length === 0 ? (
         <div className="selection__empty">
           <p>まだ色がありません</p>

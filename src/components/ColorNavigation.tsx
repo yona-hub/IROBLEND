@@ -17,7 +17,6 @@ export function ColorNavigation({ activeCategory, selectedIds, onCategory, onBac
   return (
     <div className="color-nav">
       <div className="nav-heading">
-        <img className="nav-heading__mark" src="./favicon.svg?v=2" alt="" />
         <h2>色をえらぶ</h2>
       </div>
       <div className="nav-window">

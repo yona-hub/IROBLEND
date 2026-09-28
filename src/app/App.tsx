@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type KeyboardEvent } from 'react';
 import { AboutColorModal } from '../components/AboutColorModal';
 import { ColorNavigation } from '../components/ColorNavigation';
 import { MixingCanvas } from '../components/MixingCanvas';
@@ -32,6 +32,7 @@ export default function App() {
   const [marks, setMarks] = useState<PaintMark[]>([]);
   const [incoming, setIncoming] = useState<SelectionImpact | null>(null);
   const [savedMixes, setSavedMixes] = useState<SavedMix[]>(loadSavedMixes);
+  const [activePanel, setActivePanel] = useState<'selected' | 'saved'>('selected');
   const marksRef = useRef<PaintMark[]>([]);
   const impactSerial = useRef(0);
   const reducedMotion = useReducedMotion();
@@ -39,6 +40,8 @@ export default function App() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const aboutButtonRef = useRef<HTMLButtonElement>(null);
+  const selectedTabRef = useRef<HTMLButtonElement>(null);
+  const savedTabRef = useRef<HTMLButtonElement>(null);
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
   const closeAbout = useCallback(() => setAboutOpen(false), []);
@@ -159,6 +162,17 @@ export default function App() {
     setMarks(next);
     setIncoming(null);
     dispatch({ type: 'restore', selectedColors: mix.selections, result: mix.result });
+    setActivePanel('selected');
+    selectedTabRef.current?.focus();
+  };
+
+  const onPanelKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const next = event.key === 'Home' ? 'selected' : event.key === 'End' ? 'saved'
+      : activePanel === 'selected' ? 'saved' : 'selected';
+    setActivePanel(next);
+    (next === 'selected' ? selectedTabRef : savedTabRef).current?.focus();
   };
 
   const onExport = () => {
@@ -214,9 +228,6 @@ export default function App() {
     <div className="app-shell">
       <header className="app-header">
         <div className="app-header__inner">
-          <div className="brand">
-            <img className="brand__mark" src="./favicon.svg?v=2" alt="" />
-          </div>
           <button
             className="menu-button mobile-only"
             type="button"
@@ -241,7 +252,10 @@ export default function App() {
             <div className="workspace">
               <div className="stage-column">
                 <div className="hero-copy">
-                  <h1>Let's いろ BLEND!</h1>
+                  <div className="hero-copy__title">
+                    <img className="hero-copy__mark" src="./favicon.svg?v=2" alt="" />
+                    <h1>Let's いろ BLEND!</h1>
+                  </div>
                   <button className="about-link" type="button" ref={aboutButtonRef} onClick={() => setAboutOpen(true)}>
                     <span className="about-link__icon" aria-hidden="true">!</span>
                     <span className="about-link__full">このアプリの色について</span>
@@ -284,16 +298,33 @@ export default function App() {
                 </div>
               </div>
 
-              <SelectedColorList
-                colors={colors}
-                pulseId={pulseId}
-                disabled={state.status === 'mixing'}
-                onAmount={(presetId: string, amount: DropAmount) => dispatch({ type: 'setAmount', presetId, amount })}
-                onRemove={onRemove}
-                onChoose={() => setDrawerOpen(true)}
-              />
-              <SavedMixList mixes={savedMixes} onRestore={onRestore} onDelete={onDeleteSaved}
-                onExport={onExport} onImport={onImport} />
+              <aside className="mix-side-panel" aria-label="色の管理">
+                <div className="mix-side-panel__tabs" role="tablist" aria-label="色の管理">
+                  <button id="mix-tab-selected" ref={selectedTabRef} role="tab" type="button"
+                    aria-controls="mix-panel-selected" aria-selected={activePanel === 'selected'}
+                    tabIndex={activePanel === 'selected' ? 0 : -1}
+                    onClick={() => setActivePanel('selected')} onKeyDown={onPanelKeyDown}>
+                    えらんだ色 <span>{colors.length} / 5</span>
+                  </button>
+                  <button id="mix-tab-saved" ref={savedTabRef} role="tab" type="button"
+                    aria-controls="mix-panel-saved" aria-selected={activePanel === 'saved'}
+                    tabIndex={activePanel === 'saved' ? 0 : -1}
+                    onClick={() => setActivePanel('saved')} onKeyDown={onPanelKeyDown}>
+                    保存した色 <span>{savedMixes.length}</span>
+                  </button>
+                </div>
+                <div id="mix-panel-selected" className="mix-side-panel__view" role="tabpanel"
+                  aria-labelledby="mix-tab-selected" hidden={activePanel !== 'selected'} tabIndex={0}>
+                  <SelectedColorList colors={colors} pulseId={pulseId} disabled={state.status === 'mixing'}
+                    onAmount={(presetId: string, amount: DropAmount) => dispatch({ type: 'setAmount', presetId, amount })}
+                    onRemove={onRemove} onChoose={() => setDrawerOpen(true)} />
+                </div>
+                <div id="mix-panel-saved" className="mix-side-panel__view mix-side-panel__view--saved" role="tabpanel"
+                  aria-labelledby="mix-tab-saved" hidden={activePanel !== 'saved'} tabIndex={0}>
+                  <SavedMixList mixes={savedMixes} onRestore={onRestore} onDelete={onDeleteSaved}
+                    onExport={onExport} onImport={onImport} />
+                </div>
+              </aside>
             </div>
           </div>
         </main>

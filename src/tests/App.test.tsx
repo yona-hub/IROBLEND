@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import App from '../app/App';
 import { presetsById } from '../data/colorPresets';
 import { mixPigments } from '../domain/colorMixing/mixPigments';
+import { persistSavedMixes, type SavedMix } from '../domain/savedMixes';
 
 function selectTwoColors(container: HTMLElement) {
   const sidebar = container.querySelector('.sidebar') as HTMLElement;
@@ -127,14 +128,41 @@ describe('IROBLEND interface', () => {
     fireEvent.click(screen.getByRole('button', { name: 'まぜる！' }));
     act(() => vi.advanceTimersByTime(840));
     fireEvent.click(screen.getByRole('button', { name: 'この色を保存する' }));
-    expect(screen.getByRole('heading', { name: /保存した色 1/ })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: '保存した色 1' })).toHaveAttribute('aria-selected', 'false');
     expect(screen.queryByText(/スカーレット 3本/)).not.toBeInTheDocument();
     fireEvent.click(within(actions).getByRole('button', { name: /さいしょから/ }));
     expect(screen.getByRole('button', { name: 'まぜる！' })).toBeDisabled();
     expect(within(actions).getByRole('button', { name: /さいしょから/ })).toBeDisabled();
     expect(container.querySelector('.result-surface')).toBeNull();
+    fireEvent.click(screen.getByRole('tab', { name: '保存した色 1' }));
+    expect(screen.getByRole('tab', { name: '保存した色 1' })).toHaveAttribute('aria-selected', 'true');
     fireEvent.click(screen.getByRole('button', { name: /の配合を呼び出す/ }));
+    expect(screen.getByRole('tab', { name: 'えらんだ色 2 / 5' })).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByRole('button', { name: 'もういちど まぜる' })).toBeEnabled();
     expect(container.querySelector('.result-surface')).not.toBeNull();
+  });
+
+  it('shows ten saved colors per page and keeps the logo with the title', () => {
+    const selections: SavedMix['selections'] = [{ presetId: 'red', amount: 3 }, { presetId: 'blue', amount: 2 }];
+    const result = mixPigments(selections.map(({ presetId, amount }) => ({
+      pigment: presetsById.get(presetId)!.pigment, amount,
+    })));
+    persistSavedMixes(Array.from({ length: 12 }, (_, i): SavedMix => ({
+      id: `saved-${i}`, savedAt: `2026-09-${String(i + 1).padStart(2, '0')}T12:00:00.000Z`,
+      selections, result,
+    })));
+    const { container } = render(<App />);
+    expect(container.querySelector('.hero-copy__title img')).toBeInTheDocument();
+    expect(container.querySelector('.app-header img')).toBeNull();
+    expect(container.querySelector('.nav-heading img')).toBeNull();
+    const savedTab = screen.getByRole('tab', { name: '保存した色 12' });
+    fireEvent.click(savedTab);
+    expect(screen.getAllByRole('button', { name: /の配合を呼び出す/ })).toHaveLength(10);
+    expect(screen.getByText('1 / 2')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '次へ' }));
+    expect(screen.getAllByRole('button', { name: /の配合を呼び出す/ })).toHaveLength(2);
+    expect(screen.getByText('2 / 2')).toBeInTheDocument();
+    fireEvent.keyDown(savedTab, { key: 'ArrowRight' });
+    expect(screen.getByRole('tab', { name: 'えらんだ色 0 / 5' })).toHaveAttribute('aria-selected', 'true');
   });
 });
