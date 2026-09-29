@@ -35,6 +35,17 @@ npm run build
 
 `dist/` を静的サイトとして配信できます。ビルド後のアセット参照は相対パスなので、ルート配下とサブパス配下のどちらでも使えます。ログイン、バックエンド、Cookie、分析SDK、外部API通信はありません。
 
+## デプロイ
+
+Cloudflare Workers Static Assetsで `https://iroblend.yona-works.com` に配信します。Cloudflareの対象アカウントでWranglerにログインした後、次を実行します。
+
+```sh
+npm ci
+npm run deploy
+```
+
+`wrangler.jsonc` のCustom Domain設定により、CloudflareがサブドメインのDNSレコードと証明書を管理します。`yona-works.com` のルートドメインの設定は変更しません。
+
 ## 混色の考え方
 
 54色それぞれに、表示用sRGB・色名・仮想顔料モデルを持たせています。顔料は表示用sRGBだけから推定せず、380〜750nm（10nm間隔、38点）の吸収K・散乱Sを独立に定義した基本顔料と、その明示的な配合から作ります。基本顔料の係数は手設計で、実測値ではありません。
