@@ -1,0 +1,2150 @@
+{
+  "retrieved": "2026-10-01",
+  "colordic": [
+    {
+      "nameJa": "コーラルレッド",
+      "nameEn": "coral red",
+      "hex": "#EF857D",
+      "url": "https://www.colordic.org/colorsample/4000",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サンシャインイエロー",
+      "nameEn": "sunshine yellow",
+      "hex": "#FFEDAB",
+      "url": "https://www.colordic.org/colorsample/4057",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アイスグリーン",
+      "nameEn": "ice green",
+      "hex": "#A3D6CC",
+      "url": "https://www.colordic.org/colorsample/4114",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ウイスタリア",
+      "nameEn": "wistaria",
+      "hex": "#8D93C8",
+      "url": "https://www.colordic.org/colorsample/4171",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピンクアーモンド",
+      "nameEn": "pink almond",
+      "hex": "#E3ACAE",
+      "url": "https://www.colordic.org/colorsample/4228",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ポピーレッド",
+      "nameEn": "poppy red",
+      "hex": "#EA5550",
+      "url": "https://www.colordic.org/colorsample/4001",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "クリームイエロー",
+      "nameEn": "cream yellow",
+      "hex": "#FFF3B8",
+      "url": "https://www.colordic.org/colorsample/4058",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ターコイズグリーン",
+      "nameEn": "turquoise green",
+      "hex": "#00947A",
+      "url": "https://www.colordic.org/colorsample/4115",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブルーラベンダー",
+      "nameEn": "blue lavender",
+      "hex": "#A4A8D4",
+      "url": "https://www.colordic.org/colorsample/4172",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズダスト",
+      "nameEn": "rose dust",
+      "hex": "#E6C0C0",
+      "url": "https://www.colordic.org/colorsample/4229",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "レッド",
+      "nameEn": "red",
+      "hex": "#EA5550",
+      "url": "https://www.colordic.org/colorsample/4002",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ネープルスイエロー",
+      "nameEn": "naples yellow",
+      "hex": "#FDD35C",
+      "url": "https://www.colordic.org/colorsample/4059",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シーグリーン",
+      "nameEn": "sea green",
+      "hex": "#00AC97",
+      "url": "https://www.colordic.org/colorsample/4116",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パンジー",
+      "nameEn": "pannsy",
+      "hex": "#4D4398",
+      "url": "https://www.colordic.org/colorsample/4173",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ホワイト",
+      "nameEn": "white",
+      "hex": "#FFFFFF",
+      "url": "https://www.colordic.org/colorsample/4230",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "トマトレッド",
+      "nameEn": "tomato red",
+      "hex": "#EA5549",
+      "url": "https://www.colordic.org/colorsample/4003",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "トパーズ",
+      "nameEn": "topaz",
+      "hex": "#E9BC00",
+      "url": "https://www.colordic.org/colorsample/4060",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ペパーミントグリーン",
+      "nameEn": "peppermint green",
+      "hex": "#00AC9A",
+      "url": "https://www.colordic.org/colorsample/4117",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "バイオレット",
+      "nameEn": "violet",
+      "hex": "#5A4498",
+      "url": "https://www.colordic.org/colorsample/4174",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スノーホワイト",
+      "nameEn": "snow white",
+      "hex": "#FAFDFF",
+      "url": "https://www.colordic.org/colorsample/4231",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "バーミリオン",
+      "nameEn": "vermilion",
+      "hex": "#EA553A",
+      "url": "https://www.colordic.org/colorsample/4004",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "クロムイエロー",
+      "nameEn": "chrome yellow",
+      "hex": "#FCC800",
+      "url": "https://www.colordic.org/colorsample/4061",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピーコックグリーン",
+      "nameEn": "peacock green",
+      "hex": "#00A497",
+      "url": "https://www.colordic.org/colorsample/4118",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ヘリオトロープ",
+      "nameEn": "heliotrope",
+      "hex": "#9079B6",
+      "url": "https://www.colordic.org/colorsample/4175",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピンクホワイト",
+      "nameEn": "pink white",
+      "hex": "#FEF9FB",
+      "url": "https://www.colordic.org/colorsample/4232",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スカーレット",
+      "nameEn": "scarlet",
+      "hex": "#EA5532",
+      "url": "https://www.colordic.org/colorsample/4005",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "クリーム",
+      "nameEn": "cream",
+      "hex": "#E3D7A3",
+      "url": "https://www.colordic.org/colorsample/4062",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ナイルブルー",
+      "nameEn": "nile blue",
+      "hex": "#2CB4AD",
+      "url": "https://www.colordic.org/colorsample/4119",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ディープロイヤルパープル",
+      "nameEn": "deep royal purple",
+      "hex": "#47266E",
+      "url": "https://www.colordic.org/colorsample/4176",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ミルキーホワイト",
+      "nameEn": "milky white",
+      "hex": "#FFFFF9",
+      "url": "https://www.colordic.org/colorsample/4233",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "キャロットオレンジ",
+      "nameEn": "carrot orange",
+      "hex": "#ED6D35",
+      "url": "https://www.colordic.org/colorsample/4006",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ストロー",
+      "nameEn": "straw",
+      "hex": "#ECE093",
+      "url": "https://www.colordic.org/colorsample/4063",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サックスブルー",
+      "nameEn": "saxe blue",
+      "hex": "#418B89",
+      "url": "https://www.colordic.org/colorsample/4120",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "グレープ",
+      "nameEn": "grape",
+      "hex": "#56256E",
+      "url": "https://www.colordic.org/colorsample/4177",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アンバーホワイト",
+      "nameEn": "amber white",
+      "hex": "#FFF9F5",
+      "url": "https://www.colordic.org/colorsample/4234",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "チャイニーズレッド",
+      "nameEn": "chinese red",
+      "hex": "#ED6D46",
+      "url": "https://www.colordic.org/colorsample/4007",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ジャスミンイエロー",
+      "nameEn": "jasmine yellow",
+      "hex": "#EDDE7B",
+      "url": "https://www.colordic.org/colorsample/4064",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スレートグリーン",
+      "nameEn": "slate green",
+      "hex": "#3C7170",
+      "url": "https://www.colordic.org/colorsample/4121",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "モーブ",
+      "nameEn": "mauve",
+      "hex": "#915DA3",
+      "url": "https://www.colordic.org/colorsample/4178",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ラベンダーアイス",
+      "nameEn": "lavender ice",
+      "hex": "#F7F6FB",
+      "url": "https://www.colordic.org/colorsample/4235",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "テラコッタ",
+      "nameEn": "terracotta",
+      "hex": "#BD6856",
+      "url": "https://www.colordic.org/colorsample/4008",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アンティックゴールド",
+      "nameEn": "antique gold",
+      "hex": "#C1AB05",
+      "url": "https://www.colordic.org/colorsample/4065",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "テールグリーン",
+      "nameEn": "teal green",
+      "hex": "#006A6C",
+      "url": "https://www.colordic.org/colorsample/4122",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アイリス",
+      "nameEn": "iris",
+      "hex": "#C7A5CC",
+      "url": "https://www.colordic.org/colorsample/4179",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パールホワイト",
+      "nameEn": "pearl white",
+      "hex": "#F7F6F5",
+      "url": "https://www.colordic.org/colorsample/4236",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ココアブラウン",
+      "nameEn": "cocoa brown",
+      "hex": "#98605E",
+      "url": "https://www.colordic.org/colorsample/4009",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オリーブ",
+      "nameEn": "olive",
+      "hex": "#72640C",
+      "url": "https://www.colordic.org/colorsample/4066",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アクアグリーン",
+      "nameEn": "aqua green",
+      "hex": "#88BFBF",
+      "url": "https://www.colordic.org/colorsample/4123",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ライラック",
+      "nameEn": "lilac",
+      "hex": "#D1BADA",
+      "url": "https://www.colordic.org/colorsample/4180",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アイボリー",
+      "nameEn": "ivory",
+      "hex": "#F8F4E6",
+      "url": "https://www.colordic.org/colorsample/4237",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マホガニー",
+      "nameEn": "mahogany",
+      "hex": "#6B3F31",
+      "url": "https://www.colordic.org/colorsample/4010",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オリーブドラブ",
+      "nameEn": "olive drab",
+      "hex": "#665A1A",
+      "url": "https://www.colordic.org/colorsample/4067",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アクアマリン",
+      "nameEn": "aquamarine",
+      "hex": "#67B5B7",
+      "url": "https://www.colordic.org/colorsample/4124",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ラベンダー",
+      "nameEn": "lavender",
+      "hex": "#CAB8D9",
+      "url": "https://www.colordic.org/colorsample/4181",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パウダーピンク",
+      "nameEn": "powder pink",
+      "hex": "#F5ECF4",
+      "url": "https://www.colordic.org/colorsample/4238",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "チョコレート",
+      "nameEn": "chocolate",
+      "hex": "#6C3524",
+      "url": "https://www.colordic.org/colorsample/4011",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ジョンブリアン",
+      "nameEn": "jaune brillant",
+      "hex": "#FFDC00",
+      "url": "https://www.colordic.org/colorsample/4068",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピーコックブルー",
+      "nameEn": "peacock blue",
+      "hex": "#009E9F",
+      "url": "https://www.colordic.org/colorsample/4125",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "クロッカス",
+      "nameEn": "crocus",
+      "hex": "#B79FCB",
+      "url": "https://www.colordic.org/colorsample/4182",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シルバーホワイト",
+      "nameEn": "silver white",
+      "hex": "#EFEFEF",
+      "url": "https://www.colordic.org/colorsample/4239",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マルーン",
+      "nameEn": "marron",
+      "hex": "#6A1917",
+      "url": "https://www.colordic.org/colorsample/4012",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "イエロー",
+      "nameEn": "yellow",
+      "hex": "#FFDC00",
+      "url": "https://www.colordic.org/colorsample/4069",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ターコイズ",
+      "nameEn": "turquoise",
+      "hex": "#009B9F",
+      "url": "https://www.colordic.org/colorsample/4126",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ラベンダーモーブ",
+      "nameEn": "lavender mauve",
+      "hex": "#A688BD",
+      "url": "https://www.colordic.org/colorsample/4183",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フロスティグレイ",
+      "nameEn": "frosty gray",
+      "hex": "#E8ECE9",
+      "url": "https://www.colordic.org/colorsample/4240",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "セピア",
+      "nameEn": "sepia",
+      "hex": "#622D18",
+      "url": "https://www.colordic.org/colorsample/4013",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シトラス",
+      "nameEn": "citrus",
+      "hex": "#EDDC44",
+      "url": "https://www.colordic.org/colorsample/4070",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "カプリブルー",
+      "nameEn": "capri blue",
+      "hex": "#00A3A7",
+      "url": "https://www.colordic.org/colorsample/4127",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パープル",
+      "nameEn": "purple",
+      "hex": "#9B72B0",
+      "url": "https://www.colordic.org/colorsample/4184",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シルバーピンク",
+      "nameEn": "silver pink",
+      "hex": "#EEEAEC",
+      "url": "https://www.colordic.org/colorsample/4241",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "コーヒー色",
+      "nameEn": "coffee",
+      "hex": "#7B5544",
+      "url": "https://www.colordic.org/colorsample/4014",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ライムライト",
+      "nameEn": "limelight",
+      "hex": "#FFF799",
+      "url": "https://www.colordic.org/colorsample/4071",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ケンブリッジブルー",
+      "nameEn": "cambridge blue",
+      "hex": "#25B7C0",
+      "url": "https://www.colordic.org/colorsample/4128",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ロイヤルパープル",
+      "nameEn": "royal purple",
+      "hex": "#7F1184",
+      "url": "https://www.colordic.org/colorsample/4185",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ベージュカメオ",
+      "nameEn": "beige cameo",
+      "hex": "#EEE9E6",
+      "url": "https://www.colordic.org/colorsample/4242",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブラウン",
+      "nameEn": "brown",
+      "hex": "#8F6552",
+      "url": "https://www.colordic.org/colorsample/4015",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "カナリヤ",
+      "nameEn": "canary yellow",
+      "hex": "#FFF462",
+      "url": "https://www.colordic.org/colorsample/4072",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ターコイズブルー",
+      "nameEn": "turquoise blue",
+      "hex": "#00AFCC",
+      "url": "https://www.colordic.org/colorsample/4129",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "レーズン",
+      "nameEn": "raisin",
+      "hex": "#6B395F",
+      "url": "https://www.colordic.org/colorsample/4186",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "エクリュ",
+      "nameEn": "ecru",
+      "hex": "#EEE7E0",
+      "url": "https://www.colordic.org/colorsample/4243",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "バーントシェンナ",
+      "nameEn": "burnt sienna",
+      "hex": "#BB5535",
+      "url": "https://www.colordic.org/colorsample/4016",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ミモザ",
+      "nameEn": "mimosa",
+      "hex": "#FFF462",
+      "url": "https://www.colordic.org/colorsample/4073",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ホライズンブルー",
+      "nameEn": "horizon blue",
+      "hex": "#82CDDD",
+      "url": "https://www.colordic.org/colorsample/4130",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "プラム",
+      "nameEn": "plum",
+      "hex": "#6C2463",
+      "url": "https://www.colordic.org/colorsample/4187",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピンクベージュ",
+      "nameEn": "pink beige",
+      "hex": "#EDE4E1",
+      "url": "https://www.colordic.org/colorsample/4244",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アンバーローズ",
+      "nameEn": "amber rose",
+      "hex": "#E6BFB2",
+      "url": "https://www.colordic.org/colorsample/4017",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "レモンイエロー",
+      "nameEn": "lemon yellow",
+      "hex": "#FFF352",
+      "url": "https://www.colordic.org/colorsample/4074",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サマーシャワー",
+      "nameEn": "summer shower",
+      "hex": "#A1D8E2",
+      "url": "https://www.colordic.org/colorsample/4131",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ラズベリー",
+      "nameEn": "raspberry",
+      "hex": "#841A75",
+      "url": "https://www.colordic.org/colorsample/4188",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フロスティホワイト",
+      "nameEn": "frosty white",
+      "hex": "#E6EAE6",
+      "url": "https://www.colordic.org/colorsample/4245",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ベージュローゼ",
+      "nameEn": "beige rose",
+      "hex": "#E8D3CA",
+      "url": "https://www.colordic.org/colorsample/4018",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "メロンイエロー",
+      "nameEn": "melon yellow",
+      "hex": "#E0DE94",
+      "url": "https://www.colordic.org/colorsample/4075",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ホリゾンブルー",
+      "nameEn": "horizon blue",
+      "hex": "#A1D8E6",
+      "url": "https://www.colordic.org/colorsample/4132",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フランボワーズ",
+      "nameEn": "framboise",
+      "hex": "#9A0D7C",
+      "url": "https://www.colordic.org/colorsample/4189",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オイスターホワイト",
+      "nameEn": "oyster white",
+      "hex": "#EAE8E1",
+      "url": "https://www.colordic.org/colorsample/4246",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サーモンピンク",
+      "nameEn": "salmon pink",
+      "hex": "#F3A68C",
+      "url": "https://www.colordic.org/colorsample/4019",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シャルトルーズイエロー",
+      "nameEn": "chartreuse yellow",
+      "hex": "#E3E548",
+      "url": "https://www.colordic.org/colorsample/4076",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "セルリアンブルー",
+      "nameEn": "cerulean blue",
+      "hex": "#008DB7",
+      "url": "https://www.colordic.org/colorsample/4133",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ダリアパープル",
+      "nameEn": "dahlia purple",
+      "hex": "#A50082",
+      "url": "https://www.colordic.org/colorsample/4190",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ウィステリアミスト",
+      "nameEn": "wisteria mist",
+      "hex": "#D3D6DD",
+      "url": "https://www.colordic.org/colorsample/4247",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サハラ",
+      "nameEn": "sahara",
+      "hex": "#E29676",
+      "url": "https://www.colordic.org/colorsample/4020",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ライムイエロー",
+      "nameEn": "lime yellow",
+      "hex": "#EAEEA2",
+      "url": "https://www.colordic.org/colorsample/4077",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ダックブルー",
+      "nameEn": "duck blue",
+      "hex": "#007199",
+      "url": "https://www.colordic.org/colorsample/4134",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オーキッドパープル",
+      "nameEn": "orchid purple",
+      "hex": "#AF0082",
+      "url": "https://www.colordic.org/colorsample/4191",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "クラウド",
+      "nameEn": "cloud",
+      "hex": "#D4D9DF",
+      "url": "https://www.colordic.org/colorsample/4248",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アッシュローズ",
+      "nameEn": "ash rose",
+      "hex": "#E6BFAB",
+      "url": "https://www.colordic.org/colorsample/4021",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ライムグリーン",
+      "nameEn": "lime green",
+      "hex": "#E6EB94",
+      "url": "https://www.colordic.org/colorsample/4078",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マリンブルー",
+      "nameEn": "marine blue",
+      "hex": "#006888",
+      "url": "https://www.colordic.org/colorsample/4135",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ラズベリーレッド",
+      "nameEn": "raspberry red",
+      "hex": "#9F166A",
+      "url": "https://www.colordic.org/colorsample/4192",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ムーングレイ",
+      "nameEn": "moon gray",
+      "hex": "#D4D9DC",
+      "url": "https://www.colordic.org/colorsample/4249",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シェルピンク",
+      "nameEn": "shell pink",
+      "hex": "#FBDAC8",
+      "url": "https://www.colordic.org/colorsample/4022",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シャトルーズグリーン",
+      "nameEn": "chartreuse green",
+      "hex": "#D9E367",
+      "url": "https://www.colordic.org/colorsample/4079",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マドンナブルー",
+      "nameEn": "madonna blue",
+      "hex": "#00608D",
+      "url": "https://www.colordic.org/colorsample/4136",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オーキッド",
+      "nameEn": "orchid",
+      "hex": "#D9AACD",
+      "url": "https://www.colordic.org/colorsample/4193",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "チャイナクレイ",
+      "nameEn": "china clay",
+      "hex": "#D4DCD3",
+      "url": "https://www.colordic.org/colorsample/4250",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ベビーピンク",
+      "nameEn": "baby pink",
+      "hex": "#FDEDE4",
+      "url": "https://www.colordic.org/colorsample/4023",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "レタスグリーン",
+      "nameEn": "lettuce green",
+      "hex": "#D1DE4C",
+      "url": "https://www.colordic.org/colorsample/4080",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "エジプシャンブルー",
+      "nameEn": "egyptian blue",
+      "hex": "#0073A8",
+      "url": "https://www.colordic.org/colorsample/4137",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "リラ",
+      "nameEn": "lilla",
+      "hex": "#E0B5D3",
+      "url": "https://www.colordic.org/colorsample/4194",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サンドベージュ",
+      "nameEn": "sand beige",
+      "hex": "#DCD6D2",
+      "url": "https://www.colordic.org/colorsample/4251",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ネールピンク",
+      "nameEn": "nail pink",
+      "hex": "#FCE4D6",
+      "url": "https://www.colordic.org/colorsample/4024",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オリーブグリーン",
+      "nameEn": "olive green",
+      "hex": "#5F6527",
+      "url": "https://www.colordic.org/colorsample/4081",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ベビーブルー",
+      "nameEn": "baby blue",
+      "hex": "#BBE2F1",
+      "url": "https://www.colordic.org/colorsample/4138",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズタンドル",
+      "nameEn": "rose tendre",
+      "hex": "#E6AFCF",
+      "url": "https://www.colordic.org/colorsample/4195",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オーキッドミスト",
+      "nameEn": "orchid mist",
+      "hex": "#D3D3D8",
+      "url": "https://www.colordic.org/colorsample/4252",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローシェンナ",
+      "nameEn": "raw sienna",
+      "hex": "#E17B34",
+      "url": "https://www.colordic.org/colorsample/4025",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "モスグリーン",
+      "nameEn": "moss green",
+      "hex": "#777E41",
+      "url": "https://www.colordic.org/colorsample/4082",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スカイブルー",
+      "nameEn": "sky blue",
+      "hex": "#A0D8EF",
+      "url": "https://www.colordic.org/colorsample/4139",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オーキッドピンク",
+      "nameEn": "orchid pink",
+      "hex": "#DA81B2",
+      "url": "https://www.colordic.org/colorsample/4196",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "リードグレイ",
+      "nameEn": "reed gray",
+      "hex": "#D4D9D6",
+      "url": "https://www.colordic.org/colorsample/4253",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "キャラメル",
+      "nameEn": "caramel",
+      "hex": "#BC611E",
+      "url": "https://www.colordic.org/colorsample/4026",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "グラスグリーン",
+      "nameEn": "grass green",
+      "hex": "#7B8D42",
+      "url": "https://www.colordic.org/colorsample/4083",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シャドウブルー",
+      "nameEn": "shadow blue",
+      "hex": "#719BAD",
+      "url": "https://www.colordic.org/colorsample/4140",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シクラメンピンク",
+      "nameEn": "cyclamen pink",
+      "hex": "#D04F97",
+      "url": "https://www.colordic.org/colorsample/4197",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スカイグレイ",
+      "nameEn": "sky gray",
+      "hex": "#CBD0D3",
+      "url": "https://www.colordic.org/colorsample/4254",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サンセット",
+      "nameEn": "sunset",
+      "hex": "#F6B483",
+      "url": "https://www.colordic.org/colorsample/4027",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スプリンググリーン",
+      "nameEn": "spring green",
+      "hex": "#9CBB1C",
+      "url": "https://www.colordic.org/colorsample/4084",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シアン",
+      "nameEn": "cyan",
+      "hex": "#00A1E9",
+      "url": "https://www.colordic.org/colorsample/4141",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マゼンタ",
+      "nameEn": "magenta",
+      "hex": "#E4007F",
+      "url": "https://www.colordic.org/colorsample/4198",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ラベンダーグレイ",
+      "nameEn": "lavender gray",
+      "hex": "#BCBACE",
+      "url": "https://www.colordic.org/colorsample/4255",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シナモン",
+      "nameEn": "cinnamon",
+      "hex": "#BE8F68",
+      "url": "https://www.colordic.org/colorsample/4028",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "リーフグリーン",
+      "nameEn": "leaf green",
+      "hex": "#9FC24D",
+      "url": "https://www.colordic.org/colorsample/4085",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ヨットブルー",
+      "nameEn": "yacht blue",
+      "hex": "#409ECC",
+      "url": "https://www.colordic.org/colorsample/4142",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブーゲンビリア",
+      "nameEn": "bougainvillaea",
+      "hex": "#E62F8B",
+      "url": "https://www.colordic.org/colorsample/4199",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シルバー",
+      "nameEn": "silver",
+      "hex": "#C9CACA",
+      "url": "https://www.colordic.org/colorsample/4256",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "タン",
+      "nameEn": "tan",
+      "hex": "#BF783E",
+      "url": "https://www.colordic.org/colorsample/4029",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ホワイトリリー",
+      "nameEn": "white lily",
+      "hex": "#F0F6DA",
+      "url": "https://www.colordic.org/colorsample/4086",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "チョークブルー",
+      "nameEn": "chalk blue",
+      "hex": "#68A9CF",
+      "url": "https://www.colordic.org/colorsample/4143",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ルビー",
+      "nameEn": "ruby",
+      "hex": "#C70067",
+      "url": "https://www.colordic.org/colorsample/4200",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パールグレイ",
+      "nameEn": "pearl gray",
+      "hex": "#C9C9C4",
+      "url": "https://www.colordic.org/colorsample/4257",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シャンパン",
+      "nameEn": "champagne",
+      "hex": "#E9DACB",
+      "url": "https://www.colordic.org/colorsample/4030",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アスパラガスグリーン",
+      "nameEn": "asparagus green",
+      "hex": "#DBEBC4",
+      "url": "https://www.colordic.org/colorsample/4087",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピジョンブルー",
+      "nameEn": "pigeon blue",
+      "hex": "#88B5D3",
+      "url": "https://www.colordic.org/colorsample/4144",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "クラレット",
+      "nameEn": "claret",
+      "hex": "#941F57",
+      "url": "https://www.colordic.org/colorsample/4201",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サンドグレイ",
+      "nameEn": "sand gray",
+      "hex": "#C9C9C2",
+      "url": "https://www.colordic.org/colorsample/4258",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピーチ",
+      "nameEn": "peach",
+      "hex": "#FBD8B5",
+      "url": "https://www.colordic.org/colorsample/4031",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シトロングリーン",
+      "nameEn": "citron green",
+      "hex": "#618E34",
+      "url": "https://www.colordic.org/colorsample/4088",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スモークブルー",
+      "nameEn": "smoke blue",
+      "hex": "#A4C1D7",
+      "url": "https://www.colordic.org/colorsample/4145",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アザレ",
+      "nameEn": "azalee",
+      "hex": "#D83473",
+      "url": "https://www.colordic.org/colorsample/4202",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マーブルグレイ",
+      "nameEn": "marble gray",
+      "hex": "#C0C5C2",
+      "url": "https://www.colordic.org/colorsample/4259",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "カフェオレ",
+      "nameEn": "cafe au lait",
+      "hex": "#946C45",
+      "url": "https://www.colordic.org/colorsample/4032",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "メドウグリーン",
+      "nameEn": "meadow green",
+      "hex": "#65AB31",
+      "url": "https://www.colordic.org/colorsample/4089",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フロスティブルー",
+      "nameEn": "frosty blue",
+      "hex": "#BBDBF3",
+      "url": "https://www.colordic.org/colorsample/4146",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "コスモス",
+      "nameEn": "cosmos",
+      "hex": "#DC6B9A",
+      "url": "https://www.colordic.org/colorsample/4203",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オパールグレイ",
+      "nameEn": "opal gray",
+      "hex": "#BFBEC5",
+      "url": "https://www.colordic.org/colorsample/4260",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オレンジ",
+      "nameEn": "orange",
+      "hex": "#EE7800",
+      "url": "https://www.colordic.org/colorsample/4033",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アップルグリーン",
+      "nameEn": "apple green",
+      "hex": "#A7D28D",
+      "url": "https://www.colordic.org/colorsample/4090",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブルーアシード",
+      "nameEn": "bleu acide",
+      "hex": "#006EB0",
+      "url": "https://www.colordic.org/colorsample/4147",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ロータスピンク",
+      "nameEn": "lotus pink",
+      "hex": "#DE82A7",
+      "url": "https://www.colordic.org/colorsample/4204",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フレンチグレイ",
+      "nameEn": "french gray",
+      "hex": "#8DA0B6",
+      "url": "https://www.colordic.org/colorsample/4261",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アプリコット",
+      "nameEn": "apricot",
+      "hex": "#F7B977",
+      "url": "https://www.colordic.org/colorsample/4034",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アイビーグリーン",
+      "nameEn": "ivy green",
+      "hex": "#578A3D",
+      "url": "https://www.colordic.org/colorsample/4091",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "コバルトブルー",
+      "nameEn": "cobalt blue",
+      "hex": "#0068B7",
+      "url": "https://www.colordic.org/colorsample/4148",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オールドオーキッド",
+      "nameEn": "old orchid",
+      "hex": "#E3ADC1",
+      "url": "https://www.colordic.org/colorsample/4205",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ミスト",
+      "nameEn": "mist",
+      "hex": "#B4AEB1",
+      "url": "https://www.colordic.org/colorsample/4262",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アンバー",
+      "nameEn": "amber",
+      "hex": "#C2894B",
+      "url": "https://www.colordic.org/colorsample/4035",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スピナッチグリーン",
+      "nameEn": "spinach green",
+      "hex": "#417038",
+      "url": "https://www.colordic.org/colorsample/4092",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サファイアブルー",
+      "nameEn": "sapphire blue",
+      "hex": "#0068B7",
+      "url": "https://www.colordic.org/colorsample/4149",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズミスト",
+      "nameEn": "rose mist",
+      "hex": "#DEBECC",
+      "url": "https://www.colordic.org/colorsample/4206",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アッシュブロンド",
+      "nameEn": "ash blond",
+      "hex": "#B5B5AE",
+      "url": "https://www.colordic.org/colorsample/4263",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブロンズ",
+      "nameEn": "bronze",
+      "hex": "#AC6B25",
+      "url": "https://www.colordic.org/colorsample/4036",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "カクタス",
+      "nameEn": "cactus",
+      "hex": "#387D39",
+      "url": "https://www.colordic.org/colorsample/4093",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スペクトラムブルー",
+      "nameEn": "spectrum blue",
+      "hex": "#0075C2",
+      "url": "https://www.colordic.org/colorsample/4150",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズドラジェ",
+      "nameEn": "rose dragee",
+      "hex": "#E5C1CD",
+      "url": "https://www.colordic.org/colorsample/4207",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フォッグ",
+      "nameEn": "fog",
+      "hex": "#ABB1B5",
+      "url": "https://www.colordic.org/colorsample/4264",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ヴァニラ",
+      "nameEn": "vanilla",
+      "hex": "#E8C59C",
+      "url": "https://www.colordic.org/colorsample/4037",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スカイグリーン",
+      "nameEn": "sky green",
+      "hex": "#BEE0C2",
+      "url": "https://www.colordic.org/colorsample/4094",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブルー",
+      "nameEn": "blue",
+      "hex": "#0075C2",
+      "url": "https://www.colordic.org/colorsample/4151",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "チェリーピンク",
+      "nameEn": "cherry pink",
+      "hex": "#EB6EA0",
+      "url": "https://www.colordic.org/colorsample/4208",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ベージュグレイ",
+      "nameEn": "beige gray",
+      "hex": "#B4ADA9",
+      "url": "https://www.colordic.org/colorsample/4265",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "コルク",
+      "nameEn": "cork",
+      "hex": "#C49A6A",
+      "url": "https://www.colordic.org/colorsample/4038",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スペアミント",
+      "nameEn": "spearmint",
+      "hex": "#79C06E",
+      "url": "https://www.colordic.org/colorsample/4095",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ゼニスブルー",
+      "nameEn": "zenith blue",
+      "hex": "#4496D3",
+      "url": "https://www.colordic.org/colorsample/4152",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オペラ",
+      "nameEn": "opera",
+      "hex": "#E95388",
+      "url": "https://www.colordic.org/colorsample/4209",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シルバーグレイ",
+      "nameEn": "silver gray",
+      "hex": "#AFAFB0",
+      "url": "https://www.colordic.org/colorsample/4266",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "バーントアンバー",
+      "nameEn": "burnt umber",
+      "hex": "#6F5436",
+      "url": "https://www.colordic.org/colorsample/4039",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ミントグリーン",
+      "nameEn": "mint green",
+      "hex": "#89C997",
+      "url": "https://www.colordic.org/colorsample/4096",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ヘブンリーブルー",
+      "nameEn": "heavenly blue",
+      "hex": "#68A4D9",
+      "url": "https://www.colordic.org/colorsample/4153",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズレッド",
+      "nameEn": "rose red",
+      "hex": "#EA618E",
+      "url": "https://www.colordic.org/colorsample/4210",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ストームグレイ",
+      "nameEn": "storm gray",
+      "hex": "#AAAAB0",
+      "url": "https://www.colordic.org/colorsample/4267",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローアンバー",
+      "nameEn": "raw umber",
+      "hex": "#866629",
+      "url": "https://www.colordic.org/colorsample/4040",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パロットグリーン",
+      "nameEn": "parrot green",
+      "hex": "#37A34A",
+      "url": "https://www.colordic.org/colorsample/4097",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オーキッドグレイ",
+      "nameEn": "orchid gray",
+      "hex": "#BCC7D7",
+      "url": "https://www.colordic.org/colorsample/4154",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オールドライラック",
+      "nameEn": "old lilac",
+      "hex": "#B0778C",
+      "url": "https://www.colordic.org/colorsample/4211",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "グリーンフォッグ",
+      "nameEn": "green fog",
+      "hex": "#ABB1AD",
+      "url": "https://www.colordic.org/colorsample/4268",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フレッシュ",
+      "nameEn": "flesh",
+      "hex": "#FAD09E",
+      "url": "https://www.colordic.org/colorsample/4041",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サマーグリーン",
+      "nameEn": "summer green",
+      "hex": "#009944",
+      "url": "https://www.colordic.org/colorsample/4098",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パウダーブルー",
+      "nameEn": "powder blue",
+      "hex": "#BCCDDB",
+      "url": "https://www.colordic.org/colorsample/4155",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ココア色",
+      "nameEn": "cocoa",
+      "hex": "#6E4A55",
+      "url": "https://www.colordic.org/colorsample/4212",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アッシュグレイ",
+      "nameEn": "ash gray",
+      "hex": "#9FA09E",
+      "url": "https://www.colordic.org/colorsample/4269",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ゴールデンイエロー",
+      "nameEn": "golden yellow",
+      "hex": "#F6AE54",
+      "url": "https://www.colordic.org/colorsample/4042",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オパールグリーン",
+      "nameEn": "opal green",
+      "hex": "#BEE0CE",
+      "url": "https://www.colordic.org/colorsample/4099",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ライトブルー",
+      "nameEn": "light blue",
+      "hex": "#B2CBE4",
+      "url": "https://www.colordic.org/colorsample/4156",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ワインレッド",
+      "nameEn": "wine red",
+      "hex": "#B33E5C",
+      "url": "https://www.colordic.org/colorsample/4213",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズグレイ",
+      "nameEn": "rose gray",
+      "hex": "#9D8E87",
+      "url": "https://www.colordic.org/colorsample/4270",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マンダリンオレンジ",
+      "nameEn": "mandarin orange",
+      "hex": "#F3981D",
+      "url": "https://www.colordic.org/colorsample/4043",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スプレイグリーン",
+      "nameEn": "spray green",
+      "hex": "#A4D5BD",
+      "url": "https://www.colordic.org/colorsample/4100",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ベイビーブルー",
+      "nameEn": "baby blue",
+      "hex": "#A2C2E6",
+      "url": "https://www.colordic.org/colorsample/4157",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ガーネット",
+      "nameEn": "garnet",
+      "hex": "#942343",
+      "url": "https://www.colordic.org/colorsample/4214",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "エレファントスキン",
+      "nameEn": "elephant skin",
+      "hex": "#9F9F98",
+      "url": "https://www.colordic.org/colorsample/4271",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マリーゴールド",
+      "nameEn": "marigold",
+      "hex": "#F39800",
+      "url": "https://www.colordic.org/colorsample/4044",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ボトルグリーン",
+      "nameEn": "bottle green",
+      "hex": "#004D25",
+      "url": "https://www.colordic.org/colorsample/4101",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "デイドリーム",
+      "nameEn": "day dream",
+      "hex": "#A3B9E0",
+      "url": "https://www.colordic.org/colorsample/4158",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "コチニールレッド",
+      "nameEn": "cochineal red",
+      "hex": "#C82C55",
+      "url": "https://www.colordic.org/colorsample/4215",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "バトルシップグレイ",
+      "nameEn": "battleship gray",
+      "hex": "#898989",
+      "url": "https://www.colordic.org/colorsample/4272",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "エクルベージュ",
+      "nameEn": "ecru beige",
+      "hex": "#F6E5CC",
+      "url": "https://www.colordic.org/colorsample/4045",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "コバルトグリーン",
+      "nameEn": "cobalt green",
+      "hex": "#3CB37A",
+      "url": "https://www.colordic.org/colorsample/4102",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サルビアブルー",
+      "nameEn": "salvia blue",
+      "hex": "#94ADDA",
+      "url": "https://www.colordic.org/colorsample/4159",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ストロベリー",
+      "nameEn": "strawberry",
+      "hex": "#E73562",
+      "url": "https://www.colordic.org/colorsample/4216",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ストーングレイ",
+      "nameEn": "stone gray",
+      "hex": "#898880",
+      "url": "https://www.colordic.org/colorsample/4273",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オイスター",
+      "nameEn": "oyster",
+      "hex": "#EAE1CF",
+      "url": "https://www.colordic.org/colorsample/4046",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "エバーグリーン",
+      "nameEn": "evergreen",
+      "hex": "#00984F",
+      "url": "https://www.colordic.org/colorsample/4103",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ヒヤシンスブルー",
+      "nameEn": "hyacinth blue",
+      "hex": "#7A99CF",
+      "url": "https://www.colordic.org/colorsample/4160",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ルビーレッド",
+      "nameEn": "ruby red",
+      "hex": "#E73562",
+      "url": "https://www.colordic.org/colorsample/4217",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "モスグレイ",
+      "nameEn": "moss gray",
+      "hex": "#7E837F",
+      "url": "https://www.colordic.org/colorsample/4274",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オーカー",
+      "nameEn": "ochre",
+      "hex": "#BA8B40",
+      "url": "https://www.colordic.org/colorsample/4047",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "マラカイトグリーン",
+      "nameEn": "malachite green",
+      "hex": "#009854",
+      "url": "https://www.colordic.org/colorsample/4104",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ヒヤシンス",
+      "nameEn": "hyacinth",
+      "hex": "#6C9BD2",
+      "url": "https://www.colordic.org/colorsample/4161",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "カーマイン",
+      "nameEn": "carmine",
+      "hex": "#D70035",
+      "url": "https://www.colordic.org/colorsample/4218",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ダブグレイ",
+      "nameEn": "dove gray",
+      "hex": "#7D7B83",
+      "url": "https://www.colordic.org/colorsample/4275",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "カーキー",
+      "nameEn": "khaki",
+      "hex": "#C5A05A",
+      "url": "https://www.colordic.org/colorsample/4048",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "グリーン",
+      "nameEn": "green",
+      "hex": "#00A960",
+      "url": "https://www.colordic.org/colorsample/4105",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ミッドナイトブルー",
+      "nameEn": "midnight blue",
+      "hex": "#001E43",
+      "url": "https://www.colordic.org/colorsample/4162",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "シグナルレッド",
+      "nameEn": "signal red",
+      "hex": "#E8383D",
+      "url": "https://www.colordic.org/colorsample/4219",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "グレイ",
+      "nameEn": "gray",
+      "hex": "#7D7D7D",
+      "url": "https://www.colordic.org/colorsample/4276",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "バフ",
+      "nameEn": "buff",
+      "hex": "#CAAC71",
+      "url": "https://www.colordic.org/colorsample/4049",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "エメラルドグリーン",
+      "nameEn": "emerald green",
+      "hex": "#00A968",
+      "url": "https://www.colordic.org/colorsample/4106",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ネービーブルー",
+      "nameEn": "navy blue",
+      "hex": "#202F55",
+      "url": "https://www.colordic.org/colorsample/4163",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "バーガンディー",
+      "nameEn": "burgundy",
+      "hex": "#6C2735",
+      "url": "https://www.colordic.org/colorsample/4220",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スチールグレイ",
+      "nameEn": "steel gray",
+      "hex": "#736D71",
+      "url": "https://www.colordic.org/colorsample/4277",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "サフランイエロー",
+      "nameEn": "saffron yellow",
+      "hex": "#FAC559",
+      "url": "https://www.colordic.org/colorsample/4050",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フォレストグリーン",
+      "nameEn": "forest green",
+      "hex": "#288C66",
+      "url": "https://www.colordic.org/colorsample/4107",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "プルシャンブルー",
+      "nameEn": "prussian blue",
+      "hex": "#192F60",
+      "url": "https://www.colordic.org/colorsample/4164",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ボルドー",
+      "nameEn": "bordeaux",
+      "hex": "#6C272D",
+      "url": "https://www.colordic.org/colorsample/4221",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アイビーグレイ",
+      "nameEn": "ivy gray",
+      "hex": "#666C67",
+      "url": "https://www.colordic.org/colorsample/4278",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "パンプキン",
+      "nameEn": "pumpkin",
+      "hex": "#E5A323",
+      "url": "https://www.colordic.org/colorsample/4051",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ビリジアン",
+      "nameEn": "viridian",
+      "hex": "#00885A",
+      "url": "https://www.colordic.org/colorsample/4108",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アイアンブルー",
+      "nameEn": "iron blue",
+      "hex": "#192F60",
+      "url": "https://www.colordic.org/colorsample/4165",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "カメリア",
+      "nameEn": "camellia",
+      "hex": "#DA536E",
+      "url": "https://www.colordic.org/colorsample/4222",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "スレートグレイ",
+      "nameEn": "slate gray",
+      "hex": "#626063",
+      "url": "https://www.colordic.org/colorsample/4279",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "イエローオーカー",
+      "nameEn": "yellow ocher",
+      "hex": "#C4972F",
+      "url": "https://www.colordic.org/colorsample/4052",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ホーリーグリーン",
+      "nameEn": "holly green",
+      "hex": "#006948",
+      "url": "https://www.colordic.org/colorsample/4109",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "インディゴ",
+      "nameEn": "indigo",
+      "hex": "#043C78",
+      "url": "https://www.colordic.org/colorsample/4166",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズ",
+      "nameEn": "rose",
+      "hex": "#E95464",
+      "url": "https://www.colordic.org/colorsample/4223",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "グラファイト",
+      "nameEn": "graphite",
+      "hex": "#594E52",
+      "url": "https://www.colordic.org/colorsample/4280",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブロンド",
+      "nameEn": "blond",
+      "hex": "#F2D58A",
+      "url": "https://www.colordic.org/colorsample/4053",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ビリヤードグリーン",
+      "nameEn": "billiard green",
+      "hex": "#005C42",
+      "url": "https://www.colordic.org/colorsample/4110",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "インクブルー",
+      "nameEn": "ink blue",
+      "hex": "#003F8E",
+      "url": "https://www.colordic.org/colorsample/4167",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ローズピンク",
+      "nameEn": "rose pink",
+      "hex": "#F19CA7",
+      "url": "https://www.colordic.org/colorsample/4224",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "チャコールグレイ",
+      "nameEn": "charcoal gray",
+      "hex": "#4E454A",
+      "url": "https://www.colordic.org/colorsample/4281",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ベージュ",
+      "nameEn": "beige",
+      "hex": "#EEDCB3",
+      "url": "https://www.colordic.org/colorsample/4054",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "クロムグリーン",
+      "nameEn": "chrome green",
+      "hex": "#00533F",
+      "url": "https://www.colordic.org/colorsample/4111",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オリエンタルブルー",
+      "nameEn": "oriental blue",
+      "hex": "#26499D",
+      "url": "https://www.colordic.org/colorsample/4168",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ピンク",
+      "nameEn": "pink",
+      "hex": "#F5B2B2",
+      "url": "https://www.colordic.org/colorsample/4225",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "トープ",
+      "nameEn": "taupe",
+      "hex": "#504946",
+      "url": "https://www.colordic.org/colorsample/4282",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ビスケット",
+      "nameEn": "biscuit",
+      "hex": "#EAD7A4",
+      "url": "https://www.colordic.org/colorsample/4055",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "アンティークグリーン",
+      "nameEn": "antique green",
+      "hex": "#54917F",
+      "url": "https://www.colordic.org/colorsample/4112",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ウルトラマリンブルー",
+      "nameEn": "ultramarine blue",
+      "hex": "#4753A2",
+      "url": "https://www.colordic.org/colorsample/4169",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "フラミンゴピンク",
+      "nameEn": "flamingo pink",
+      "hex": "#F5B2AC",
+      "url": "https://www.colordic.org/colorsample/4226",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ランプブラック",
+      "nameEn": "lamp black",
+      "hex": "#24140E",
+      "url": "https://www.colordic.org/colorsample/4283",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "レグホーン",
+      "nameEn": "leghorn",
+      "hex": "#FFE9A9",
+      "url": "https://www.colordic.org/colorsample/4056",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ウォーターグリーン",
+      "nameEn": "water green",
+      "hex": "#A5C9C1",
+      "url": "https://www.colordic.org/colorsample/4113",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ウルトラマリン",
+      "nameEn": "ultramarine",
+      "hex": "#434DA2",
+      "url": "https://www.colordic.org/colorsample/4170",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "オールドローズ",
+      "nameEn": "old rose",
+      "hex": "#E29399",
+      "url": "https://www.colordic.org/colorsample/4227",
+      "kind": "colordic"
+    },
+    {
+      "nameJa": "ブラック",
+      "nameEn": "black",
+      "hex": "#000000",
+      "url": "https://www.colordic.org/colorsample/4284",
+      "kind": "colordic"
+    }
+  ],
+  "css": {
+    "aliceblue": "#F0F8FF",
+    "antiquewhite": "#FAEBD7",
+    "aqua": "#00FFFF",
+    "aquamarine": "#7FFFD4",
+    "azure": "#F0FFFF",
+    "beige": "#F5F5DC",
+    "bisque": "#FFE4C4",
+    "black": "#000000",
+    "blanchedalmond": "#FFEBCD",
+    "blue": "#0000FF",
+    "blueviolet": "#8A2BE2",
+    "brown": "#A52A2A",
+    "burlywood": "#DEB887",
+    "cadetblue": "#5F9EA0",
+    "chartreuse": "#7FFF00",
+    "chocolate": "#D2691E",
+    "coral": "#FF7F50",
+    "cornflowerblue": "#6495ED",
+    "cornsilk": "#FFF8DC",
+    "crimson": "#DC143C",
+    "cyan": "#00FFFF",
+    "darkblue": "#00008B",
+    "darkcyan": "#008B8B",
+    "darkgoldenrod": "#B8860B",
+    "darkgray": "#A9A9A9",
+    "darkgreen": "#006400",
+    "darkgrey": "#A9A9A9",
+    "darkkhaki": "#BDB76B",
+    "darkmagenta": "#8B008B",
+    "darkolivegreen": "#556B2F",
+    "darkorange": "#FF8C00",
+    "darkorchid": "#9932CC",
+    "darkred": "#8B0000",
+    "darksalmon": "#E9967A",
+    "darkseagreen": "#8FBC8F",
+    "darkslateblue": "#483D8B",
+    "darkslategray": "#2F4F4F",
+    "darkslategrey": "#2F4F4F",
+    "darkturquoise": "#00CED1",
+    "darkviolet": "#9400D3",
+    "deeppink": "#FF1493",
+    "deepskyblue": "#00BFFF",
+    "dimgray": "#696969",
+    "dimgrey": "#696969",
+    "dodgerblue": "#1E90FF",
+    "firebrick": "#B22222",
+    "floralwhite": "#FFFAF0",
+    "forestgreen": "#228B22",
+    "fuchsia": "#FF00FF",
+    "gainsboro": "#DCDCDC",
+    "ghostwhite": "#F8F8FF",
+    "gold": "#FFD700",
+    "goldenrod": "#DAA520",
+    "gray": "#808080",
+    "green": "#008000",
+    "greenyellow": "#ADFF2F",
+    "grey": "#808080",
+    "honeydew": "#F0FFF0",
+    "hotpink": "#FF69B4",
+    "indianred": "#CD5C5C",
+    "indigo": "#4B0082",
+    "ivory": "#FFFFF0",
+    "khaki": "#F0E68C",
+    "lavender": "#E6E6FA",
+    "lavenderblush": "#FFF0F5",
+    "lawngreen": "#7CFC00",
+    "lemonchiffon": "#FFFACD",
+    "lightblue": "#ADD8E6",
+    "lightcoral": "#F08080",
+    "lightcyan": "#E0FFFF",
+    "lightgoldenrodyellow": "#FAFAD2",
+    "lightgray": "#D3D3D3",
+    "lightgreen": "#90EE90",
+    "lightgrey": "#D3D3D3",
+    "lightpink": "#FFB6C1",
+    "lightsalmon": "#FFA07A",
+    "lightseagreen": "#20B2AA",
+    "lightskyblue": "#87CEFA",
+    "lightslategray": "#778899",
+    "lightslategrey": "#778899",
+    "lightsteelblue": "#B0C4DE",
+    "lightyellow": "#FFFFE0",
+    "lime": "#00FF00",
+    "limegreen": "#32CD32",
+    "linen": "#FAF0E6",
+    "magenta": "#FF00FF",
+    "maroon": "#800000",
+    "mediumaquamarine": "#66CDAA",
+    "mediumblue": "#0000CD",
+    "mediumorchid": "#BA55D3",
+    "mediumpurple": "#9370DB",
+    "mediumseagreen": "#3CB371",
+    "mediumslateblue": "#7B68EE",
+    "mediumspringgreen": "#00FA9A",
+    "mediumturquoise": "#48D1CC",
+    "mediumvioletred": "#C71585",
+    "midnightblue": "#191970",
+    "mintcream": "#F5FFFA",
+    "mistyrose": "#FFE4E1",
+    "moccasin": "#FFE4B5",
+    "navajowhite": "#FFDEAD",
+    "navy": "#000080",
+    "oldlace": "#FDF5E6",
+    "olive": "#808000",
+    "olivedrab": "#6B8E23",
+    "orange": "#FFA500",
+    "orangered": "#FF4500",
+    "orchid": "#DA70D6",
+    "palegoldenrod": "#EEE8AA",
+    "palegreen": "#98FB98",
+    "paleturquoise": "#AFEEEE",
+    "palevioletred": "#DB7093",
+    "papayawhip": "#FFEFD5",
+    "peachpuff": "#FFDAB9",
+    "peru": "#CD853F",
+    "pink": "#FFC0CB",
+    "plum": "#DDA0DD",
+    "powderblue": "#B0E0E6",
+    "purple": "#800080",
+    "rebeccapurple": "#663399",
+    "red": "#FF0000",
+    "rosybrown": "#BC8F8F",
+    "royalblue": "#4169E1",
+    "saddlebrown": "#8B4513",
+    "salmon": "#FA8072",
+    "sandybrown": "#F4A460",
+    "seagreen": "#2E8B57",
+    "seashell": "#FFF5EE",
+    "sienna": "#A0522D",
+    "silver": "#C0C0C0",
+    "skyblue": "#87CEEB",
+    "slateblue": "#6A5ACD",
+    "slategray": "#708090",
+    "slategrey": "#708090",
+    "snow": "#FFFAFA",
+    "springgreen": "#00FF7F",
+    "steelblue": "#4682B4",
+    "tan": "#D2B48C",
+    "teal": "#008080",
+    "thistle": "#D8BFD8",
+    "tomato": "#FF6347",
+    "turquoise": "#40E0D0",
+    "violet": "#EE82EE",
+    "wheat": "#F5DEB3",
+    "white": "#FFFFFF",
+    "whitesmoke": "#F5F5F5",
+    "yellow": "#FFFF00",
+    "yellowgreen": "#9ACD32"
+  }
+}

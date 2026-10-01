@@ -1,5 +1,11 @@
 # Third party notices
 
+Named-color reference facts are attributed per entry in `src/data/namedColors.ts`.
+The application prioritizes [colordic's western color dictionary](https://www.colordic.org/y),
+then [W3C CSS Color 4 named colors](https://www.w3.org/TR/css-color-4/#named-colors).
+These are reference values, not measured pigment data. Authored descriptors are
+identified separately. Source site images and explanatory text are not bundled.
+
 The application uses [Spectral.js 3.0.0](https://github.com/rvanwijnen/spectral.js),
 copyright (c) 2025 Ronald van Wijnen, under the MIT License.
 

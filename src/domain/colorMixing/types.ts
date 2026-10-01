@@ -21,12 +21,12 @@ export type ColorPreset = {
 /** Relative coefficients on a common 380–750 nm / 10 nm grid, not measured paint data. */
 export type VirtualPigment = {
   model: 'kubelka-munk-two-constant';
-  source: 'authored-virtual-pigment-v2';
+  source: 'authored-virtual-pigment-v3';
   absorption: readonly number[];
   scattering: readonly number[];
   /** Appearance of one unmixed paint, used to calibrate the on-screen swatch. */
   displayOklab: readonly [number, number, number];
-  /** Position on the shared artist's RYB wheel; null for white and black. */
+  /** Position on the shared artist's RYB wheel; null for white/black groups, including subtly tinted neutrals. */
   artistHue: number | null;
 };
 

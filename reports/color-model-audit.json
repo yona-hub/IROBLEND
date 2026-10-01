@@ -1,0 +1,4249 @@
+{
+  "date": "2026-10-01",
+  "palette": [
+    {
+      "id": "red",
+      "nameJa": "レッド",
+      "category": "red",
+      "displayHex": "#E53935",
+      "display": {
+        "L": 0.608277046940196,
+        "C": 0.2089830489088849,
+        "h": 27.027574491733276
+      },
+      "reference": {
+        "label": "レッド red",
+        "hex": "#EA5550",
+        "url": "https://www.colordic.org/colorsample/4002",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6483268811165285,
+        "C": 0.1853770158632313,
+        "h": 25.608960192345307
+      },
+      "referenceDelta": 0.046743791834633376,
+      "rawHex": "#CF534A",
+      "raw": {
+        "L": 0.603219568360952,
+        "C": 0.160021179145081,
+        "h": 27.063241313284436
+      },
+      "rawDelta": 0.0492225125259205,
+      "calibrationDelta": 0,
+      "calibratedHex": "#E53935",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FF7B70",
+          "oklab": [
+            0.7341307486343056,
+            0.1456601828086307,
+            0.07306566650429036
+          ],
+          "nearestName": {
+            "nameJa": "コーラル",
+            "nameEn": "Coral",
+            "deltaE": 0.03441537849725867
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFA79E",
+          "oklab": [
+            0.8128113450146041,
+            0.09496817291015991,
+            0.04635815796463061
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.043836384044761166
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFB8B1",
+          "oklab": [
+            0.8467954364600917,
+            0.07559906705838959,
+            0.03574616377861428
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.03561382123719886
+          }
+        }
+      ]
+    },
+    {
+      "id": "scarlet",
+      "nameJa": "スカーレット",
+      "category": "red",
+      "displayHex": "#D8253E",
+      "display": {
+        "L": 0.5720701241867562,
+        "C": 0.21017807502260918,
+        "h": 20.777208818824533
+      },
+      "reference": {
+        "label": "スカーレット scarlet",
+        "hex": "#EA5532",
+        "url": "https://www.colordic.org/colorsample/4005",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6446257153167821,
+        "C": 0.19091161387495717,
+        "h": 34.48130400674978
+      },
+      "referenceDelta": 0.0889948139368477,
+      "rawHex": "#CC5150",
+      "raw": {
+        "L": 0.5972726510526221,
+        "C": 0.15691620489613317,
+        "h": 23.449192882955288
+      },
+      "rawDelta": 0.059529046237801066,
+      "calibrationDelta": 0,
+      "calibratedHex": "#D8253E",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F57176",
+          "oklab": [
+            0.7074242061673714,
+            0.15272463694565153,
+            0.055137290711535614
+          ],
+          "nearestName": {
+            "nameJa": "コーラル",
+            "nameEn": "Coral",
+            "deltaE": 0.0312690333873177
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FF9C9E",
+          "oklab": [
+            0.7944905264101743,
+            0.11226894756127748,
+            0.03814446452107201
+          ],
+          "nearestName": {
+            "nameJa": "ブラッシュ",
+            "nameEn": "Blush",
+            "deltaE": 0.041192394985457355
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFB1B2",
+          "oklab": [
+            0.834775593542455,
+            0.08690339397522528,
+            0.028817916973630453
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.04373030643801754
+          }
+        }
+      ]
+    },
+    {
+      "id": "vermilion",
+      "nameJa": "バーミリオン",
+      "category": "red",
+      "displayHex": "#E85C40",
+      "display": {
+        "L": 0.6515462179167879,
+        "C": 0.17948227595758282,
+        "h": 33.14910529433422
+      },
+      "reference": {
+        "label": "バーミリオン vermilion",
+        "hex": "#EA553A",
+        "url": "https://www.colordic.org/colorsample/4004",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6454257195323242,
+        "C": 0.1893043957486417,
+        "h": 32.473743500879834
+      },
+      "referenceDelta": 0.011775195194898756,
+      "rawHex": "#D45C49",
+      "raw": {
+        "L": 0.6216046338391108,
+        "C": 0.15539644057995236,
+        "h": 30.841038925078294
+      },
+      "rawDelta": 0.03901127709942693,
+      "calibrationDelta": 0,
+      "calibratedHex": "#E85C40",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FF9278",
+          "oklab": [
+            0.7703789033000663,
+            0.11339556320359795,
+            0.07754627326868802
+          ],
+          "nearestName": {
+            "nameJa": "サーモンピンク",
+            "nameEn": "Salmon Pink",
+            "deltaE": 0.030831575573337832
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFB5A3",
+          "oklab": [
+            0.838232419041213,
+            0.07488988573885041,
+            0.05084877306127478
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.022828610015097835
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFC4B6",
+          "oklab": [
+            0.8695542796327237,
+            0.05891071059198705,
+            0.039263267805740076
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.0427027898734562
+          }
+        }
+      ]
+    },
+    {
+      "id": "crimson",
+      "nameJa": "クリムゾン",
+      "category": "red",
+      "displayHex": "#A42343",
+      "display": {
+        "L": 0.47727078326959327,
+        "C": 0.16419741820729697,
+        "h": 12.312098659004107
+      },
+      "reference": {
+        "label": "crimson",
+        "hex": "#DC143C",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-crimson",
+        "kind": "css-name"
+      },
+      "referenceLch": {
+        "L": 0.571189289139478,
+        "C": 0.22193815281220408,
+        "h": 20.087361218254046
+      },
+      "referenceDelta": 0.11324638014501358,
+      "rawHex": "#A34F69",
+      "raw": {
+        "L": 0.5390366580395316,
+        "C": 0.11470222696021361,
+        "h": 2.064683214160709
+      },
+      "rawDelta": 0.08285918083946672,
+      "calibrationDelta": 0,
+      "calibratedHex": "#A42343",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#D2687E",
+          "oklab": [
+            0.647994625323048,
+            0.13339538348251684,
+            0.01992449495328119
+          ],
+          "nearestName": {
+            "nameJa": "ローズピンク",
+            "nameEn": "Rose Pink",
+            "deltaE": 0.039530482284451156
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#E795A6",
+          "oklab": [
+            0.7570773774167694,
+            0.09999774034347336,
+            0.010934516462689614
+          ],
+          "nearestName": {
+            "nameJa": "ピンク",
+            "nameEn": "Pink",
+            "deltaE": 0.02882748448885471
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#EFAAB9",
+          "oklab": [
+            0.8074239807003518,
+            0.08278720842734,
+            0.006905056239010832
+          ],
+          "nearestName": {
+            "nameJa": "ブラッシュ",
+            "nameEn": "Blush",
+            "deltaE": 0.037305100517552967
+          }
+        }
+      ]
+    },
+    {
+      "id": "carmine",
+      "nameJa": "カーマイン",
+      "category": "red",
+      "displayHex": "#8F1D46",
+      "display": {
+        "L": 0.4349067948850511,
+        "C": 0.15087160361797014,
+        "h": 4.922958099661685
+      },
+      "reference": {
+        "label": "カーマイン carmine",
+        "hex": "#D70035",
+        "url": "https://www.colordic.org/colorsample/4218",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.5558496970708964,
+        "C": 0.22344006981706693,
+        "h": 20.68515621619531
+      },
+      "referenceDelta": 0.14976177988496717,
+      "rawHex": "#8A4C6F",
+      "raw": {
+        "L": 0.5006946332724083,
+        "C": 0.09560976159393687,
+        "h": 345.68011764720194
+      },
+      "rawDelta": 0.09483528735708391,
+      "calibrationDelta": 0,
+      "calibratedHex": "#8F1D46",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#C36281",
+          "oklab": [
+            0.6194954841818471,
+            0.12779221505068755,
+            0.00275808255484572
+          ],
+          "nearestName": {
+            "nameJa": "ローズピンク",
+            "nameEn": "Rose Pink",
+            "deltaE": 0.04441448781476977
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#DC90A9",
+          "oklab": [
+            0.7369633452110358,
+            0.0967374899058655,
+            -0.0026145248106536068
+          ],
+          "nearestName": {
+            "nameJa": "ピンク",
+            "nameEn": "Pink",
+            "deltaE": 0.034354283559631264
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#E5A6BB",
+          "oklab": [
+            0.7904784789083429,
+            0.07862180650821954,
+            -0.0036815157848527624
+          ],
+          "nearestName": {
+            "nameJa": "ブラッシュ",
+            "nameEn": "Blush",
+            "deltaE": 0.03425760190665743
+          }
+        }
+      ]
+    },
+    {
+      "id": "tomato-red",
+      "nameJa": "トマトレッド",
+      "category": "red",
+      "displayHex": "#E96B52",
+      "display": {
+        "L": 0.6755655739647394,
+        "C": 0.1617268424233988,
+        "h": 32.829497580628356
+      },
+      "reference": {
+        "label": "トマトレッド tomato red",
+        "hex": "#EA5549",
+        "url": "https://www.colordic.org/colorsample/4003",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.647288565957767,
+        "C": 0.18647510099934825,
+        "h": 27.992362622763267
+      },
+      "referenceDelta": 0.04033467726026712,
+      "rawHex": "#DB6857",
+      "raw": {
+        "L": 0.6517536298320454,
+        "C": 0.14847220692182586,
+        "h": 29.95741830069295
+      },
+      "rawDelta": 0.02833755779850736,
+      "calibrationDelta": 0,
+      "calibratedHex": "#E96B52",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FB9680",
+          "oklab": [
+            0.7734052425811319,
+            0.10583896784943525,
+            0.06911964025463446
+          ],
+          "nearestName": {
+            "nameJa": "サーモンピンク",
+            "nameEn": "Salmon Pink",
+            "deltaE": 0.02500589134703611
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFB5A5",
+          "oklab": [
+            0.8386801056155853,
+            0.07566520616953665,
+            0.0483797961901572
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.02463645132366737
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFC3B6",
+          "oklab": [
+            0.8677351532013396,
+            0.0604534744100777,
+            0.03843921462911115
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.041474063051054666
+          }
+        }
+      ]
+    },
+    {
+      "id": "pink",
+      "nameJa": "ピンク",
+      "category": "pink",
+      "displayHex": "#F08BAA",
+      "display": {
+        "L": 0.7525219206737638,
+        "C": 0.12703492394588423,
+        "h": 0.8951514350637808
+      },
+      "reference": {
+        "label": "ピンク pink",
+        "hex": "#F5B2B2",
+        "url": "https://www.colordic.org/colorsample/4225",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.8259734789092913,
+        "C": 0.07853753831502415,
+        "h": 18.880467377216746
+      },
+      "referenceDelta": 0.09339254482295087,
+      "rawHex": "#EEAACE",
+      "raw": {
+        "L": 0.8127406826094182,
+        "C": 0.09179137705617575,
+        "h": 346.4269258469752
+      },
+      "rawDelta": 0.07488667711898032,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F08BAA",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F6A3BD",
+          "oklab": [
+            0.8040863996517603,
+            0.10288268090762342,
+            -0.0011864957102052376
+          ],
+          "nearestName": {
+            "nameJa": "ブラッシュ",
+            "nameEn": "Blush",
+            "deltaE": 0.04763064334446894
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FBBAD0",
+          "oklab": [
+            0.8545404698803444,
+            0.07958276503161782,
+            -0.0044018645247884125
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.019072709459817486
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FDC7DA",
+          "oklab": [
+            0.8825852442143346,
+            0.06557067352347462,
+            -0.005144209781080322
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.0226078051776805
+          }
+        }
+      ]
+    },
+    {
+      "id": "baby-pink",
+      "nameJa": "ベビーピンク",
+      "category": "pink",
+      "displayHex": "#F4C1D1",
+      "display": {
+        "L": 0.8605044144426055,
+        "C": 0.06162533370446775,
+        "h": 357.78279802893223
+      },
+      "reference": {
+        "label": "ベビーピンク baby pink",
+        "hex": "#FDEDE4",
+        "url": "https://www.colordic.org/colorsample/4023",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9563336546433397,
+        "C": 0.021192347160860766,
+        "h": 51.523059064302004
+      },
+      "referenceDelta": 0.10901925966473512,
+      "rawHex": "#F6CDE3",
+      "raw": {
+        "L": 0.8898801861354311,
+        "C": 0.052963775135817744,
+        "h": 344.86430618655777
+      },
+      "rawDelta": 0.03321420831685621,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F4C1D1",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F7CDDB",
+          "oklab": [
+            0.8882190397370618,
+            0.0503879338721519,
+            -0.0033719901047269962
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.029905194686065065
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FBD9E5",
+          "oklab": [
+            0.9169717652174594,
+            0.04053393178656961,
+            -0.0038044261355257847
+          ],
+          "nearestName": {
+            "nameJa": "ホワイトスモーク",
+            "nameEn": "White Smoke",
+            "deltaE": 0.04459752462820063
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FCE0EB",
+          "oklab": [
+            0.9326774297813601,
+            0.03354101341508309,
+            -0.004688457060689544
+          ],
+          "nearestName": {
+            "nameJa": "ホワイトスモーク",
+            "nameEn": "White Smoke",
+            "deltaE": 0.03612949757351172
+          }
+        }
+      ]
+    },
+    {
+      "id": "rose-pink",
+      "nameJa": "ローズピンク",
+      "category": "pink",
+      "displayHex": "#D95A8A",
+      "display": {
+        "L": 0.6421669199864789,
+        "C": 0.16568211719573925,
+        "h": 359.25742160663043
+      },
+      "reference": {
+        "label": "ローズピンク rose pink",
+        "hex": "#F19CA7",
+        "url": "https://www.colordic.org/colorsample/4224",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.7805537293577897,
+        "C": 0.10232809039784278,
+        "h": 11.26037829065092
+      },
+      "referenceDelta": 0.1546155679797412,
+      "rawHex": "#E07FB1",
+      "raw": {
+        "L": 0.7159419321295439,
+        "C": 0.13249573833064082,
+        "h": 348.7172247086285
+      },
+      "rawDelta": 0.0853515926186271,
+      "calibrationDelta": 0,
+      "calibratedHex": "#D95A8A",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#E881A7",
+          "oklab": [
+            0.7262869270993664,
+            0.13282675228454688,
+            -0.0059709245560107815
+          ],
+          "nearestName": {
+            "nameJa": "ピンク",
+            "nameEn": "Pink",
+            "deltaE": 0.028023040967307473
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#F3A4C2",
+          "oklab": [
+            0.8039894892977054,
+            0.09976989285241661,
+            -0.008462191421324872
+          ],
+          "nearestName": {
+            "nameJa": "ブラッシュ",
+            "nameEn": "Blush",
+            "deltaE": 0.05082210342270783
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#F7B5CF",
+          "oklab": [
+            0.8414217549695583,
+            0.08248722047725338,
+            -0.009221675021406361
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.029121213298416146
+          }
+        }
+      ]
+    },
+    {
+      "id": "cherry-pink",
+      "nameJa": "チェリーピンク",
+      "category": "pink",
+      "displayHex": "#C94370",
+      "display": {
+        "L": 0.5828744513712923,
+        "C": 0.17285628009404083,
+        "h": 3.6097211203155553
+      },
+      "reference": {
+        "label": "チェリーピンク cherry pink",
+        "hex": "#EB6EA0",
+        "url": "https://www.colordic.org/colorsample/4208",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.7005260877592199,
+        "C": 0.16250011891459618,
+        "h": 356.9714936493311
+      },
+      "referenceDelta": 0.11969037170822529,
+      "rawHex": "#D36489",
+      "raw": {
+        "L": 0.6454663590536783,
+        "C": 0.14468472089196818,
+        "h": 0.8177288004010279
+      },
+      "rawDelta": 0.06907068012347643,
+      "calibrationDelta": 0,
+      "calibratedHex": "#C94370",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#E17799",
+          "oklab": [
+            0.6979845441414714,
+            0.13591980939467235,
+            0.0018960875563667212
+          ],
+          "nearestName": {
+            "nameJa": "ピンク",
+            "nameEn": "Pink",
+            "deltaE": 0.05525893777053275
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#EF9EB9",
+          "oklab": [
+            0.7867620102448964,
+            0.1015446524836966,
+            -0.003333797613197964
+          ],
+          "nearestName": {
+            "nameJa": "ブラッシュ",
+            "nameEn": "Blush",
+            "deltaE": 0.041203990077671025
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#F5B0C7",
+          "oklab": [
+            0.8282401969718224,
+            0.08515625035257984,
+            -0.0038533094039253646
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.039987692769095216
+          }
+        }
+      ]
+    },
+    {
+      "id": "salmon-pink",
+      "nameJa": "サーモンピンク",
+      "category": "pink",
+      "displayHex": "#EF9285",
+      "display": {
+        "L": 0.7532837297116112,
+        "C": 0.11503448724440926,
+        "h": 28.612823385896093
+      },
+      "reference": {
+        "label": "サーモンピンク salmon pink",
+        "hex": "#F3A68C",
+        "url": "https://www.colordic.org/colorsample/4019",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.7937537773973509,
+        "C": 0.09875253726567722,
+        "h": 39.43058317975175
+      },
+      "referenceDelta": 0.04802789967359828,
+      "rawHex": "#F29E90",
+      "raw": {
+        "L": 0.7792696015667262,
+        "C": 0.10333005436135478,
+        "h": 30.045287608892295
+      },
+      "rawDelta": 0.0286302060148118,
+      "calibrationDelta": 0,
+      "calibratedHex": "#EF9285",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F6A99D",
+          "oklab": [
+            0.8060264689547768,
+            0.08150046310196196,
+            0.045320413751607
+          ],
+          "nearestName": {
+            "nameJa": "ブラッシュ",
+            "nameEn": "Blush",
+            "deltaE": 0.034101331325686206
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FCBEB5",
+          "oklab": [
+            0.855429252834249,
+            0.06450325534141937,
+            0.03439576192053195
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.03724337891429859
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FECAC2",
+          "oklab": [
+            0.8824881007396739,
+            0.05321814097727107,
+            0.028823098113681556
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.03907789713326644
+          }
+        }
+      ]
+    },
+    {
+      "id": "hot-pink",
+      "nameJa": "ホットピンク",
+      "category": "pink",
+      "displayHex": "#E94A9E",
+      "display": {
+        "L": 0.6549606460052059,
+        "C": 0.20927656031342654,
+        "h": 351.9349101163886
+      },
+      "reference": {
+        "label": "hotpink",
+        "hex": "#FF69B4",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-hotpink",
+        "kind": "css-name"
+      },
+      "referenceLch": {
+        "L": 0.7282973975427447,
+        "C": 0.19707546871923085,
+        "h": 351.994700786309
+      },
+      "referenceDelta": 0.07434507835385114,
+      "rawHex": "#CF5D96",
+      "raw": {
+        "L": 0.6363234377600517,
+        "C": 0.156890219124244,
+        "h": 351.2420486122171
+      },
+      "rawDelta": 0.055645984343065356,
+      "calibrationDelta": 0,
+      "calibratedHex": "#E94A9E",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FA80BF",
+          "oklab": [
+            0.7552421357331984,
+            0.16107205849537032,
+            -0.02985950701935247
+          ],
+          "nearestName": {
+            "nameJa": "ピンク",
+            "nameEn": "Pink",
+            "deltaE": 0.046701506781507314
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFA6D3",
+          "oklab": [
+            0.8257144568177409,
+            0.11556025327212494,
+            -0.023932199352016514
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.06773930884490911
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFB8DC",
+          "oklab": [
+            0.8587451130208238,
+            0.09115351066666771,
+            -0.020343730022022388
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.03464508130668086
+          }
+        }
+      ]
+    },
+    {
+      "id": "orange",
+      "nameJa": "オレンジ",
+      "category": "orange",
+      "displayHex": "#F38C29",
+      "display": {
+        "L": 0.7362014374121637,
+        "C": 0.16186433135520464,
+        "h": 58.33069373824492
+      },
+      "reference": {
+        "label": "オレンジ orange",
+        "hex": "#EE7800",
+        "url": "https://www.colordic.org/colorsample/4033",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6961468879495265,
+        "C": 0.17574322167375114,
+        "h": 53.422628331884425
+      },
+      "referenceDelta": 0.044783955463026714,
+      "rawHex": "#E48846",
+      "raw": {
+        "L": 0.7131719721366231,
+        "C": 0.1381589044344636,
+        "h": 54.065248515244036
+      },
+      "rawDelta": 0.03487387103920721,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F38C29",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FFBB75",
+          "oklab": [
+            0.8406715149752584,
+            0.04792546003925158,
+            0.10699377954884981
+          ],
+          "nearestName": {
+            "nameJa": "アプリコット",
+            "nameEn": "Apricot",
+            "deltaE": 0.03314457763321768
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFD4A4",
+          "oklab": [
+            0.8954766052761157,
+            0.027386883899230774,
+            0.07378907434881798
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.04455768776381381
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFDEB7",
+          "oklab": [
+            0.9184646923817607,
+            0.019816394046234753,
+            0.059492915579127725
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.03486334689446022
+          }
+        }
+      ]
+    },
+    {
+      "id": "mandarin-orange",
+      "nameJa": "マンダリンオレンジ",
+      "category": "orange",
+      "displayHex": "#E96D22",
+      "display": {
+        "L": 0.6736683289223704,
+        "C": 0.1735417468365459,
+        "h": 46.601497316680366
+      },
+      "reference": {
+        "label": "マンダリンオレンジ mandarin orange",
+        "hex": "#F3981D",
+        "url": "https://www.colordic.org/colorsample/4043",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.7560962350972796,
+        "C": 0.16112439954759347,
+        "h": 66.34465726497513
+      },
+      "referenceDelta": 0.10117284582595529,
+      "rawHex": "#E17E47",
+      "raw": {
+        "L": 0.6917013758430388,
+        "C": 0.14076443214710052,
+        "h": 47.90984263767689
+      },
+      "rawDelta": 0.037580319903170026,
+      "calibrationDelta": 0,
+      "calibratedHex": "#E96D22",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FCA36A",
+          "oklab": [
+            0.7928452422182001,
+            0.07815657444601082,
+            0.10196649728679108
+          ],
+          "nearestName": {
+            "nameJa": "アプリコット",
+            "nameEn": "Apricot",
+            "deltaE": 0.0328277433560945
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFC49A",
+          "oklab": [
+            0.8635170055771657,
+            0.047994342566613224,
+            0.07309295275344374
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.038653784522819756
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFD1AF",
+          "oklab": [
+            0.8920495914725924,
+            0.036259404228241754,
+            0.05845251967413012
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.0590641156769879
+          }
+        }
+      ]
+    },
+    {
+      "id": "carrot-orange",
+      "nameJa": "キャロットオレンジ",
+      "category": "orange",
+      "displayHex": "#CE5828",
+      "display": {
+        "L": 0.6039632762973505,
+        "C": 0.16154183274738013,
+        "h": 40.73494384482797
+      },
+      "reference": {
+        "label": "キャロットオレンジ carrot orange",
+        "hex": "#ED6D35",
+        "url": "https://www.colordic.org/colorsample/4006",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6808087612155848,
+        "C": 0.1726065756585718,
+        "h": 42.20673390971075
+      },
+      "referenceDelta": 0.07775638139228645,
+      "rawHex": "#B57249",
+      "raw": {
+        "L": 0.6140518065084731,
+        "C": 0.1015788109697138,
+        "h": 50.98040886676819
+      },
+      "rawDelta": 0.06496645240990272,
+      "calibrationDelta": 0,
+      "calibratedHex": "#CE5828",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F09369",
+          "oklab": [
+            0.7509705093527892,
+            0.08969754378628725,
+            0.08869996281944459
+          ],
+          "nearestName": {
+            "nameJa": "サーモンピンク",
+            "nameEn": "Salmon Pink",
+            "deltaE": 0.03553165831324486
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FBB795",
+          "oklab": [
+            0.8346356143965207,
+            0.06186169235205774,
+            0.06772094213238522
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.012126860454380302
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FDC6A9",
+          "oklab": [
+            0.8683033742194092,
+            0.04856540654403074,
+            0.056137164924318084
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.04072076942647505
+          }
+        }
+      ]
+    },
+    {
+      "id": "apricot",
+      "nameJa": "アプリコット",
+      "category": "orange",
+      "displayHex": "#F4B179",
+      "display": {
+        "L": 0.8112098584991241,
+        "C": 0.10647008241353093,
+        "h": 60.37789666047928
+      },
+      "reference": {
+        "label": "アプリコット apricot",
+        "hex": "#F7B977",
+        "url": "https://www.colordic.org/colorsample/4034",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.8288670027122652,
+        "C": 0.10972317417193103,
+        "h": 67.0734762010245
+      },
+      "referenceDelta": 0.021947921652890993,
+      "rawHex": "#F6BE88",
+      "raw": {
+        "L": 0.8391809187146159,
+        "C": 0.09483458125226588,
+        "h": 64.99824383641317
+      },
+      "rawDelta": 0.031359035857559926,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F4B179",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F9C595",
+          "oklab": [
+            0.858461081680996,
+            0.03783873912327412,
+            0.07752830319575421
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.03967827842788102
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FDD6B0",
+          "oklab": [
+            0.8998685754519777,
+            0.02689395710586201,
+            0.06062658995913184
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.04809480626251338
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FEDFBE",
+          "oklab": [
+            0.9210236975505909,
+            0.02000240853510049,
+            0.051591345863559734
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.03044534749919603
+          }
+        }
+      ]
+    },
+    {
+      "id": "coral",
+      "nameJa": "コーラル",
+      "category": "orange",
+      "displayHex": "#ED7968",
+      "display": {
+        "L": 0.7052159145224746,
+        "C": 0.14637124177919797,
+        "h": 29.813851626389976
+      },
+      "reference": {
+        "label": "coral",
+        "hex": "#FF7F50",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-coral",
+        "kind": "css-name"
+      },
+      "referenceLch": {
+        "L": 0.7351128623710319,
+        "C": 0.1679943624784983,
+        "h": 40.246662497061266
+      },
+      "referenceDelta": 0.046630663265969576,
+      "rawHex": "#E48075",
+      "raw": {
+        "L": 0.7064140524305976,
+        "C": 0.12545203189827175,
+        "h": 27.33999219226814
+      },
+      "rawDelta": 0.02175490814079247,
+      "calibrationDelta": 0,
+      "calibratedHex": "#ED7968",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F89B8D",
+          "oklab": [
+            0.7807425234285895,
+            0.09968316120374021,
+            0.05559759555977961
+          ],
+          "nearestName": {
+            "nameJa": "サーモンピンク",
+            "nameEn": "Salmon Pink",
+            "deltaE": 0.02749439445803762
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FEB7AC",
+          "oklab": [
+            0.8427829350866615,
+            0.07413835078651765,
+            0.04083176488199891
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.029491807696524038
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFC5BC",
+          "oklab": [
+            0.872825637001131,
+            0.05967737005111645,
+            0.03255941136754481
+          ],
+          "nearestName": {
+            "nameJa": "ベビーピンク",
+            "nameEn": "Baby Pink",
+            "deltaE": 0.03710096938600305
+          }
+        }
+      ]
+    },
+    {
+      "id": "dark-orange",
+      "nameJa": "ダークオレンジ",
+      "category": "orange",
+      "displayHex": "#AB4F1D",
+      "display": {
+        "L": 0.5364417300274639,
+        "C": 0.1351556701430726,
+        "h": 45.44906746556239
+      },
+      "reference": {
+        "label": "darkorange",
+        "hex": "#FF8C00",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-darkorange",
+        "kind": "css-name"
+      },
+      "referenceLch": {
+        "L": 0.7505442519756035,
+        "C": 0.179114492672321,
+        "h": 58.282680839767636
+      },
+      "referenceDelta": 0.22131822059596049,
+      "rawHex": "#8E6648",
+      "raw": {
+        "L": 0.5447620742569451,
+        "C": 0.0673138168748456,
+        "h": 57.71635204958898
+      },
+      "rawDelta": 0.07132465457707063,
+      "calibrationDelta": 0,
+      "calibratedHex": "#AB4F1D",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#D88B61",
+          "oklab": [
+            0.7068291650434521,
+            0.07237586580003308,
+            0.0830134907221512
+          ],
+          "nearestName": {
+            "nameJa": "タン",
+            "nameEn": "Tan",
+            "deltaE": 0.04745416529486451
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#E9B08F",
+          "oklab": [
+            0.8018091666784022,
+            0.05037231530149122,
+            0.0628305379664712
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.027422184147351775
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#EFC0A4",
+          "oklab": [
+            0.8423162358794234,
+            0.04038847070344148,
+            0.05230251208535286
+          ],
+          "nearestName": {
+            "nameJa": "ピーチ",
+            "nameEn": "Peach",
+            "deltaE": 0.02202812434714526
+          }
+        }
+      ]
+    },
+    {
+      "id": "yellow",
+      "nameJa": "イエロー",
+      "category": "yellow",
+      "displayHex": "#F4D929",
+      "display": {
+        "L": 0.8813909997771923,
+        "C": 0.17481114715300194,
+        "h": 99.60527450951417
+      },
+      "reference": {
+        "label": "イエロー yellow",
+        "hex": "#FFDC00",
+        "url": "https://www.colordic.org/colorsample/4069",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.8966991153978164,
+        "C": 0.1850619718253841,
+        "h": 97.44499504646558
+      },
+      "referenceDelta": 0.01963166061304277,
+      "rawHex": "#EFD334",
+      "raw": {
+        "L": 0.865811015600755,
+        "C": 0.16611350546318734,
+        "h": 98.65281325858433
+      },
+      "rawDelta": 0.01806680087483628,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F4D929",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FBED77",
+          "oklab": [
+            0.9340876526504717,
+            -0.030443646083779863,
+            0.13645768108911605
+          ],
+          "nearestName": {
+            "nameJa": "レモンイエロー",
+            "nameEn": "Lemon Yellow",
+            "deltaE": 0.03080120872224185
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FDF6A0",
+          "oklab": [
+            0.9596623315679111,
+            -0.02628910901341741,
+            0.10370898418580687
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.053892951333243705
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FEF9B2",
+          "oklab": [
+            0.9696082079133788,
+            -0.022526693930649155,
+            0.08684898338577007
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.05698567118191331
+          }
+        }
+      ]
+    },
+    {
+      "id": "lemon-yellow",
+      "nameJa": "レモンイエロー",
+      "category": "yellow",
+      "displayHex": "#F5ED55",
+      "display": {
+        "L": 0.9257067759649994,
+        "C": 0.1677156971389317,
+        "h": 106.31681835004679
+      },
+      "reference": {
+        "label": "レモンイエロー lemon yellow",
+        "hex": "#FFF352",
+        "url": "https://www.colordic.org/colorsample/4074",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9461417012329676,
+        "C": 0.17407787472339628,
+        "h": 105.04695729141133
+      },
+      "referenceDelta": 0.021734858000997913,
+      "rawHex": "#F4E367",
+      "raw": {
+        "L": 0.9061858937981074,
+        "C": 0.14456373865701322,
+        "h": 101.25937803759234
+      },
+      "rawDelta": 0.03325451795258126,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F5ED55",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F9F584",
+          "oklab": [
+            0.9502950575959775,
+            -0.03942050191859908,
+            0.12966965935006114
+          ],
+          "nearestName": {
+            "nameJa": "レモンイエロー",
+            "nameEn": "Lemon Yellow",
+            "deltaE": 0.04053368830214336
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FBFAA7",
+          "oklab": [
+            0.9672916390926783,
+            -0.03135150458624719,
+            0.09882400956248094
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.06096952887654737
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FCFCB7",
+          "oklab": [
+            0.9749742713648051,
+            -0.026880504796923332,
+            0.08314182045981988
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.059010450752303316
+          }
+        }
+      ]
+    },
+    {
+      "id": "canary-yellow",
+      "nameJa": "カナリアイエロー",
+      "category": "yellow",
+      "displayHex": "#F6C83F",
+      "display": {
+        "L": 0.8505631239209073,
+        "C": 0.15471303717587076,
+        "h": 89.38618225985812
+      },
+      "reference": {
+        "label": "カナリヤ canary yellow",
+        "hex": "#FFF462",
+        "url": "https://www.colordic.org/colorsample/4072",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9494737016186803,
+        "C": 0.16378415358682216,
+        "h": 105.00117293991178
+      },
+      "referenceDelta": 0.1083330164660949,
+      "rawHex": "#EEC53A",
+      "raw": {
+        "L": 0.8362859947925324,
+        "C": 0.15400329479875743,
+        "h": 91.21519173395023
+      },
+      "rawDelta": 0.015120112526348142,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F6C83F",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FEE37D",
+          "oklab": [
+            0.9174099492079324,
+            -0.010724603379743958,
+            0.12525683730575665
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.04034271216754656
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFEFA5",
+          "oklab": [
+            0.9481732778986136,
+            -0.012219480082828915,
+            0.0935796235134907
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.038275180685048704
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFF4B7",
+          "oklab": [
+            0.9614023197926549,
+            -0.012383487749639377,
+            0.07748751200232118
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.042247948913478425
+          }
+        }
+      ]
+    },
+    {
+      "id": "golden-yellow",
+      "nameJa": "ゴールデンイエロー",
+      "category": "yellow",
+      "displayHex": "#D7A226",
+      "display": {
+        "L": 0.7427491570524553,
+        "C": 0.14269153609469726,
+        "h": 83.01611824883315
+      },
+      "reference": {
+        "label": "ゴールデンイエロー golden yellow",
+        "hex": "#F6AE54",
+        "url": "https://www.colordic.org/colorsample/4042",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.80295078518434,
+        "C": 0.1348846459602922,
+        "h": 69.73676767771883
+      },
+      "referenceDelta": 0.06866179023113854,
+      "rawHex": "#BDA046",
+      "raw": {
+        "L": 0.7140377143319768,
+        "C": 0.11392855511007254,
+        "h": 90.84040073734451
+      },
+      "rawDelta": 0.04420799766991226,
+      "calibrationDelta": 0,
+      "calibratedHex": "#D7A226",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F1CB6F",
+          "oklab": [
+            0.8562615569342088,
+            0.00547673313507252,
+            0.11900831640349196
+          ],
+          "nearestName": {
+            "nameJa": "カナリアイエロー",
+            "nameEn": "Canary Yellow",
+            "deltaE": 0.03634903552905391
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#F8DF9B",
+          "oklab": [
+            0.9087751081571261,
+            -0.00024341944576833363,
+            0.09024206936825607
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.013552179658557727
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FAE7AE",
+          "oklab": [
+            0.9297915192297852,
+            -0.0024015590209610638,
+            0.07579101441326053
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.023764115958279437
+          }
+        }
+      ]
+    },
+    {
+      "id": "cream-yellow",
+      "nameJa": "クリームイエロー",
+      "category": "yellow",
+      "displayHex": "#F0E3A0",
+      "display": {
+        "L": 0.9107607363251199,
+        "C": 0.08647061355609001,
+        "h": 98.50590034773177
+      },
+      "reference": {
+        "label": "クリームイエロー cream yellow",
+        "hex": "#FFF3B8",
+        "url": "https://www.colordic.org/colorsample/4058",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9596172954702743,
+        "C": 0.07626753163358652,
+        "h": 97.95396443788673
+      },
+      "referenceDelta": 0.049916712950386494,
+      "rawHex": "#F7F4BF",
+      "raw": {
+        "L": 0.9569926380093486,
+        "C": 0.0685840899753347,
+        "h": 104.55588472442196
+      },
+      "rawDelta": 0.05023324040744801,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F0E3A0",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F4EAB3",
+          "oklab": [
+            0.9317262638636765,
+            -0.011160508316443607,
+            0.07071637336989134
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.02571654781127426
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#F8F1C7",
+          "oklab": [
+            0.9531073793227948,
+            -0.009079775074485819,
+            0.05424354801192399
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.01910316970439729
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#F9F5D2",
+          "oklab": [
+            0.9643080810988095,
+            -0.009393641648026918,
+            0.04478864614643374
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.02622933106482954
+          }
+        }
+      ]
+    },
+    {
+      "id": "khaki",
+      "nameJa": "カーキ",
+      "category": "yellow",
+      "displayHex": "#B7A467",
+      "display": {
+        "L": 0.7212418601435014,
+        "C": 0.08315453093304168,
+        "h": 92.73454164155919
+      },
+      "reference": {
+        "label": "カーキー khaki",
+        "hex": "#C5A05A",
+        "url": "https://www.colordic.org/colorsample/4048",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.7246833492312152,
+        "C": 0.09888850837350355,
+        "h": 82.06130286059613
+      },
+      "referenceDelta": 0.02332227190092709,
+      "rawHex": "#999961",
+      "raw": {
+        "L": 0.6689887458788187,
+        "C": 0.07650015321214794,
+        "h": 108.06071765624608
+      },
+      "rawDelta": 0.056807815885036424,
+      "calibrationDelta": 0,
+      "calibratedHex": "#B7A467",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#D1C38D",
+          "oklab": [
+            0.8158099190283953,
+            -0.00673896201822316,
+            0.07237550893318201
+          ],
+          "nearestName": {
+            "nameJa": "サンド",
+            "nameEn": "Sand",
+            "deltaE": 0.030612443090913804
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#E0D7AB",
+          "oklab": [
+            0.8754001293868823,
+            -0.007976422011914508,
+            0.05820461762693507
+          ],
+          "nearestName": {
+            "nameJa": "エクリュ",
+            "nameEn": "Ecru",
+            "deltaE": 0.04117353715056399
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#E6DFB9",
+          "oklab": [
+            0.8995333434752848,
+            -0.007623923944311828,
+            0.05004965102672809
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.037561310770414406
+          }
+        }
+      ]
+    },
+    {
+      "id": "green",
+      "nameJa": "グリーン",
+      "category": "green",
+      "displayHex": "#4C9A5A",
+      "display": {
+        "L": 0.6199889662653327,
+        "C": 0.12285550728357408,
+        "h": 147.88185070761335
+      },
+      "reference": {
+        "label": "グリーン green",
+        "hex": "#00A960",
+        "url": "https://www.colordic.org/colorsample/4105",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6453135387074502,
+        "C": 0.16011845645548003,
+        "h": 154.8135029037935
+      },
+      "referenceDelta": 0.04813964429652319,
+      "rawHex": "#35C37E",
+      "raw": {
+        "L": 0.7270576576618973,
+        "C": 0.15602173402193317,
+        "h": 156.98189478911252
+      },
+      "rawDelta": 0.11422003106705805,
+      "calibrationDelta": 0,
+      "calibratedHex": "#4C9A5A",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#89BF92",
+          "oklab": [
+            0.7547904839715307,
+            -0.0734038917157786,
+            0.04387637289343771
+          ],
+          "nearestName": {
+            "nameJa": "ミントグリーン",
+            "nameEn": "Mint Green",
+            "deltaE": 0.049196437788619415
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#AED7B6",
+          "oklab": [
+            0.8407859959669167,
+            -0.05474136877074087,
+            0.030766436857839308
+          ],
+          "nearestName": {
+            "nameJa": "ミントグリーン",
+            "nameEn": "Mint Green",
+            "deltaE": 0.0508753067659484
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#BEE1C6",
+          "oklab": [
+            0.877050903423069,
+            -0.046034162441957294,
+            0.024414750422110165
+          ],
+          "nearestName": {
+            "nameJa": "アイスブルー",
+            "nameEn": "Ice Blue",
+            "deltaE": 0.0483342691720911
+          }
+        }
+      ]
+    },
+    {
+      "id": "apple-green",
+      "nameJa": "アップルグリーン",
+      "category": "green",
+      "displayHex": "#91B849",
+      "display": {
+        "L": 0.7311965044298588,
+        "C": 0.1458290243582629,
+        "h": 126.12065078021692
+      },
+      "reference": {
+        "label": "アップルグリーン apple green",
+        "hex": "#A7D28D",
+        "url": "https://www.colordic.org/colorsample/4090",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.8160390760291898,
+        "C": 0.10363471181231787,
+        "h": 134.1833030680201
+      },
+      "referenceDelta": 0.0963192406802804,
+      "rawHex": "#ACD65F",
+      "raw": {
+        "L": 0.8212355866690563,
+        "C": 0.15412417337446363,
+        "h": 125.96206882931239
+      },
+      "rawDelta": 0.09042133600704132,
+      "calibrationDelta": 0,
+      "calibratedHex": "#91B849",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#B5D17C",
+          "oklab": [
+            0.8204459289730117,
+            -0.06381451233704533,
+            0.09537440052048052
+          ],
+          "nearestName": {
+            "nameJa": "シャルトルーズ",
+            "nameEn": "Chartreuse",
+            "deltaE": 0.03384546939091176
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#CEE2A2",
+          "oklab": [
+            0.8822866044615983,
+            -0.04628859679474129,
+            0.0732902700471314
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.04563428047354683
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#D9EAB4",
+          "oklab": [
+            0.9108867966262236,
+            -0.03883909143775344,
+            0.062039072355308256
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.03506996342330537
+          }
+        }
+      ]
+    },
+    {
+      "id": "mint-green",
+      "nameJa": "ミントグリーン",
+      "category": "green",
+      "displayHex": "#8BCDB2",
+      "display": {
+        "L": 0.7962993946205285,
+        "C": 0.07760748078685845,
+        "h": 166.92188720095578
+      },
+      "reference": {
+        "label": "ミントグリーン mint green",
+        "hex": "#89C997",
+        "url": "https://www.colordic.org/colorsample/4096",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.7792058335510001,
+        "C": 0.09662287910684737,
+        "h": 150.5224192836846
+      },
+      "referenceDelta": 0.0355516115068592,
+      "rawHex": "#B2E9D4",
+      "raw": {
+        "L": 0.8892095893217336,
+        "C": 0.06296234193408641,
+        "h": 169.72510307786683
+      },
+      "rawDelta": 0.09411949022602839,
+      "calibrationDelta": 0,
+      "calibratedHex": "#8BCDB2",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#A4D9C3",
+          "oklab": [
+            0.8423006452412045,
+            -0.061357725528144835,
+            0.013676212999992332
+          ],
+          "nearestName": {
+            "nameJa": "ミントグリーン",
+            "nameEn": "Mint Green",
+            "deltaE": 0.048310382628036
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#BDE5D5",
+          "oklab": [
+            0.8889112703239473,
+            -0.04624793212197742,
+            0.008979547825393563
+          ],
+          "nearestName": {
+            "nameJa": "アイスブルー",
+            "nameEn": "Ice Blue",
+            "deltaE": 0.03152963515203502
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#CAECDE",
+          "oklab": [
+            0.914717683545043,
+            -0.03945960155682143,
+            0.007929331470220902
+          ],
+          "nearestName": {
+            "nameJa": "ホワイトスモーク",
+            "nameEn": "White Smoke",
+            "deltaE": 0.04092505097534141
+          }
+        }
+      ]
+    },
+    {
+      "id": "emerald-green",
+      "nameJa": "エメラルドグリーン",
+      "category": "green",
+      "displayHex": "#248466",
+      "display": {
+        "L": 0.5505212408603722,
+        "C": 0.09955226440194373,
+        "h": 167.61339911827952
+      },
+      "reference": {
+        "label": "エメラルドグリーン emerald green",
+        "hex": "#00A968",
+        "url": "https://www.colordic.org/colorsample/4106",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6468832754893844,
+        "C": 0.15280598182244387,
+        "h": 157.44353780364656
+      },
+      "referenceDelta": 0.11224797909490014,
+      "rawHex": "#00B589",
+      "raw": {
+        "L": 0.6867122443667933,
+        "C": 0.14306817698766666,
+        "h": 167.72414142349112
+      },
+      "rawDelta": 0.14297439383374963,
+      "calibrationDelta": 0,
+      "calibratedHex": "#248466",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#71AF9A",
+          "oklab": [
+            0.7056466983897428,
+            -0.07059159411561211,
+            0.011418335629002074
+          ],
+          "nearestName": {
+            "nameJa": "シーグリーン",
+            "nameEn": "Sea Green",
+            "deltaE": 0.02162162764521426
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#9CCBBC",
+          "oklab": [
+            0.8045252212378982,
+            -0.05337142580105092,
+            0.0062326766660499855
+          ],
+          "nearestName": {
+            "nameJa": "ミントグリーン",
+            "nameEn": "Mint Green",
+            "deltaE": 0.026265201897377456
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#B0D8CB",
+          "oklab": [
+            0.8498691025508841,
+            -0.04544700823743969,
+            0.005238104483241801
+          ],
+          "nearestName": {
+            "nameJa": "ライトブルー",
+            "nameEn": "Light Blue",
+            "deltaE": 0.04525534107032298
+          }
+        }
+      ]
+    },
+    {
+      "id": "forest-green",
+      "nameJa": "フォレストグリーン",
+      "category": "green",
+      "displayHex": "#2F6345",
+      "display": {
+        "L": 0.45467887077308217,
+        "C": 0.07504689280467337,
+        "h": 156.3811854569518
+      },
+      "reference": {
+        "label": "フォレストグリーン forest green",
+        "hex": "#288C66",
+        "url": "https://www.colordic.org/colorsample/4107",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.5731378321289939,
+        "C": 0.10865217134071828,
+        "h": 163.35995956091483
+      },
+      "referenceDelta": 0.12362306655594538,
+      "rawHex": "#507361",
+      "raw": {
+        "L": 0.5236397695594246,
+        "C": 0.04933648181056732,
+        "h": 161.08708007362065
+      },
+      "rawDelta": 0.0737671589706662,
+      "calibrationDelta": 0,
+      "calibratedHex": "#2F6345",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#6E9B80",
+          "oklab": [
+            0.6490367168006025,
+            -0.05872195953589038,
+            0.024034166767550103
+          ],
+          "nearestName": {
+            "nameJa": "シーグリーン",
+            "nameEn": "Sea Green",
+            "deltaE": 0.040737690485356526
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#99BCA7",
+          "oklab": [
+            0.7634363026906211,
+            -0.04487977336967974,
+            0.017501288790433667
+          ],
+          "nearestName": {
+            "nameJa": "セージ",
+            "nameEn": "Sage",
+            "deltaE": 0.04481699135639121
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#ADCBB9",
+          "oklab": [
+            0.8148218925407249,
+            -0.03812649622142911,
+            0.01461176809089515
+          ],
+          "nearestName": {
+            "nameJa": "ミントグリーン",
+            "nameEn": "Mint Green",
+            "deltaE": 0.04190029355321368
+          }
+        }
+      ]
+    },
+    {
+      "id": "lime-green",
+      "nameJa": "ライムグリーン",
+      "category": "green",
+      "displayHex": "#C0D947",
+      "display": {
+        "L": 0.8400272339316535,
+        "C": 0.1690786874954393,
+        "h": 118.5985094568286
+      },
+      "reference": {
+        "label": "ライムグリーン lime green",
+        "hex": "#E6EB94",
+        "url": "https://www.colordic.org/colorsample/4078",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9169136354452392,
+        "C": 0.10947223298055624,
+        "h": 111.18785315985627
+      },
+      "referenceDelta": 0.09886182016847363,
+      "rawHex": "#CBDC5F",
+      "raw": {
+        "L": 0.8561876336483643,
+        "C": 0.1501925191751222,
+        "h": 116.19872467304396
+      },
+      "rawDelta": 0.025736903667548123,
+      "calibrationDelta": 0,
+      "calibratedHex": "#C0D947",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#D5E87D",
+          "oklab": [
+            0.8941457311413669,
+            -0.06185556604671438,
+            0.11893821648612513
+          ],
+          "nearestName": {
+            "nameJa": "レモンイエロー",
+            "nameEn": "Lemon Yellow",
+            "deltaE": 0.054581426525549
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#E4F2A3",
+          "oklab": [
+            0.9324574340380571,
+            -0.04556375248749961,
+            0.09099589421947107
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.039684480713092704
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#EAF6B5",
+          "oklab": [
+            0.948591825654987,
+            -0.03779634449917152,
+            0.07566909162321023
+          ],
+          "nearestName": {
+            "nameJa": "クリームイエロー",
+            "nameEn": "Cream Yellow",
+            "deltaE": 0.04640625067045964
+          }
+        }
+      ]
+    },
+    {
+      "id": "blue",
+      "nameJa": "ブルー",
+      "category": "blue",
+      "displayHex": "#326DAF",
+      "display": {
+        "L": 0.5282615869020578,
+        "C": 0.12106990280055795,
+        "h": 253.2388551053065
+      },
+      "reference": {
+        "label": "ブルー blue",
+        "hex": "#0075C2",
+        "url": "https://www.colordic.org/colorsample/4151",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.549018542473032,
+        "C": 0.1475640548923971,
+        "h": 247.93612608717746
+      },
+      "referenceDelta": 0.03585679734568762,
+      "rawHex": "#0094C8",
+      "raw": {
+        "L": 0.626096625902153,
+        "C": 0.1605105484068845,
+        "h": 232.54331276083127
+      },
+      "rawDelta": 0.11676995546152436,
+      "calibrationDelta": 0,
+      "calibratedHex": "#326DAF",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#699ECD",
+          "oklab": [
+            0.6807574864809973,
+            -0.03602880597738084,
+            -0.08223830418598677
+          ],
+          "nearestName": {
+            "nameJa": "ペリウィンクル",
+            "nameEn": "Periwinkle",
+            "deltaE": 0.04167790897607712
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#90BEE0",
+          "oklab": [
+            0.7807970406587319,
+            -0.033665597236912204,
+            -0.06011684535872197
+          ],
+          "nearestName": {
+            "nameJa": "スカイブルー",
+            "nameEn": "Sky Blue",
+            "deltaE": 0.020246081643755305
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#A3CDE9",
+          "oklab": [
+            0.8277279679841524,
+            -0.03178320159506848,
+            -0.050127530483045524
+          ],
+          "nearestName": {
+            "nameJa": "ライトブルー",
+            "nameEn": "Light Blue",
+            "deltaE": 0.03977707832987749
+          }
+        }
+      ]
+    },
+    {
+      "id": "sky-blue",
+      "nameJa": "スカイブルー",
+      "category": "blue",
+      "displayHex": "#80BCE5",
+      "display": {
+        "L": 0.769400351525698,
+        "C": 0.08550456000266711,
+        "h": 239.1931330218854
+      },
+      "reference": {
+        "label": "スカイブルー sky blue",
+        "hex": "#A0D8EF",
+        "url": "https://www.colordic.org/colorsample/4139",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.8514879739658997,
+        "C": 0.0657064912584321,
+        "h": 225.2328436022986
+      },
+      "referenceDelta": 0.0863841956325489,
+      "rawHex": "#87D4F2",
+      "raw": {
+        "L": 0.8305677673801465,
+        "C": 0.08711291393834059,
+        "h": 224.7142836492758
+      },
+      "rawDelta": 0.06493975302284344,
+      "calibrationDelta": 0,
+      "calibratedHex": "#80BCE5",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#97CBEC",
+          "oklab": [
+            0.8173669530525333,
+            -0.03928636330127544,
+            -0.059662526823484385
+          ],
+          "nearestName": {
+            "nameJa": "スカイブルー",
+            "nameEn": "Sky Blue",
+            "deltaE": 0.05010884590929485
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#B0DAF3",
+          "oklab": [
+            0.8667141712122093,
+            -0.032621070588862655,
+            -0.045583597691402966
+          ],
+          "nearestName": {
+            "nameJa": "ライトブルー",
+            "nameEn": "Light Blue",
+            "deltaE": 0.011140250793446892
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#BDE2F6",
+          "oklab": [
+            0.8926432485248,
+            -0.029543762009186403,
+            -0.03729380549254824
+          ],
+          "nearestName": {
+            "nameJa": "アイスブルー",
+            "nameEn": "Ice Blue",
+            "deltaE": 0.023906755082741035
+          }
+        }
+      ]
+    },
+    {
+      "id": "light-blue",
+      "nameJa": "ライトブルー",
+      "category": "blue",
+      "displayHex": "#B4D9EB",
+      "display": {
+        "L": 0.8644483802861311,
+        "C": 0.04631271415287399,
+        "h": 228.890031940734
+      },
+      "reference": {
+        "label": "ライトブルー light blue",
+        "hex": "#B2CBE4",
+        "url": "https://www.colordic.org/colorsample/4156",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.8315891053019485,
+        "C": 0.04438781257264349,
+        "h": 248.36010459127135
+      },
+      "referenceDelta": 0.03631180170415627,
+      "rawHex": "#B6E5F6",
+      "raw": {
+        "L": 0.8934122869795402,
+        "C": 0.05397643120463406,
+        "h": 222.36207131690855
+      },
+      "rawDelta": 0.030496808422025377,
+      "calibrationDelta": 0,
+      "calibratedHex": "#B4D9EB",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#C1E1F0",
+          "oklab": [
+            0.8912348652932259,
+            -0.026587251368034248,
+            -0.02930397925885131
+          ],
+          "nearestName": {
+            "nameJa": "アイスブルー",
+            "nameEn": "Ice Blue",
+            "deltaE": 0.022505407978234346
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#CFEAF5",
+          "oklab": [
+            0.9207054790603979,
+            -0.023046882095597077,
+            -0.02244163462797355
+          ],
+          "nearestName": {
+            "nameJa": "ホワイトスモーク",
+            "nameEn": "White Smoke",
+            "deltaE": 0.03379086281021828
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#D7EEF8",
+          "oklab": [
+            0.9352489528663166,
+            -0.019429364291350393,
+            -0.019909976658158524
+          ],
+          "nearestName": {
+            "nameJa": "ホワイトスモーク",
+            "nameEn": "White Smoke",
+            "deltaE": 0.028868273477797666
+          }
+        }
+      ]
+    },
+    {
+      "id": "cobalt-blue",
+      "nameJa": "コバルトブルー",
+      "category": "blue",
+      "displayHex": "#3158A9",
+      "display": {
+        "L": 0.4765597531275406,
+        "C": 0.13752286211360368,
+        "h": 262.92147456597013
+      },
+      "reference": {
+        "label": "コバルトブルー cobalt blue",
+        "hex": "#0068B7",
+        "url": "https://www.colordic.org/colorsample/4148",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.5114104734606277,
+        "C": 0.14787455364747748,
+        "h": 250.79196637200664
+      },
+      "referenceDelta": 0.04722004232529382,
+      "rawHex": "#007FD5",
+      "raw": {
+        "L": 0.5845190390822868,
+        "C": 0.16313862178515448,
+        "h": 248.77171187420885
+      },
+      "rawDelta": 0.1169305139402961,
+      "calibrationDelta": 0,
+      "calibratedHex": "#3158A9",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#668FC9",
+          "oklab": [
+            0.6440722106820733,
+            -0.02200988726027514,
+            -0.09621539411905433
+          ],
+          "nearestName": {
+            "nameJa": "ペリウィンクル",
+            "nameEn": "Periwinkle",
+            "deltaE": 0.04426338033342763
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#8FB3DE",
+          "oklab": [
+            0.7558590831321539,
+            -0.02128052444047368,
+            -0.07045281269604631
+          ],
+          "nearestName": {
+            "nameJa": "スカイブルー",
+            "nameEn": "Sky Blue",
+            "deltaE": 0.02643861348062331
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#A3C3E7",
+          "oklab": [
+            0.8059519864113148,
+            -0.01951029455317832,
+            -0.05864879056480665
+          ],
+          "nearestName": {
+            "nameJa": "スカイブルー",
+            "nameEn": "Sky Blue",
+            "deltaE": 0.04630698918027876
+          }
+        }
+      ]
+    },
+    {
+      "id": "ultramarine",
+      "nameJa": "ウルトラマリン",
+      "category": "blue",
+      "displayHex": "#464B9C",
+      "display": {
+        "L": 0.45231538012187866,
+        "C": 0.12952550376166866,
+        "h": 277.2259492605852
+      },
+      "reference": {
+        "label": "ウルトラマリン ultramarine",
+        "hex": "#434DA2",
+        "url": "https://www.colordic.org/colorsample/4170",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.45852840026850455,
+        "C": 0.13620829755093097,
+        "h": 274.65628887903114
+      },
+      "referenceDelta": 0.010896882945604987,
+      "rawHex": "#4964D5",
+      "raw": {
+        "L": 0.5455812672612909,
+        "C": 0.17623857115890634,
+        "h": 269.56473216080065
+      },
+      "rawDelta": 0.10624578182958858,
+      "calibrationDelta": 0,
+      "calibratedHex": "#464B9C",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#7882BF",
+          "oklab": [
+            0.623196863455771,
+            0.010080616061800218,
+            -0.09229870835753429
+          ],
+          "nearestName": {
+            "nameJa": "ペリウィンクル",
+            "nameEn": "Periwinkle",
+            "deltaE": 0.055054467346166244
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#9EA8D6",
+          "oklab": [
+            0.7399663933665731,
+            0.005984201082539997,
+            -0.0672462360971352
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダー",
+            "nameEn": "Lavender",
+            "deltaE": 0.037886008792114255
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#B0B9E1",
+          "oklab": [
+            0.792209355282712,
+            0.0051006847792284815,
+            -0.0574512497746672
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダー",
+            "nameEn": "Lavender",
+            "deltaE": 0.04794107188166856
+          }
+        }
+      ]
+    },
+    {
+      "id": "royal-blue",
+      "nameJa": "ロイヤルブルー",
+      "category": "blue",
+      "displayHex": "#546FCC",
+      "display": {
+        "L": 0.5671584739503264,
+        "C": 0.14650577409724191,
+        "h": 269.1579473191535
+      },
+      "reference": {
+        "label": "royalblue",
+        "hex": "#4169E1",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-royalblue",
+        "kind": "css-name"
+      },
+      "referenceLch": {
+        "L": 0.5598481874487442,
+        "C": 0.1882335476776531,
+        "h": 266.39959584431256
+      },
+      "referenceDelta": 0.0431109088587829,
+      "rawHex": "#4A7FDE",
+      "raw": {
+        "L": 0.6075754306572926,
+        "C": 0.15572842998173586,
+        "h": 261.12715900193103
+      },
+      "rawDelta": 0.04654113266236837,
+      "calibrationDelta": 0,
+      "calibratedHex": "#546FCC",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#7E99E0",
+          "oklab": [
+            0.6912426287540407,
+            -0.004543472694882922,
+            -0.10935262371173093
+          ],
+          "nearestName": {
+            "nameJa": "ペリウィンクル",
+            "nameEn": "Periwinkle",
+            "deltaE": 0.027576633142776346
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#A0B8EC",
+          "oklab": [
+            0.7831121320423853,
+            -0.006429676737150725,
+            -0.07888979757019543
+          ],
+          "nearestName": {
+            "nameJa": "スカイブルー",
+            "nameEn": "Sky Blue",
+            "deltaE": 0.04016926354447827
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#B1C6F2",
+          "oklab": [
+            0.8257186150620993,
+            -0.005836586960362655,
+            -0.06601063052861167
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.05158773161773945
+          }
+        }
+      ]
+    },
+    {
+      "id": "navy-blue",
+      "nameJa": "ネイビーブルー",
+      "category": "blue",
+      "displayHex": "#243458",
+      "display": {
+        "L": 0.3300644830949998,
+        "C": 0.06746152133279461,
+        "h": 264.8321775925299
+      },
+      "reference": {
+        "label": "ネービーブルー navy blue",
+        "hex": "#202F55",
+        "url": "https://www.colordic.org/colorsample/4163",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.31298966590955396,
+        "C": 0.0712019061123126,
+        "h": 266.1579848877253
+      },
+      "referenceDelta": 0.017553110836414337,
+      "rawHex": "#375A6B",
+      "raw": {
+        "L": 0.4479400134100516,
+        "C": 0.04909040996843854,
+        "h": 229.19170371139975
+      },
+      "rawDelta": 0.1243896174065307,
+      "calibrationDelta": 0,
+      "calibratedHex": "#243458",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#597193",
+          "oklab": [
+            0.5431789986293362,
+            -0.013525886215003613,
+            -0.05909774466055556
+          ],
+          "nearestName": {
+            "nameJa": "デニム",
+            "nameEn": "Denim",
+            "deltaE": 0.025471124938786567
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#849CB7",
+          "oklab": [
+            0.6837326419397715,
+            -0.01528941972179959,
+            -0.04584661964920267
+          ],
+          "nearestName": {
+            "nameJa": "ダスティブルー",
+            "nameEn": "Dusty Blue",
+            "deltaE": 0.024191693478218305
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#9AB0C6",
+          "oklab": [
+            0.7476996533153154,
+            -0.014790558663285103,
+            -0.03728596508094595
+          ],
+          "nearestName": {
+            "nameJa": "クールグレー",
+            "nameEn": "Cool Gray",
+            "deltaE": 0.03618023336524541
+          }
+        }
+      ]
+    },
+    {
+      "id": "purple",
+      "nameJa": "パープル",
+      "category": "purple",
+      "displayHex": "#704891",
+      "display": {
+        "L": 0.4791805673739083,
+        "C": 0.12018861296153181,
+        "h": 307.77725596458833
+      },
+      "reference": {
+        "label": "パープル purple",
+        "hex": "#9B72B0",
+        "url": "https://www.colordic.org/colorsample/4184",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.6159846928512753,
+        "C": 0.10179395870130288,
+        "h": 313.7608918856776
+      },
+      "referenceDelta": 0.13851731304406303,
+      "rawHex": "#77539D",
+      "raw": {
+        "L": 0.5135559352954845,
+        "C": 0.11821125130214241,
+        "h": 304.8117015210206
+      },
+      "rawDelta": 0.034980410600363145,
+      "calibrationDelta": 0,
+      "calibratedHex": "#704891",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#A180BD",
+          "oklab": [
+            0.6534917587291588,
+            0.05974250706402956,
+            -0.07470308112147339
+          ],
+          "nearestName": {
+            "nameJa": "オーキッド",
+            "nameEn": "Orchid",
+            "deltaE": 0.0471062760429787
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#BFA6D5",
+          "oklab": [
+            0.762581697956196,
+            0.04470455367899184,
+            -0.05560845876017628
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダー",
+            "nameEn": "Lavender",
+            "deltaE": 0.009171762542579906
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#CCB7DF",
+          "oklab": [
+            0.8099982105627028,
+            0.037406996380324964,
+            -0.04668575854019297
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.014426004875851314
+          }
+        }
+      ]
+    },
+    {
+      "id": "violet",
+      "nameJa": "バイオレット",
+      "category": "purple",
+      "displayHex": "#875BC5",
+      "display": {
+        "L": 0.5670195392847506,
+        "C": 0.1606260203890586,
+        "h": 300.52986121848636
+      },
+      "reference": {
+        "label": "バイオレット violet",
+        "hex": "#5A4498",
+        "url": "https://www.colordic.org/colorsample/4174",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.45338203731736515,
+        "C": 0.1320226251876198,
+        "h": 292.3994776445986
+      },
+      "referenceDelta": 0.11898711270673387,
+      "rawHex": "#7D65B1",
+      "raw": {
+        "L": 0.562032635801714,
+        "C": 0.11656657181235164,
+        "h": 297.1254144354513
+      },
+      "rawDelta": 0.045079821352780235,
+      "calibrationDelta": 0,
+      "calibratedHex": "#875BC5",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#AC8BDF",
+          "oklab": [
+            0.6996478392991307,
+            0.06472003790525183,
+            -0.10625602200992623
+          ],
+          "nearestName": {
+            "nameJa": "うす紫",
+            "nameEn": "Light Purple",
+            "deltaE": 0.046569310085712634
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#C4ADEC",
+          "oklab": [
+            0.7891631033782464,
+            0.04701204162995237,
+            -0.07803746262701472
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダー",
+            "nameEn": "Lavender",
+            "deltaE": 0.03650256163369021
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#CFBDF1",
+          "oklab": [
+            0.8305396715464677,
+            0.03779292700466702,
+            -0.06384276461022875
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.018173018473030694
+          }
+        }
+      ]
+    },
+    {
+      "id": "lavender",
+      "nameJa": "ラベンダー",
+      "category": "purple",
+      "displayHex": "#B9A6D7",
+      "display": {
+        "L": 0.7580982432327482,
+        "C": 0.07203230932348545,
+        "h": 302.42169547002635
+      },
+      "reference": {
+        "label": "ラベンダー lavender",
+        "hex": "#CAB8D9",
+        "url": "https://www.colordic.org/colorsample/4181",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.8081065441813428,
+        "C": 0.04970740762430553,
+        "h": 309.67970570833427
+      },
+      "referenceDelta": 0.05528662585577219,
+      "rawHex": "#C8B4DD",
+      "raw": {
+        "L": 0.8004826090314919,
+        "C": 0.061011027167676625,
+        "h": 306.70279174722293
+      },
+      "rawDelta": 0.04407297949337735,
+      "calibrationDelta": 0,
+      "calibratedHex": "#B9A6D7",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#C7B7E0",
+          "oklab": [
+            0.8061145869496601,
+            0.03226470591827185,
+            -0.04996550650303466
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.02023430568939679
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#D6C9E9",
+          "oklab": [
+            0.8564309146462644,
+            0.025574248743853167,
+            -0.03812981319915487
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.03816757344904026
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#DED3EE",
+          "oklab": [
+            0.8839029474733766,
+            0.021524334500241216,
+            -0.03185862938610773
+          ],
+          "nearestName": {
+            "nameJa": "ライトグレー",
+            "nameEn": "Light Gray",
+            "deltaE": 0.04079975577636572
+          }
+        }
+      ]
+    },
+    {
+      "id": "lilac",
+      "nameJa": "ライラック",
+      "category": "purple",
+      "displayHex": "#D3BAE4",
+      "display": {
+        "L": 0.8235130079067132,
+        "C": 0.06379549261233632,
+        "h": 311.5897305770088
+      },
+      "reference": {
+        "label": "ライラック lilac",
+        "hex": "#D1BADA",
+        "url": "https://www.colordic.org/colorsample/4180",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.81830796699777,
+        "C": 0.05073688452325667,
+        "h": 316.50574916233563
+      },
+      "referenceDelta": 0.014880642410120184,
+      "rawHex": "#DCC6E4",
+      "raw": {
+        "L": 0.8534421164296225,
+        "C": 0.04714080692580009,
+        "h": 317.50377710752923
+      },
+      "rawDelta": 0.03471517009262799,
+      "calibrationDelta": 0,
+      "calibratedHex": "#D3BAE4",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#DCC7EA",
+          "oklab": [
+            0.8579237918308977,
+            0.03524327137773231,
+            -0.03927549622620363
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.03613541489483118
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#E6D5F0",
+          "oklab": [
+            0.8949084017826548,
+            0.027846210805158256,
+            -0.029670849306612013
+          ],
+          "nearestName": {
+            "nameJa": "ライトグレー",
+            "nameEn": "Light Gray",
+            "deltaE": 0.04889750504391766
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#EBDDF3",
+          "oklab": [
+            0.9152421385853239,
+            0.02275221114960535,
+            -0.02397562501354822
+          ],
+          "nearestName": {
+            "nameJa": "ホワイトスモーク",
+            "nameEn": "White Smoke",
+            "deltaE": 0.038703715063933206
+          }
+        }
+      ]
+    },
+    {
+      "id": "mauve",
+      "nameJa": "モーブ",
+      "category": "purple",
+      "displayHex": "#947897",
+      "display": {
+        "L": 0.6097722307601952,
+        "C": 0.05646201108235677,
+        "h": 323.0917159003465
+      },
+      "reference": {
+        "label": "モーブ mauve",
+        "hex": "#915DA3",
+        "url": "https://www.colordic.org/colorsample/4178",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.5621300906490403,
+        "C": 0.11922989172143136,
+        "h": 317.02483574868313
+      },
+      "referenceDelta": 0.07927792263735792,
+      "rawHex": "#B59DBA",
+      "raw": {
+        "L": 0.7270475798903314,
+        "C": 0.04998928490258084,
+        "h": 320.50458024922585
+      },
+      "rawDelta": 0.11747832765799131,
+      "calibrationDelta": 0,
+      "calibratedHex": "#947897",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#AB93AE",
+          "oklab": [
+            0.6934271956677382,
+            0.037674206566205404,
+            -0.028882429557520184
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダーグレー",
+            "nameEn": "Lavender Gray",
+            "deltaE": 0.033171683700414976
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#C2AFC5",
+          "oklab": [
+            0.776943953404107,
+            0.029228792168885964,
+            -0.023147051745693092
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダー",
+            "nameEn": "Lavender",
+            "deltaE": 0.043144168317774075
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#CFBDD1",
+          "oklab": [
+            0.8194162255178157,
+            0.02701925666934868,
+            -0.02051566229661872
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.03148741186096024
+          }
+        }
+      ]
+    },
+    {
+      "id": "orchid",
+      "nameJa": "オーキッド",
+      "category": "purple",
+      "displayHex": "#BC77B7",
+      "display": {
+        "L": 0.6635717994408544,
+        "C": 0.12056395743657135,
+        "h": 329.406058890564
+      },
+      "reference": {
+        "label": "オーキッド orchid",
+        "hex": "#D9AACD",
+        "url": "https://www.colordic.org/colorsample/4193",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.7913395570924802,
+        "C": 0.07170319101427944,
+        "h": 335.55317782671466
+      },
+      "referenceDelta": 0.13715460637591725,
+      "rawHex": "#CC94C4",
+      "raw": {
+        "L": 0.7358442106699565,
+        "C": 0.09211633987305258,
+        "h": 331.31318036866804
+      },
+      "rawDelta": 0.07774877349889332,
+      "calibrationDelta": 0,
+      "calibratedHex": "#BC77B7",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#CE94C9",
+          "oklab": [
+            0.7395683362190224,
+            0.08517437204368244,
+            -0.05021817817798013
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダー",
+            "nameEn": "Lavender",
+            "deltaE": 0.05121273906985593
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#DDB0D9",
+          "oklab": [
+            0.8101866665234562,
+            0.06464373108413801,
+            -0.038561355153636234
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.027540951464443526
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#E5BFE1",
+          "oklab": [
+            0.8478092878215508,
+            0.05373410723781141,
+            -0.03157818141068636
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.031310266703625224
+          }
+        }
+      ]
+    },
+    {
+      "id": "plum",
+      "nameJa": "プラム",
+      "category": "purple",
+      "displayHex": "#71375F",
+      "display": {
+        "L": 0.42608336711073114,
+        "C": 0.09747747043818059,
+        "h": 340.3709363970805
+      },
+      "reference": {
+        "label": "プラム plum",
+        "hex": "#6C2463",
+        "url": "https://www.colordic.org/colorsample/4187",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.3936895021389829,
+        "C": 0.12936370365025013,
+        "h": 333.016899410014
+      },
+      "referenceDelta": 0.04768176496305648,
+      "rawHex": "#6D4E75",
+      "raw": {
+        "L": 0.4725810389894415,
+        "C": 0.07195029345916766,
+        "h": 319.7330923887329
+      },
+      "rawDelta": 0.06094120085890854,
+      "calibrationDelta": 0,
+      "calibratedHex": "#71375F",
+      "neutralByCategory": false,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#A67096",
+          "oklab": [
+            0.613520777759386,
+            0.07925793846785967,
+            -0.031793075389568715
+          ],
+          "nearestName": {
+            "nameJa": "モーブ",
+            "nameEn": "Mauve",
+            "deltaE": 0.03438146361335606
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#C49AB9",
+          "oklab": [
+            0.7345741309263335,
+            0.059320767140698116,
+            -0.02666021410560515
+          ],
+          "nearestName": {
+            "nameJa": "ラベンダーグレー",
+            "nameEn": "Lavender Gray",
+            "deltaE": 0.04501092467203845
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#D0ADC8",
+          "oklab": [
+            0.7866996062455286,
+            0.04890410663992206,
+            -0.023721309084480224
+          ],
+          "nearestName": {
+            "nameJa": "ライラック",
+            "nameEn": "Lilac",
+            "deltaE": 0.044428138930547915
+          }
+        }
+      ]
+    },
+    {
+      "id": "white",
+      "nameJa": "ホワイト",
+      "category": "white",
+      "displayHex": "#FFFFFF",
+      "display": {
+        "L": 1.0000000000000002,
+        "C": 6.497413668604471e-16,
+        "h": 199.98310652189997
+      },
+      "reference": {
+        "label": "ホワイト white",
+        "hex": "#FFFFFF",
+        "url": "https://www.colordic.org/colorsample/4230",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 1.0000000000000002,
+        "C": 6.497413668604471e-16,
+        "h": 199.98310652189997
+      },
+      "referenceDelta": 0,
+      "rawHex": "#F7F8F7",
+      "raw": {
+        "L": 0.977359023274932,
+        "C": 0.0005464411790425988,
+        "h": 138.79338742180948
+      },
+      "rawDelta": 0.022647569958546013,
+      "calibrationDelta": 0,
+      "calibratedHex": "#FFFFFF",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#FFFFFF",
+          "oklab": [
+            1.0000000000000002,
+            -6.106226635438361e-16,
+            -2.220446049250313e-16
+          ],
+          "nearestName": {
+            "nameJa": "ホワイト",
+            "nameEn": "White",
+            "deltaE": 0
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FFFFFF",
+          "oklab": [
+            1.0000000000000002,
+            -6.106226635438361e-16,
+            -2.220446049250313e-16
+          ],
+          "nearestName": {
+            "nameJa": "ホワイト",
+            "nameEn": "White",
+            "deltaE": 0
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FFFFFF",
+          "oklab": [
+            1.0000000000000002,
+            -6.106226635438361e-16,
+            -2.220446049250313e-16
+          ],
+          "nearestName": {
+            "nameJa": "ホワイト",
+            "nameEn": "White",
+            "deltaE": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "snow-white",
+      "nameJa": "スノーホワイト",
+      "category": "white",
+      "displayHex": "#F0F5FA",
+      "display": {
+        "L": 0.9678003119678658,
+        "C": 0.008568157121606353,
+        "h": 247.9141449663507
+      },
+      "reference": {
+        "label": "スノーホワイト snow white",
+        "hex": "#FAFDFF",
+        "url": "https://www.colordic.org/colorsample/4231",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9923478643361864,
+        "C": 0.004155814523636526,
+        "h": 236.49520519322104
+      },
+      "referenceDelta": 0.024969195950807783,
+      "rawHex": "#F5F7F7",
+      "raw": {
+        "L": 0.9746608826408687,
+        "C": 0.0025257773539679356,
+        "h": 200.57732933026907
+      },
+      "rawDelta": 0.009875641092257761,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F0F5FA",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F4F7FB",
+          "oklab": [
+            0.9750011442330982,
+            -0.0015616347701378208,
+            -0.006027432196703986
+          ],
+          "nearestName": {
+            "nameJa": "スノーホワイト",
+            "nameEn": "Snow White",
+            "deltaE": 0.0076330334808469465
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#F7FAFD",
+          "oklab": [
+            0.9836833234219764,
+            -0.0019281815641465916,
+            -0.004742855136822266
+          ],
+          "nearestName": {
+            "nameJa": "スノーホワイト",
+            "nameEn": "Snow White",
+            "deltaE": 0.016253033552891163
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#F9FBFD",
+          "oklab": [
+            0.9871363030511237,
+            -0.001285304152067679,
+            -0.003158620570064885
+          ],
+          "nearestName": {
+            "nameJa": "ホワイト",
+            "nameEn": "White",
+            "deltaE": 0.013308027271594119
+          }
+        }
+      ]
+    },
+    {
+      "id": "ivory",
+      "nameJa": "アイボリー",
+      "category": "white",
+      "displayHex": "#F4EBCB",
+      "display": {
+        "L": 0.9389203744499088,
+        "C": 0.043062806290459346,
+        "h": 94.07900652441833
+      },
+      "reference": {
+        "label": "アイボリー ivory",
+        "hex": "#F8F4E6",
+        "url": "https://www.colordic.org/colorsample/4237",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9664611070897327,
+        "C": 0.018960495957136017,
+        "h": 93.66307859555155
+      },
+      "referenceDelta": 0.03659858391710139,
+      "rawHex": "#F7F7D9",
+      "raw": {
+        "L": 0.9678272624202303,
+        "C": 0.0388911455842296,
+        "h": 106.02320361704682
+      },
+      "rawDelta": 0.030422513856018116,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F4EBCB",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F7F0D5",
+          "oklab": [
+            0.9535612936636324,
+            -0.0031656579811264463,
+            0.036068354453815066
+          ],
+          "nearestName": {
+            "nameJa": "アイボリー",
+            "nameEn": "Ivory",
+            "deltaE": 0.016179472950418043
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#F9F5E0",
+          "oklab": [
+            0.9676753181423229,
+            -0.003912435379312573,
+            0.02762194962835829
+          ],
+          "nearestName": {
+            "nameJa": "ミルクホワイト",
+            "nameEn": "Milk White",
+            "deltaE": 0.014912245425674202
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FBF8E7",
+          "oklab": [
+            0.9768879138541973,
+            -0.003384356392160337,
+            0.022293597442057278
+          ],
+          "nearestName": {
+            "nameJa": "ミルクホワイト",
+            "nameEn": "Milk White",
+            "deltaE": 0.015992259829017644
+          }
+        }
+      ]
+    },
+    {
+      "id": "milk-white",
+      "nameJa": "ミルクホワイト",
+      "category": "white",
+      "displayHex": "#F6F3E9",
+      "display": {
+        "L": 0.9637334143206909,
+        "C": 0.013619981907639687,
+        "h": 92.9823215768364
+      },
+      "reference": {
+        "label": "ミルキーホワイト milky white",
+        "hex": "#FFFFF9",
+        "url": "https://www.colordic.org/colorsample/4233",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.9983553312035736,
+        "C": 0.007872049649715284,
+        "h": 106.5413339968456
+      },
+      "referenceDelta": 0.035180852193797414,
+      "rawHex": "#F7F8EE",
+      "raw": {
+        "L": 0.9749593259064085,
+        "C": 0.012522158586448583,
+        "h": 108.7760119710768
+      },
+      "rawDelta": 0.011836538450166472,
+      "calibrationDelta": 0,
+      "calibratedHex": "#F6F3E9",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#F8F6EE",
+          "oklab": [
+            0.9724864020094715,
+            -0.0009706305559401551,
+            0.010743290254382809
+          ],
+          "nearestName": {
+            "nameJa": "ミルクホワイト",
+            "nameEn": "Milk White",
+            "deltaE": 0.009211569345350943
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#FAF9F3",
+          "oklab": [
+            0.9812302720204249,
+            -0.0012325305832479594,
+            0.007891520992604706
+          ],
+          "nearestName": {
+            "nameJa": "ミルクホワイト",
+            "nameEn": "Milk White",
+            "deltaE": 0.018412462604331666
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#FCFBF6",
+          "oklab": [
+            0.9874723316154668,
+            -0.0008541003606349351,
+            0.006621718373488683
+          ],
+          "nearestName": {
+            "nameJa": "ホワイト",
+            "nameEn": "White",
+            "deltaE": 0.014195742911051721
+          }
+        }
+      ]
+    },
+    {
+      "id": "white-smoke",
+      "nameJa": "ホワイトスモーク",
+      "category": "white",
+      "displayHex": "#E7E8E6",
+      "display": {
+        "L": 0.9296659366113224,
+        "C": 0.002872805587466369,
+        "h": 128.49499624477562
+      },
+      "reference": {
+        "label": "whitesmoke",
+        "hex": "#F5F5F5",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-whitesmoke",
+        "kind": "css-name"
+      },
+      "referenceLch": {
+        "L": 0.9701507725365187,
+        "C": 1.4432899320127035e-15,
+        "h": 180
+      },
+      "referenceDelta": 0.04058663513810233,
+      "rawHex": "#EBECEC",
+      "raw": {
+        "L": 0.941402946091687,
+        "C": 0.0004384427114240548,
+        "h": 204.40357459498148
+      },
+      "rawDelta": 0.012066039347231014,
+      "calibrationDelta": 0,
+      "calibratedHex": "#E7E8E6",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#ECEDEB",
+          "oklab": [
+            0.9447773645288919,
+            -0.00178095434261899,
+            0.0022394231354343486
+          ],
+          "nearestName": {
+            "nameJa": "ホワイトスモーク",
+            "nameEn": "White Smoke",
+            "deltaE": 0.015111432327454457
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#F2F2F1",
+          "oklab": [
+            0.9608712678566036,
+            -0.00037525338784533124,
+            0.001272987099409817
+          ],
+          "nearestName": {
+            "nameJa": "スノーホワイト",
+            "nameEn": "Snow White",
+            "deltaE": 0.01187358671141435
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#F5F5F4",
+          "oklab": [
+            0.9698713175972961,
+            -0.0003743750719272798,
+            0.0012700311423941013
+          ],
+          "nearestName": {
+            "nameJa": "スノーホワイト",
+            "nameEn": "Snow White",
+            "deltaE": 0.009859514177640109
+          }
+        }
+      ]
+    },
+    {
+      "id": "black",
+      "nameJa": "ブラック",
+      "category": "black",
+      "displayHex": "#101112",
+      "display": {
+        "L": 0.17693204324246425,
+        "C": 0.002620620094871416,
+        "h": 247.975417788081
+      },
+      "reference": {
+        "label": "ブラック black",
+        "hex": "#000000",
+        "url": "https://www.colordic.org/colorsample/4284",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.000006055339507539464,
+        "C": 1.2164741850336404e-9,
+        "h": 131.95602889148165
+      },
+      "referenceDelta": 0.17694539510231894,
+      "rawHex": "#202020",
+      "raw": {
+        "L": 0.24199767634690764,
+        "C": 0.00004861559384856573,
+        "h": 131.956028891424
+      },
+      "rawDelta": 0.06511926290686441,
+      "calibrationDelta": 0,
+      "calibratedHex": "#101112",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#4E5052",
+          "oklab": [
+            0.4301329579394618,
+            -0.0015776190257169587,
+            -0.0038897880603295243
+          ],
+          "nearestName": {
+            "nameJa": "グラファイト",
+            "nameEn": "Graphite",
+            "deltaE": 0.01647149116045838
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#7A7C7E",
+          "oklab": [
+            0.5852430377830513,
+            -0.0014627307735365358,
+            -0.00360066896033584
+          ],
+          "nearestName": {
+            "nameJa": "ディムグレー",
+            "nameEn": "Dim Gray",
+            "deltaE": 0.028508406798994065
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#909293",
+          "oklab": [
+            0.6585991995628323,
+            -0.0018307331467556365,
+            -0.002091634068114301
+          ],
+          "nearestName": {
+            "nameJa": "グレー",
+            "nameEn": "Gray",
+            "deltaE": 0.021244200540278774
+          }
+        }
+      ]
+    },
+    {
+      "id": "charcoal",
+      "nameJa": "チャコール",
+      "category": "black",
+      "displayHex": "#30343B",
+      "display": {
+        "L": 0.32395554787728154,
+        "C": 0.013612352591816472,
+        "h": 261.719871280996
+      },
+      "reference": {
+        "label": "チャコールグレイ charcoal gray",
+        "hex": "#4E454A",
+        "url": "https://www.colordic.org/colorsample/4281",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.40122024125836503,
+        "C": 0.014579734110970148,
+        "h": 343.20803221889935
+      },
+      "referenceDelta": 0.07942887813206714,
+      "rawHex": "#333334",
+      "raw": {
+        "L": 0.32238460941264835,
+        "C": 0.0010618840636658403,
+        "h": 245.09175032730457
+      },
+      "rawDelta": 0.012696103244317098,
+      "calibrationDelta": 0,
+      "calibratedHex": "#30343B",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#61656B",
+          "oklab": [
+            0.505296852140457,
+            -0.0021641384452403267,
+            -0.010501742957498117
+          ],
+          "nearestName": {
+            "nameJa": "ダークグレー",
+            "nameEn": "Dark Gray",
+            "deltaE": 0.04377964672739232
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#878A8F",
+          "oklab": [
+            0.632509755764565,
+            -0.0013296246265876999,
+            -0.008146952593524825
+          ],
+          "nearestName": {
+            "nameJa": "グレー",
+            "nameEn": "Gray",
+            "deltaE": 0.005950386063239473
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#9A9CA1",
+          "oklab": [
+            0.6926580375272426,
+            -0.0001968772764099902,
+            -0.0076219477270074165
+          ],
+          "nearestName": {
+            "nameJa": "クールグレー",
+            "nameEn": "Cool Gray",
+            "deltaE": 0.030440279781329682
+          }
+        }
+      ]
+    },
+    {
+      "id": "graphite",
+      "nameJa": "グラファイト",
+      "category": "black",
+      "displayHex": "#4F545B",
+      "display": {
+        "L": 0.4439161831708594,
+        "C": 0.013143288154979192,
+        "h": 256.7486949311993
+      },
+      "reference": {
+        "label": "グラファイト graphite",
+        "hex": "#594E52",
+        "url": "https://www.colordic.org/colorsample/4280",
+        "kind": "dictionary"
+      },
+      "referenceLch": {
+        "L": 0.4361644023800338,
+        "C": 0.015888829428415182,
+        "h": 353.77674707148464
+      },
+      "referenceDelta": 0.023160187706991128,
+      "rawHex": "#525354",
+      "raw": {
+        "L": 0.44176369169794544,
+        "C": 0.0018993258587402726,
+        "h": 245.57353902373063
+      },
+      "rawDelta": 0.01148941055838934,
+      "calibrationDelta": 0,
+      "calibratedHex": "#4F545B",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#71767C",
+          "oklab": [
+            0.5635583467184799,
+            -0.0032556861417687433,
+            -0.010565794162052389
+          ],
+          "nearestName": {
+            "nameJa": "ディムグレー",
+            "nameEn": "Dim Gray",
+            "deltaE": 0.006147772562767375
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#919599",
+          "oklab": [
+            0.667789344959587,
+            -0.0028247703742353414,
+            -0.006970192884004134
+          ],
+          "nearestName": {
+            "nameJa": "ウォームグレー",
+            "nameEn": "Warm Gray",
+            "deltaE": 0.02858214837247293
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#A2A5A9",
+          "oklab": [
+            0.7207201484487104,
+            -0.0016833799946989747,
+            -0.006503838758994407
+          ],
+          "nearestName": {
+            "nameJa": "アッシュグレー",
+            "nameEn": "Ash Gray",
+            "deltaE": 0.01191661532837239
+          }
+        }
+      ]
+    },
+    {
+      "id": "dark-slate",
+      "nameJa": "ダークスレート",
+      "category": "black",
+      "displayHex": "#435054",
+      "display": {
+        "L": 0.42144567623148876,
+        "C": 0.017769313343552737,
+        "h": 218.30646091775233
+      },
+      "reference": {
+        "label": "darkslategray",
+        "hex": "#2F4F4F",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-darkslategray",
+        "kind": "related-css-name"
+      },
+      "referenceLch": {
+        "L": 0.4029629170830151,
+        "C": 0.037723686760904124,
+        "h": 195.75771789275973
+      },
+      "referenceDelta": 0.029022010032116408,
+      "rawHex": "#444B4C",
+      "raw": {
+        "L": 0.40709634543360634,
+        "C": 0.009611136805118138,
+        "h": 208.40614511912838
+      },
+      "rawDelta": 0.016659700457777756,
+      "calibrationDelta": 0,
+      "calibratedHex": "#435054",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#6E7C7F",
+          "oklab": [
+            0.5758078081393079,
+            -0.014604990002170637,
+            -0.009139750458976137
+          ],
+          "nearestName": {
+            "nameJa": "ディムグレー",
+            "nameEn": "Dim Gray",
+            "deltaE": 0.022169950793084144
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#919DA0",
+          "oklab": [
+            0.6873471949501319,
+            -0.011910463600766752,
+            -0.008152121821863645
+          ],
+          "nearestName": {
+            "nameJa": "クールグレー",
+            "nameEn": "Cool Gray",
+            "deltaE": 0.03347039050125485
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#A3ADB0",
+          "oklab": [
+            0.7406214780990253,
+            -0.009587222368925563,
+            -0.0073763622391758155
+          ],
+          "nearestName": {
+            "nameJa": "クールグレー",
+            "nameEn": "Cool Gray",
+            "deltaE": 0.021399545462080664
+          }
+        }
+      ]
+    },
+    {
+      "id": "dim-gray",
+      "nameJa": "ディムグレー",
+      "category": "black",
+      "displayHex": "#70747A",
+      "display": {
+        "L": 0.5575266828893374,
+        "C": 0.01045772233234386,
+        "h": 258.352351341212
+      },
+      "reference": {
+        "label": "dimgray",
+        "hex": "#696969",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-dimgray",
+        "kind": "css-name"
+      },
+      "referenceLch": {
+        "L": 0.5208065529984138,
+        "C": 4.308824046522781e-16,
+        "h": 194.93141717813754
+      },
+      "referenceDelta": 0.03818025531065366,
+      "rawHex": "#818283",
+      "raw": {
+        "L": 0.6062057115270599,
+        "C": 0.0021848145982845033,
+        "h": 244.74206499816026
+      },
+      "rawDelta": 0.04938999941025085,
+      "calibrationDelta": 0,
+      "calibratedHex": "#70747A",
+      "neutralByCategory": true,
+      "tint": [
+        {
+          "amount": 1,
+          "hex": "#888B90",
+          "oklab": [
+            0.6358416147478416,
+            -0.0013278505529518148,
+            -0.008136109097256261
+          ],
+          "nearestName": {
+            "nameJa": "グレー",
+            "nameEn": "Gray",
+            "deltaE": 0.0027629969204705255
+          }
+        },
+        {
+          "amount": 3,
+          "hex": "#A2A5A8",
+          "oklab": [
+            0.7204091335347511,
+            -0.0020820763819337507,
+            -0.005128043810633032
+          ],
+          "nearestName": {
+            "nameJa": "アッシュグレー",
+            "nameEn": "Ash Gray",
+            "deltaE": 0.010623790153322429
+          }
+        },
+        {
+          "amount": 5,
+          "hex": "#B1B3B6",
+          "oklab": [
+            0.7660488836841661,
+            -0.0009747455410951678,
+            -0.004718723921020906
+          ],
+          "nearestName": {
+            "nameJa": "グレージュ",
+            "nameEn": "Greige",
+            "deltaE": 0.024344138927060607
+          }
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "pairs": 1431,
+    "invalid": 0,
+    "orderDelta": 0,
+    "scaleDelta": 0,
+    "whiteFailures": [],
+    "blackFailures": [],
+    "directionFailures": [],
+    "coolColorsNamedWarmGray": [
+      {
+        "a": "light-blue",
+        "b": "dim-gray",
+        "hex": "#91969C",
+        "name": "ウォームグレー",
+        "lab": [
+          0.6709104200263494,
+          -0.003120209656745254,
+          -0.010110613747275288
+        ]
+      },
+      {
+        "a": "white",
+        "b": "graphite",
+        "hex": "#919599",
+        "name": "ウォームグレー",
+        "lab": [
+          0.667789344959587,
+          -0.0028247703742353414,
+          -0.006970192884004134
+        ]
+      },
+      {
+        "a": "milk-white",
+        "b": "dark-slate",
+        "hex": "#8D9799",
+        "name": "ウォームグレー",
+        "lab": [
+          0.6689323782370633,
+          -0.010223371684013494,
+          -0.006152663047591211
+        ]
+      }
+    ]
+  },
+  "examples": {
+    "referenceNearest": {
+      "nameJa": "グラファイト",
+      "nameEn": "Graphite",
+      "deltaE": 0.023160187706991128
+    },
+    "graphiteWhite": {
+      "hex": "#919599",
+      "oklab": [
+        0.667789344959587,
+        -0.0028247703742353414,
+        -0.006970192884004134
+      ],
+      "nearestName": {
+        "nameJa": "ウォームグレー",
+        "nameEn": "Warm Gray",
+        "deltaE": 0.02858214837247293
+      }
+    },
+    "correctedSwatchWhite": {
+      "hex": "#979194",
+      "oklab": [
+        0.6627156872785087,
+        0.008009982349532874,
+        -0.0020763811212390904
+      ],
+      "nearestName": {
+        "nameJa": "ウォームグレー",
+        "nameEn": "Warm Gray",
+        "deltaE": 0.021165268826404807
+      }
+    }
+  },
+  "resultDictionaryCount": 125,
+  "method": {
+    "reference": "46 matched traditional names, 7 CSS names, 1 related CSS name; references are comparison choices, not universal physical standards",
+    "distance": "Euclidean distance in OKLab on its 0..1 scale; not CIEDE2000",
+    "pairs": "All 1431 distinct pairs at 1:1, reversed order and 3:3; directional distance at 1:1 through 1:5, tolerance 0.003",
+    "neutrals": "Every selectable color plus white/black at 3:1 through 3:5; lightness tolerance 0.001",
+    "single": "Two copies of each preset compared with its displayed swatch; this checks consistency only",
+    "raw": "Authored pigment before display calibration, not a prediction verified against actual paints"
+  }
+}

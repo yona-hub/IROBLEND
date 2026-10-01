@@ -92,40 +92,50 @@ describe('IROBLEND interface', () => {
     expect(container.querySelector('.selection-choose')).toHaveTextContent('色をたす');
   });
 
-  it('uses measured canvas dimensions, preserves marks on amount changes and reflows on resize', () => {
-    const viewport = Object.getOwnPropertyDescriptor(window, 'innerWidth')!;
-    Object.defineProperty(window, 'innerWidth', { configurable: true, value: 390 });
-    let height = 180;
+  it.each([
+    { label: 'phone', viewportWidth: 390, viewportHeight: 844, width: 360, initialHeight: 180, resizedHeight: 260, unit: 360 },
+    { label: 'tablet portrait', viewportWidth: 768, viewportHeight: 1024, width: 560, initialHeight: 220, resizedHeight: 307.2, unit: 560 / 1.45 },
+    { label: 'tablet landscape', viewportWidth: 1024, viewportHeight: 768, width: 500, initialHeight: 220, resizedHeight: 260, unit: 500 / 1.55 },
+    { label: 'large tablet portrait', viewportWidth: 1032, viewportHeight: 1376, width: 949.44, initialHeight: 522.88, resizedHeight: 440, unit: 949.44 / 1.45 },
+  ])('preserves paint size and amount changes on measured $label canvases', ({ viewportWidth, viewportHeight, width, initialHeight, resizedHeight, unit }) => {
+    const previousWidth = Object.getOwnPropertyDescriptor(window, 'innerWidth')!;
+    const previousHeight = Object.getOwnPropertyDescriptor(window, 'innerHeight')!;
+    Object.defineProperty(window, 'innerWidth', { configurable: true, value: viewportWidth });
+    Object.defineProperty(window, 'innerHeight', { configurable: true, value: viewportHeight });
+    let height = initialHeight;
     const bounds = vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
-      width: 360, height, x: 0, y: 0, top: 0, left: 0, right: 360, bottom: height, toJSON: () => ({}),
+      width, height, x: 0, y: 0, top: 0, left: 0, right: width, bottom: height, toJSON: () => ({}),
     }));
     vi.mocked(HTMLCanvasElement.prototype.getContext).mockReturnValue({ setTransform: vi.fn() } as unknown as CanvasRenderingContext2D);
     const drawing = vi.spyOn(paintDrawing, 'drawPaintMarks').mockImplementation(() => {});
     const { container, unmount } = render(<App />);
     try {
+      expect(screen.queryByRole('button', { name: '色をえらぶメニューを開く' })).not.toBeInTheDocument();
+      expect(container.querySelectorAll('.choose-button')).toHaveLength(1);
       selectTwoColors(container);
       const before = drawing.mock.calls.at(-1)!;
-      expect(before[1]).toBe(360);
-      expect(before[2]).toBe(180);
-      expect(before[6]).toBe(360);
+      expect(before[1]).toBe(width);
+      expect(before[2]).toBe(initialHeight);
+      expect(before[6]).toBeCloseTo(unit);
       const marks = before[3];
       fireEvent.click(screen.getByRole('button', { name: 'スカーレットの量をスポイト1本分にする' }));
       const changed = drawing.mock.calls.at(-1)!;
       expect(changed[3]).toBe(marks);
       expect(changed[4].find(color => color.preset.id === 'scarlet')?.amount).toBe(1);
       expect(changed[5]).toBeUndefined();
-      height = 260;
+      height = resizedHeight;
       fireEvent(window, new Event('resize'));
       const resized = drawing.mock.calls.at(-1)!;
-      expect(resized[2]).toBe(260);
-      expect(resized[6]).toBe(360);
+      expect(resized[2]).toBe(resizedHeight);
+      expect(resized[6]).toBeCloseTo(unit);
       expect(resized[3]).not.toBe(marks);
       expect(resized[3].map(mark => mark.seed)).toEqual(marks.map(mark => mark.seed));
     } finally {
       unmount();
       drawing.mockRestore();
       bounds.mockRestore();
-      Object.defineProperty(window, 'innerWidth', viewport);
+      Object.defineProperty(window, 'innerWidth', previousWidth);
+      Object.defineProperty(window, 'innerHeight', previousHeight);
     }
   });
 

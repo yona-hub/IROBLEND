@@ -1,0 +1,909 @@
+{
+  "method": "Nonnegative normalized recipes fitted offline to reference OKLab, with unchanged eight authored K/S bases. Pure black and white bases retained. This is not measured paint.",
+  "colors": [
+    {
+      "id": "red",
+      "referenceHex": "#EA5550",
+      "previousRecipe": {
+        "red": 1
+      },
+      "recipe": {
+        "red": 0.9443359,
+        "white": 0.0556641
+      },
+      "previousRawDelta": 0.05192974249580114,
+      "rawDelta": 0.034651960855220376,
+      "rawHex": "#D96258"
+    },
+    {
+      "id": "scarlet",
+      "referenceHex": "#EA5532",
+      "previousRecipe": {
+        "red": 8,
+        "rose": 2
+      },
+      "recipe": {
+        "red": 0.6689453,
+        "yellow": 0.3310547
+      },
+      "previousRawDelta": 0.06712086431417581,
+      "rawDelta": 0.03997689361419036,
+      "rawHex": "#D76349"
+    },
+    {
+      "id": "vermilion",
+      "referenceHex": "#EA553A",
+      "previousRecipe": {
+        "red": 4,
+        "yellow": 1
+      },
+      "recipe": {
+        "red": 0.7423828,
+        "yellow": 0.2439453,
+        "white": 0.0136719
+      },
+      "previousRawDelta": 0.04172624458362973,
+      "rawDelta": 0.03840274126202002,
+      "rawHex": "#D7624D"
+    },
+    {
+      "id": "crimson",
+      "referenceHex": "#DC143C",
+      "previousRecipe": {
+        "rose": 7,
+        "red": 2,
+        "black": 0.3
+      },
+      "recipe": {
+        "red": 0.6826172,
+        "rose": 0.3173828
+      },
+      "previousRawDelta": 0.12260283659493662,
+      "rawDelta": 0.07046255360092422,
+      "rawHex": "#CA5055"
+    },
+    {
+      "id": "carmine",
+      "referenceHex": "#D70035",
+      "previousRecipe": {
+        "rose": 8,
+        "black": 0.7
+      },
+      "recipe": {
+        "red": 0.6464844,
+        "rose": 0.3535156
+      },
+      "previousRawDelta": 0.1646564681409071,
+      "rawDelta": 0.07808180407662503,
+      "rawHex": "#CA5056"
+    },
+    {
+      "id": "tomato-red",
+      "referenceHex": "#EA5549",
+      "previousRecipe": {
+        "red": 6,
+        "yellow": 1,
+        "white": 0.4
+      },
+      "recipe": {
+        "red": 0.9455764,
+        "yellow": 0.0003695,
+        "white": 0.0540541
+      },
+      "previousRawDelta": 0.03868746586936894,
+      "rawDelta": 0.03532038451471725,
+      "rawHex": "#D96157"
+    },
+    {
+      "id": "pink",
+      "referenceHex": "#F5B2B2",
+      "previousRecipe": {
+        "rose": 1,
+        "white": 1.3
+      },
+      "recipe": {
+        "red": 0.2841797,
+        "rose": 0.1017748,
+        "yellow": 0.0078125,
+        "white": 0.606233
+      },
+      "previousRawDelta": 0.051014676832687664,
+      "rawDelta": 0.00032713264744499936,
+      "rawHex": "#F5B2B2"
+    },
+    {
+      "id": "baby-pink",
+      "referenceHex": "#FDEDE4",
+      "previousRecipe": {
+        "rose": 1,
+        "white": 5
+      },
+      "recipe": {
+        "red": 0.0195313,
+        "yellow": 0.0205078,
+        "white": 0.9599609
+      },
+      "previousRawDelta": 0.08234631028885632,
+      "rawDelta": 0.004746749967417695,
+      "rawHex": "#F9EDE5"
+    },
+    {
+      "id": "rose-pink",
+      "referenceHex": "#F19CA7",
+      "previousRecipe": {
+        "rose": 3,
+        "white": 1
+      },
+      "recipe": {
+        "red": 0.2851563,
+        "rose": 0.2724609,
+        "white": 0.4423828
+      },
+      "previousRawDelta": 0.08459717523588399,
+      "rawDelta": 0.005852786037283367,
+      "rawHex": "#EE9DA7"
+    },
+    {
+      "id": "cherry-pink",
+      "referenceHex": "#EB6EA0",
+      "previousRecipe": {
+        "rose": 5,
+        "red": 1,
+        "white": 0.6
+      },
+      "recipe": {
+        "red": 0.047023,
+        "rose": 0.7644117,
+        "white": 0.1885653
+      },
+      "previousRawDelta": 0.05877816590951895,
+      "rawDelta": 0.029171134265479605,
+      "rawHex": "#DB75A3"
+    },
+    {
+      "id": "salmon-pink",
+      "referenceHex": "#F3A68C",
+      "previousRecipe": {
+        "red": 2,
+        "yellow": 0.3,
+        "white": 1.5
+      },
+      "recipe": {
+        "red": 0.3915502,
+        "rose": 0.0029297,
+        "yellow": 0.2420333,
+        "white": 0.3634868
+      },
+      "previousRawDelta": 0.02244834938056516,
+      "rawDelta": 0.00018842932201041277,
+      "rawHex": "#F3A68C"
+    },
+    {
+      "id": "hot-pink",
+      "referenceHex": "#FF69B4",
+      "previousRecipe": {
+        "rose": 5,
+        "white": 0.4
+      },
+      "recipe": {
+        "rose": 0.7755353,
+        "white": 0.2244647
+      },
+      "previousRawDelta": 0.10039620981753263,
+      "rawDelta": 0.06553677713152423,
+      "rawHex": "#DE7BAE"
+    },
+    {
+      "id": "orange",
+      "referenceHex": "#EE7800",
+      "previousRecipe": {
+        "red": 1,
+        "yellow": 3
+      },
+      "recipe": {
+        "red": 0.3027344,
+        "yellow": 0.6972656
+      },
+      "previousRawDelta": 0.041297563206811744,
+      "rawDelta": 0.03733578109704897,
+      "rawHex": "#E28147"
+    },
+    {
+      "id": "mandarin-orange",
+      "referenceHex": "#F3981D",
+      "previousRecipe": {
+        "red": 1,
+        "yellow": 2
+      },
+      "recipe": {
+        "red": 0.133138,
+        "yellow": 0.866862
+      },
+      "previousRawDelta": 0.08299986852251179,
+      "rawDelta": 0.02400476164099939,
+      "rawHex": "#E99D44"
+    },
+    {
+      "id": "carrot-orange",
+      "referenceHex": "#ED6D35",
+      "previousRecipe": {
+        "red": 2,
+        "yellow": 3,
+        "black": 0.15
+      },
+      "recipe": {
+        "red": 0.4199219,
+        "yellow": 0.5800781
+      },
+      "previousRawDelta": 0.09955782628788604,
+      "rawDelta": 0.02976826279982629,
+      "rawHex": "#DE7548"
+    },
+    {
+      "id": "apricot",
+      "referenceHex": "#F7B977",
+      "previousRecipe": {
+        "red": 1,
+        "yellow": 3,
+        "white": 2
+      },
+      "recipe": {
+        "red": 0.1510417,
+        "yellow": 0.6152344,
+        "white": 0.233724
+      },
+      "previousRawDelta": 0.018485026885529793,
+      "rawDelta": 0.004702494650318469,
+      "rawHex": "#F4BA78"
+    },
+    {
+      "id": "coral",
+      "referenceHex": "#FF7F50",
+      "previousRecipe": {
+        "red": 3,
+        "rose": 1,
+        "yellow": 1,
+        "white": 1
+      },
+      "recipe": {
+        "red": 0.4423828,
+        "rose": 0.000651,
+        "yellow": 0.4527995,
+        "white": 0.1041667
+      },
+      "previousRawDelta": 0.06081442967183769,
+      "rawDelta": 0.041730461567656224,
+      "rawHex": "#E88861"
+    },
+    {
+      "id": "dark-orange",
+      "referenceHex": "#FF8C00",
+      "previousRecipe": {
+        "red": 2,
+        "yellow": 3,
+        "black": 0.5
+      },
+      "recipe": {
+        "red": 0.1679688,
+        "yellow": 0.8320313
+      },
+      "previousRawDelta": 0.2341940941101963,
+      "rawDelta": 0.04487450705532126,
+      "rawHex": "#E79645"
+    },
+    {
+      "id": "yellow",
+      "referenceHex": "#FFDC00",
+      "previousRecipe": {
+        "yellow": 1
+      },
+      "recipe": {
+        "yellow": 0.9472656,
+        "white": 0.0527344
+      },
+      "previousRawDelta": 0.03642498459378815,
+      "rawDelta": 0.0297951830293254,
+      "rawHex": "#F2DA49"
+    },
+    {
+      "id": "lemon-yellow",
+      "referenceHex": "#FFF352",
+      "previousRecipe": {
+        "yellow": 5,
+        "white": 1
+      },
+      "recipe": {
+        "yellow": 0.7854818,
+        "white": 0.2145182
+      },
+      "previousRawDelta": 0.05076891258141197,
+      "rawDelta": 0.04955716884548827,
+      "rawHex": "#F5E571"
+    },
+    {
+      "id": "canary-yellow",
+      "referenceHex": "#FFF462",
+      "previousRecipe": {
+        "yellow": 10,
+        "red": 0.2
+      },
+      "recipe": {
+        "yellow": 0.7460938,
+        "white": 0.2539063
+      },
+      "previousRawDelta": 0.11983470625295316,
+      "rawDelta": 0.04455762860015615,
+      "rawHex": "#F6E778"
+    },
+    {
+      "id": "golden-yellow",
+      "referenceHex": "#F6AE54",
+      "previousRecipe": {
+        "yellow": 8,
+        "red": 0.5,
+        "black": 0.2
+      },
+      "recipe": {
+        "red": 0.1199713,
+        "yellow": 0.7945402,
+        "white": 0.0849609,
+        "black": 0.0005276
+      },
+      "previousRawDelta": 0.10200994139032293,
+      "rawDelta": 0.012628982477062388,
+      "rawHex": "#EEB05B"
+    },
+    {
+      "id": "cream-yellow",
+      "referenceHex": "#FFF3B8",
+      "previousRecipe": {
+        "yellow": 1,
+        "white": 3
+      },
+      "recipe": {
+        "yellow": 0.2861328,
+        "white": 0.7138672
+      },
+      "previousRawDelta": 0.011631641233832027,
+      "rawDelta": 0.009987481262907407,
+      "rawHex": "#F7F3BA"
+    },
+    {
+      "id": "khaki",
+      "referenceHex": "#C5A05A",
+      "previousRecipe": {
+        "yellow": 3,
+        "black": 0.4,
+        "white": 0.4
+      },
+      "recipe": {
+        "red": 0.1201172,
+        "yellow": 0.7797081,
+        "white": 0.0730366,
+        "black": 0.0271382
+      },
+      "previousRawDelta": 0.07165404944004887,
+      "rawDelta": 0.0005317989835536749,
+      "rawHex": "#C5A05A"
+    },
+    {
+      "id": "green",
+      "referenceHex": "#00A960",
+      "previousRecipe": {
+        "green": 1
+      },
+      "recipe": {
+        "yellow": 0.5332031,
+        "blue": 0.4667969
+      },
+      "previousRawDelta": 0.08206498158352929,
+      "rawDelta": 0.01973250135892167,
+      "rawHex": "#2EA96A"
+    },
+    {
+      "id": "apple-green",
+      "referenceHex": "#A7D28D",
+      "previousRecipe": {
+        "green": 1,
+        "yellow": 3,
+        "white": 0.3
+      },
+      "recipe": {
+        "yellow": 0.5140807,
+        "blue": 0.0800781,
+        "ultramarine": 0.0449219,
+        "green": 0.1075581,
+        "white": 0.2533612
+      },
+      "previousRawDelta": 0.053893235820505064,
+      "rawDelta": 0.00014348867873041277,
+      "rawHex": "#A7D28D"
+    },
+    {
+      "id": "mint-green",
+      "referenceHex": "#89C997",
+      "previousRecipe": {
+        "green": 1,
+        "blue": 0.2,
+        "white": 2
+      },
+      "recipe": {
+        "yellow": 0.4316406,
+        "blue": 0.2382813,
+        "ultramarine": 0.0546875,
+        "green": 0.0263672,
+        "white": 0.2490234
+      },
+      "previousRawDelta": 0.11794418011304378,
+      "rawDelta": 0.00007115806656902111,
+      "rawHex": "#89C997"
+    },
+    {
+      "id": "emerald-green",
+      "referenceHex": "#00A968",
+      "previousRecipe": {
+        "green": 4,
+        "blue": 1
+      },
+      "recipe": {
+        "yellow": 0.5117188,
+        "blue": 0.4880859,
+        "green": 0.0001953
+      },
+      "previousRawDelta": 0.048817287556950105,
+      "rawDelta": 0.011838100766746077,
+      "rawHex": "#28A86C"
+    },
+    {
+      "id": "forest-green",
+      "referenceHex": "#288C66",
+      "previousRecipe": {
+        "green": 4,
+        "black": 0.7
+      },
+      "recipe": {
+        "yellow": 0.4072266,
+        "blue": 0.5498047,
+        "green": 0.0004779,
+        "black": 0.0424909
+      },
+      "previousRawDelta": 0.07731004902802384,
+      "rawDelta": 0.014175105332775932,
+      "rawHex": "#388C6C"
+    },
+    {
+      "id": "lime-green",
+      "referenceHex": "#E6EB94",
+      "previousRecipe": {
+        "yellow": 8,
+        "green": 1,
+        "white": 1
+      },
+      "recipe": {
+        "red": 0.0009766,
+        "yellow": 0.5441406,
+        "green": 0.0433594,
+        "white": 0.4115234
+      },
+      "previousRawDelta": 0.07396936032031572,
+      "rawDelta": 0.0007179499896162748,
+      "rawHex": "#E6EB94"
+    },
+    {
+      "id": "blue",
+      "referenceHex": "#0075C2",
+      "previousRecipe": {
+        "blue": 1
+      },
+      "recipe": {
+        "blue": 0.4433594,
+        "ultramarine": 0.5234375,
+        "green": 0.0244141,
+        "black": 0.0087891
+      },
+      "previousRawDelta": 0.08836236751371669,
+      "rawDelta": 0.012831842577264132,
+      "rawHex": "#2676C2"
+    },
+    {
+      "id": "sky-blue",
+      "referenceHex": "#A0D8EF",
+      "previousRecipe": {
+        "blue": 1,
+        "white": 1.2
+      },
+      "recipe": {
+        "blue": 0.2660689,
+        "ultramarine": 0.0507813,
+        "green": 0.0263672,
+        "white": 0.6567827
+      },
+      "previousRawDelta": 0.02993925237350757,
+      "rawDelta": 0.0001409029032631283,
+      "rawHex": "#A0D8EF"
+    },
+    {
+      "id": "light-blue",
+      "referenceHex": "#B2CBE4",
+      "previousRecipe": {
+        "blue": 1,
+        "white": 4
+      },
+      "recipe": {
+        "red": 0.0039063,
+        "rose": 0.0117188,
+        "blue": 0.0271484,
+        "ultramarine": 0.2226563,
+        "green": 0.0908203,
+        "white": 0.64375
+      },
+      "previousRawDelta": 0.06632445340297564,
+      "rawDelta": 0.00005319874453761175,
+      "rawHex": "#B2CBE4"
+    },
+    {
+      "id": "cobalt-blue",
+      "referenceHex": "#0068B7",
+      "previousRecipe": {
+        "blue": 2,
+        "ultramarine": 1
+      },
+      "recipe": {
+        "blue": 0.2939453,
+        "ultramarine": 0.6826172,
+        "black": 0.0234375
+      },
+      "previousRawDelta": 0.07488553828760659,
+      "rawDelta": 0.03124153769015504,
+      "rawHex": "#366CB5"
+    },
+    {
+      "id": "ultramarine",
+      "referenceHex": "#434DA2",
+      "previousRecipe": {
+        "ultramarine": 1
+      },
+      "recipe": {
+        "rose": 0.1132813,
+        "ultramarine": 0.8476563,
+        "black": 0.0390625
+      },
+      "previousRawDelta": 0.09679909987376305,
+      "rawDelta": 0.05100298325582663,
+      "rawHex": "#525D9E"
+    },
+    {
+      "id": "royal-blue",
+      "referenceHex": "#4169E1",
+      "previousRecipe": {
+        "ultramarine": 3,
+        "blue": 1,
+        "white": 0.3
+      },
+      "recipe": {
+        "blue": 0.0859375,
+        "ultramarine": 0.90625,
+        "white": 0.0078125
+      },
+      "previousRawDelta": 0.059854160662862234,
+      "rawDelta": 0.01633971774559366,
+      "rawHex": "#4569D7"
+    },
+    {
+      "id": "navy-blue",
+      "referenceHex": "#202F55",
+      "previousRecipe": {
+        "blue": 3,
+        "ultramarine": 1,
+        "black": 1
+      },
+      "recipe": {
+        "ultramarine": 0.3935547,
+        "black": 0.6064453
+      },
+      "previousRawDelta": 0.14179460717077688,
+      "rawDelta": 0.06233437167104074,
+      "rawHex": "#313439"
+    },
+    {
+      "id": "purple",
+      "referenceHex": "#9B72B0",
+      "previousRecipe": {
+        "rose": 1,
+        "ultramarine": 1
+      },
+      "recipe": {
+        "rose": 0.5458984,
+        "blue": 0.0517578,
+        "ultramarine": 0.2705078,
+        "green": 0.0009766,
+        "white": 0.1308594
+      },
+      "previousRawDelta": 0.10513869746162693,
+      "rawDelta": 0.00005621206826802969,
+      "rawHex": "#9B72B0"
+    },
+    {
+      "id": "violet",
+      "referenceHex": "#5A4498",
+      "previousRecipe": {
+        "rose": 2,
+        "ultramarine": 3,
+        "white": 0.3
+      },
+      "recipe": {
+        "rose": 0.307046,
+        "ultramarine": 0.6588112,
+        "white": 0.0009397,
+        "black": 0.0332031
+      },
+      "previousRawDelta": 0.11022016284804603,
+      "rawDelta": 0.05424065457344483,
+      "rawHex": "#625796"
+    },
+    {
+      "id": "lavender",
+      "referenceHex": "#CAB8D9",
+      "previousRecipe": {
+        "rose": 1,
+        "ultramarine": 1,
+        "white": 3
+      },
+      "recipe": {
+        "red": 0.0097656,
+        "rose": 0.1990234,
+        "yellow": 0.0068359,
+        "blue": 0.0380859,
+        "ultramarine": 0.1287109,
+        "green": 0.0009766,
+        "white": 0.6166016
+      },
+      "previousRawDelta": 0.013931303200384932,
+      "rawDelta": 0.000048018704151233476,
+      "rawHex": "#CAB8D9"
+    },
+    {
+      "id": "lilac",
+      "referenceHex": "#D1BADA",
+      "previousRecipe": {
+        "rose": 1,
+        "ultramarine": 0.6,
+        "white": 5
+      },
+      "recipe": {
+        "rose": 0.2149917,
+        "blue": 0.0097656,
+        "ultramarine": 0.1075107,
+        "green": 0.03125,
+        "white": 0.636482
+      },
+      "previousRawDelta": 0.035327976427013665,
+      "rawDelta": 0.0001242595079193443,
+      "rawHex": "#D1BADA"
+    },
+    {
+      "id": "mauve",
+      "referenceHex": "#915DA3",
+      "previousRecipe": {
+        "rose": 1,
+        "ultramarine": 0.5,
+        "black": 0.2,
+        "white": 1.5
+      },
+      "recipe": {
+        "rose": 0.6123047,
+        "ultramarine": 0.3398438,
+        "white": 0.0478516
+      },
+      "previousRawDelta": 0.17892461367038887,
+      "rawDelta": 0.004974172041131766,
+      "rawHex": "#905EA1"
+    },
+    {
+      "id": "orchid",
+      "referenceHex": "#D9AACD",
+      "previousRecipe": {
+        "rose": 2,
+        "ultramarine": 0.5,
+        "white": 1.5
+      },
+      "recipe": {
+        "red": 0.0009766,
+        "rose": 0.3828125,
+        "yellow": 0.0009766,
+        "blue": 0.0068359,
+        "ultramarine": 0.0498047,
+        "green": 0.03125,
+        "white": 0.5273438
+      },
+      "previousRawDelta": 0.05943555050963567,
+      "rawDelta": 0.00010413394632663671,
+      "rawHex": "#D9AACD"
+    },
+    {
+      "id": "plum",
+      "referenceHex": "#6C2463",
+      "previousRecipe": {
+        "rose": 2,
+        "ultramarine": 1,
+        "black": 0.3
+      },
+      "recipe": {
+        "rose": 0.7789122,
+        "ultramarine": 0.0002959,
+        "black": 0.2207919
+      },
+      "previousRawDelta": 0.1000912268753812,
+      "rawDelta": 0.08714359282083517,
+      "rawHex": "#654559"
+    },
+    {
+      "id": "white",
+      "referenceHex": "#FFFFFF",
+      "previousRecipe": {
+        "white": 1
+      },
+      "recipe": {
+        "white": 1
+      },
+      "previousRawDelta": 0.022647569958546013,
+      "rawDelta": 0.022647569958546013,
+      "rawHex": "#F7F8F7"
+    },
+    {
+      "id": "snow-white",
+      "referenceHex": "#FAFDFF",
+      "previousRecipe": {
+        "white": 20,
+        "blue": 0.04
+      },
+      "recipe": {
+        "white": 1
+      },
+      "previousRawDelta": 0.017873948684091194,
+      "rawDelta": 0.015583434541917766,
+      "rawHex": "#F7F8F7"
+    },
+    {
+      "id": "ivory",
+      "referenceHex": "#F8F4E6",
+      "previousRecipe": {
+        "white": 10,
+        "yellow": 1
+      },
+      "recipe": {
+        "red": 0.0039063,
+        "rose": 0.0009766,
+        "yellow": 0.0332919,
+        "white": 0.9618253
+      },
+      "previousRawDelta": 0.020815394144792176,
+      "rawDelta": 0.00031527875875831426,
+      "rawHex": "#F8F4E6"
+    },
+    {
+      "id": "milk-white",
+      "referenceHex": "#FFFFF9",
+      "previousRecipe": {
+        "white": 20,
+        "yellow": 0.3
+      },
+      "recipe": {
+        "yellow": 0.0029297,
+        "white": 0.9970703
+      },
+      "previousRawDelta": 0.023856791690653998,
+      "rawDelta": 0.021982728032723144,
+      "rawHex": "#F7F8F5"
+    },
+    {
+      "id": "white-smoke",
+      "referenceHex": "#F5F5F5",
+      "previousRecipe": {
+        "white": 20,
+        "black": 0.2
+      },
+      "recipe": {
+        "rose": 0.0019531,
+        "yellow": 0.0019531,
+        "ultramarine": 0.0019531,
+        "green": 0.0009766,
+        "white": 0.9931641
+      },
+      "previousRawDelta": 0.028751169668612925,
+      "rawDelta": 0.00032623982836247814,
+      "rawHex": "#F5F5F5"
+    },
+    {
+      "id": "black",
+      "referenceHex": "#000000",
+      "previousRecipe": {
+        "black": 1
+      },
+      "recipe": {
+        "black": 1
+      },
+      "previousRawDelta": 0.24199162589053957,
+      "rawDelta": 0.24199162589053957,
+      "rawHex": "#202020"
+    },
+    {
+      "id": "charcoal",
+      "referenceHex": "#4E454A",
+      "previousRecipe": {
+        "black": 5,
+        "white": 0.3
+      },
+      "recipe": {
+        "red": 0.0810547,
+        "rose": 0.3095703,
+        "yellow": 0.0019531,
+        "ultramarine": 0.015625,
+        "green": 0.0136719,
+        "white": 0.0566038,
+        "black": 0.5215212
+      },
+      "previousRawDelta": 0.08020676197395885,
+      "rawDelta": 0.000019384799649038266,
+      "rawHex": "#4E454A"
+    },
+    {
+      "id": "graphite",
+      "referenceHex": "#594E52",
+      "previousRecipe": {
+        "black": 2,
+        "white": 0.5
+      },
+      "recipe": {
+        "red": 0.1455078,
+        "rose": 0.2373047,
+        "white": 0.1023438,
+        "black": 0.5148438
+      },
+      "previousRawDelta": 0.0175005404827644,
+      "rawDelta": 0.00121152934738183,
+      "rawHex": "#584E52"
+    },
+    {
+      "id": "dark-slate",
+      "referenceHex": "#2F4F4F",
+      "previousRecipe": {
+        "black": 3,
+        "blue": 1,
+        "green": 0.5,
+        "white": 0.4
+      },
+      "recipe": {
+        "yellow": 0.0820313,
+        "blue": 0.5790816,
+        "green": 0.0004783,
+        "white": 0.000578,
+        "black": 0.3378308
+      },
+      "previousRawDelta": 0.02872278270041182,
+      "rawDelta": 0.011534385206693327,
+      "rawHex": "#384E50"
+    },
+    {
+      "id": "dim-gray",
+      "referenceHex": "#696969",
+      "previousRecipe": {
+        "black": 1,
+        "white": 1
+      },
+      "recipe": {
+        "red": 0.0732422,
+        "rose": 0.0126953,
+        "yellow": 0.0644531,
+        "blue": 0.0371094,
+        "ultramarine": 0.046875,
+        "green": 0.0078125,
+        "white": 0.25,
+        "black": 0.5078125
+      },
+      "previousRawDelta": 0.08542710162606304,
+      "rawDelta": 0.00002652058449618528,
+      "rawHex": "#696969"
+    }
+  ]
+}

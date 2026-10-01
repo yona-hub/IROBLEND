@@ -5,10 +5,10 @@ import { colorPresets } from '../data/colorPresets';
 import { resultColorNames } from '../data/resultColorNames';
 import { mixPigments } from '../domain/colorMixing/mixPigments';
 
-const red = '#E53935' as const;
-const blue = '#326DAF' as const;
+const red = '#EA5550' as const;
+const blue = '#0075C2' as const;
 const white = '#FFFFFF' as const;
-const black = '#101112' as const;
+const black = '#000000' as const;
 const distance = (a: readonly number[], b: readonly number[]) =>
   Math.hypot((a[0] ?? 0) - (b[0] ?? 0), (a[1] ?? 0) - (b[1] ?? 0), (a[2] ?? 0) - (b[2] ?? 0));
 const input = (hex: `#${string}`, amount: number) => ({ pigment: colorPresets.find((p) => p.hex === hex)!.pigment, amount });
@@ -69,7 +69,7 @@ describe('spectral pigment mixing', () => {
   });
 
   it('computes finite colors from 2–5 inputs, including black', () => {
-    const palette = [red, blue, white, black, '#91B849' as const];
+    const palette = [red, blue, white, black, '#A7D28D' as const];
     for (let size = 2; size <= 5; size++) {
       const result = mixPigments(palette.slice(0, size).map((hex, index) => input(hex, index + 1)));
       expect(result.hex).toMatch(/^#[0-9a-f]{6}$/i);

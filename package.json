@@ -9,7 +9,8 @@
     "deploy": "npm run build && wrangler deploy",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false",
-    "test": "vitest run"
+    "test": "vitest run",
+    "audit:colors": "vite-node scripts/audit-colors.ts"
   },
   "dependencies": {
     "react": "^19.2.0",

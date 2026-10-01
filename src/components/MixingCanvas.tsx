@@ -4,7 +4,7 @@ import type { MixStatus } from '../domain/state/mixReducer';
 import type { ResolvedSelection } from './SelectedColorList';
 import { drawMixFrame, MIX_DURATION_MS } from './mixAnimation';
 import { drawPaintMarks, SELECTION_IMPACT_DURATION_MS, type PaintMark } from './paintMarks';
-import { paintGeometry, type PaintGeometry } from './paintGeometry';
+import { viewportPaintGeometry, type PaintGeometry } from './paintGeometry';
 
 export type SelectionImpact = { id: string; key: number; delayMs?: number };
 type Props = {
@@ -31,7 +31,7 @@ export function MixingCanvas({ colors, marks, incoming, result, pendingResult, s
     if (!surface) return;
     const measure = () => {
       const { width, height } = surface.getBoundingClientRect();
-      if (width > 0 && height > 0) onGeometry(paintGeometry(width, height, window.innerWidth < 600));
+      if (width > 0 && height > 0) onGeometry(viewportPaintGeometry(width, height, window.innerWidth, window.innerHeight));
     };
     measure();
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
@@ -56,7 +56,7 @@ export function MixingCanvas({ colors, marks, incoming, result, pendingResult, s
     resize();
     const render = (progress?: number) => drawPaintMarks(ctx, width, height, marks, colors,
       incoming && progress !== undefined ? { id: incoming.id, progress } : undefined,
-      paintGeometry(width, height, window.innerWidth < 600).unit);
+      viewportPaintGeometry(width, height, window.innerWidth, window.innerHeight).unit);
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(() => { resize(); render(); });
     observer?.observe(canvas);
     const animate = !!incoming && !reducedMotion && incoming.key !== lastImpactKey.current;
@@ -99,7 +99,7 @@ export function MixingCanvas({ colors, marks, incoming, result, pendingResult, s
       const elapsed = Math.min(now - started, MIX_DURATION_MS);
       drawMixFrame(ctx, width, height, elapsed, palette, pendingResult.hex,
         () => drawPaintMarks(ctx, width, height, marks, colors, undefined,
-          paintGeometry(width, height, window.innerWidth < 600).unit));
+          viewportPaintGeometry(width, height, window.innerWidth, window.innerHeight).unit));
       if (elapsed < MIX_DURATION_MS) frame = requestAnimationFrame(draw);
     };
     draw(started);

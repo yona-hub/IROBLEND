@@ -64,7 +64,7 @@ export default function App() {
   }, [pulseId]);
 
   useEffect(() => {
-    const query = window.matchMedia?.('(orientation: landscape) and (min-width: 900px)');
+    const query = window.matchMedia?.('(orientation: landscape) and (min-width: 1280px)');
     if (!query) return;
     const onChange = () => { if (query.matches) closeDrawer(); };
     query.addEventListener('change', onChange);
@@ -228,21 +228,6 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <header className="app-header">
-        <div className="app-header__inner">
-          <button
-            className="menu-button mobile-only tablet-only"
-            type="button"
-            onClick={(event) => openDrawer(event.currentTarget)}
-            aria-label="色をえらぶメニューを開く"
-            aria-expanded={drawerOpen}
-            aria-controls="color-drawer"
-          >
-            <span /><span /><span />
-          </button>
-        </div>
-      </header>
-
       <div className="app-body">
         <aside className="sidebar" aria-label="色のパレット">
           <ColorNavigation {...navProps} />
@@ -267,12 +252,6 @@ export default function App() {
                 <MixingCanvas colors={colors} marks={marks} incoming={incoming} result={state.result}
                   pendingResult={state.pendingResult} status={state.status} reducedMotion={!!reducedMotion} onGeometry={onGeometry} />
                 <div className="stage-actions">
-                  {colors.length < 5 && (
-                    <button className="choose-button mobile-only tablet-only" type="button"
-                      disabled={state.status === 'mixing'} onClick={(event) => openDrawer(event.currentTarget)}>
-                      <ActionIcon kind="palette" />{colors.length === 0 ? '色をえらぶ' : '色をたす'}
-                    </button>
-                  )}
                   <div className="stage-actions__primary">
                     <button
                       className={`mix-button${state.status === 'dirty' || state.status === 'amount-dirty' ? ' mix-button--dirty' : ''}`}
@@ -318,7 +297,7 @@ export default function App() {
                 </div>
                 <div id="mix-panel-selected" className="mix-side-panel__view" role="tabpanel"
                   aria-labelledby="mix-tab-selected" hidden={activePanel !== 'selected'} tabIndex={0}>
-                  {colors.length < 5 && <button className="choose-button selection-choose phone-only" type="button"
+                  {colors.length < 5 && <button className="choose-button selection-choose compact-only" type="button"
                     disabled={state.status === 'mixing'} onClick={(event) => openDrawer(event.currentTarget)}
                     aria-controls="color-drawer" aria-expanded={drawerOpen}>
                     <ActionIcon kind="palette" />{colors.length === 0 ? '色をえらぶ' : '色をたす'}
@@ -328,7 +307,7 @@ export default function App() {
                       setIncoming(null);
                       dispatch({ type: 'setAmount', presetId, amount });
                     }}
-                    onRemove={onRemove} onChoose={openDrawer} />
+                    onRemove={onRemove} />
                 </div>
                 <div id="mix-panel-saved" className="mix-side-panel__view mix-side-panel__view--saved" role="tabpanel"
                   aria-labelledby="mix-tab-saved" hidden={activePanel !== 'saved'} tabIndex={0}>

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { drawPaintMarks, placeMark, relayoutMarks, type PaintMark } from '../components/paintMarks';
-import { bodyContour, bodyOverlap, containsPoint, maxBodyOverlap, paintGeometry } from '../components/paintGeometry';
+import { bodyContour, bodyOverlap, containsPoint, maxBodyOverlap, paintGeometry, viewportPaintGeometry } from '../components/paintGeometry';
 import { presetsById } from '../data/colorPresets';
 import { mixPigments } from '../domain/colorMixing/mixPigments';
 
@@ -10,9 +10,11 @@ function randomWithSeed(seed: number) {
 }
 
 describe('paint placement', () => {
-  it('fits five full-size bodies with at most 15% overlap on phones and desktop', () => {
+  it('fits five full-size bodies with at most 15% overlap on phones, tablets and desktop', () => {
     for (const g of [paintGeometry(360, 180, true), paintGeometry(288, 180, true),
-      paintGeometry(360, 260, true), paintGeometry(640, 640 / 1.55, false)]) {
+      paintGeometry(360, 260, true), viewportPaintGeometry(560, 220, 768, 1024),
+      viewportPaintGeometry(500, 220, 1024, 768), viewportPaintGeometry(949.44, 522.88, 1032, 1376),
+      paintGeometry(640, 640 / 1.55, false)]) {
       for (let seed = 1; seed <= 24; seed++) {
         let marks: PaintMark[] = [];
         const random = randomWithSeed(seed);
@@ -33,15 +35,21 @@ describe('paint placement', () => {
     }
   }, 30000);
 
-  it('keeps body dimensions unchanged when phone height decreases', () => {
+  it.each([
+    { label: 'phone', width: 360, viewportWidth: 390, viewportHeight: 844, oldHeight: 450, newHeight: 180, minimumBodyWidth: 70 },
+    { label: 'tablet portrait', width: 560, viewportWidth: 768, viewportHeight: 1024, oldHeight: 560 / 1.45, newHeight: 220, minimumBodyWidth: 80 },
+    { label: 'tablet landscape', width: 500, viewportWidth: 1024, viewportHeight: 768, oldHeight: 500 / 1.55, newHeight: 220, minimumBodyWidth: 65 },
+    { label: 'large tablet portrait', width: 949.44, viewportWidth: 1032, viewportHeight: 1376, oldHeight: 522.88, newHeight: 440, minimumBodyWidth: 135 },
+  ])('keeps body dimensions unchanged when $label canvas height decreases', ({ width, viewportWidth, viewportHeight, oldHeight, newHeight, minimumBodyWidth }) => {
     const mark = { presetId: 'red', seed: 42, x: .5, y: .5 };
     const size = (height: number) => {
-      const points = bodyContour(mark, paintGeometry(360, height, true));
+      const points = bodyContour(mark, viewportPaintGeometry(width, height, viewportWidth, viewportHeight));
       return [Math.max(...points.map(p => p.x)) - Math.min(...points.map(p => p.x)),
         Math.max(...points.map(p => p.y)) - Math.min(...points.map(p => p.y))];
     };
-    expect(size(180)).toEqual(size(450));
-    expect(size(180)[0]).toBeGreaterThan(70);
+    expect(size(newHeight)[0]).toBeCloseTo(size(oldHeight)[0]!);
+    expect(size(newHeight)[1]).toBeCloseTo(size(oldHeight)[1]!);
+    expect(size(newHeight)[0]).toBeGreaterThan(minimumBodyWidth);
   });
 
   it('samples continuous positions and reflows reproducibly on rotation', () => {

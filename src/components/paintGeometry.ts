@@ -6,6 +6,17 @@ export function paintGeometry(width: number, height: number, phone: boolean): Pa
   return { width, height, unit: phone ? width : Math.min(width, height) };
 }
 
+/** Preserve tablet paint size when the canvas becomes shallower. */
+export function viewportPaintGeometry(width: number, height: number,
+  viewportWidth: number, viewportHeight: number): PaintGeometry {
+  if (viewportWidth < 600) return paintGeometry(width, height, true);
+  if (viewportWidth < 1280 || viewportHeight >= viewportWidth) {
+    const previousAspect = viewportWidth >= 900 && viewportWidth > viewportHeight ? 1.55 : 1.45;
+    return { width, height, unit: width / previousAspect };
+  }
+  return paintGeometry(width, height, false);
+}
+
 export function noise(seed: number, n: number) {
   const value = Math.sin(seed * .0001 + n * 127.1) * 43758.5453;
   return value - Math.floor(value);
