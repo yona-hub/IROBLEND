@@ -1,58 +1,28 @@
 import type { ColorPreset } from '../domain/colorMixing/types';
 import { mixPigments } from '../domain/colorMixing/mixPigments';
 
-export type PaintMark = { presetId: string; x: number; y: number; seed: number };
+import { bodyControls, noise, type PaintMark } from './paintGeometry';
+export { placeMark, relayoutMarks } from './paintGeometry';
+export type { PaintMark } from './paintGeometry';
 
-// Distances are measured in units of the canvas's shorter side, so portrait and
-// landscape canvases give the same paint splat roughly the same breathing room.
-function distance(a: Pick<PaintMark, 'x' | 'y'>, b: Pick<PaintMark, 'x' | 'y'>, aspect: number) {
-  const widthInUnits = Math.max(1, aspect);
-  const heightInUnits = Math.max(1, 1 / aspect);
-  return Math.hypot((a.x - b.x) * widthInUnits, (a.y - b.y) * heightInUnits);
-}
+type PaintColor = { preset: ColorPreset; amount: number };
+const regionCache = new WeakMap<readonly PaintColor[], { ids: string[]; hex: string }[]>();
 
-function seededRandom(seed: number) {
-  let value = seed >>> 0;
-  return () => {
-    value = (1664525 * value + 1013904223) >>> 0;
-    return value / 0x100000000;
-  };
-}
-
-function randomPosition(existing: readonly PaintMark[], aspect: number, random: () => number) {
-  const xMargin = .18 / Math.max(1, aspect);
-  const yMargin = .18 / Math.max(1, 1 / aspect);
-  let best = { x: .5, y: .5, clearance: -1 };
-  // Continuous rejection sampling keeps positions genuinely random. When five
-  // large splats cannot all fit, the best sampled gap is used as a fallback.
-  for (let i = 0; i < 160; i++) {
-    const point = { x: xMargin + random() * (1 - 2 * xMargin),
-      y: yMargin + random() * (1 - 2 * yMargin) };
-    const clearance = existing.length ? Math.min(...existing.map((mark) => distance(point, mark, aspect))) : 1;
-    if (clearance >= .33) return point;
-    if (clearance > best.clearance) best = { ...point, clearance };
+/** Paint smaller intersections first, then overwrite triple and higher intersections. */
+function overlapColors(colors: readonly PaintColor[]) {
+  const cached = regionCache.get(colors);
+  if (cached) return cached;
+  const sorted = [...colors].sort((a, b) => a.preset.id.localeCompare(b.preset.id));
+  const regions: { ids: string[]; hex: string }[] = [];
+  for (let mask = 1; mask < 1 << sorted.length; mask++) {
+    const entries = sorted.filter((_, i) => mask & (1 << i));
+    if (entries.length < 2) continue;
+    regions.push({ ids: entries.map(e => e.preset.id),
+      hex: mixPigments(entries.map(e => ({ pigment: e.preset.pigment, amount: e.amount }))).hex });
   }
-  return { x: best.x, y: best.y };
-}
-
-export function relayoutMarks(marks: readonly PaintMark[], aspect: number): PaintMark[] {
-  const placed: PaintMark[] = [];
-  for (const mark of marks) {
-    placed.push({ ...mark, ...randomPosition(placed, aspect, seededRandom(mark.seed)) });
-  }
-  return placed;
-}
-
-/** Sample the entire usable canvas, only rejecting landings that crowd earlier splats. */
-export function placeMark(presetId: string, existing: readonly PaintMark[], aspect: number,
-  random: () => number = Math.random): PaintMark {
-  const seed = Math.floor(random() * 0x100000000) >>> 0;
-  return { presetId, seed, ...randomPosition(existing, aspect, seededRandom(seed)) };
-}
-
-function noise(seed: number, n: number) {
-  const value = Math.sin(seed * 0.0001 + n * 127.1) * 43758.5453;
-  return value - Math.floor(value);
+  regions.sort((a, b) => a.ids.length - b.ids.length);
+  regionCache.set(colors, regions);
+  return regions;
 }
 
 function isPalePaint(hex: string) {
@@ -70,8 +40,7 @@ const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 const easeOut = (value: number) => 1 - (1 - value) ** 3;
 
 function drawImpactBurst(ctx: CanvasRenderingContext2D, mark: PaintMark, hex: string,
-  width: number, height: number, impact: number) {
-  const unit = Math.min(width, height);
+  width: number, height: number, impact: number, unit: number) {
   const cx = mark.x * width, cy = mark.y * height;
   const expansion = easeOut(impact);
   const fade = 1 - clamp01((impact - .48) / .5);
@@ -134,11 +103,7 @@ function drawImpactBurst(ctx: CanvasRenderingContext2D, mark: PaintMark, hex: st
 
 function shape(cx: number, cy: number, radius: number, seed: number) {
   const path = new Path2D();
-  const points = Array.from({ length: 18 }, (_, i) => {
-    const angle = -Math.PI / 2 + i * Math.PI * 2 / 18;
-    const swell = .87 + noise(seed, i) * .27 + (i % 6 === 1 ? .19 : 0);
-    return { x: cx + Math.cos(angle) * radius * swell, y: cy + Math.sin(angle) * radius * swell };
-  });
+  const points = bodyControls(seed, radius).map(point => ({ x: cx + point.x, y: cy + point.y }));
   for (let i = 0; i <= points.length; i++) {
     const previous = points[(i - 1 + points.length) % points.length]!;
     const current = points[i % points.length]!;
@@ -151,8 +116,8 @@ function shape(cx: number, cy: number, radius: number, seed: number) {
   return path;
 }
 
-function markShape(mark: PaintMark, width: number, height: number, scale = 1) {
-  const radius = Math.min(width, height) * .11 * scale;
+function markShape(mark: PaintMark, width: number, height: number, scale: number, unit: number) {
+  const radius = unit * .11 * scale;
   const cx = mark.x * width, cy = mark.y * height;
   const path = shape(cx, cy, radius, mark.seed);
   for (let i = 0; i < 5; i++) {
@@ -168,10 +133,9 @@ function markShape(mark: PaintMark, width: number, height: number, scale = 1) {
 }
 
 function paintOne(ctx: CanvasRenderingContext2D, mark: PaintMark, hex: string,
-  width: number, height: number, scale = 1) {
-  const unit = Math.min(width, height);
+  width: number, height: number, scale: number, unit: number) {
   const radius = unit * .11 * scale;
-  const body = markShape(mark, width, height, scale);
+  const body = markShape(mark, width, height, scale, unit);
   ctx.fillStyle = hex;
   const palePaint = isPalePaint(hex);
   if (palePaint) {
@@ -192,11 +156,11 @@ function paintOne(ctx: CanvasRenderingContext2D, mark: PaintMark, hex: string,
 
 export function drawPaintMarks(ctx: CanvasRenderingContext2D, width: number, height: number,
   marks: readonly PaintMark[], colors: readonly { preset: ColorPreset; amount: number }[],
-  incoming?: { id: string; progress: number }) {
+  incoming?: { id: string; progress: number }, unit = Math.min(width, height)) {
   ctx.clearRect(0, 0, width, height);
   const lookup = new Map(colors.map((entry) => [entry.preset.id, entry]));
-  const visible: PaintMark[] = [];
-  for (const mark of marks) {
+  const visible = new Map<string, { mark: PaintMark; path: Path2D; scale: number }>();
+  for (const mark of [...marks].sort((a, b) => a.presetId.localeCompare(b.presetId))) {
     const entry = lookup.get(mark.presetId);
     if (!entry) continue;
     if (incoming?.id === mark.presetId && incoming.progress < IMPACT_AT) continue;
@@ -204,26 +168,29 @@ export function drawPaintMarks(ctx: CanvasRenderingContext2D, width: number, hei
     const scale = incoming?.id === mark.presetId
       ? impact < .2 ? .38 + .87 * easeOut(impact / .2) : 1.25 - .25 * easeOut((impact - .2) / .8)
       : 1;
-    const path = paintOne(ctx, mark, entry.preset.hex, width, height, scale);
-    for (const previous of visible) {
-      const distance = Math.hypot((previous.x - mark.x) * width, (previous.y - mark.y) * height);
-      if (distance > Math.min(width, height) * .11 * (scale + 1) * 1.55) continue;
-      const other = lookup.get(previous.presetId);
-      if (!other) continue;
-      // Clip to BOTH actual silhouettes. This region uses the same pigment model
-      // as the main mix, rather than browser alpha compositing.
-      ctx.save();
-      ctx.clip(markShape(previous, width, height));
-      ctx.fillStyle = mixPigments([
-        { pigment: other.preset.pigment, amount: other.amount },
-        { pigment: entry.preset.pigment, amount: entry.amount },
-      ]).hex;
-      ctx.fill(path);
-      ctx.restore();
-    }
-    visible.push(mark);
+    const path = paintOne(ctx, mark, entry.preset.hex, width, height, scale, unit);
+    visible.set(mark.presetId, { mark, path, scale });
+  }
+  // Every clip uses the actual curved body and droplets, at the current impact
+  // scale. No alpha blend and no dependence on the order of the original marks.
+  for (const region of overlapColors(colors)) {
+    const members = region.ids.map(id => visible.get(id));
+    if (members.some(member => !member)) continue;
+    const shapes = members as { mark: PaintMark; path: Path2D; scale: number }[];
+    if (shapes.some((a, i) => shapes.slice(i + 1).some(b =>
+      Math.hypot((a.mark.x - b.mark.x) * width, (a.mark.y - b.mark.y) * height)
+        > unit * .18 * (a.scale + b.scale)))) continue;
+    ctx.save();
+    for (const member of shapes) ctx.clip(member.path);
+    ctx.fillStyle = region.hex;
+    ctx.fillRect(0, 0, width, height);
+    ctx.restore();
+  }
+  for (const { mark } of visible.values()) {
+    const entry = lookup.get(mark.presetId)!;
+    const impact = incoming?.id === mark.presetId ? clamp01((incoming.progress - IMPACT_AT) / (1 - IMPACT_AT)) : 1;
     if (incoming?.id === mark.presetId && impact < 1) {
-      drawImpactBurst(ctx, mark, entry.preset.hex, width, height, impact);
+      drawImpactBurst(ctx, mark, entry.preset.hex, width, height, impact, unit);
     }
   }
   if (incoming && incoming.progress < IMPACT_AT) {
@@ -234,7 +201,7 @@ export function drawPaintMarks(ctx: CanvasRenderingContext2D, width: number, hei
       const ease = p ** 2.5;
       const x = width * .5 + (mark.x * width - width * .5) * ease;
       const y = height * 1.16 + (mark.y * height - height * 1.16) * ease;
-      const r = Math.min(width, height) * (.2 - .14 * ease);
+      const r = unit * (.2 - .14 * ease);
       ctx.save();
       for (let i = 3; i >= 1; i--) {
         const lag = Math.max(0, p - i * .05);

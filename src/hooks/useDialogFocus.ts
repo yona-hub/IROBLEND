@@ -8,6 +8,7 @@ export function useDialogFocus(
   dialogRef: RefObject<HTMLElement | null>,
   triggerRef: RefObject<HTMLElement | null>,
   onClose: () => void,
+  fallbackRef?: RefObject<HTMLElement | null>,
 ) {
   useEffect(() => {
     if (!open || !dialogRef.current) return;
@@ -43,7 +44,8 @@ export function useDialogFocus(
     return () => {
       document.removeEventListener('keydown', onKeyDown);
       document.body.style.overflow = previousOverflow;
-      triggerRef.current?.focus();
+      const trigger = triggerRef.current;
+      (trigger?.isConnected ? trigger : fallbackRef?.current)?.focus();
     };
-  }, [open, dialogRef, triggerRef, onClose]);
+  }, [open, dialogRef, triggerRef, onClose, fallbackRef]);
 }

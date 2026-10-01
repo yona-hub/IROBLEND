@@ -4,6 +4,7 @@ import type { MixStatus } from '../domain/state/mixReducer';
 import type { ResolvedSelection } from './SelectedColorList';
 import { drawMixFrame, MIX_DURATION_MS } from './mixAnimation';
 import { drawPaintMarks, SELECTION_IMPACT_DURATION_MS, type PaintMark } from './paintMarks';
+import { paintGeometry, type PaintGeometry } from './paintGeometry';
 
 export type SelectionImpact = { id: string; key: number; delayMs?: number };
 type Props = {
@@ -14,14 +15,30 @@ type Props = {
   pendingResult: MixResult | null;
   status: MixStatus;
   reducedMotion: boolean;
+  onGeometry: (geometry: PaintGeometry) => void;
 };
 
-export function MixingCanvas({ colors, marks, incoming, result, pendingResult, status, reducedMotion }: Props) {
+export function MixingCanvas({ colors, marks, incoming, result, pendingResult, status, reducedMotion, onGeometry }: Props) {
+  const surfaceRef = useRef<HTMLDivElement>(null);
   const selectionRef = useRef<HTMLCanvasElement>(null);
   const mixingRef = useRef<HTMLCanvasElement>(null);
   const lastImpactKey = useRef<number | null>(null);
   const showResult = (status === 'mixed' || status === 'amount-dirty') && result;
   const mixing = status === 'mixing';
+
+  useEffect(() => {
+    const surface = surfaceRef.current;
+    if (!surface) return;
+    const measure = () => {
+      const { width, height } = surface.getBoundingClientRect();
+      if (width > 0 && height > 0) onGeometry(paintGeometry(width, height, window.innerWidth < 600));
+    };
+    measure();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
+    observer?.observe(surface);
+    window.addEventListener('resize', measure);
+    return () => { observer?.disconnect(); window.removeEventListener('resize', measure); };
+  }, [onGeometry]);
 
   useEffect(() => {
     const canvas = selectionRef.current;
@@ -38,7 +55,8 @@ export function MixingCanvas({ colors, marks, incoming, result, pendingResult, s
     };
     resize();
     const render = (progress?: number) => drawPaintMarks(ctx, width, height, marks, colors,
-      incoming && progress !== undefined ? { id: incoming.id, progress } : undefined);
+      incoming && progress !== undefined ? { id: incoming.id, progress } : undefined,
+      paintGeometry(width, height, window.innerWidth < 600).unit);
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(() => { resize(); render(); });
     observer?.observe(canvas);
     const animate = !!incoming && !reducedMotion && incoming.key !== lastImpactKey.current;
@@ -80,7 +98,8 @@ export function MixingCanvas({ colors, marks, incoming, result, pendingResult, s
     const draw = (now: number) => {
       const elapsed = Math.min(now - started, MIX_DURATION_MS);
       drawMixFrame(ctx, width, height, elapsed, palette, pendingResult.hex,
-        () => drawPaintMarks(ctx, width, height, marks, colors));
+        () => drawPaintMarks(ctx, width, height, marks, colors, undefined,
+          paintGeometry(width, height, window.innerWidth < 600).unit));
       if (elapsed < MIX_DURATION_MS) frame = requestAnimationFrame(draw);
     };
     draw(started);
@@ -89,7 +108,7 @@ export function MixingCanvas({ colors, marks, incoming, result, pendingResult, s
 
   return (
     <div className="canvas-wrap">
-      <div className={`mix-canvas mix-canvas--${status}`}
+      <div ref={surfaceRef} className={`mix-canvas mix-canvas--${status}`}
         aria-label={showResult ? `${status === 'amount-dirty' ? '前にまぜた色' : 'できた色'}は${result.nearestName.nameJa}に近い色` : `${colors.length}色を載せたキャンバス`} role="img">
         {showResult && <div className="result-surface" style={{ backgroundColor: result.hex }} />}
         {!showResult && !mixing && <canvas className="paint-canvas" ref={selectionRef} aria-hidden="true" />}

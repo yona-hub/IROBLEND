@@ -4,6 +4,7 @@ import App from '../app/App';
 import { presetsById } from '../data/colorPresets';
 import { mixPigments } from '../domain/colorMixing/mixPigments';
 import { persistSavedMixes, type SavedMix } from '../domain/savedMixes';
+import * as paintDrawing from '../components/paintMarks';
 
 function selectTwoColors(container: HTMLElement) {
   const sidebar = container.querySelector('.sidebar') as HTMLElement;
@@ -23,6 +24,7 @@ describe('IROBLEND interface', () => {
     expect(screen.getByRole('button', { name: 'まぜる！' })).toBeEnabled();
     fireEvent.click(screen.getByRole('button', { name: 'まぜる！' }));
     expect(screen.getByRole('button', { name: 'まぜています…' })).toBeDisabled();
+    expect(container.querySelector('.mix-button__logo')).toHaveClass('mix-button__logo--spinning');
     expect(screen.queryByText(/に近い色/)).not.toBeInTheDocument();
     act(() => vi.advanceTimersByTime(840));
     const previousName = screen.getByText(/に近い色/).textContent;
@@ -46,8 +48,8 @@ describe('IROBLEND interface', () => {
   });
 
   it('opens and closes the color drawer with keyboard focus restored', () => {
-    render(<App />);
-    const menu = screen.getByRole('button', { name: '色をえらぶメニューを開く' });
+    const { container } = render(<App />);
+    const menu = container.querySelector('.selection-choose') as HTMLButtonElement;
     fireEvent.click(menu);
     expect(menu).toHaveAttribute('aria-expanded', 'true');
     const dialog = screen.getByRole('dialog', { name: '色をえらぶ' });
@@ -60,14 +62,71 @@ describe('IROBLEND interface', () => {
   });
 
   it('returns to the canvas after selecting a color from the mobile drawer', () => {
-    render(<App />);
-    fireEvent.click(screen.getByRole('button', { name: '色をえらぶメニューを開く' }));
+    const { container } = render(<App />);
+    fireEvent.click(container.querySelector('.selection-choose')!);
     const dialog = screen.getByRole('dialog', { name: '色をえらぶ' });
     fireEvent.click(within(dialog).getByRole('button', { name: '赤の色を見る' }));
     fireEvent.click(within(dialog).getByRole('button', { name: 'レッドを追加' }));
-    expect(screen.getByRole('button', { name: '色をえらぶメニューを開く' })).toHaveAttribute('aria-expanded', 'false');
-    expect(screen.getByRole('button', { name: /色をたす/ })).toBeInTheDocument();
+    const add = container.querySelector('.selection-choose');
+    expect(add).toHaveAttribute('aria-expanded', 'false');
+    expect(add).toHaveTextContent('色をたす');
+    expect(add).toHaveFocus();
+    expect(screen.getByRole('button', { name: 'まぜる！' })).toBeDisabled();
     expect(screen.getByRole('img', { name: '1色を載せたキャンバス' })).toBeInTheDocument();
+  });
+
+  it('hides color addition at five colors and returns focus to the selected tab', () => {
+    const { container } = render(<App />);
+    expect(container.querySelector('.selection-choose')).toHaveTextContent('色をえらぶ');
+    const names = ['レッド', 'スカーレット', 'バーミリオン', 'クリムゾン', 'カーマイン'];
+    for (let i = 0; i < names.length; i++) {
+      fireEvent.click(container.querySelector('.selection-choose')!);
+      const dialog = screen.getByRole('dialog', { name: '色をえらぶ' });
+      if (i === 0) fireEvent.click(within(dialog).getByRole('button', { name: '赤の色を見る' }));
+      fireEvent.click(within(dialog).getByRole('button', { name: `${names[i]}を追加` }));
+    }
+    expect(container.querySelector('.selection-choose')).toBeNull();
+    expect(screen.getByRole('tab', { name: 'えらんだ色 5 / 5' })).toHaveFocus();
+    expect(screen.getByRole('img', { name: '5色を載せたキャンバス' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'レッドを削除' }));
+    expect(container.querySelector('.selection-choose')).toHaveTextContent('色をたす');
+  });
+
+  it('uses measured canvas dimensions, preserves marks on amount changes and reflows on resize', () => {
+    const viewport = Object.getOwnPropertyDescriptor(window, 'innerWidth')!;
+    Object.defineProperty(window, 'innerWidth', { configurable: true, value: 390 });
+    let height = 180;
+    const bounds = vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+      width: 360, height, x: 0, y: 0, top: 0, left: 0, right: 360, bottom: height, toJSON: () => ({}),
+    }));
+    vi.mocked(HTMLCanvasElement.prototype.getContext).mockReturnValue({ setTransform: vi.fn() } as unknown as CanvasRenderingContext2D);
+    const drawing = vi.spyOn(paintDrawing, 'drawPaintMarks').mockImplementation(() => {});
+    const { container, unmount } = render(<App />);
+    try {
+      selectTwoColors(container);
+      const before = drawing.mock.calls.at(-1)!;
+      expect(before[1]).toBe(360);
+      expect(before[2]).toBe(180);
+      expect(before[6]).toBe(360);
+      const marks = before[3];
+      fireEvent.click(screen.getByRole('button', { name: 'スカーレットの量をスポイト1本分にする' }));
+      const changed = drawing.mock.calls.at(-1)!;
+      expect(changed[3]).toBe(marks);
+      expect(changed[4].find(color => color.preset.id === 'scarlet')?.amount).toBe(1);
+      expect(changed[5]).toBeUndefined();
+      height = 260;
+      fireEvent(window, new Event('resize'));
+      const resized = drawing.mock.calls.at(-1)!;
+      expect(resized[2]).toBe(260);
+      expect(resized[6]).toBe(360);
+      expect(resized[3]).not.toBe(marks);
+      expect(resized[3].map(mark => mark.seed)).toEqual(marks.map(mark => mark.seed));
+    } finally {
+      unmount();
+      drawing.mockRestore();
+      bounds.mockRestore();
+      Object.defineProperty(window, 'innerWidth', viewport);
+    }
   });
 
   it('passes the latest white eyedropper amount to the model and repaints after remixing', () => {
@@ -113,6 +172,7 @@ describe('IROBLEND interface', () => {
     act(() => vi.advanceTimersByTime(129));
     expect(container.querySelector('canvas')).toBeNull();
     expect(container.querySelector('.reduced-mix-surface')).not.toBeNull();
+    expect(container.querySelector('.mix-button__logo')).not.toHaveClass('mix-button__logo--spinning');
     expect(screen.queryByText(/に近い色/)).not.toBeInTheDocument();
     act(() => vi.advanceTimersByTime(1));
     expect(screen.getByText(/に近い色/)).toBeInTheDocument();
@@ -122,17 +182,17 @@ describe('IROBLEND interface', () => {
     vi.useFakeTimers();
     const { container } = render(<App />);
     const actions = container.querySelector('.stage-actions') as HTMLElement;
-    expect(within(actions).getByRole('button', { name: /さいしょから/ })).toBeDisabled();
+    expect(within(actions).getByRole('button', { name: /色をけす/ })).toBeDisabled();
     selectTwoColors(container);
-    expect(within(actions).getByRole('button', { name: /さいしょから/ })).toBeEnabled();
+    expect(within(actions).getByRole('button', { name: /色をけす/ })).toBeEnabled();
     fireEvent.click(screen.getByRole('button', { name: 'まぜる！' }));
     act(() => vi.advanceTimersByTime(840));
     fireEvent.click(screen.getByRole('button', { name: 'この色を保存する' }));
     expect(screen.getByRole('tab', { name: '保存した色 1' })).toHaveAttribute('aria-selected', 'false');
     expect(screen.queryByText(/スカーレット 3本/)).not.toBeInTheDocument();
-    fireEvent.click(within(actions).getByRole('button', { name: /さいしょから/ }));
+    fireEvent.click(within(actions).getByRole('button', { name: /色をけす/ }));
     expect(screen.getByRole('button', { name: 'まぜる！' })).toBeDisabled();
-    expect(within(actions).getByRole('button', { name: /さいしょから/ })).toBeDisabled();
+    expect(within(actions).getByRole('button', { name: /色をけす/ })).toBeDisabled();
     expect(container.querySelector('.result-surface')).toBeNull();
     fireEvent.click(screen.getByRole('tab', { name: '保存した色 1' }));
     expect(screen.getByRole('tab', { name: '保存した色 1' })).toHaveAttribute('aria-selected', 'true');
