@@ -1,0 +1,708 @@
+{
+  "source": "https://www.colordic.org/y",
+  "retrieved": "2026-10-01",
+  "colors": [
+    {
+      "id": "red",
+      "category": "red",
+      "nameJa": "レッド",
+      "nameEn": "Red",
+      "hex": "#E53935",
+      "reference": {
+        "label": "レッド red",
+        "hex": "#EA5550",
+        "url": "https://www.colordic.org/colorsample/4002",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "scarlet",
+      "category": "red",
+      "nameJa": "スカーレット",
+      "nameEn": "Scarlet",
+      "hex": "#D8253E",
+      "reference": {
+        "label": "スカーレット scarlet",
+        "hex": "#EA5532",
+        "url": "https://www.colordic.org/colorsample/4005",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "vermilion",
+      "category": "red",
+      "nameJa": "バーミリオン",
+      "nameEn": "Vermilion",
+      "hex": "#E85C40",
+      "reference": {
+        "label": "バーミリオン vermilion",
+        "hex": "#EA553A",
+        "url": "https://www.colordic.org/colorsample/4004",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "crimson",
+      "category": "red",
+      "nameJa": "クリムゾン",
+      "nameEn": "Crimson",
+      "hex": "#A42343",
+      "reference": {
+        "label": "crimson",
+        "hex": "#DC143C",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-crimson",
+        "kind": "css-name"
+      }
+    },
+    {
+      "id": "carmine",
+      "category": "red",
+      "nameJa": "カーマイン",
+      "nameEn": "Carmine",
+      "hex": "#8F1D46",
+      "reference": {
+        "label": "カーマイン carmine",
+        "hex": "#D70035",
+        "url": "https://www.colordic.org/colorsample/4218",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "tomato-red",
+      "category": "red",
+      "nameJa": "トマトレッド",
+      "nameEn": "Tomato Red",
+      "hex": "#E96B52",
+      "reference": {
+        "label": "トマトレッド tomato red",
+        "hex": "#EA5549",
+        "url": "https://www.colordic.org/colorsample/4003",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "pink",
+      "category": "pink",
+      "nameJa": "ピンク",
+      "nameEn": "Pink",
+      "hex": "#F08BAA",
+      "reference": {
+        "label": "ピンク pink",
+        "hex": "#F5B2B2",
+        "url": "https://www.colordic.org/colorsample/4225",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "baby-pink",
+      "category": "pink",
+      "nameJa": "ベビーピンク",
+      "nameEn": "Baby Pink",
+      "hex": "#F4C1D1",
+      "reference": {
+        "label": "ベビーピンク baby pink",
+        "hex": "#FDEDE4",
+        "url": "https://www.colordic.org/colorsample/4023",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "rose-pink",
+      "category": "pink",
+      "nameJa": "ローズピンク",
+      "nameEn": "Rose Pink",
+      "hex": "#D95A8A",
+      "reference": {
+        "label": "ローズピンク rose pink",
+        "hex": "#F19CA7",
+        "url": "https://www.colordic.org/colorsample/4224",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "cherry-pink",
+      "category": "pink",
+      "nameJa": "チェリーピンク",
+      "nameEn": "Cherry Pink",
+      "hex": "#C94370",
+      "reference": {
+        "label": "チェリーピンク cherry pink",
+        "hex": "#EB6EA0",
+        "url": "https://www.colordic.org/colorsample/4208",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "salmon-pink",
+      "category": "pink",
+      "nameJa": "サーモンピンク",
+      "nameEn": "Salmon Pink",
+      "hex": "#EF9285",
+      "reference": {
+        "label": "サーモンピンク salmon pink",
+        "hex": "#F3A68C",
+        "url": "https://www.colordic.org/colorsample/4019",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "hot-pink",
+      "category": "pink",
+      "nameJa": "ホットピンク",
+      "nameEn": "Hot Pink",
+      "hex": "#E94A9E",
+      "reference": {
+        "label": "hotpink",
+        "hex": "#FF69B4",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-hotpink",
+        "kind": "css-name"
+      }
+    },
+    {
+      "id": "orange",
+      "category": "orange",
+      "nameJa": "オレンジ",
+      "nameEn": "Orange",
+      "hex": "#F38C29",
+      "reference": {
+        "label": "オレンジ orange",
+        "hex": "#EE7800",
+        "url": "https://www.colordic.org/colorsample/4033",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "mandarin-orange",
+      "category": "orange",
+      "nameJa": "マンダリンオレンジ",
+      "nameEn": "Mandarin Orange",
+      "hex": "#E96D22",
+      "reference": {
+        "label": "マンダリンオレンジ mandarin orange",
+        "hex": "#F3981D",
+        "url": "https://www.colordic.org/colorsample/4043",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "carrot-orange",
+      "category": "orange",
+      "nameJa": "キャロットオレンジ",
+      "nameEn": "Carrot Orange",
+      "hex": "#CE5828",
+      "reference": {
+        "label": "キャロットオレンジ carrot orange",
+        "hex": "#ED6D35",
+        "url": "https://www.colordic.org/colorsample/4006",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "apricot",
+      "category": "orange",
+      "nameJa": "アプリコット",
+      "nameEn": "Apricot",
+      "hex": "#F4B179",
+      "reference": {
+        "label": "アプリコット apricot",
+        "hex": "#F7B977",
+        "url": "https://www.colordic.org/colorsample/4034",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "coral",
+      "category": "orange",
+      "nameJa": "コーラル",
+      "nameEn": "Coral",
+      "hex": "#ED7968",
+      "reference": {
+        "label": "coral",
+        "hex": "#FF7F50",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-coral",
+        "kind": "css-name"
+      }
+    },
+    {
+      "id": "dark-orange",
+      "category": "orange",
+      "nameJa": "ダークオレンジ",
+      "nameEn": "Dark Orange",
+      "hex": "#AB4F1D",
+      "reference": {
+        "label": "darkorange",
+        "hex": "#FF8C00",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-darkorange",
+        "kind": "css-name"
+      }
+    },
+    {
+      "id": "yellow",
+      "category": "yellow",
+      "nameJa": "イエロー",
+      "nameEn": "Yellow",
+      "hex": "#F4D929",
+      "reference": {
+        "label": "イエロー yellow",
+        "hex": "#FFDC00",
+        "url": "https://www.colordic.org/colorsample/4069",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "lemon-yellow",
+      "category": "yellow",
+      "nameJa": "レモンイエロー",
+      "nameEn": "Lemon Yellow",
+      "hex": "#F5ED55",
+      "reference": {
+        "label": "レモンイエロー lemon yellow",
+        "hex": "#FFF352",
+        "url": "https://www.colordic.org/colorsample/4074",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "canary-yellow",
+      "category": "yellow",
+      "nameJa": "カナリアイエロー",
+      "nameEn": "Canary Yellow",
+      "hex": "#F6C83F",
+      "reference": {
+        "label": "カナリヤ canary yellow",
+        "hex": "#FFF462",
+        "url": "https://www.colordic.org/colorsample/4072",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "golden-yellow",
+      "category": "yellow",
+      "nameJa": "ゴールデンイエロー",
+      "nameEn": "Golden Yellow",
+      "hex": "#D7A226",
+      "reference": {
+        "label": "ゴールデンイエロー golden yellow",
+        "hex": "#F6AE54",
+        "url": "https://www.colordic.org/colorsample/4042",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "cream-yellow",
+      "category": "yellow",
+      "nameJa": "クリームイエロー",
+      "nameEn": "Cream Yellow",
+      "hex": "#F0E3A0",
+      "reference": {
+        "label": "クリームイエロー cream yellow",
+        "hex": "#FFF3B8",
+        "url": "https://www.colordic.org/colorsample/4058",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "khaki",
+      "category": "yellow",
+      "nameJa": "カーキ",
+      "nameEn": "Khaki",
+      "hex": "#B7A467",
+      "reference": {
+        "label": "カーキー khaki",
+        "hex": "#C5A05A",
+        "url": "https://www.colordic.org/colorsample/4048",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "green",
+      "category": "green",
+      "nameJa": "グリーン",
+      "nameEn": "Green",
+      "hex": "#4C9A5A",
+      "reference": {
+        "label": "グリーン green",
+        "hex": "#00A960",
+        "url": "https://www.colordic.org/colorsample/4105",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "apple-green",
+      "category": "green",
+      "nameJa": "アップルグリーン",
+      "nameEn": "Apple Green",
+      "hex": "#91B849",
+      "reference": {
+        "label": "アップルグリーン apple green",
+        "hex": "#A7D28D",
+        "url": "https://www.colordic.org/colorsample/4090",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "mint-green",
+      "category": "green",
+      "nameJa": "ミントグリーン",
+      "nameEn": "Mint Green",
+      "hex": "#8BCDB2",
+      "reference": {
+        "label": "ミントグリーン mint green",
+        "hex": "#89C997",
+        "url": "https://www.colordic.org/colorsample/4096",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "emerald-green",
+      "category": "green",
+      "nameJa": "エメラルドグリーン",
+      "nameEn": "Emerald Green",
+      "hex": "#248466",
+      "reference": {
+        "label": "エメラルドグリーン emerald green",
+        "hex": "#00A968",
+        "url": "https://www.colordic.org/colorsample/4106",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "forest-green",
+      "category": "green",
+      "nameJa": "フォレストグリーン",
+      "nameEn": "Forest Green",
+      "hex": "#2F6345",
+      "reference": {
+        "label": "フォレストグリーン forest green",
+        "hex": "#288C66",
+        "url": "https://www.colordic.org/colorsample/4107",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "lime-green",
+      "category": "green",
+      "nameJa": "ライムグリーン",
+      "nameEn": "Lime Green",
+      "hex": "#C0D947",
+      "reference": {
+        "label": "ライムグリーン lime green",
+        "hex": "#E6EB94",
+        "url": "https://www.colordic.org/colorsample/4078",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "blue",
+      "category": "blue",
+      "nameJa": "ブルー",
+      "nameEn": "Blue",
+      "hex": "#326DAF",
+      "reference": {
+        "label": "ブルー blue",
+        "hex": "#0075C2",
+        "url": "https://www.colordic.org/colorsample/4151",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "sky-blue",
+      "category": "blue",
+      "nameJa": "スカイブルー",
+      "nameEn": "Sky Blue",
+      "hex": "#80BCE5",
+      "reference": {
+        "label": "スカイブルー sky blue",
+        "hex": "#A0D8EF",
+        "url": "https://www.colordic.org/colorsample/4139",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "light-blue",
+      "category": "blue",
+      "nameJa": "ライトブルー",
+      "nameEn": "Light Blue",
+      "hex": "#B4D9EB",
+      "reference": {
+        "label": "ライトブルー light blue",
+        "hex": "#B2CBE4",
+        "url": "https://www.colordic.org/colorsample/4156",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "cobalt-blue",
+      "category": "blue",
+      "nameJa": "コバルトブルー",
+      "nameEn": "Cobalt Blue",
+      "hex": "#3158A9",
+      "reference": {
+        "label": "コバルトブルー cobalt blue",
+        "hex": "#0068B7",
+        "url": "https://www.colordic.org/colorsample/4148",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "ultramarine",
+      "category": "blue",
+      "nameJa": "ウルトラマリン",
+      "nameEn": "Ultramarine",
+      "hex": "#464B9C",
+      "reference": {
+        "label": "ウルトラマリン ultramarine",
+        "hex": "#434DA2",
+        "url": "https://www.colordic.org/colorsample/4170",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "royal-blue",
+      "category": "blue",
+      "nameJa": "ロイヤルブルー",
+      "nameEn": "Royal Blue",
+      "hex": "#546FCC",
+      "reference": {
+        "label": "royalblue",
+        "hex": "#4169E1",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-royalblue",
+        "kind": "css-name"
+      }
+    },
+    {
+      "id": "navy-blue",
+      "category": "blue",
+      "nameJa": "ネイビーブルー",
+      "nameEn": "Navy Blue",
+      "hex": "#243458",
+      "reference": {
+        "label": "ネービーブルー navy blue",
+        "hex": "#202F55",
+        "url": "https://www.colordic.org/colorsample/4163",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "purple",
+      "category": "purple",
+      "nameJa": "パープル",
+      "nameEn": "Purple",
+      "hex": "#704891",
+      "reference": {
+        "label": "パープル purple",
+        "hex": "#9B72B0",
+        "url": "https://www.colordic.org/colorsample/4184",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "violet",
+      "category": "purple",
+      "nameJa": "バイオレット",
+      "nameEn": "Violet",
+      "hex": "#875BC5",
+      "reference": {
+        "label": "バイオレット violet",
+        "hex": "#5A4498",
+        "url": "https://www.colordic.org/colorsample/4174",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "lavender",
+      "category": "purple",
+      "nameJa": "ラベンダー",
+      "nameEn": "Lavender",
+      "hex": "#B9A6D7",
+      "reference": {
+        "label": "ラベンダー lavender",
+        "hex": "#CAB8D9",
+        "url": "https://www.colordic.org/colorsample/4181",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "lilac",
+      "category": "purple",
+      "nameJa": "ライラック",
+      "nameEn": "Lilac",
+      "hex": "#D3BAE4",
+      "reference": {
+        "label": "ライラック lilac",
+        "hex": "#D1BADA",
+        "url": "https://www.colordic.org/colorsample/4180",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "mauve",
+      "category": "purple",
+      "nameJa": "モーブ",
+      "nameEn": "Mauve",
+      "hex": "#947897",
+      "reference": {
+        "label": "モーブ mauve",
+        "hex": "#915DA3",
+        "url": "https://www.colordic.org/colorsample/4178",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "orchid",
+      "category": "purple",
+      "nameJa": "オーキッド",
+      "nameEn": "Orchid",
+      "hex": "#BC77B7",
+      "reference": {
+        "label": "オーキッド orchid",
+        "hex": "#D9AACD",
+        "url": "https://www.colordic.org/colorsample/4193",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "plum",
+      "category": "purple",
+      "nameJa": "プラム",
+      "nameEn": "Plum",
+      "hex": "#71375F",
+      "reference": {
+        "label": "プラム plum",
+        "hex": "#6C2463",
+        "url": "https://www.colordic.org/colorsample/4187",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "white",
+      "category": "white",
+      "nameJa": "ホワイト",
+      "nameEn": "White",
+      "hex": "#FFFFFF",
+      "reference": {
+        "label": "ホワイト white",
+        "hex": "#FFFFFF",
+        "url": "https://www.colordic.org/colorsample/4230",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "snow-white",
+      "category": "white",
+      "nameJa": "スノーホワイト",
+      "nameEn": "Snow White",
+      "hex": "#F0F5FA",
+      "reference": {
+        "label": "スノーホワイト snow white",
+        "hex": "#FAFDFF",
+        "url": "https://www.colordic.org/colorsample/4231",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "ivory",
+      "category": "white",
+      "nameJa": "アイボリー",
+      "nameEn": "Ivory",
+      "hex": "#F4EBCB",
+      "reference": {
+        "label": "アイボリー ivory",
+        "hex": "#F8F4E6",
+        "url": "https://www.colordic.org/colorsample/4237",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "milk-white",
+      "category": "white",
+      "nameJa": "ミルクホワイト",
+      "nameEn": "Milk White",
+      "hex": "#F6F3E9",
+      "reference": {
+        "label": "ミルキーホワイト milky white",
+        "hex": "#FFFFF9",
+        "url": "https://www.colordic.org/colorsample/4233",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "white-smoke",
+      "category": "white",
+      "nameJa": "ホワイトスモーク",
+      "nameEn": "White Smoke",
+      "hex": "#E7E8E6",
+      "reference": {
+        "label": "whitesmoke",
+        "hex": "#F5F5F5",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-whitesmoke",
+        "kind": "css-name"
+      }
+    },
+    {
+      "id": "black",
+      "category": "black",
+      "nameJa": "ブラック",
+      "nameEn": "Black",
+      "hex": "#101112",
+      "reference": {
+        "label": "ブラック black",
+        "hex": "#000000",
+        "url": "https://www.colordic.org/colorsample/4284",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "charcoal",
+      "category": "black",
+      "nameJa": "チャコール",
+      "nameEn": "Charcoal",
+      "hex": "#30343B",
+      "reference": {
+        "label": "チャコールグレイ charcoal gray",
+        "hex": "#4E454A",
+        "url": "https://www.colordic.org/colorsample/4281",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "graphite",
+      "category": "black",
+      "nameJa": "グラファイト",
+      "nameEn": "Graphite",
+      "hex": "#4F545B",
+      "reference": {
+        "label": "グラファイト graphite",
+        "hex": "#594E52",
+        "url": "https://www.colordic.org/colorsample/4280",
+        "kind": "dictionary"
+      }
+    },
+    {
+      "id": "dark-slate",
+      "category": "black",
+      "nameJa": "ダークスレート",
+      "nameEn": "Dark Slate",
+      "hex": "#435054",
+      "reference": {
+        "label": "darkslategray",
+        "hex": "#2F4F4F",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-darkslategray",
+        "kind": "related-css-name"
+      }
+    },
+    {
+      "id": "dim-gray",
+      "category": "black",
+      "nameJa": "ディムグレー",
+      "nameEn": "Dim Gray",
+      "hex": "#70747A",
+      "reference": {
+        "label": "dimgray",
+        "hex": "#696969",
+        "url": "https://www.w3.org/TR/css-color-4/#valdef-color-dimgray",
+        "kind": "css-name"
+      }
+    }
+  ]
+}

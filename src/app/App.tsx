@@ -1,4 +1,6 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState, type KeyboardEvent } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type KeyboardEvent } from 'react';
+import { ActionIcon } from '../components/ActionIcon';
+import { maxBodyOverlap, paintGeometry, type PaintGeometry } from '../components/paintGeometry';
 import { AboutColorModal } from '../components/AboutColorModal';
 import { ColorNavigation } from '../components/ColorNavigation';
 import { MixingCanvas } from '../components/MixingCanvas';
@@ -23,18 +25,6 @@ import { targetsById } from '../data/targetCatalog';
 import { useRecipeManifest } from '../hooks/useRecipeManifest';
 import { targetDeltaE } from '../domain/reverseMixing/evaluateRecipe';
 import type { SelectedColor } from '../domain/colorMixing/types';
-
-function canvasAspect() {
-  const canvas = document.querySelector<HTMLElement>('.mix-canvas');
-  const bounds = canvas?.getBoundingClientRect();
-  if (bounds && bounds.width > 0 && bounds.height > 0) return bounds.width / bounds.height;
-  // The recipe canvas is not mounted until a recipe is loaded. Its measured
-  // aspect replaces this fallback before the new paint marks are drawn.
-  if (window.innerWidth < 600) return Math.min(window.innerWidth - (window.innerWidth < 340 ? 24 : 40), 360) /
-    Math.max(180, Math.min(window.innerHeight * .3, 260));
-  return window.matchMedia('(orientation: landscape) and (min-width: 900px)').matches ? 1.55
-    : window.innerWidth >= 600 ? 1.45 : .8;
-}
 
 export default function App() {
   const [mode, setMode] = useState<AppMode>('free');
@@ -68,6 +58,7 @@ export default function App() {
   const recipeMarksRef = useRef<PaintMark[]>([]);
   const marksRef = mode === 'free' ? freeMarksRef : recipeMarksRef;
   const impactSerial = useRef(0);
+  const geometryRef = useRef(paintGeometry(360, 240, true));
   const reducedMotion = useReducedMotion();
   const drawerRef = useRef<HTMLElement>(null);
   const drawerTriggerRef = useRef<HTMLElement>(null);
@@ -80,7 +71,7 @@ export default function App() {
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
   const closeAbout = useCallback(() => setAboutOpen(false), []);
-  useDialogFocus(drawerOpen, drawerRef, drawerTriggerRef, closeDrawer);
+  useDialogFocus(drawerOpen, drawerRef, drawerTriggerRef, closeDrawer, selectedTabRef);
   useDialogFocus(aboutOpen, aboutRef, aboutButtonRef, closeAbout);
 
   useEffect(() => {
@@ -102,36 +93,24 @@ export default function App() {
   }, [pulseId]);
 
   useEffect(() => {
-    const query = window.matchMedia?.('(orientation: landscape) and (min-width: 900px)');
+    const query = window.matchMedia?.('(orientation: landscape) and (min-width: 1280px)');
     if (!query) return;
     const onChange = () => { if (query.matches) closeDrawer(); };
     query.addEventListener('change', onChange);
     return () => query.removeEventListener('change', onChange);
   }, [closeDrawer]);
 
-  useLayoutEffect(() => {
-    const canvas = document.querySelector<HTMLElement>('.mix-canvas');
-    if (!canvas) return;
-    let aspect: number | null = null;
-    const syncAspect = () => {
-      const bounds = canvas.getBoundingClientRect();
-      // The comparison view hides the canvas after mixing. Do not relayout
-      // settled marks against a guessed ratio while its dimensions are zero.
-      if (bounds.width <= 0 || bounds.height <= 0) return;
-      const nextAspect = bounds.width / bounds.height;
-      if (aspect !== null && Math.abs(aspect - nextAspect) < .001) return;
-      aspect = nextAspect;
-      if (marksRef.current.length === 0) return;
-      const next = relayoutMarks(marksRef.current, nextAspect);
-      marksRef.current = next;
-      setMarks(next);
-    };
-    syncAspect();
-    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(syncAspect);
-    observer?.observe(canvas);
-    window.addEventListener('resize', syncAspect);
-    return () => { observer?.disconnect(); window.removeEventListener('resize', syncAspect); };
-  }, [mode, experiment, marksRef, setMarks]);
+  const onGeometry = useCallback((nextGeometry: PaintGeometry) => {
+    const previous = geometryRef.current;
+    if (previous.width === nextGeometry.width && previous.height === nextGeometry.height
+      && previous.unit === nextGeometry.unit) return;
+    geometryRef.current = nextGeometry;
+    if (!marksRef.current.length) return;
+    const next = relayoutMarks(marksRef.current, nextGeometry);
+    marksRef.current = next;
+    setMarks(next);
+    setIncoming(null);
+  }, [marksRef, setMarks]);
 
   const colors = useMemo(
     () => state.selectedColors.flatMap((item): ResolvedSelection[] => {
@@ -144,6 +123,7 @@ export default function App() {
 
   const openDrawer = (trigger: HTMLElement) => {
     drawerTriggerRef.current = trigger;
+    setActivePanel('selected');
     setDrawerOpen(true);
   };
 
@@ -160,8 +140,10 @@ export default function App() {
     closeDrawer();
   };
   const replaceMarks = (selections: readonly SelectedColor[]) => {
+    const geometry = geometryRef.current;
     let next: PaintMark[] = [];
-    for (const item of selections) next = [...next, placeMark(item.presetId, next, canvasAspect())];
+    for (const item of selections) next = [...next, placeMark(item.presetId, next, geometry)];
+    next = relayoutMarks(next, geometry);
     marksRef.current = next;
     setMarks(next);
     setIncoming(null);
@@ -192,10 +174,8 @@ export default function App() {
       setToast('まぜられるのは5色までだよ');
       return;
     }
-    const next = [...marksRef.current, placeMark(presetId, marksRef.current, canvasAspect())];
-    if (drawerOpen && (colors.length === 4 || drawerTriggerRef.current?.closest('.selection__empty'))) {
-      drawerTriggerRef.current = colors.length === 4 ? mixButtonRef.current : chooseButtonRef.current;
-    }
+    let next = [...marksRef.current, placeMark(presetId, marksRef.current, geometryRef.current)];
+    if (maxBodyOverlap(next, geometryRef.current) > .15) next = relayoutMarks(next, geometryRef.current);
     marksRef.current = next;
     setMarks(next);
     setIncoming({ id: presetId, key: ++impactSerial.current, delayMs: drawerOpen ? 200 : 0 });
@@ -298,7 +278,7 @@ export default function App() {
         ? 'もういちど まぜる'
         : 'まぜる！';
   const showResult = (state.status === 'mixed' || state.status === 'amount-dirty') && state.result;
-  const showChooseButton = mode === 'recipe' || colors.length < 5;
+  const showChooseButton = mode === 'recipe';
   const navProps = {
     activeCategory,
     selectedIds,
@@ -340,14 +320,14 @@ export default function App() {
                 {mode === 'recipe' && !manifest && <p role="status" className="recipe-note">
                   {manifestError ? '配合データを確認できませんでした。自由にまぜるモードは使えます。' : '配合を確認しています…'}</p>}
                 {(mode === 'free' || experiment) && <MixingCanvas colors={colors} marks={marks} incoming={incoming} result={state.result}
-                  pendingResult={state.pendingResult} status={state.status} reducedMotion={!!reducedMotion} />
+                  pendingResult={state.pendingResult} status={state.status} reducedMotion={!!reducedMotion} onGeometry={onGeometry} />
                 }
                 <div className={`stage-actions${showChooseButton ? ' stage-actions--with-choose' : ''}`}>
                   {showChooseButton && (
                     <button className="choose-button mobile-only" type="button" disabled={state.status === 'mixing'}
                       ref={chooseButtonRef} aria-expanded={drawerOpen} aria-controls="color-drawer"
                       onClick={event => openDrawer(event.currentTarget)}>
-                      {mode === 'recipe' ? 'つくりたい色をえらぶ' : colors.length === 0 ? '色をえらぶ' : '色をたす'}
+                      つくりたい色をえらぶ
                     </button>
                   )}
                   <div className="stage-actions__primary">
@@ -358,16 +338,17 @@ export default function App() {
                       onClick={mode === 'recipe' && !experiment ? onLoadRecipe : onMix}
                       disabled={state.status === 'mixing' || (mode === 'recipe' && !experiment ? !candidate : colors.length < 2)}
                     >
-                      {mode === 'recipe' && !experiment ? 'この配合でためす' : buttonLabel}
+                      <img className={`mix-button__logo${state.status === 'mixing' && !reducedMotion ? ' mix-button__logo--spinning' : ''}`}
+                        src="./favicon.svg?v=2" alt="" />{mode === 'recipe' && !experiment ? 'この配合でためす' : buttonLabel}
                     </button>
                     {(mode === 'free' || experiment) && <button className="reset-button" type="button" onClick={onClear}
                       disabled={colors.length === 0 || state.status === 'mixing'}
-                      aria-label="さいしょから（えらんだ色をすべて消す）">
-                      さいしょから
+                      aria-label="色をけす（えらんだ色をすべて消す）">
+                      <ActionIcon kind="eraser" />色をけす
                     </button>}
                   </div>
                 </div>
-                <div className="result-copy" aria-live="polite">
+                <div className={`result-copy${(mode === 'free' || experiment) && showResult ? ' result-copy--visible' : ''}`} aria-live="polite">
                   {(mode === 'free' || experiment) && showResult && (
                     <div className="result-copy__inner" key={state.result?.hex}>
                       {state.status === 'amount-dirty' && <span className="result-copy__stale">前にまぜた色</span>}
@@ -396,9 +377,17 @@ export default function App() {
                 </div>
                 <div id="mix-panel-selected" className="mix-side-panel__view" role="tabpanel"
                   aria-labelledby="mix-tab-selected" hidden={activePanel !== 'selected'} tabIndex={0}>
+                  {colors.length < 5 && <button className="choose-button selection-choose compact-only" type="button"
+                    disabled={state.status === 'mixing'} onClick={(event) => openDrawer(event.currentTarget)}
+                    aria-controls="color-drawer" aria-expanded={drawerOpen}>
+                    <ActionIcon kind="palette" />{colors.length === 0 ? '色をえらぶ' : '色をたす'}
+                  </button>}
                   <SelectedColorList colors={colors} pulseId={pulseId} disabled={state.status === 'mixing'}
-                    onAmount={(presetId: string, amount: DropAmount) => dispatch({ type: 'setAmount', presetId, amount })}
-                    onRemove={onRemove} onChoose={openDrawer} />
+                    onAmount={(presetId: string, amount: DropAmount) => {
+                      setIncoming(null);
+                      dispatch({ type: 'setAmount', presetId, amount });
+                    }}
+                    onRemove={onRemove} />
                 </div>
                 <div id="mix-panel-saved" className="mix-side-panel__view mix-side-panel__view--saved" role="tabpanel"
                   aria-labelledby="mix-tab-saved" hidden={activePanel !== 'saved'} tabIndex={0}>
@@ -418,8 +407,8 @@ export default function App() {
                   </div>
                   <h2>ためす配合</h2>
                   <SelectedColorList colors={colors} pulseId={pulseId} disabled={state.status === 'mixing'}
-                    onAmount={(presetId, amount) => recipeDispatch({ type: 'setAmount', presetId, amount })}
-                    onRemove={onRemove} onChoose={() => setExperiment(false)} />
+                    onAmount={(presetId, amount) => { setIncoming(null); recipeDispatch({ type: 'setAmount', presetId, amount }); }}
+                    onRemove={onRemove} />
                 </div> : <RecipePanel target={manifest ? target : null} candidates={candidates} selected={candidate}
                   disabled={state.status === 'mixing'} onSelect={setCandidateId} />}
               </aside>

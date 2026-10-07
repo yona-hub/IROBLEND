@@ -1,0 +1,185 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IROBLEND 色名・色見本の監査 2026-10-01</title>
+<style>body{margin:0;background:#f5f5f3;color:#25282c;font:16px/1.7 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:28px 20px 70px}h1{font-size:27px}h2{font-size:21px;margin-top:32px}p{max-width:75ch}section{background:white;border-radius:16px;padding:18px 24px;margin-top:20px}.samples{display:flex;flex-wrap:wrap;gap:20px}.sample{flex:1;min-width:180px}.large{height:100px;border-radius:10px;display:block}small{display:block;font-size:12px;color:#666}code{font-family:ui-monospace,monospace;font-size:13px}a{color:#355da0}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px;border-bottom:1px solid #ddd;text-align:left;vertical-align:middle}.swatch{display:block;width:100%;min-width:75px;height:48px;border-radius:6px;box-shadow:inset 0 0 0 1px #0001}thead{background:#f2f3f1}.table-wrap{overflow-x:auto}.note{color:#5b6065;font-size:14px}li{margin-bottom:7px}</style>
+<main><h1>IROBLEND：色名・色見本の監査</h1><p class="note">2026-10-01 · 対象：main e61ff02 · アプリ本体は変更せず、色データと計算を調査。</p>
+<section><h2>グラファイトの違い</h2><div class="samples"><div class="sample"><span class="large" style="background:#4F545B"></span><strong>アプリ #4F545B</strong><small>RGB 79 / 84 / 91。青成分が最大。</small></div><div class="sample"><span class="large" style="background:#594E52"></span><strong>参考 #594E52</strong><small>RGB 89 / 78 / 82。赤成分が最大。</small></div></div>
+<p><a href="https://www.colordic.org/colorsample/4280">参考の辞典</a>は「暗い赤紫系」と説明しています。両者の明るさ・彩度は近くても、灰色の色味の方向が異なります。低彩度なので、色相角だけで違いを評価せず、実際の見本も併せて比較します。</p></section>
+<section><h2>コードから確認できた原因</h2><ol>
+<li><code>src/data/colorPresets.ts:81</code> で、最初から <code>#4F545B</code> を手入力している。初回実装の <code>cc26ac8</code> にも同じ値があり、スマホ改善で生じた変化ではない。現在の定義に出典や参照規格を保持する項目はない。</li>
+<li><code>src/data/virtualPigments.ts:58</code> の配合は <code>graphite: { black: 2, white: .5 }</code>。補正前の単色は <code>#525354</code> でほぼ無彩色。暖色の顔料は入っていない。</li>
+<li><code>src/domain/colorMixing/intuitivePalette.ts:52</code> は顔料の単色計算を表示用HEXへ補正する。そのため、誤った色見本を基準にすると単色テストも同じ値で合格する。54色すべてで単色補正後の見本との差は今回の計算では0だったが、外部の色名定義との一致を意味しない。</li>
+<li><code>src/data/virtualPigments.ts:73</code> は白・黒カテゴリー全体の <code>artistHue</code> をnullにする。アイボリーやダークスレートのような色味も、複数の有彩色を混ぜる色相誘導から除外される。表示補正には色味が残るため、完全に消えるわけではないが、UIの分類と混色上の性質が結びついている。</li>
+<li><code>src/data/resultColorNames.ts:12</code> は同じ色見本を結果の色名辞書にも取り込む。色見本の変更は、結果の色名選択にも影響する。既存の保存配合は読み込み時に再計算されるので、修正時には保存色の見え方も確認する必要がある。</li></ol></section>
+<section><h2>計算と名称判定の確認</h2><ul>
+<li>全54色の単色一致、全1,431通りの2色組み合わせを確認。無効な色、入力順の差、1:1→3:3での比率差は0。</li>
+<li>全ペアで1:1→1:5と量を変更したとき、増やした色へ近づく距離に目立つ逆行はなし（OKLab距離の許容差0.003）。</li>
+<li>各色＋白／黒の3:1→3:5で明度の目立つ逆行はなし（Lの許容差0.001）。</li>
+<li>既存の混色モデルの回帰テスト23件も合格。これらは実物の顔料との一致や、全3〜5色の組み合わせを保証する検査ではない。</li></ul>
+<p>別の候補として、青みのある結果が「ウォームグレーに近い色」と表示される例が3件あった。125色の辞書でOKLab距離だけから最寄りを選ぶため、明度が近い暖色名が選ばれる場合がある。</p><ul><li>light-blue ＋ dim-gray → <code>#91969C</code>：ウォームグレーに近い色</li><li>white ＋ graphite → <code>#919599</code>：ウォームグレーに近い色</li><li>milk-white ＋ dark-slate → <code>#8D9799</code>：ウォームグレーに近い色</li></ul></section>
+<section><h2>54色の見本と参考値</h2><p>46色は同名の洋色大辞典、7色はW3CのCSS色名、ダークスレート1色は近縁のDarkSlateGrayと比較。色辞典とCSSの値は同名でも異なることがあり、数値の違いをすべて誤りとは判定しない。外部基準との差が大きい色は、意図して独自に調整したのか再確認が必要。</p>
+<p>参考値との差がOKLab距離0.05を超える色は25色、0.10を超える色は14色。これは監査上の比較用の区切りで、合否基準ではない。グラファイトのような低彩度の色は、小さな色差でも暖色・寒色の印象が変わる。</p>
+<div class="table-wrap"><table><thead><tr><th>色名</th><th>アプリ</th><th>参考値</th><th>比較元</th><th>OKLab距離×100</th></tr></thead><tbody><tr><th scope="row">グラファイト<small>graphite</small></th>
+<td><span class="swatch" style="background:#4F545B"></span><code>#4F545B</code></td>
+<td><span class="swatch" style="background:#594E52"></span><code>#594E52</code></td>
+<td><a href="https://www.colordic.org/colorsample/4280">洋色大辞典</a></td><td>2.32</td></tr><tr><th scope="row">チャコール<small>charcoal</small></th>
+<td><span class="swatch" style="background:#30343B"></span><code>#30343B</code></td>
+<td><span class="swatch" style="background:#4E454A"></span><code>#4E454A</code></td>
+<td><a href="https://www.colordic.org/colorsample/4281">洋色大辞典</a></td><td>7.94</td></tr><tr><th scope="row">ディムグレー<small>dim-gray</small></th>
+<td><span class="swatch" style="background:#70747A"></span><code>#70747A</code></td>
+<td><span class="swatch" style="background:#696969"></span><code>#696969</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-dimgray">CSS色名</a></td><td>3.82</td></tr><tr><th scope="row">ホワイトスモーク<small>white-smoke</small></th>
+<td><span class="swatch" style="background:#E7E8E6"></span><code>#E7E8E6</code></td>
+<td><span class="swatch" style="background:#F5F5F5"></span><code>#F5F5F5</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-whitesmoke">CSS色名</a></td><td>4.06</td></tr><tr><th scope="row">カナリアイエロー<small>canary-yellow</small></th>
+<td><span class="swatch" style="background:#F6C83F"></span><code>#F6C83F</code></td>
+<td><span class="swatch" style="background:#FFF462"></span><code>#FFF462</code></td>
+<td><a href="https://www.colordic.org/colorsample/4072">洋色大辞典</a></td><td>10.83</td></tr><tr><th scope="row">カーマイン<small>carmine</small></th>
+<td><span class="swatch" style="background:#8F1D46"></span><code>#8F1D46</code></td>
+<td><span class="swatch" style="background:#D70035"></span><code>#D70035</code></td>
+<td><a href="https://www.colordic.org/colorsample/4218">洋色大辞典</a></td><td>14.98</td></tr><tr><th scope="row">ダークオレンジ<small>dark-orange</small></th>
+<td><span class="swatch" style="background:#AB4F1D"></span><code>#AB4F1D</code></td>
+<td><span class="swatch" style="background:#FF8C00"></span><code>#FF8C00</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-darkorange">CSS色名</a></td><td>22.13</td></tr><tr><th scope="row">ブラック<small>black</small></th>
+<td><span class="swatch" style="background:#101112"></span><code>#101112</code></td>
+<td><span class="swatch" style="background:#000000"></span><code>#000000</code></td>
+<td><a href="https://www.colordic.org/colorsample/4284">洋色大辞典</a></td><td>17.69</td></tr><tr><th scope="row">ローズピンク<small>rose-pink</small></th>
+<td><span class="swatch" style="background:#D95A8A"></span><code>#D95A8A</code></td>
+<td><span class="swatch" style="background:#F19CA7"></span><code>#F19CA7</code></td>
+<td><a href="https://www.colordic.org/colorsample/4224">洋色大辞典</a></td><td>15.46</td></tr><tr><th scope="row">パープル<small>purple</small></th>
+<td><span class="swatch" style="background:#704891"></span><code>#704891</code></td>
+<td><span class="swatch" style="background:#9B72B0"></span><code>#9B72B0</code></td>
+<td><a href="https://www.colordic.org/colorsample/4184">洋色大辞典</a></td><td>13.85</td></tr><tr><th scope="row">オーキッド<small>orchid</small></th>
+<td><span class="swatch" style="background:#BC77B7"></span><code>#BC77B7</code></td>
+<td><span class="swatch" style="background:#D9AACD"></span><code>#D9AACD</code></td>
+<td><a href="https://www.colordic.org/colorsample/4193">洋色大辞典</a></td><td>13.72</td></tr><tr><th scope="row">フォレストグリーン<small>forest-green</small></th>
+<td><span class="swatch" style="background:#2F6345"></span><code>#2F6345</code></td>
+<td><span class="swatch" style="background:#288C66"></span><code>#288C66</code></td>
+<td><a href="https://www.colordic.org/colorsample/4107">洋色大辞典</a></td><td>12.36</td></tr><tr><th scope="row">チェリーピンク<small>cherry-pink</small></th>
+<td><span class="swatch" style="background:#C94370"></span><code>#C94370</code></td>
+<td><span class="swatch" style="background:#EB6EA0"></span><code>#EB6EA0</code></td>
+<td><a href="https://www.colordic.org/colorsample/4208">洋色大辞典</a></td><td>11.97</td></tr><tr><th scope="row">バイオレット<small>violet</small></th>
+<td><span class="swatch" style="background:#875BC5"></span><code>#875BC5</code></td>
+<td><span class="swatch" style="background:#5A4498"></span><code>#5A4498</code></td>
+<td><a href="https://www.colordic.org/colorsample/4174">洋色大辞典</a></td><td>11.90</td></tr><tr><th scope="row">クリムゾン<small>crimson</small></th>
+<td><span class="swatch" style="background:#A42343"></span><code>#A42343</code></td>
+<td><span class="swatch" style="background:#DC143C"></span><code>#DC143C</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-crimson">CSS色名</a></td><td>11.32</td></tr><tr><th scope="row">エメラルドグリーン<small>emerald-green</small></th>
+<td><span class="swatch" style="background:#248466"></span><code>#248466</code></td>
+<td><span class="swatch" style="background:#00A968"></span><code>#00A968</code></td>
+<td><a href="https://www.colordic.org/colorsample/4106">洋色大辞典</a></td><td>11.22</td></tr><tr><th scope="row">ベビーピンク<small>baby-pink</small></th>
+<td><span class="swatch" style="background:#F4C1D1"></span><code>#F4C1D1</code></td>
+<td><span class="swatch" style="background:#FDEDE4"></span><code>#FDEDE4</code></td>
+<td><a href="https://www.colordic.org/colorsample/4023">洋色大辞典</a></td><td>10.90</td></tr><tr><th scope="row">マンダリンオレンジ<small>mandarin-orange</small></th>
+<td><span class="swatch" style="background:#E96D22"></span><code>#E96D22</code></td>
+<td><span class="swatch" style="background:#F3981D"></span><code>#F3981D</code></td>
+<td><a href="https://www.colordic.org/colorsample/4043">洋色大辞典</a></td><td>10.12</td></tr><tr><th scope="row">ライムグリーン<small>lime-green</small></th>
+<td><span class="swatch" style="background:#C0D947"></span><code>#C0D947</code></td>
+<td><span class="swatch" style="background:#E6EB94"></span><code>#E6EB94</code></td>
+<td><a href="https://www.colordic.org/colorsample/4078">洋色大辞典</a></td><td>9.89</td></tr><tr><th scope="row">アップルグリーン<small>apple-green</small></th>
+<td><span class="swatch" style="background:#91B849"></span><code>#91B849</code></td>
+<td><span class="swatch" style="background:#A7D28D"></span><code>#A7D28D</code></td>
+<td><a href="https://www.colordic.org/colorsample/4090">洋色大辞典</a></td><td>9.63</td></tr><tr><th scope="row">ピンク<small>pink</small></th>
+<td><span class="swatch" style="background:#F08BAA"></span><code>#F08BAA</code></td>
+<td><span class="swatch" style="background:#F5B2B2"></span><code>#F5B2B2</code></td>
+<td><a href="https://www.colordic.org/colorsample/4225">洋色大辞典</a></td><td>9.34</td></tr><tr><th scope="row">スカーレット<small>scarlet</small></th>
+<td><span class="swatch" style="background:#D8253E"></span><code>#D8253E</code></td>
+<td><span class="swatch" style="background:#EA5532"></span><code>#EA5532</code></td>
+<td><a href="https://www.colordic.org/colorsample/4005">洋色大辞典</a></td><td>8.90</td></tr><tr><th scope="row">スカイブルー<small>sky-blue</small></th>
+<td><span class="swatch" style="background:#80BCE5"></span><code>#80BCE5</code></td>
+<td><span class="swatch" style="background:#A0D8EF"></span><code>#A0D8EF</code></td>
+<td><a href="https://www.colordic.org/colorsample/4139">洋色大辞典</a></td><td>8.64</td></tr><tr><th scope="row">モーブ<small>mauve</small></th>
+<td><span class="swatch" style="background:#947897"></span><code>#947897</code></td>
+<td><span class="swatch" style="background:#915DA3"></span><code>#915DA3</code></td>
+<td><a href="https://www.colordic.org/colorsample/4178">洋色大辞典</a></td><td>7.93</td></tr><tr><th scope="row">キャロットオレンジ<small>carrot-orange</small></th>
+<td><span class="swatch" style="background:#CE5828"></span><code>#CE5828</code></td>
+<td><span class="swatch" style="background:#ED6D35"></span><code>#ED6D35</code></td>
+<td><a href="https://www.colordic.org/colorsample/4006">洋色大辞典</a></td><td>7.78</td></tr><tr><th scope="row">ホットピンク<small>hot-pink</small></th>
+<td><span class="swatch" style="background:#E94A9E"></span><code>#E94A9E</code></td>
+<td><span class="swatch" style="background:#FF69B4"></span><code>#FF69B4</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-hotpink">CSS色名</a></td><td>7.43</td></tr><tr><th scope="row">ゴールデンイエロー<small>golden-yellow</small></th>
+<td><span class="swatch" style="background:#D7A226"></span><code>#D7A226</code></td>
+<td><span class="swatch" style="background:#F6AE54"></span><code>#F6AE54</code></td>
+<td><a href="https://www.colordic.org/colorsample/4042">洋色大辞典</a></td><td>6.87</td></tr><tr><th scope="row">ラベンダー<small>lavender</small></th>
+<td><span class="swatch" style="background:#B9A6D7"></span><code>#B9A6D7</code></td>
+<td><span class="swatch" style="background:#CAB8D9"></span><code>#CAB8D9</code></td>
+<td><a href="https://www.colordic.org/colorsample/4181">洋色大辞典</a></td><td>5.53</td></tr><tr><th scope="row">クリームイエロー<small>cream-yellow</small></th>
+<td><span class="swatch" style="background:#F0E3A0"></span><code>#F0E3A0</code></td>
+<td><span class="swatch" style="background:#FFF3B8"></span><code>#FFF3B8</code></td>
+<td><a href="https://www.colordic.org/colorsample/4058">洋色大辞典</a></td><td>4.99</td></tr><tr><th scope="row">グリーン<small>green</small></th>
+<td><span class="swatch" style="background:#4C9A5A"></span><code>#4C9A5A</code></td>
+<td><span class="swatch" style="background:#00A960"></span><code>#00A960</code></td>
+<td><a href="https://www.colordic.org/colorsample/4105">洋色大辞典</a></td><td>4.81</td></tr><tr><th scope="row">サーモンピンク<small>salmon-pink</small></th>
+<td><span class="swatch" style="background:#EF9285"></span><code>#EF9285</code></td>
+<td><span class="swatch" style="background:#F3A68C"></span><code>#F3A68C</code></td>
+<td><a href="https://www.colordic.org/colorsample/4019">洋色大辞典</a></td><td>4.80</td></tr><tr><th scope="row">プラム<small>plum</small></th>
+<td><span class="swatch" style="background:#71375F"></span><code>#71375F</code></td>
+<td><span class="swatch" style="background:#6C2463"></span><code>#6C2463</code></td>
+<td><a href="https://www.colordic.org/colorsample/4187">洋色大辞典</a></td><td>4.77</td></tr><tr><th scope="row">コバルトブルー<small>cobalt-blue</small></th>
+<td><span class="swatch" style="background:#3158A9"></span><code>#3158A9</code></td>
+<td><span class="swatch" style="background:#0068B7"></span><code>#0068B7</code></td>
+<td><a href="https://www.colordic.org/colorsample/4148">洋色大辞典</a></td><td>4.72</td></tr><tr><th scope="row">レッド<small>red</small></th>
+<td><span class="swatch" style="background:#E53935"></span><code>#E53935</code></td>
+<td><span class="swatch" style="background:#EA5550"></span><code>#EA5550</code></td>
+<td><a href="https://www.colordic.org/colorsample/4002">洋色大辞典</a></td><td>4.67</td></tr><tr><th scope="row">コーラル<small>coral</small></th>
+<td><span class="swatch" style="background:#ED7968"></span><code>#ED7968</code></td>
+<td><span class="swatch" style="background:#FF7F50"></span><code>#FF7F50</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-coral">CSS色名</a></td><td>4.66</td></tr><tr><th scope="row">オレンジ<small>orange</small></th>
+<td><span class="swatch" style="background:#F38C29"></span><code>#F38C29</code></td>
+<td><span class="swatch" style="background:#EE7800"></span><code>#EE7800</code></td>
+<td><a href="https://www.colordic.org/colorsample/4033">洋色大辞典</a></td><td>4.48</td></tr><tr><th scope="row">ロイヤルブルー<small>royal-blue</small></th>
+<td><span class="swatch" style="background:#546FCC"></span><code>#546FCC</code></td>
+<td><span class="swatch" style="background:#4169E1"></span><code>#4169E1</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-royalblue">CSS色名</a></td><td>4.31</td></tr><tr><th scope="row">トマトレッド<small>tomato-red</small></th>
+<td><span class="swatch" style="background:#E96B52"></span><code>#E96B52</code></td>
+<td><span class="swatch" style="background:#EA5549"></span><code>#EA5549</code></td>
+<td><a href="https://www.colordic.org/colorsample/4003">洋色大辞典</a></td><td>4.03</td></tr><tr><th scope="row">アイボリー<small>ivory</small></th>
+<td><span class="swatch" style="background:#F4EBCB"></span><code>#F4EBCB</code></td>
+<td><span class="swatch" style="background:#F8F4E6"></span><code>#F8F4E6</code></td>
+<td><a href="https://www.colordic.org/colorsample/4237">洋色大辞典</a></td><td>3.66</td></tr><tr><th scope="row">ライトブルー<small>light-blue</small></th>
+<td><span class="swatch" style="background:#B4D9EB"></span><code>#B4D9EB</code></td>
+<td><span class="swatch" style="background:#B2CBE4"></span><code>#B2CBE4</code></td>
+<td><a href="https://www.colordic.org/colorsample/4156">洋色大辞典</a></td><td>3.63</td></tr><tr><th scope="row">ブルー<small>blue</small></th>
+<td><span class="swatch" style="background:#326DAF"></span><code>#326DAF</code></td>
+<td><span class="swatch" style="background:#0075C2"></span><code>#0075C2</code></td>
+<td><a href="https://www.colordic.org/colorsample/4151">洋色大辞典</a></td><td>3.59</td></tr><tr><th scope="row">ミントグリーン<small>mint-green</small></th>
+<td><span class="swatch" style="background:#8BCDB2"></span><code>#8BCDB2</code></td>
+<td><span class="swatch" style="background:#89C997"></span><code>#89C997</code></td>
+<td><a href="https://www.colordic.org/colorsample/4096">洋色大辞典</a></td><td>3.56</td></tr><tr><th scope="row">ミルクホワイト<small>milk-white</small></th>
+<td><span class="swatch" style="background:#F6F3E9"></span><code>#F6F3E9</code></td>
+<td><span class="swatch" style="background:#FFFFF9"></span><code>#FFFFF9</code></td>
+<td><a href="https://www.colordic.org/colorsample/4233">洋色大辞典</a></td><td>3.52</td></tr><tr><th scope="row">ダークスレート<small>dark-slate</small></th>
+<td><span class="swatch" style="background:#435054"></span><code>#435054</code></td>
+<td><span class="swatch" style="background:#2F4F4F"></span><code>#2F4F4F</code></td>
+<td><a href="https://www.w3.org/TR/css-color-4/#valdef-color-darkslategray">近縁のCSS色名（同名ではない）</a></td><td>2.90</td></tr><tr><th scope="row">スノーホワイト<small>snow-white</small></th>
+<td><span class="swatch" style="background:#F0F5FA"></span><code>#F0F5FA</code></td>
+<td><span class="swatch" style="background:#FAFDFF"></span><code>#FAFDFF</code></td>
+<td><a href="https://www.colordic.org/colorsample/4231">洋色大辞典</a></td><td>2.50</td></tr><tr><th scope="row">カーキ<small>khaki</small></th>
+<td><span class="swatch" style="background:#B7A467"></span><code>#B7A467</code></td>
+<td><span class="swatch" style="background:#C5A05A"></span><code>#C5A05A</code></td>
+<td><a href="https://www.colordic.org/colorsample/4048">洋色大辞典</a></td><td>2.33</td></tr><tr><th scope="row">アプリコット<small>apricot</small></th>
+<td><span class="swatch" style="background:#F4B179"></span><code>#F4B179</code></td>
+<td><span class="swatch" style="background:#F7B977"></span><code>#F7B977</code></td>
+<td><a href="https://www.colordic.org/colorsample/4034">洋色大辞典</a></td><td>2.19</td></tr><tr><th scope="row">レモンイエロー<small>lemon-yellow</small></th>
+<td><span class="swatch" style="background:#F5ED55"></span><code>#F5ED55</code></td>
+<td><span class="swatch" style="background:#FFF352"></span><code>#FFF352</code></td>
+<td><a href="https://www.colordic.org/colorsample/4074">洋色大辞典</a></td><td>2.17</td></tr><tr><th scope="row">イエロー<small>yellow</small></th>
+<td><span class="swatch" style="background:#F4D929"></span><code>#F4D929</code></td>
+<td><span class="swatch" style="background:#FFDC00"></span><code>#FFDC00</code></td>
+<td><a href="https://www.colordic.org/colorsample/4069">洋色大辞典</a></td><td>1.96</td></tr><tr><th scope="row">ネイビーブルー<small>navy-blue</small></th>
+<td><span class="swatch" style="background:#243458"></span><code>#243458</code></td>
+<td><span class="swatch" style="background:#202F55"></span><code>#202F55</code></td>
+<td><a href="https://www.colordic.org/colorsample/4163">洋色大辞典</a></td><td>1.76</td></tr><tr><th scope="row">ライラック<small>lilac</small></th>
+<td><span class="swatch" style="background:#D3BAE4"></span><code>#D3BAE4</code></td>
+<td><span class="swatch" style="background:#D1BADA"></span><code>#D1BADA</code></td>
+<td><a href="https://www.colordic.org/colorsample/4180">洋色大辞典</a></td><td>1.49</td></tr><tr><th scope="row">バーミリオン<small>vermilion</small></th>
+<td><span class="swatch" style="background:#E85C40"></span><code>#E85C40</code></td>
+<td><span class="swatch" style="background:#EA553A"></span><code>#EA553A</code></td>
+<td><a href="https://www.colordic.org/colorsample/4004">洋色大辞典</a></td><td>1.18</td></tr><tr><th scope="row">ウルトラマリン<small>ultramarine</small></th>
+<td><span class="swatch" style="background:#464B9C"></span><code>#464B9C</code></td>
+<td><span class="swatch" style="background:#434DA2"></span><code>#434DA2</code></td>
+<td><a href="https://www.colordic.org/colorsample/4170">洋色大辞典</a></td><td>1.09</td></tr><tr><th scope="row">ホワイト<small>white</small></th>
+<td><span class="swatch" style="background:#FFFFFF"></span><code>#FFFFFF</code></td>
+<td><span class="swatch" style="background:#FFFFFF"></span><code>#FFFFFF</code></td>
+<td><a href="https://www.colordic.org/colorsample/4230">洋色大辞典</a></td><td>0.00</td></tr></tbody></table></div></section>
+<section><h2>改善する場合の順序</h2><ol><li>色名の基準を決め、各色に出典と独自調整の有無を記録する。</li><li>グラファイト・チャコール・ディムグレーを優先して見本を確認し、修正した色味が白を混ぜても維持されるか検査する。</li><li>見本のHEX、仮想顔料、結果の色名辞書を一緒に点検する。暖色顔料を追加する場合も、既存補正との二重適用を避ける。</li><li>UIカテゴリーと有彩色の扱いを分離し、低彩度の色味をどの程度混色に反映するか決める。</li><li>外部参考値との照合、灰色の暖色・寒色、結果名の矛盾候補を既存の自己整合性テストへ追加する。</li></ol>
+<p class="note">参考：<a href="https://www.colordic.org/y">洋色大辞典</a>、<a href="https://www.w3.org/TR/css-color-4/#named-colors">W3C CSS Color 4 Named Colors</a>。数値記録：color-model-audit.json / color-reference-audit.json。</p></section></main></html>

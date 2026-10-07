@@ -12,11 +12,11 @@ export const targetGroups: readonly { id: TargetGroupId; name: string }[] = [
 // Only target classification; material extraction and pigments stay unchanged.
 const extraGroups: Record<string, TargetGroupId> = {};
 for (const [group, names] of Object.entries({
-  brown: 'Brown|Chocolate|Cocoa|Chestnut|Coffee|Dark Brown|Sienna|Umber|Sepia|Beige|Sand|Tan|Light Brown|Ecru|Biscuit|Camel|Oat|Taupe|Greige',
+  brown: 'Brown|Chocolate|Cocoa Brown|Chestnut|Coffee|Dark Brown|Sienna|Raw Umber|Sepia|Beige|Sand Beige|Tan|Light Brown|Ecru|Biscuit|Camel|Oat|Taupe|Greige',
   gray: 'Gray|Ash Gray|Silver Gray|Slate Gray|Warm Gray|Brown Gray|Cool Gray|Light Gray|Dark Gray',
   green: 'Teal|Dark Teal|Blue Green|Sea Green|Turquoise|Olive|Olive Green|Moss Green|Sage|Military Green|Chartreuse|Pistachio',
   blue: 'Peacock Blue|Aqua|Cyan|Ice Blue|Lagoon|Dusty Blue|Denim',
-  red: 'Burgundy|Wine|Maroon|Brick Red|Rust|Rosewood',
+  red: 'Burgundy|Wine Red|Maroon|Brick Red|Rust|Rosewood',
   pink: 'Magenta|Fuchsia|Raspberry|Berry|Blush|Dusty Pink',
   purple: 'Reddish Purple|Periwinkle|Indigo|Blue Violet|Bluish Purple|Light Purple|Lavender Gray',
   orange: 'Peach|Terracotta',

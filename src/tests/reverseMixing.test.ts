@@ -83,7 +83,7 @@ describe('reverse recipes', () => {
     badHex.targets.brown[0]!.predictedHex = '#000000';
     await expect(validateManifest(badHex)).rejects.toThrow('Unverified');
     const badDistance = structuredClone(manifestData);
-    badDistance.targets.brown[0]!.targetDeltaE = 0;
+    badDistance.targets.brown[0]!.targetDeltaE += .01;
     await expect(validateManifest(badDistance)).rejects.toThrow('Unverified');
     const duplicate = structuredClone(manifestData);
     duplicate.targets.brown[1] = { ...duplicate.targets.brown[0]!, id: 'duplicate-ratio' };
@@ -108,12 +108,16 @@ describe('reverse recipes', () => {
     await expect(validateManifest(amountOnly)).rejects.toThrow('Unverified recipe');
 
     const sameCategories = structuredClone(manifestData);
-    const selections = [
-      { presetId: 'lemon-yellow', amount: 4 }, { presetId: 'sky-blue', amount: 4 },
-      { presetId: 'cobalt-blue', amount: 3 },
-    ] as const;
-    const result = mixPigments(selections.map(item => ({ pigment: presetsById.get(item.presetId)!.pigment, amount: item.amount })));
-    expect(targetDeltaE(result, target)).toBeLessThanOrEqual(.05);
+    const swapped = original.selections.flatMap((entry, slot) => colorPresets
+      .filter(preset => preset.category === presetsById.get(entry.presetId)!.category && preset.id !== entry.presetId)
+      .flatMap(preset => ([1, 2, 3, 4, 5] as const).flatMap(amount => {
+        const selections = original.selections.map((item, index) => index === slot ? { presetId: preset.id, amount } : item);
+        if (!legalRecipe(selections, target)) return [];
+        const result = mixPigments(selections.map(item => ({ pigment: presetsById.get(item.presetId)!.pigment, amount: item.amount })));
+        return targetDeltaE(result, target) <= .05 ? [{ selections, result }] : [];
+      })))[0];
+    expect(swapped).toBeDefined();
+    const { selections, result } = swapped!;
     expect(recipeCategoryKey(selections)).toBe(recipeCategoryKey(original.selections));
     expect(recipeMaterialKey(selections)).not.toBe(recipeMaterialKey(original.selections));
     sameCategories.targets.turquoise[1] = { ...sameCategories.targets.turquoise[1]!,

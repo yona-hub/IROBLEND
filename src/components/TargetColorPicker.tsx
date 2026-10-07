@@ -3,8 +3,8 @@ import { categories } from '../data/colorPresets';
 import { targetCatalog, targetGroups, type TargetGroupId } from '../data/targetCatalog';
 
 export const recommendedTargetIds = [
-  'brown', 'beige', 'gray', 'chocolate', 'sand', 'teal', 'turquoise', 'olive',
-  'wine', 'maroon', 'peach', 'dusty-pink', 'lavender-gray', 'pistachio',
+  'brown', 'beige', 'gray', 'chocolate', 'sand-beige', 'teal', 'turquoise', 'olive',
+  'wine-red', 'maroon', 'peach', 'dusty-pink', 'lavender-gray', 'pistachio',
   'denim', 'amber', 'terracotta', 'mustard', 'mauve', 'mint-green', 'periwinkle', 'blue-green',
 ] as const;
 export type TargetPickerGroup = TargetGroupId | 'recommended' | 'all';

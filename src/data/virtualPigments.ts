@@ -1,6 +1,6 @@
 import { Color } from 'spectral.js';
+import { namedColorById } from './namedColors';
 import { artistHueForDisplay } from '../domain/colorMixing/intuitivePalette';
-import type { ColorCategory } from '../domain/colorMixing/types';
 import type { VirtualPigment } from '../domain/colorMixing/types';
 
 export const WAVELENGTHS = Object.freeze(Array.from({ length: 38 }, (_, i) => 380 + i * 10));
@@ -37,38 +37,77 @@ const bases = Object.fromEntries(Object.entries(bands).map(([id, values]) => [id
 
 // Explicit pigment recipes, not RGB-derived spectra. Each recipe is normalized once
 // to define one drop of that preset; UI drop amounts are applied separately at mixing.
-const recipes: Record<string, Recipe> = {
-  red: { red: 1 }, scarlet: { red: 8, rose: 2 }, vermilion: { red: 4, yellow: 1 },
-  crimson: { rose: 7, red: 2, black: .3 }, carmine: { rose: 8, black: .7 }, 'tomato-red': { red: 6, yellow: 1, white: .4 },
-  pink: { rose: 1, white: 1.3 }, 'baby-pink': { rose: 1, white: 5 }, 'rose-pink': { rose: 3, white: 1 },
-  'cherry-pink': { rose: 5, red: 1, white: .6 }, 'salmon-pink': { red: 2, yellow: .3, white: 1.5 }, 'hot-pink': { rose: 5, white: .4 },
-  orange: { red: 1, yellow: 3 }, 'mandarin-orange': { red: 1, yellow: 2 }, 'carrot-orange': { red: 2, yellow: 3, black: .15 },
-  apricot: { red: 1, yellow: 3, white: 2 }, coral: { red: 3, rose: 1, yellow: 1, white: 1 }, 'dark-orange': { red: 2, yellow: 3, black: .5 },
-  yellow: { yellow: 1 }, 'lemon-yellow': { yellow: 5, white: 1 }, 'canary-yellow': { yellow: 10, red: .2 },
-  'golden-yellow': { yellow: 8, red: .5, black: .2 }, 'cream-yellow': { yellow: 1, white: 3 }, khaki: { yellow: 3, black: .4, white: .4 },
-  green: { green: 1 }, 'apple-green': { green: 1, yellow: 3, white: .3 }, 'mint-green': { green: 1, blue: .2, white: 2 },
-  'emerald-green': { green: 4, blue: 1 }, 'forest-green': { green: 4, black: .7 }, 'lime-green': { yellow: 8, green: 1, white: 1 },
-  blue: { blue: 1 }, 'sky-blue': { blue: 1, white: 1.2 }, 'light-blue': { blue: 1, white: 4 },
-  'cobalt-blue': { blue: 2, ultramarine: 1 }, ultramarine: { ultramarine: 1 }, 'royal-blue': { ultramarine: 3, blue: 1, white: .3 }, 'navy-blue': { blue: 3, ultramarine: 1, black: 1 },
-  purple: { rose: 1, ultramarine: 1 }, violet: { rose: 2, ultramarine: 3, white: .3 },
-  lavender: { rose: 1, ultramarine: 1, white: 3 }, lilac: { rose: 1, ultramarine: .6, white: 5 },
-  mauve: { rose: 1, ultramarine: .5, black: .2, white: 1.5 }, orchid: { rose: 2, ultramarine: .5, white: 1.5 }, plum: { rose: 2, ultramarine: 1, black: .3 },
-  white: { white: 1 }, 'snow-white': { white: 20, blue: .04 }, ivory: { white: 10, yellow: 1 },
-  'milk-white': { white: 20, yellow: .3 }, 'white-smoke': { white: 20, black: .2 },
-  black: { black: 1 }, charcoal: { black: 5, white: .3 }, graphite: { black: 2, white: .5 },
-  'dark-slate': { black: 3, blue: 1, green: .5, white: .4 }, 'dim-gray': { black: 1, white: 1 },
+// Nonnegative recipes fitted offline to the shared reference swatches. The eight
+// authored base spectra remain independent of sRGB; these are not measured paints.
+export const virtualPigmentRecipes: Readonly<Record<string, Recipe>> = {
+  "red": {"red": 0.9443359, "white": 0.0556641},
+  "scarlet": {"red": 0.6689453, "yellow": 0.3310547},
+  "vermilion": {"red": 0.7423828, "yellow": 0.2439453, "white": 0.0136719},
+  "crimson": {"red": 0.6826172, "rose": 0.3173828},
+  "carmine": {"red": 0.6464844, "rose": 0.3535156},
+  "tomato-red": {"red": 0.9455764, "yellow": 0.0003695, "white": 0.0540541},
+  "pink": {"red": 0.2841797, "rose": 0.1017748, "yellow": 0.0078125, "white": 0.606233},
+  "baby-pink": {"red": 0.0195313, "yellow": 0.0205078, "white": 0.9599609},
+  "rose-pink": {"red": 0.2851563, "rose": 0.2724609, "white": 0.4423828},
+  "cherry-pink": {"red": 0.047023, "rose": 0.7644117, "white": 0.1885653},
+  "salmon-pink": {"red": 0.3915502, "rose": 0.0029297, "yellow": 0.2420333, "white": 0.3634868},
+  "hot-pink": {"rose": 0.7755353, "white": 0.2244647},
+  "orange": {"red": 0.3027344, "yellow": 0.6972656},
+  "mandarin-orange": {"red": 0.133138, "yellow": 0.866862},
+  "carrot-orange": {"red": 0.4199219, "yellow": 0.5800781},
+  "apricot": {"red": 0.1510417, "yellow": 0.6152344, "white": 0.233724},
+  "coral": {"red": 0.4423828, "rose": 0.000651, "yellow": 0.4527995, "white": 0.1041667},
+  "dark-orange": {"red": 0.1679688, "yellow": 0.8320313},
+  "yellow": {"yellow": 0.9472656, "white": 0.0527344},
+  "lemon-yellow": {"yellow": 0.7854818, "white": 0.2145182},
+  "canary-yellow": {"yellow": 0.7460938, "white": 0.2539063},
+  "golden-yellow": {"red": 0.1199713, "yellow": 0.7945402, "white": 0.0849609, "black": 0.0005276},
+  "cream-yellow": {"yellow": 0.2861328, "white": 0.7138672},
+  "khaki": {"red": 0.1201172, "yellow": 0.7797081, "white": 0.0730366, "black": 0.0271382},
+  "green": {"yellow": 0.5332031, "blue": 0.4667969},
+  "apple-green": {"yellow": 0.5140807, "blue": 0.0800781, "ultramarine": 0.0449219, "green": 0.1075581, "white": 0.2533612},
+  "mint-green": {"yellow": 0.4316406, "blue": 0.2382813, "ultramarine": 0.0546875, "green": 0.0263672, "white": 0.2490234},
+  "emerald-green": {"yellow": 0.5117188, "blue": 0.4880859, "green": 0.0001953},
+  "forest-green": {"yellow": 0.4072266, "blue": 0.5498047, "green": 0.0004779, "black": 0.0424909},
+  "lime-green": {"red": 0.0009766, "yellow": 0.5441406, "green": 0.0433594, "white": 0.4115234},
+  "blue": {"blue": 0.4433594, "ultramarine": 0.5234375, "green": 0.0244141, "black": 0.0087891},
+  "sky-blue": {"blue": 0.2660689, "ultramarine": 0.0507813, "green": 0.0263672, "white": 0.6567827},
+  "light-blue": {"red": 0.0039063, "rose": 0.0117188, "blue": 0.0271484, "ultramarine": 0.2226563, "green": 0.0908203, "white": 0.64375},
+  "cobalt-blue": {"blue": 0.2939453, "ultramarine": 0.6826172, "black": 0.0234375},
+  "ultramarine": {"rose": 0.1132813, "ultramarine": 0.8476563, "black": 0.0390625},
+  "royal-blue": {"blue": 0.0859375, "ultramarine": 0.90625, "white": 0.0078125},
+  "navy-blue": {"ultramarine": 0.3935547, "black": 0.6064453},
+  "purple": {"rose": 0.5458984, "blue": 0.0517578, "ultramarine": 0.2705078, "green": 0.0009766, "white": 0.1308594},
+  "violet": {"rose": 0.307046, "ultramarine": 0.6588112, "white": 0.0009397, "black": 0.0332031},
+  "lavender": {"red": 0.0097656, "rose": 0.1990234, "yellow": 0.0068359, "blue": 0.0380859, "ultramarine": 0.1287109, "green": 0.0009766, "white": 0.6166016},
+  "lilac": {"rose": 0.2149917, "blue": 0.0097656, "ultramarine": 0.1075107, "green": 0.03125, "white": 0.636482},
+  "mauve": {"rose": 0.6123047, "ultramarine": 0.3398438, "white": 0.0478516},
+  "orchid": {"red": 0.0009766, "rose": 0.3828125, "yellow": 0.0009766, "blue": 0.0068359, "ultramarine": 0.0498047, "green": 0.03125, "white": 0.5273438},
+  "plum": {"rose": 0.7789122, "ultramarine": 0.0002959, "black": 0.2207919},
+  "white": {"white": 1},
+  "snow-white": {"white": 1},
+  "ivory": {"red": 0.0039063, "rose": 0.0009766, "yellow": 0.0332919, "white": 0.9618253},
+  "milk-white": {"yellow": 0.0029297, "white": 0.9970703},
+  "white-smoke": {"rose": 0.0019531, "yellow": 0.0019531, "ultramarine": 0.0019531, "green": 0.0009766, "white": 0.9931641},
+  "black": {"black": 1},
+  "charcoal": {"red": 0.0810547, "rose": 0.3095703, "yellow": 0.0019531, "ultramarine": 0.015625, "green": 0.0136719, "white": 0.0566038, "black": 0.5215212},
+  "graphite": {"red": 0.1455078, "rose": 0.2373047, "white": 0.1023438, "black": 0.5148438},
+  "dark-slate": {"yellow": 0.0820313, "blue": 0.5790816, "green": 0.0004783, "white": 0.000578, "black": 0.3378308},
+  "dim-gray": {"red": 0.0732422, "rose": 0.0126953, "yellow": 0.0644531, "blue": 0.0371094, "ultramarine": 0.046875, "green": 0.0078125, "white": 0.25, "black": 0.5078125},
 };
 
-export function pigmentForPreset(id: string, displayHex: `#${string}`, category: ColorCategory): VirtualPigment {
-  const recipe = recipes[id];
+export function pigmentForPreset(id: string): VirtualPigment {
+  const reference = namedColorById(id);
+  if (!reference.category) throw new Error(`No selectable paint for reference: ${id}`);
+  const recipe = virtualPigmentRecipes[id];
   if (!recipe) throw new Error(`Missing virtual pigment recipe: ${id}`);
   const parts = Object.entries(recipe) as [Base, number][];
   const total = parts.reduce((sum, [, amount]) => sum + amount, 0);
   const coefficients = (key: 'absorption' | 'scattering') => Object.freeze(WAVELENGTHS.map((_, i) =>
     parts.reduce((sum, [base, amount]) => sum + bases[base][key][i]! * amount / total, 0)));
-  const lab = new Color(displayHex).OKLab;
+  const lab = new Color(reference.hex).OKLab;
   const displayOklab: [number, number, number] = [lab[0]!, lab[1]!, lab[2]!];
-  return Object.freeze({ model: 'kubelka-munk-two-constant', source: 'authored-virtual-pigment-v2',
+  return Object.freeze({ model: 'kubelka-munk-two-constant', source: 'authored-virtual-pigment-v3',
     absorption: coefficients('absorption'), scattering: coefficients('scattering'), displayOklab,
-    artistHue: category === 'white' || category === 'black' ? null : artistHueForDisplay(displayOklab) });
+    artistHue: reference.category === 'white' || reference.category === 'black' ? null : artistHueForDisplay(displayOklab) });
 }

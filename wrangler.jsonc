@@ -1,0 +1,14 @@
+{
+  "name": "iroblend",
+  "account_id": "52bdc79555c053d84913a6fe260a2e4a",
+  "compatibility_date": "2026-09-29",
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "iroblend.yona-works.com",
+      "custom_domain": true
+    }
+  ]
+}

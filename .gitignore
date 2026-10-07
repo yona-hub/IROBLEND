@@ -2,6 +2,7 @@ node_modules/
 .local-tools/
 .npm-cache/
 dist/
+.wrangler/
 coverage/
 .vite/
 .env*
