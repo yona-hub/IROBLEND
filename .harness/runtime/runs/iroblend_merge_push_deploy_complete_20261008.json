@@ -1,0 +1,90 @@
+{
+  "run_id": "iroblend_merge_push_deploy_complete_20261008",
+  "parent_run_id": "iroblend_merge_push_deploy_pending_20261008",
+  "project_id": "IROBLEND",
+  "task_id": "resolve-pull-conflicts-push-and-deploy",
+  "state": "done",
+  "task_class": "software_development",
+  "started_at": null,
+  "first_useful_response_at": null,
+  "first_useful_action_at": null,
+  "completed_at": null,
+  "model_requested": null,
+  "model_actual": null,
+  "effort_requested": null,
+  "effort_actual": null,
+  "model_evidence": null,
+  "context_pack_hash": null,
+  "tool_calls": null,
+  "retry_count": null,
+  "subagent_count": 0,
+  "human_interventions": null,
+  "verification_evidence": [
+    "Merge commit b82205f and authentication handoff record 66c127e pushed to origin/main",
+    "npm test: 73 tests passed across 10 files",
+    "npm run deploy: recipe validation for 125 targets and 322 recipes, TypeScript, Vite, and Cloudflare Workers upload all passed",
+    "Cloudflare deployment version be3d286e-16db-4b78-9665-3e9254ea6c5c for iroblend.yona-works.com",
+    "Live custom domain HTTP 200 served expected index-BmWM6Uj0.js and index-DzeJyn9j.css; both and reverseRecipes-oOvJVPRA.js returned HTTP 200",
+    "Live in-app browser rendered IROBLEND, switched to reverse recipe mode, and displayed a Mint Green candidate"
+  ],
+  "acceptance_results": [
+    {
+      "requirement": "Resolve pull conflicts while preserving reverse recipe mode and incoming changes",
+      "passed": true,
+      "evidence": "Merge commit b82205f, 73 passing tests, and successful production build"
+    },
+    {
+      "requirement": "Push resolved main to GitHub",
+      "passed": true,
+      "evidence": "origin/main advanced through b82205f and 66c127e"
+    },
+    {
+      "requirement": "Deploy merged build to Cloudflare",
+      "passed": true,
+      "evidence": "Wrangler deployed version be3d286e-16db-4b78-9665-3e9254ea6c5c and live asset checks matched the local build"
+    }
+  ],
+  "artifacts": [
+    "wrangler.jsonc",
+    "docs/reverse-recipes/README.md",
+    "src/data/generated/reverseRecipes.json",
+    "src/tests/fixtures/mix-core-reference-20261008.json"
+  ],
+  "stop_reason": null,
+  "next_step": null,
+  "failed_hypotheses": null,
+  "schema_version": "2.0",
+  "core_version": "0.1.0",
+  "policy_hash": "33b03e442d1f49622d17927a0ca98fd9e67b7be12d595eed8854b6d49c9e8e59",
+  "base_commit": "66c127e3a90fc13d5e8f4ce51eb9f8f55f8bdf33",
+  "dirty_diff_hash": "33173edadfa7311961412dddf39c34df809ab28e6ed641ab618f48b87be58e7c",
+  "git_state": {
+    "base_commit": "66c127e3a90fc13d5e8f4ce51eb9f8f55f8bdf33",
+    "status": "observed",
+    "dirty_diff_hash": "33173edadfa7311961412dddf39c34df809ab28e6ed641ab618f48b87be58e7c",
+    "changes": [
+      "?? .harness/runtime/iroblend_merge_deploy_complete_input.json"
+    ],
+    "untracked": [
+      {
+        "path": ".harness/runtime/iroblend_merge_deploy_complete_input.json",
+        "sha256": null,
+        "reason": "private_path"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": null,
+    "cached_input_tokens": null,
+    "output_tokens": null,
+    "reasoning_output_tokens": null,
+    "total_tokens": null,
+    "credits": null,
+    "quota_percent": null,
+    "source": null,
+    "unknown_parent_scope": false,
+    "run_count": 0,
+    "counted_run_ids": [],
+    "missing_rate": 1
+  }
+}
