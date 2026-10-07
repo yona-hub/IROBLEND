@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run recipes:check && tsc -b && vite build",
+    "recipes:generate": "node scripts/run-reverse-tools.mjs scripts/generate-reverse-recipes.ts",
+    "recipes:check": "node scripts/run-reverse-tools.mjs scripts/check-reverse-recipes.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run"

@@ -1,0 +1,456 @@
+{
+  "run_id": "iroblend_mobile_mix_scroll_20261008",
+  "parent_run_id": null,
+  "project_id": "IROBLEND",
+  "task_id": "scroll-mobile-canvas-before-mixing-animation",
+  "state": "done",
+  "task_class": "software_development",
+  "started_at": null,
+  "first_useful_response_at": null,
+  "first_useful_action_at": null,
+  "completed_at": null,
+  "model_requested": null,
+  "model_actual": null,
+  "effort_requested": null,
+  "effort_actual": null,
+  "model_evidence": null,
+  "context_pack_hash": null,
+  "tool_calls": null,
+  "retry_count": null,
+  "subagent_count": 0,
+  "human_interventions": null,
+  "verification_evidence": [
+    "npm test: 57 tests passed across 9 files",
+    "npm run build: 125 targets and 348 published recipes verified; TypeScript and Vite build passed",
+    "Chrome UI QA: 12 viewports passed; at 320x568 free mixing and recipe remix scrolled upward to reveal at least 90 percent of the canvas before animation"
+  ],
+  "acceptance_results": [
+    {
+      "requirement": "On smartphones, scroll to reveal the canvas when less than half is visible before the mix animation",
+      "passed": true,
+      "evidence": "MixingCanvas layout effect measures visible area above the fixed action bar; App.test.tsx covers 50 percent threshold and scrolling; Chrome screenshots auto-scroll-free-mix-320.png and auto-scroll-recipe-remix-320.png show full canvas during animation"
+    },
+    {
+      "requirement": "Do not move the page when at least half of the canvas is visible",
+      "passed": true,
+      "evidence": "App.test.tsx verifies no scroll at exactly 50 percent visibility"
+    }
+  ],
+  "artifacts": [
+    "src/components/MixingCanvas.tsx",
+    "src/tests/App.test.tsx",
+    "scripts/ui-reverse-qa.mjs",
+    "docs/reverse-recipes/ui-qa/results.json"
+  ],
+  "stop_reason": null,
+  "next_step": null,
+  "failed_hypotheses": null,
+  "schema_version": "2.0",
+  "core_version": "0.1.0",
+  "policy_hash": "33b03e442d1f49622d17927a0ca98fd9e67b7be12d595eed8854b6d49c9e8e59",
+  "base_commit": "4d2f6e1701a35fcc4d363abc95642c50ba4e7e21",
+  "dirty_diff_hash": "b2e360b284a8d7e162ceeee57c7f285087c87ad39586ec07de42b36018a17e42",
+  "git_state": {
+    "base_commit": "4d2f6e1701a35fcc4d363abc95642c50ba4e7e21",
+    "status": "observed",
+    "dirty_diff_hash": "b2e360b284a8d7e162ceeee57c7f285087c87ad39586ec07de42b36018a17e42",
+    "changes": [
+      "M README.md",
+      " M package.json",
+      " M src/app/App.tsx",
+      " M src/components/ColorNavigation.tsx",
+      " M src/components/MixingCanvas.tsx",
+      " M src/components/SelectedColorList.tsx",
+      " M src/domain/colorMixing/mixPigments.ts",
+      " M src/domain/state/mixReducer.ts",
+      " M src/hooks/useDialogFocus.ts",
+      " M src/main.tsx",
+      " M src/styles.css",
+      " M src/tests/App.test.tsx",
+      "?? .harness/runtime/iroblend_mobile_mix_scroll_input.json",
+      "?? .harness/runtime/runs/iroblend_responsive_layout_20261008.json",
+      "?? .harness/runtime/runs/iroblend_reverse_ui_20261007.json",
+      "?? docs/reverse-recipes/README.md",
+      "?? docs/reverse-recipes/audit.html",
+      "?? docs/reverse-recipes/audit.json",
+      "?? docs/reverse-recipes/generation-progress.json",
+      "?? docs/reverse-recipes/ui-qa/auto-scroll-free-mix-320.png",
+      "?? docs/reverse-recipes/ui-qa/auto-scroll-recipe-remix-320.png",
+      "?? docs/reverse-recipes/ui-qa/black-no-candidate-reflow.png",
+      "?? docs/reverse-recipes/ui-qa/color-back-button-320.png",
+      "?? docs/reverse-recipes/ui-qa/drawer-position-after-resize.png",
+      "?? docs/reverse-recipes/ui-qa/five-materials-320.png",
+      "?? docs/reverse-recipes/ui-qa/five-materials-tablet-landscape.png",
+      "?? docs/reverse-recipes/ui-qa/five-materials-tablet-portrait.png",
+      "?? docs/reverse-recipes/ui-qa/free-1024.png",
+      "?? docs/reverse-recipes/ui-qa/free-1032.png",
+      "?? docs/reverse-recipes/ui-qa/free-1280.png",
+      "?? docs/reverse-recipes/ui-qa/free-1366.png",
+      "?? docs/reverse-recipes/ui-qa/free-1376.png",
+      "?? docs/reverse-recipes/ui-qa/free-1536.png",
+      "?? docs/reverse-recipes/ui-qa/free-1920.png",
+      "?? docs/reverse-recipes/ui-qa/free-320.png",
+      "?? docs/reverse-recipes/ui-qa/free-360.png",
+      "?? docs/reverse-recipes/ui-qa/free-390.png",
+      "?? docs/reverse-recipes/ui-qa/free-430.png",
+      "?? docs/reverse-recipes/ui-qa/free-768.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1024.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1032.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1280.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1366.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1376.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1536.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1920.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-320.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-360.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-390.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-430.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-768.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1024.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1032.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1280.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1366.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1376.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1536.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1920.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-320.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-360.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-390.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-430.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-768.png",
+      "?? docs/reverse-recipes/ui-qa/results.json",
+      "?? scripts/check-reverse-recipes.ts",
+      "?? scripts/generate-reverse-recipes.ts",
+      "?? scripts/run-reverse-tools.mjs",
+      "?? scripts/ui-reverse-qa.mjs",
+      "?? src/components/ModeSwitch.tsx",
+      "?? src/components/RecipePanel.tsx",
+      "?? src/components/TargetColorPicker.tsx",
+      "?? src/components/TargetComparison.tsx",
+      "?? src/data/generated/reverseRecipes.json",
+      "?? src/data/targetCatalog.ts",
+      "?? src/domain/reverseMixing/evaluateRecipe.ts",
+      "?? src/domain/reverseMixing/fingerprints.ts",
+      "?? src/domain/reverseMixing/recipeKey.ts",
+      "?? src/domain/reverseMixing/types.ts",
+      "?? src/domain/reverseMixing/validateManifest.ts",
+      "?? src/hooks/useRecipeManifest.ts",
+      "?? src/reverse.css",
+      "?? src/tests/ReverseApp.test.tsx",
+      "?? src/tests/fixtures/mix-core-baseline.json",
+      "?? src/tests/mixCoreRegression.test.ts",
+      "?? src/tests/reverseMixing.test.ts"
+    ],
+    "untracked": [
+      {
+        "path": ".harness/runtime/iroblend_mobile_mix_scroll_input.json",
+        "sha256": null,
+        "reason": "private_path"
+      },
+      {
+        "path": ".harness/runtime/runs/iroblend_responsive_layout_20261008.json",
+        "sha256": null,
+        "reason": "private_path"
+      },
+      {
+        "path": ".harness/runtime/runs/iroblend_reverse_ui_20261007.json",
+        "sha256": null,
+        "reason": "private_path"
+      },
+      {
+        "path": "docs/reverse-recipes/README.md",
+        "sha256": "17423f8e68c80010c5736e0b4136eac16bfe436c056fc749fc344e6f779770d4"
+      },
+      {
+        "path": "docs/reverse-recipes/audit.html",
+        "sha256": "9f199c82654155531bba4f0c64ab0d0aeeb5090a71341286f5b570fb321cb3a2"
+      },
+      {
+        "path": "docs/reverse-recipes/audit.json",
+        "sha256": "0267bd086396927d01f1a40d4a5a3f26e485cee964c88c4188da1323215688f1"
+      },
+      {
+        "path": "docs/reverse-recipes/generation-progress.json",
+        "sha256": "58272479f29ad6c1c45446810dba65fcd35e976c15ccce1207b193be7481d970"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/auto-scroll-free-mix-320.png",
+        "sha256": "e927d8e7190ce75b48ecec2e84409ef80410efaec13c537bd747baf9c71f68b1"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/auto-scroll-recipe-remix-320.png",
+        "sha256": "c606fe696755cdc85a32bf53d2cbe9f975df63afb669239a909d1bae36a8d96e"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/black-no-candidate-reflow.png",
+        "sha256": "3c8f1c51259aa32c07208ff9798cb9a24acbbae4c98489777f67a970786ab31a"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/color-back-button-320.png",
+        "sha256": "0a7b04b7ed7e439f6a5fcea837efdb6e423e5d15357f252ee432b3fb6c18eefd"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/drawer-position-after-resize.png",
+        "sha256": "fa2492e7330185ebd955ce544107c1c0fc6188c0e4c0d24427c4f81f1ac1f0c7"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/five-materials-320.png",
+        "sha256": "c0ae75816a2ff4ef113f1d1926e2d90c7816faf559918920bc48f7451487b3ce"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/five-materials-tablet-landscape.png",
+        "sha256": "10d79202c1eb4f23e2511b541cd5b331729dc912e62a04b44eead667cf09cede"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/five-materials-tablet-portrait.png",
+        "sha256": "c9cd44065c9831357bda4938bec9e51219d44e10ceb23e409c026ba982b284d3"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1024.png",
+        "sha256": "2ce78bcc4595eba7f1b8c54a3bbbc6df4caf351c0db95914d80af7dbad13d18b"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1032.png",
+        "sha256": "3c643a8a043201833a338d656fb888a753b5560abd7a0948d430cbfc9f0a7541"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1280.png",
+        "sha256": "90fcd7a3ecdbeeef566ba40bed013dc8709ba76410b7ddac62624c2c4d2daf73"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1366.png",
+        "sha256": "ba316e7a4f1e8327509be119aa32db8ee6d91ec26367f7f926a78907b7f0d4c5"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1376.png",
+        "sha256": "ae46f4707c85556ec105affdb75d6c358a40ceeeeeb4cd05874cfcb8b2989ed8"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1536.png",
+        "sha256": "e02ae3277a1e692630626f49e97d1911f6739eb0ddb1631e1352336b76b052db"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1920.png",
+        "sha256": "7d49660ac7522c9da1f22787228feecf34bb02700a225b8d6c728d515ff5a429"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-320.png",
+        "sha256": "91a623ac691a4f2e22831a43aa217818af423bcff1b4e085202f58fee84bca49"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-360.png",
+        "sha256": "f6b093388d4d22e99fe0a1bc83756b9b5ebd5e9e371d5b3c55c27f947c2349a4"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-390.png",
+        "sha256": "4120db78fe4b3d5607c4c7abf27d7b3a864449b10f5477a082bed64a9c67546f"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-430.png",
+        "sha256": "9693e03d7670450dfc16bf8e7a8b365d26a35a15a7b0f3dc43db673ccdaa0195"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-768.png",
+        "sha256": "a7b38e8d878dfd0388daa9c406c2fe7a8f352809183a7a515f5b83fef52fb8cd"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1024.png",
+        "sha256": "b9c3dd91f3f0aaa59710008658faae875933273fad6d5f8156fb21ddd90004de"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1032.png",
+        "sha256": "02c6b773582e9ee067b58e6f6e969e806cb7b0d5807546effa3e280c2195ba58"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1280.png",
+        "sha256": "f0e03970cb94e984d10e9d1f92590d150eb3c661810a550d56cf461911e940e3"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1366.png",
+        "sha256": "f2f1956afd96838f609ee5f665c906dbd5347c6cf1630db289fda8ce0e6fbd74"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1376.png",
+        "sha256": "678de0dde5c43eed9f949c4b48a8e0c35917aa7d2f1ad049427ae5843a78c447"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1536.png",
+        "sha256": "6a5b648e0922d600811e173ef1f274fb593cc9d14a0c85ec88010ef33fa0e8a5"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1920.png",
+        "sha256": "49bc9ae955f8ee1cba5545030a253bbd31d02f9d1ab4301b62b592314bc0b9f3"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-320.png",
+        "sha256": "a66ebb06e7f3bb59f3a383a7b79ad53cd8eeeee7fa3011fc79430df1feaa3135"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-360.png",
+        "sha256": "5a28a37af16bd82b198991bba59ec728be47fc8f594d7cb8a4ce11c38091a6da"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-390.png",
+        "sha256": "c51b5c13db49d82c11dc7105b8535ab4ff8f8dd9ed12cb1b7e1b9b1863e2e596"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-430.png",
+        "sha256": "a8d30dbf35184c0861f44ff326703655ba0805b0c64676fe09a864c94a7da3d3"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-768.png",
+        "sha256": "7acfc05c68b63baca89a73b99b00161735fe296a1690c51de5c34a78ffff3a1b"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1024.png",
+        "sha256": "928f3508faebbe877c952cc4555dce37828193b7d682ec723ef33fafe4a5ec25"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1032.png",
+        "sha256": "1491869881b81a10b3e0b38fa62bab982cdeb1197d42f940b0f284a5f6d40c5c"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1280.png",
+        "sha256": "71e4a45a602fd72cd8317885e248b7926fa5ccc14de505b413daba1c7f921307"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1366.png",
+        "sha256": "884552dc28c4be044c24e66b790165b9e78ba2c646bb8904162628a77369a582"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1376.png",
+        "sha256": "2ef7c4f1d651bf6878f76a1c2de7fd49718def75a0f391d3a9f17b66f4354112"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1536.png",
+        "sha256": "96a85acf8568f3f106f0cb16e9945ec4379b4682e3ec266990c8822e5bd8597a"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1920.png",
+        "sha256": "c55dbe242ba06f02ca98c9240ff087f16e15182c42e2d4c24d64fad3e7ca179e"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-320.png",
+        "sha256": "b5ca7f24e6c7169ebefb905a7d1788d98faddfa0f77411eea0a0a5360fbd474d"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-360.png",
+        "sha256": "545a5437f94ff83554f36667b2361c6bfc342c35452fdf4be5408cbe2301929b"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-390.png",
+        "sha256": "78404e19e005200751bcb61c4dcc1dcc49bbf49cc9b5ae1105d576a9fd459fb3"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-430.png",
+        "sha256": "beb61c76cf5b0e1b62b4af827d6c25ea0df0e3817d13dc3d09d2b6b860a2875e"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-768.png",
+        "sha256": "f67c47d7b07962fc34c77d4a0620d9d977410486da343419b319649ec2cc5ff4"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/results.json",
+        "sha256": "7e127a0012e02c2a69f1f37465da8434af398ebf12ee325078a8ae5ef6cdc2e1"
+      },
+      {
+        "path": "scripts/check-reverse-recipes.ts",
+        "sha256": "d2ed88d75a209eb2c5d710cabbd861ab0dc6902e1db6503d7fa10211aef452c1"
+      },
+      {
+        "path": "scripts/generate-reverse-recipes.ts",
+        "sha256": "b4e701e4ef766a837dfd0d40df3307157bc6db3973dfb71fd95863d7fb8f6d3d"
+      },
+      {
+        "path": "scripts/run-reverse-tools.mjs",
+        "sha256": "3d0c600a7d7a5965bd2d28152e8f86c58878d6395d757e332fc46f8b20341341"
+      },
+      {
+        "path": "scripts/ui-reverse-qa.mjs",
+        "sha256": "1dee30b56e1698894c0f1bcea3e29a4f0d6fbb2d3a75cfe55169e2a57e568b38"
+      },
+      {
+        "path": "src/components/ModeSwitch.tsx",
+        "sha256": "c49cb3fa01fcdde67bac0d7ad44c787635124ad9dc2ec3d3983c90160c5ac5fe"
+      },
+      {
+        "path": "src/components/RecipePanel.tsx",
+        "sha256": "f7a74e452fc1bb4cb8325401a5ed1051685f5a102a81b4099e85b4618834adc4"
+      },
+      {
+        "path": "src/components/TargetColorPicker.tsx",
+        "sha256": "b81fe7543d052cd4148d82250da624b93a678cbf631f3088d643128710c7030c"
+      },
+      {
+        "path": "src/components/TargetComparison.tsx",
+        "sha256": "66724bc1cbb686154666fc0c5942ba7623b6981f7c8dd521da1aa83a92582ed9"
+      },
+      {
+        "path": "src/data/generated/reverseRecipes.json",
+        "sha256": "16d48b4d8fa936ccc6cf68c0be5da9b9f8dbbee92d6dbec5ca09fba116941b92"
+      },
+      {
+        "path": "src/data/targetCatalog.ts",
+        "sha256": "4217a3ad2fe310f71d00f2d865036e04f99b3eddfdbc19f3269896be007ee783"
+      },
+      {
+        "path": "src/domain/reverseMixing/evaluateRecipe.ts",
+        "sha256": "a954d7fa06185fa755303f014e14392c14d7ecd0b78caead96cd49732402f307"
+      },
+      {
+        "path": "src/domain/reverseMixing/fingerprints.ts",
+        "sha256": "9ccd89cbc216fadaac312d83d19c233e24abd78a6b129da40740a2a9e34908b2"
+      },
+      {
+        "path": "src/domain/reverseMixing/recipeKey.ts",
+        "sha256": "dd7dbc285964a1037be430a89229a2282e397586da1b5c41e55a9242de5bfece"
+      },
+      {
+        "path": "src/domain/reverseMixing/types.ts",
+        "sha256": "b7dc0553232ca3301dc017366c56ecaf7253cd697273f7031f2df750cfecb9d8"
+      },
+      {
+        "path": "src/domain/reverseMixing/validateManifest.ts",
+        "sha256": "186f8467b11ba56312ce07db6182746a4520787d90b9014647f8d919b1cecd58"
+      },
+      {
+        "path": "src/hooks/useRecipeManifest.ts",
+        "sha256": "348a4eb43894c4c5bcd62c4e058f3a778079886d54804027b90ba6bb61d58465"
+      },
+      {
+        "path": "src/reverse.css",
+        "sha256": "b7884cfb68f5e6c47dc9c3d8f8b32098465080477cd7ebd0e7bfd8f866295a18"
+      },
+      {
+        "path": "src/tests/ReverseApp.test.tsx",
+        "sha256": "30a8ee9cf15aab0640ffa41f6680b05e477b44ed580fe022420b5f6bd72dcf60"
+      },
+      {
+        "path": "src/tests/fixtures/mix-core-baseline.json",
+        "sha256": "b4f798fa46c402a0f6e3194aa9caf74b8a56febc0f06babd1cd279174cb9193b"
+      },
+      {
+        "path": "src/tests/mixCoreRegression.test.ts",
+        "sha256": "9553ed50bcdca37a8c45dea22884518cce582677c8326917bacce10d32420228"
+      },
+      {
+        "path": "src/tests/reverseMixing.test.ts",
+        "sha256": "6307dabf829c3c41701d04f702c6955defdae1be206dec14eb0e3e0ff19c54a7"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": null,
+    "cached_input_tokens": null,
+    "output_tokens": null,
+    "reasoning_output_tokens": null,
+    "total_tokens": null,
+    "credits": null,
+    "quota_percent": null,
+    "source": null,
+    "unknown_parent_scope": false,
+    "run_count": 0,
+    "counted_run_ids": [],
+    "missing_rate": 1
+  }
+}

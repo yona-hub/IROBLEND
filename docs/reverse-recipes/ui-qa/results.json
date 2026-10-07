@@ -1,0 +1,687 @@
+{
+  "browser": "Windows Chrome headless",
+  "results": [
+    {
+      "width": 1920,
+      "height": 900,
+      "readyMs": 79.53689999999995,
+      "readyCanvasHeight": 215,
+      "readyGeometry": {
+        "viewportWidth": 1920,
+        "card": [
+          346,
+          1474
+        ],
+        "pair": [
+          346,
+          1474
+        ],
+        "action": [
+          730,
+          1090,
+          474.390625,
+          526.390625
+        ],
+        "panel": [
+          1522,
+          1892
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          346,
+          1474,
+          215
+        ],
+        "card": [
+          346,
+          1474
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        1920,
+        900
+      ],
+      "bodyWidth": 1920,
+      "bodyHeight": 900,
+      "action": [
+        725,
+        474.390625,
+        1085,
+        526.390625
+      ],
+      "canvasHeight": 0,
+      "longTasks": [
+        97
+      ],
+      "selectedCount": 3
+    },
+    {
+      "width": 1536,
+      "height": 760,
+      "readyMs": 49.92750000000024,
+      "readyCanvasHeight": 215,
+      "readyGeometry": {
+        "viewportWidth": 1536,
+        "card": [
+          335.1875,
+          1095
+        ],
+        "pair": [
+          335.1875,
+          1095
+        ],
+        "action": [
+          535.09375,
+          895.09375,
+          467.75,
+          519.75
+        ],
+        "panel": [
+          1138,
+          1508
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          335.1875,
+          1095,
+          215
+        ],
+        "card": [
+          335.1875,
+          1095
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        1536,
+        760
+      ],
+      "bodyWidth": 1536,
+      "bodyHeight": 760,
+      "action": [
+        535.09375,
+        467.75,
+        895.09375,
+        519.75
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 1376,
+      "height": 1032,
+      "readyMs": 59.78789999999981,
+      "readyCanvasHeight": 215,
+      "readyGeometry": {
+        "viewportWidth": 1376,
+        "card": [
+          310,
+          939.484375
+        ],
+        "pair": [
+          310,
+          939.484375
+        ],
+        "action": [
+          444.734375,
+          804.734375,
+          462.578125,
+          514.578125
+        ],
+        "panel": [
+          978,
+          1348
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          310,
+          939.484375,
+          215
+        ],
+        "card": [
+          310,
+          939.484375
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        1376,
+        1032
+      ],
+      "bodyWidth": 1376,
+      "bodyHeight": 1032,
+      "action": [
+        439.734375,
+        462.578125,
+        799.734375,
+        514.578125
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 1366,
+      "height": 650,
+      "readyMs": 55.8720000000003,
+      "readyCanvasHeight": 215,
+      "readyGeometry": {
+        "viewportWidth": 1366,
+        "card": [
+          310,
+          929.765625
+        ],
+        "pair": [
+          310,
+          929.765625
+        ],
+        "action": [
+          439.875,
+          799.875,
+          462.25,
+          514.25
+        ],
+        "panel": [
+          968,
+          1338
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          310,
+          914.765625,
+          215
+        ],
+        "card": [
+          310,
+          914.765625
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        1366,
+        650
+      ],
+      "bodyWidth": 1366,
+      "bodyHeight": 650,
+      "action": [
+        439.875,
+        462.25,
+        799.875,
+        514.25
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "readyMs": 72.09520000000066,
+      "readyCanvasHeight": 215,
+      "readyGeometry": {
+        "viewportWidth": 1280,
+        "card": [
+          310,
+          846.171875
+        ],
+        "pair": [
+          310,
+          846.171875
+        ],
+        "action": [
+          398.078125,
+          758.078125,
+          459.46875,
+          511.46875
+        ],
+        "panel": [
+          882,
+          1252
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          310,
+          846.171875,
+          215
+        ],
+        "card": [
+          310,
+          846.171875
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        1280,
+        720
+      ],
+      "bodyWidth": 1280,
+      "bodyHeight": 720,
+      "action": [
+        398.078125,
+        459.46875,
+        758.078125,
+        511.46875
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 1032,
+      "height": 1376,
+      "readyMs": 31.369300000000294,
+      "readyCanvasHeight": 480,
+      "readyGeometry": {
+        "viewportWidth": 1032,
+        "card": [
+          25.796875,
+          1006.203125
+        ],
+        "pair": [
+          25.796875,
+          1006.203125
+        ],
+        "action": [
+          0,
+          1032,
+          1302,
+          1376
+        ],
+        "panel": [
+          25.796875,
+          1006.203125
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          25.796875,
+          1006.203125,
+          480
+        ],
+        "card": [
+          25.796875,
+          1006.203125
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        1032,
+        1376
+      ],
+      "bodyWidth": 1032,
+      "bodyHeight": 1376,
+      "action": [
+        0,
+        1302,
+        1032,
+        1376
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "readyMs": 21.757700000000114,
+      "readyCanvasHeight": 215,
+      "readyGeometry": {
+        "viewportWidth": 1024,
+        "card": [
+          25.59375,
+          634.40625
+        ],
+        "pair": [
+          25.59375,
+          634.40625
+        ],
+        "action": [
+          0,
+          1024,
+          694,
+          768
+        ],
+        "panel": [
+          658.40625,
+          998.40625
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          25.59375,
+          634.40625,
+          215
+        ],
+        "card": [
+          25.59375,
+          634.40625
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        1024,
+        768
+      ],
+      "bodyWidth": 1024,
+      "bodyHeight": 768,
+      "action": [
+        0,
+        694,
+        1024,
+        768
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "readyMs": 29.93919999999889,
+      "readyCanvasHeight": 409.59375,
+      "readyGeometry": {
+        "viewportWidth": 768,
+        "card": [
+          19.1875,
+          748.8125
+        ],
+        "pair": [
+          19.1875,
+          748.8125
+        ],
+        "action": [
+          0,
+          768,
+          950,
+          1024
+        ],
+        "panel": [
+          19.1875,
+          748.8125
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          19.1875,
+          733.8125,
+          409.59375
+        ],
+        "card": [
+          19.1875,
+          733.8125
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        768,
+        1024
+      ],
+      "bodyWidth": 753,
+      "bodyHeight": 1048,
+      "action": [
+        0,
+        950,
+        753,
+        1024
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "readyMs": 35.61080000000038,
+      "readyCanvasHeight": 260,
+      "readyGeometry": {
+        "viewportWidth": 430,
+        "card": [
+          12,
+          418
+        ],
+        "pair": [
+          12,
+          418
+        ],
+        "action": [
+          0,
+          430,
+          805,
+          932
+        ],
+        "panel": [
+          12,
+          418
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          12,
+          418,
+          260
+        ],
+        "card": [
+          12,
+          418
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        430,
+        932
+      ],
+      "bodyWidth": 430,
+      "bodyHeight": 1147,
+      "action": [
+        0,
+        805,
+        430,
+        932
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "readyMs": 34.784999999999854,
+      "readyCanvasHeight": 253.1875,
+      "readyGeometry": {
+        "viewportWidth": 390,
+        "card": [
+          12,
+          378
+        ],
+        "pair": [
+          12,
+          378
+        ],
+        "action": [
+          0,
+          390,
+          717,
+          844
+        ],
+        "panel": [
+          12,
+          378
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          12,
+          378,
+          253.1875
+        ],
+        "card": [
+          12,
+          378
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        390,
+        844
+      ],
+      "bodyWidth": 390,
+      "bodyHeight": 1137,
+      "action": [
+        0,
+        717,
+        390,
+        844
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "readyMs": 50.299699999999575,
+      "readyCanvasHeight": 192,
+      "readyGeometry": {
+        "viewportWidth": 360,
+        "card": [
+          12,
+          348
+        ],
+        "pair": [
+          12,
+          348
+        ],
+        "action": [
+          0,
+          360,
+          522,
+          640
+        ],
+        "panel": [
+          12,
+          348
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          12,
+          348,
+          192
+        ],
+        "card": [
+          12,
+          348
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        360,
+        640
+      ],
+      "bodyWidth": 360,
+      "bodyHeight": 1128,
+      "action": [
+        0,
+        522,
+        360,
+        640
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "readyMs": 36.247299999999086,
+      "readyCanvasHeight": 180,
+      "readyGeometry": {
+        "viewportWidth": 320,
+        "card": [
+          12,
+          308
+        ],
+        "pair": [
+          12,
+          308
+        ],
+        "action": [
+          0,
+          320,
+          450,
+          568
+        ],
+        "panel": [
+          12,
+          308
+        ]
+      },
+      "canvasGeometry": {
+        "canvas": [
+          12,
+          308,
+          180
+        ],
+        "card": [
+          12,
+          308
+        ]
+      },
+      "predicted": "rgb(139, 90, 61)",
+      "actual": "rgb(139, 90, 61)",
+      "viewport": [
+        320,
+        568
+      ],
+      "bodyWidth": 320,
+      "bodyHeight": 1128,
+      "action": [
+        0,
+        450,
+        320,
+        568
+      ],
+      "canvasHeight": 0,
+      "longTasks": [],
+      "selectedCount": 3
+    }
+  ],
+  "extra": [
+    "keyboard End mode switching",
+    "drawer initial focus",
+    "no candidate",
+    "reduced motion media",
+    "640×360 @2x reflow",
+    "picker position after viewport resize",
+    "five materials accessible at 320×568",
+    "five materials in two columns at 1032×1376",
+    "tablet rotation",
+    "target-card and canvas alignment",
+    "back button at 320×568",
+    "free mix and recipe remix reveal canvas before animation at 320×568"
+  ],
+  "limitations": [
+    "No physical mobile devices",
+    "Actual browser 200% zoom and soft keyboard not tested",
+    "Edge Firefox iOS Safari Android Chrome not tested"
+  ],
+  "errors": []
+}

@@ -41,7 +41,10 @@ export function ColorNavigation({ activeCategory, selectedIds, onCategory, onBac
           </div>
           <div className="nav-page" aria-hidden={!activeCategory} inert={!activeCategory}>
             <button className="nav-back" type="button" onClick={onBack} aria-label="色のグループに戻る">
-              <span aria-hidden="true">←</span>
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+                <path d="M25 16H8m0 0 8-8m-8 8 8 8" stroke="currentColor" strokeWidth="2.1"
+                  strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
             <div className="nav-detail-heading">
               <span className="swatch swatch--category" style={{ backgroundColor: category?.hex }} aria-hidden="true" />

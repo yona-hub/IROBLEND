@@ -1,0 +1,370 @@
+{
+  "run_id": "iroblend_reverse_ui_20261007",
+  "parent_run_id": null,
+  "project_id": "IROBLEND",
+  "task_id": "exclude-same-category-recipes-and-polish-target-picker",
+  "state": "done",
+  "task_class": "software_development",
+  "started_at": null,
+  "first_useful_response_at": null,
+  "first_useful_action_at": null,
+  "completed_at": "2026-10-07T12:57:23.9202266Z",
+  "model_requested": null,
+  "model_actual": null,
+  "effort_requested": null,
+  "effort_actual": null,
+  "model_evidence": null,
+  "context_pack_hash": null,
+  "tool_calls": null,
+  "retry_count": null,
+  "subagent_count": 0,
+  "human_interventions": null,
+  "verification_evidence": [
+    "npm test: 56 tests passed across 9 files",
+    "npm run build: 125 targets and 348 published recipes verified; TypeScript and Vite build passed",
+    "Chrome responsive QA passed at 1920x900, 1536x760, 1366x650, 1280x720, 1024x768, 768x1024, 390x844, 360x640, 320x568"
+  ],
+  "acceptance_results": [
+    {
+      "evidence": "reverseMixing.test.ts validates all 348 published recipes; orange has red and yellow ingredients",
+      "requirement": "No target-category ingredients in published recipes",
+      "passed": true
+    },
+    {
+      "evidence": "Chrome UI QA verified 9 viewport sizes and no horizontal overflow",
+      "requirement": "Mobile top-left title, no hamburger, fixed actions visible",
+      "passed": true
+    },
+    {
+      "evidence": "ReverseApp.test.tsx covers keyboard, outside pointer, touch pointer, search, clear and focus",
+      "requirement": "Custom search and color-group controls",
+      "passed": true
+    }
+  ],
+  "artifacts": [
+    "src/data/generated/reverseRecipes.json",
+    "docs/reverse-recipes/audit.json",
+    "docs/reverse-recipes/ui-qa/results.json"
+  ],
+  "stop_reason": null,
+  "next_step": null,
+  "failed_hypotheses": null,
+  "schema_version": "2.0",
+  "core_version": "0.1.0",
+  "policy_hash": "33b03e442d1f49622d17927a0ca98fd9e67b7be12d595eed8854b6d49c9e8e59",
+  "base_commit": "4d2f6e1701a35fcc4d363abc95642c50ba4e7e21",
+  "dirty_diff_hash": "cc84d9c05380a9167bd0c36cce2e40c20efc4c3d3891f07ead226265f0cda547",
+  "git_state": {
+    "base_commit": "4d2f6e1701a35fcc4d363abc95642c50ba4e7e21",
+    "status": "observed",
+    "dirty_diff_hash": "cc84d9c05380a9167bd0c36cce2e40c20efc4c3d3891f07ead226265f0cda547",
+    "changes": [
+      "M README.md",
+      " M package.json",
+      " M src/app/App.tsx",
+      " M src/components/SelectedColorList.tsx",
+      " M src/domain/colorMixing/mixPigments.ts",
+      " M src/domain/state/mixReducer.ts",
+      " M src/hooks/useDialogFocus.ts",
+      " M src/main.tsx",
+      " M src/styles.css",
+      " M src/tests/App.test.tsx",
+      "?? docs/reverse-recipes/README.md",
+      "?? docs/reverse-recipes/audit.html",
+      "?? docs/reverse-recipes/audit.json",
+      "?? docs/reverse-recipes/generation-progress.json",
+      "?? docs/reverse-recipes/ui-qa/black-no-candidate-reflow.png",
+      "?? docs/reverse-recipes/ui-qa/drawer-position-after-resize.png",
+      "?? docs/reverse-recipes/ui-qa/five-materials-320.png",
+      "?? docs/reverse-recipes/ui-qa/free-1024.png",
+      "?? docs/reverse-recipes/ui-qa/free-1280.png",
+      "?? docs/reverse-recipes/ui-qa/free-1366.png",
+      "?? docs/reverse-recipes/ui-qa/free-1536.png",
+      "?? docs/reverse-recipes/ui-qa/free-1920.png",
+      "?? docs/reverse-recipes/ui-qa/free-320.png",
+      "?? docs/reverse-recipes/ui-qa/free-360.png",
+      "?? docs/reverse-recipes/ui-qa/free-390.png",
+      "?? docs/reverse-recipes/ui-qa/free-768.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1024.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1280.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1366.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1536.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-1920.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-320.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-360.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-390.png",
+      "?? docs/reverse-recipes/ui-qa/mixed-768.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1024.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1280.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1366.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1536.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-1920.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-320.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-360.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-390.png",
+      "?? docs/reverse-recipes/ui-qa/recipe-768.png",
+      "?? docs/reverse-recipes/ui-qa/results.json",
+      "?? scripts/check-reverse-recipes.ts",
+      "?? scripts/generate-reverse-recipes.ts",
+      "?? scripts/run-reverse-tools.mjs",
+      "?? scripts/ui-reverse-qa.mjs",
+      "?? src/components/ModeSwitch.tsx",
+      "?? src/components/RecipePanel.tsx",
+      "?? src/components/TargetColorPicker.tsx",
+      "?? src/components/TargetComparison.tsx",
+      "?? src/data/generated/reverseRecipes.json",
+      "?? src/data/targetCatalog.ts",
+      "?? src/domain/reverseMixing/evaluateRecipe.ts",
+      "?? src/domain/reverseMixing/fingerprints.ts",
+      "?? src/domain/reverseMixing/recipeKey.ts",
+      "?? src/domain/reverseMixing/types.ts",
+      "?? src/domain/reverseMixing/validateManifest.ts",
+      "?? src/hooks/useRecipeManifest.ts",
+      "?? src/reverse.css",
+      "?? src/tests/ReverseApp.test.tsx",
+      "?? src/tests/fixtures/mix-core-baseline.json",
+      "?? src/tests/mixCoreRegression.test.ts",
+      "?? src/tests/reverseMixing.test.ts"
+    ],
+    "untracked": [
+      {
+        "path": "docs/reverse-recipes/README.md",
+        "sha256": "3f54f1f7393ae9a6aa7e0ad0b6b4961f4caa836a3eede07cf3c28211e70819f4"
+      },
+      {
+        "path": "docs/reverse-recipes/audit.html",
+        "sha256": "9f199c82654155531bba4f0c64ab0d0aeeb5090a71341286f5b570fb321cb3a2"
+      },
+      {
+        "path": "docs/reverse-recipes/audit.json",
+        "sha256": "0267bd086396927d01f1a40d4a5a3f26e485cee964c88c4188da1323215688f1"
+      },
+      {
+        "path": "docs/reverse-recipes/generation-progress.json",
+        "sha256": "58272479f29ad6c1c45446810dba65fcd35e976c15ccce1207b193be7481d970"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/black-no-candidate-reflow.png",
+        "sha256": "878e2f9bf637df40a9aeab30b1c5096e9d2f605d73cf6b60fba1aed405e95d28"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/drawer-position-after-resize.png",
+        "sha256": "91045181534751759e79ce9f30f64922ddde08ccb5e7eb885fe28d426ad6a21e"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/five-materials-320.png",
+        "sha256": "7f01c4bade0a3ae5f1868bd3a66ae289a497705691f721cda94a230377cd932f"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1024.png",
+        "sha256": "c19c572408d4fc3625fd4412d27bd4bf69fd583be55c4eedd27391ab36a20ab2"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1280.png",
+        "sha256": "f33125aa8976b66006fde4da3ca8bfdd17e4a3cd8491bb44acb1ce5d5fd1fcb2"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1366.png",
+        "sha256": "5e3b4ffe50f761e1f5bfd8dd64fc55f54f1045d5c936a2f0b5b5cc390791fb92"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1536.png",
+        "sha256": "b6e9b0fa9901ebed8c2dd674280ffa60db9b484672e95abbcbe98accd5ac9f54"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-1920.png",
+        "sha256": "3e9b84d22d2d6d720daa1da5c3fd9d5ec6bdce4b6fd57379262bb784c2eb7394"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-320.png",
+        "sha256": "4a273be13d7ba088c063f23298a280ff521045674fdd16af67f4b7bb4416013d"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-360.png",
+        "sha256": "780bbdf7b50052b2bb16c1879179c568b765c6e9450621271befddf82822d7d8"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-390.png",
+        "sha256": "e08f7899a1ca7b9f7f7d62ec417f0e7e1457f87cb9fd73613e535d81ba22b51d"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/free-768.png",
+        "sha256": "f72cc8c45b61d400957be187fe99fceab3c57ff9c50db51f6065f83079b06a2e"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1024.png",
+        "sha256": "0a5827699363fd5fc45136e800babca408f090b4d3501688eb440639d050ceff"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1280.png",
+        "sha256": "3f967e110fadbb8e1fb67c55ab71b0ff43cef7ccf4389ab956537aee180152f1"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1366.png",
+        "sha256": "61242315310befa6bd0be29be0751604022263437a86235d1226865cf61a95a9"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1536.png",
+        "sha256": "c0210488ef53264757134150b9967f7f7d7f7ca1a01aa70988c0e65665bbd997"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-1920.png",
+        "sha256": "62da04f514e4a04ea432b4a5d290efbeed7dad0b2bfa33f74daa19eee1a178d3"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-320.png",
+        "sha256": "3b3e64564f1ebd27809b79fb725b4636955484ca6cc0c54f1c89e709bf74bd22"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-360.png",
+        "sha256": "b2bfac01ed2d03a4b77a79eabe1e0622616fd7e8315ccaff96c33dac0b606c90"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-390.png",
+        "sha256": "2be01ef7e8a08f53e2442e0bc04627141b91b35b1114ce4417c14c64db0e9b73"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/mixed-768.png",
+        "sha256": "f593ce53b9fc0d628a393963da9b48c136d92ae5f42d837cb66de3be064f79b7"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1024.png",
+        "sha256": "8089376ad7f8cf789193eb482dcb90dee95f7a84e4d580856a3d97224fbba1e9"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1280.png",
+        "sha256": "a73a2dad0b9ece7792d93a788b17def48c3971281233e8388cb04f47f31a5efe"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1366.png",
+        "sha256": "697fecb184304b1ce24d7dc1ac7cdac05cc3c11644fb0d40ca571849bc6cac4d"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1536.png",
+        "sha256": "235674a14872514d0222e777a61e8e338af9ce4fc6ffb07c67560d66a9651c70"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-1920.png",
+        "sha256": "ca67ce579ed36127e719d36144754cdcf3564f0289ffaaf4e275bf4357e9d821"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-320.png",
+        "sha256": "7f8114103f15ded09c5e16c033110a275daf7da900b4ab6fcea893207b6f098e"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-360.png",
+        "sha256": "d8ff4c115b3080a497f33ca16e4526d3c7a1edb10f3ab256ec07d23959636628"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-390.png",
+        "sha256": "8f2a96bf22d48626aea23644b05cd273c39febee057f26cbeb59c6aaec2be824"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/recipe-768.png",
+        "sha256": "68b69ef8e0d8a46195c7191f037055c6309ccaa80d6be217fc1260b823ce0253"
+      },
+      {
+        "path": "docs/reverse-recipes/ui-qa/results.json",
+        "sha256": "3e9d0d1fa3546c212f8e45b8149d593f9431ec11b33c5c7ffa9b4e5c0cd7e6c6"
+      },
+      {
+        "path": "scripts/check-reverse-recipes.ts",
+        "sha256": "d2ed88d75a209eb2c5d710cabbd861ab0dc6902e1db6503d7fa10211aef452c1"
+      },
+      {
+        "path": "scripts/generate-reverse-recipes.ts",
+        "sha256": "b4e701e4ef766a837dfd0d40df3307157bc6db3973dfb71fd95863d7fb8f6d3d"
+      },
+      {
+        "path": "scripts/run-reverse-tools.mjs",
+        "sha256": "3d0c600a7d7a5965bd2d28152e8f86c58878d6395d757e332fc46f8b20341341"
+      },
+      {
+        "path": "scripts/ui-reverse-qa.mjs",
+        "sha256": "b567320b2f5a5eb81a4f742170d513aed9bdbc3a760cef77ebf888226325463b"
+      },
+      {
+        "path": "src/components/ModeSwitch.tsx",
+        "sha256": "c49cb3fa01fcdde67bac0d7ad44c787635124ad9dc2ec3d3983c90160c5ac5fe"
+      },
+      {
+        "path": "src/components/RecipePanel.tsx",
+        "sha256": "f5f94a44818a6ad059cb46c925ea15120e2aab3bda4af3cd07c122e4f17ccb10"
+      },
+      {
+        "path": "src/components/TargetColorPicker.tsx",
+        "sha256": "b81fe7543d052cd4148d82250da624b93a678cbf631f3088d643128710c7030c"
+      },
+      {
+        "path": "src/components/TargetComparison.tsx",
+        "sha256": "66724bc1cbb686154666fc0c5942ba7623b6981f7c8dd521da1aa83a92582ed9"
+      },
+      {
+        "path": "src/data/generated/reverseRecipes.json",
+        "sha256": "16d48b4d8fa936ccc6cf68c0be5da9b9f8dbbee92d6dbec5ca09fba116941b92"
+      },
+      {
+        "path": "src/data/targetCatalog.ts",
+        "sha256": "4217a3ad2fe310f71d00f2d865036e04f99b3eddfdbc19f3269896be007ee783"
+      },
+      {
+        "path": "src/domain/reverseMixing/evaluateRecipe.ts",
+        "sha256": "a954d7fa06185fa755303f014e14392c14d7ecd0b78caead96cd49732402f307"
+      },
+      {
+        "path": "src/domain/reverseMixing/fingerprints.ts",
+        "sha256": "9ccd89cbc216fadaac312d83d19c233e24abd78a6b129da40740a2a9e34908b2"
+      },
+      {
+        "path": "src/domain/reverseMixing/recipeKey.ts",
+        "sha256": "dd7dbc285964a1037be430a89229a2282e397586da1b5c41e55a9242de5bfece"
+      },
+      {
+        "path": "src/domain/reverseMixing/types.ts",
+        "sha256": "b7dc0553232ca3301dc017366c56ecaf7253cd697273f7031f2df750cfecb9d8"
+      },
+      {
+        "path": "src/domain/reverseMixing/validateManifest.ts",
+        "sha256": "186f8467b11ba56312ce07db6182746a4520787d90b9014647f8d919b1cecd58"
+      },
+      {
+        "path": "src/hooks/useRecipeManifest.ts",
+        "sha256": "348a4eb43894c4c5bcd62c4e058f3a778079886d54804027b90ba6bb61d58465"
+      },
+      {
+        "path": "src/reverse.css",
+        "sha256": "5cedbed7d4b46ea2526b417cb91ea2349a3be28ae1b9dd0253576abf5661fe15"
+      },
+      {
+        "path": "src/tests/ReverseApp.test.tsx",
+        "sha256": "30a8ee9cf15aab0640ffa41f6680b05e477b44ed580fe022420b5f6bd72dcf60"
+      },
+      {
+        "path": "src/tests/fixtures/mix-core-baseline.json",
+        "sha256": "b4f798fa46c402a0f6e3194aa9caf74b8a56febc0f06babd1cd279174cb9193b"
+      },
+      {
+        "path": "src/tests/mixCoreRegression.test.ts",
+        "sha256": "9553ed50bcdca37a8c45dea22884518cce582677c8326917bacce10d32420228"
+      },
+      {
+        "path": "src/tests/reverseMixing.test.ts",
+        "sha256": "6307dabf829c3c41701d04f702c6955defdae1be206dec14eb0e3e0ff19c54a7"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": null,
+    "cached_input_tokens": null,
+    "output_tokens": null,
+    "reasoning_output_tokens": null,
+    "total_tokens": null,
+    "credits": null,
+    "quota_percent": null,
+    "source": null,
+    "unknown_parent_scope": false,
+    "run_count": 0,
+    "counted_run_ids": [],
+    "missing_rate": 1
+  }
+}

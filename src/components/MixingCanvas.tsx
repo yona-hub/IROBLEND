@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import type { MixResult } from '../domain/colorMixing/types';
 import type { MixStatus } from '../domain/state/mixReducer';
 import type { ResolvedSelection } from './SelectedColorList';
@@ -17,11 +17,35 @@ type Props = {
 };
 
 export function MixingCanvas({ colors, marks, incoming, result, pendingResult, status, reducedMotion }: Props) {
+  const frameRef = useRef<HTMLDivElement>(null);
   const selectionRef = useRef<HTMLCanvasElement>(null);
   const mixingRef = useRef<HTMLCanvasElement>(null);
   const lastImpactKey = useRef<number | null>(null);
   const showResult = (status === 'mixed' || status === 'amount-dirty') && result;
   const mixing = status === 'mixing';
+
+  useLayoutEffect(() => {
+    if (!mixing || !window.matchMedia('(max-width: 599px)').matches) return;
+    const frame = frameRef.current;
+    if (!frame) return;
+    const canvas = frame.getBoundingClientRect();
+    if (canvas.height <= 0) return;
+
+    const viewportTop = window.visualViewport?.offsetTop ?? 0;
+    const viewportBottom = viewportTop + (window.visualViewport?.height ?? window.innerHeight);
+    const actions = document.querySelector<HTMLElement>('.stage-actions')?.getBoundingClientRect();
+    const visibleBottom = actions && actions.top < viewportBottom && actions.bottom > viewportTop
+      ? Math.min(viewportBottom, actions.top) : viewportBottom;
+    const availableHeight = visibleBottom - viewportTop;
+    if (availableHeight <= 0) return;
+    const visibleHeight = Math.max(0, Math.min(canvas.bottom, visibleBottom) - Math.max(canvas.top, viewportTop));
+    if (visibleHeight / canvas.height >= .5) return;
+
+    // This layout effect runs after the canvas reappears on a recipe remix,
+    // but before the Canvas 2D animation effect starts drawing.
+    const top = viewportTop + Math.max(12, (availableHeight - canvas.height) / 2);
+    window.scrollTo({ top: Math.max(0, window.scrollY + canvas.top - top), behavior: 'instant' });
+  }, [mixing]);
 
   useEffect(() => {
     const canvas = selectionRef.current;
@@ -89,7 +113,7 @@ export function MixingCanvas({ colors, marks, incoming, result, pendingResult, s
 
   return (
     <div className="canvas-wrap">
-      <div className={`mix-canvas mix-canvas--${status}`}
+      <div ref={frameRef} className={`mix-canvas mix-canvas--${status}`}
         aria-label={showResult ? `${status === 'amount-dirty' ? '前にまぜた色' : 'できた色'}は${result.nearestName.nameJa}に近い色` : `${colors.length}色を載せたキャンバス`} role="img">
         {showResult && <div className="result-surface" style={{ backgroundColor: result.hex }} />}
         {!showResult && !mixing && <canvas className="paint-canvas" ref={selectionRef} aria-hidden="true" />}

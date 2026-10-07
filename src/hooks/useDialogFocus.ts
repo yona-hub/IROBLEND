@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import type { RefObject } from 'react';
 
-const focusable = 'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
+const focusable = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
 
 export function useDialogFocus(
   open: boolean,

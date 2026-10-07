@@ -23,7 +23,7 @@ function pureModelLab(pigment: VirtualPigment): Lab {
 }
 
 /** Opaque, infinite-thickness two-constant KM approximation; drops are relative mass. */
-export function mixPigments(inputs: readonly MixInput[]): MixResult {
+export function mixPigmentsColor(inputs: readonly MixInput[]): Pick<MixResult, 'hex' | 'oklab'> {
   if (inputs.length < 2 || inputs.length > 5) {
     throw new RangeError('Choose between 2 and 5 colors.');
   }
@@ -75,5 +75,11 @@ export function mixPigments(inputs: readonly MixInput[]): MixResult {
     throw new Error('Pigment mixing produced an invalid OKLab color.');
   }
 
-  return { hex, oklab, nearestName: findNearestColorName(oklab) };
+  return { hex, oklab };
+}
+
+/** Public API and reverse search share every step through the rounded display color. */
+export function mixPigments(inputs: readonly MixInput[]): MixResult {
+  const color = mixPigmentsColor(inputs);
+  return { ...color, nearestName: findNearestColorName(color.oklab) };
 }

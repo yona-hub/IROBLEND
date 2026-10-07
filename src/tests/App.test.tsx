@@ -47,7 +47,8 @@ describe('IROBLEND interface', () => {
 
   it('opens and closes the color drawer with keyboard focus restored', () => {
     render(<App />);
-    const menu = screen.getByRole('button', { name: '色をえらぶメニューを開く' });
+    const menu = screen.getByRole('button', { name: '色をえらぶ', expanded: false });
+    expect(document.querySelector('.menu-button')).toBeNull();
     fireEvent.click(menu);
     expect(menu).toHaveAttribute('aria-expanded', 'true');
     const dialog = screen.getByRole('dialog', { name: '色をえらぶ' });
@@ -61,11 +62,11 @@ describe('IROBLEND interface', () => {
 
   it('returns to the canvas after selecting a color from the mobile drawer', () => {
     render(<App />);
-    fireEvent.click(screen.getByRole('button', { name: '色をえらぶメニューを開く' }));
+    fireEvent.click(screen.getByRole('button', { name: '色をえらぶ', expanded: false }));
     const dialog = screen.getByRole('dialog', { name: '色をえらぶ' });
     fireEvent.click(within(dialog).getByRole('button', { name: '赤の色を見る' }));
     fireEvent.click(within(dialog).getByRole('button', { name: 'レッドを追加' }));
-    expect(screen.getByRole('button', { name: '色をえらぶメニューを開く' })).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.getByRole('button', { name: '色をたす' })).toHaveAttribute('aria-expanded', 'false');
     expect(screen.getByRole('button', { name: /色をたす/ })).toBeInTheDocument();
     expect(screen.getByRole('img', { name: '1色を載せたキャンバス' })).toBeInTheDocument();
   });
@@ -116,6 +117,43 @@ describe('IROBLEND interface', () => {
     expect(screen.queryByText(/に近い色/)).not.toBeInTheDocument();
     act(() => vi.advanceTimersByTime(1));
     expect(screen.getByText(/に近い色/)).toBeInTheDocument();
+  });
+
+  it('moves the mobile canvas into view before mixing only when less than half is visible', () => {
+    vi.useFakeTimers();
+    const matchMedia = window.matchMedia;
+    const scrollY = Object.getOwnPropertyDescriptor(window, 'scrollY');
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+    window.matchMedia = vi.fn().mockImplementation((query: string) => ({
+      matches: query === '(max-width: 599px)', media: query,
+      addEventListener: vi.fn(), removeEventListener: vi.fn(),
+    }));
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 700 });
+    try {
+      const { container } = render(<App />);
+      selectTwoColors(container);
+      const canvas = container.querySelector('.mix-canvas') as HTMLElement;
+      const actions = container.querySelector('.stage-actions') as HTMLElement;
+      let canvasTop = -100;
+      vi.spyOn(canvas, 'getBoundingClientRect').mockImplementation(() => ({
+        top: canvasTop, bottom: canvasTop + 200, height: 200,
+      }) as DOMRect);
+      vi.spyOn(actions, 'getBoundingClientRect').mockReturnValue({ top: 470, bottom: 568 } as DOMRect);
+
+      fireEvent.click(screen.getByRole('button', { name: 'まぜる！' }));
+      expect(scrollTo).not.toHaveBeenCalled(); // Exactly 50% remains visible.
+      act(() => vi.advanceTimersByTime(840));
+      const amount = screen.getByRole('group', { name: 'スカーレットの色の量を選ぶ' });
+      fireEvent.click(within(amount).getByRole('button', { name: 'スカーレットの量をスポイト2本分にする' }));
+      canvasTop = -120;
+      fireEvent.click(screen.getByRole('button', { name: 'もういちど まぜる！' }));
+      expect(scrollTo).toHaveBeenCalledWith({ top: 445, behavior: 'instant' });
+      expect(screen.getByRole('button', { name: 'まぜています…' })).toBeDisabled();
+    } finally {
+      window.matchMedia = matchMedia;
+      if (scrollY) Object.defineProperty(window, 'scrollY', scrollY);
+      scrollTo.mockRestore();
+    }
   });
 
   it('clears selected colors and keeps saved blends available to restore', () => {

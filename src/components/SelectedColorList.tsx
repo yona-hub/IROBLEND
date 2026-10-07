@@ -9,7 +9,7 @@ type Props = {
   disabled: boolean;
   onAmount: (presetId: string, amount: DropAmount) => void;
   onRemove: (presetId: string) => void;
-  onChoose: () => void;
+  onChoose: (trigger: HTMLButtonElement) => void;
 };
 
 export function SelectedColorList({ colors, pulseId, disabled, onAmount, onRemove, onChoose }: Props) {
@@ -18,7 +18,7 @@ export function SelectedColorList({ colors, pulseId, disabled, onAmount, onRemov
       {colors.length === 0 ? (
         <div className="selection__empty">
           <p>まだ色がありません</p>
-          <button className="text-action mobile-only" type="button" onClick={onChoose}>色をえらぶ <span aria-hidden="true">→</span></button>
+          <button className="text-action mobile-only" type="button" onClick={event => onChoose(event.currentTarget)}>色をえらぶ <span aria-hidden="true">→</span></button>
           <span className="desktop-only">左のパレットから色をえらんでね</span>
         </div>
       ) : (

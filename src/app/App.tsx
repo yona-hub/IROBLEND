@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type KeyboardEvent } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState, type KeyboardEvent } from 'react';
 import { AboutColorModal } from '../components/AboutColorModal';
 import { ColorNavigation } from '../components/ColorNavigation';
 import { MixingCanvas } from '../components/MixingCanvas';
@@ -15,29 +15,64 @@ import { useDialogFocus } from '../hooks/useDialogFocus';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { MIX_DURATION_MS } from '../components/mixAnimation';
 import { loadSavedMixes, mergeSavedMixes, parseSavedMixes, persistSavedMixes, serializeSavedMixes, MAX_SAVED, type SavedMix } from '../domain/savedMixes';
+import { ModeSwitch, type AppMode } from '../components/ModeSwitch';
+import { TargetColorPicker, type TargetPickerGroup } from '../components/TargetColorPicker';
+import { RecipePanel } from '../components/RecipePanel';
+import { TargetComparison } from '../components/TargetComparison';
+import { targetsById } from '../data/targetCatalog';
+import { useRecipeManifest } from '../hooks/useRecipeManifest';
+import { targetDeltaE } from '../domain/reverseMixing/evaluateRecipe';
+import type { SelectedColor } from '../domain/colorMixing/types';
 
 function canvasAspect() {
-  if (window.matchMedia('(max-width: 599px) and (max-height: 700px)').matches) return 1.2;
+  const canvas = document.querySelector<HTMLElement>('.mix-canvas');
+  const bounds = canvas?.getBoundingClientRect();
+  if (bounds && bounds.width > 0 && bounds.height > 0) return bounds.width / bounds.height;
+  // The recipe canvas is not mounted until a recipe is loaded. Its measured
+  // aspect replaces this fallback before the new paint marks are drawn.
+  if (window.innerWidth < 600) return Math.min(window.innerWidth - (window.innerWidth < 340 ? 24 : 40), 360) /
+    Math.max(180, Math.min(window.innerHeight * .3, 260));
   return window.matchMedia('(orientation: landscape) and (min-width: 900px)').matches ? 1.55
     : window.innerWidth >= 600 ? 1.45 : .8;
 }
 
 export default function App() {
-  const [state, dispatch] = useReducer(mixReducer, initialMixState);
+  const [mode, setMode] = useState<AppMode>('free');
+  const [freeState, freeDispatch] = useReducer(mixReducer, initialMixState);
+  const [recipeState, recipeDispatch] = useReducer(mixReducer, initialMixState);
+  const state = mode === 'free' ? freeState : recipeState;
+  const dispatch = mode === 'free' ? freeDispatch : recipeDispatch;
+  const [targetId, setTargetId] = useState<string | null>(null);
+  const [candidateId, setCandidateId] = useState<string | null>(null);
+  const [experiment, setExperiment] = useState(false);
+  const [targetGroup, setTargetGroup] = useState<TargetPickerGroup>('recommended');
+  const [targetQuery, setTargetQuery] = useState('');
+  const [targetScroll, setTargetScroll] = useState(0);
+  const { manifest, error: manifestError } = useRecipeManifest(mode === 'recipe');
+  const target = targetId ? targetsById.get(targetId) ?? null : null;
+  const candidates = targetId ? manifest?.targets[targetId] ?? [] : [];
+  const candidate = candidates.find(item => item.id === candidateId) ?? candidates[0];
   const [activeCategory, setActiveCategory] = useState<ColorCategory | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [toast, setToast] = useState('');
   const [pulseId, setPulseId] = useState<string | null>(null);
-  const [marks, setMarks] = useState<PaintMark[]>([]);
+  const [freeMarks, setFreeMarks] = useState<PaintMark[]>([]);
+  const [recipeMarks, setRecipeMarks] = useState<PaintMark[]>([]);
+  const marks = mode === 'free' ? freeMarks : recipeMarks;
+  const setMarks = mode === 'free' ? setFreeMarks : setRecipeMarks;
   const [incoming, setIncoming] = useState<SelectionImpact | null>(null);
   const [savedMixes, setSavedMixes] = useState<SavedMix[]>(loadSavedMixes);
   const [activePanel, setActivePanel] = useState<'selected' | 'saved'>('selected');
-  const marksRef = useRef<PaintMark[]>([]);
+  const freeMarksRef = useRef<PaintMark[]>([]);
+  const recipeMarksRef = useRef<PaintMark[]>([]);
+  const marksRef = mode === 'free' ? freeMarksRef : recipeMarksRef;
   const impactSerial = useRef(0);
   const reducedMotion = useReducedMotion();
   const drawerRef = useRef<HTMLElement>(null);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const drawerTriggerRef = useRef<HTMLElement>(null);
+  const chooseButtonRef = useRef<HTMLButtonElement>(null);
+  const mixButtonRef = useRef<HTMLButtonElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const aboutButtonRef = useRef<HTMLButtonElement>(null);
   const selectedTabRef = useRef<HTMLButtonElement>(null);
@@ -45,14 +80,14 @@ export default function App() {
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
   const closeAbout = useCallback(() => setAboutOpen(false), []);
-  useDialogFocus(drawerOpen, drawerRef, menuButtonRef, closeDrawer);
+  useDialogFocus(drawerOpen, drawerRef, drawerTriggerRef, closeDrawer);
   useDialogFocus(aboutOpen, aboutRef, aboutButtonRef, closeAbout);
 
   useEffect(() => {
     if (state.status !== 'mixing') return;
     const timer = window.setTimeout(() => dispatch({ type: 'finish' }), reducedMotion ? 130 : MIX_DURATION_MS);
     return () => window.clearTimeout(timer);
-  }, [state.status, reducedMotion]);
+  }, [state.status, reducedMotion, dispatch, mode]);
 
   useEffect(() => {
     if (!toast) return;
@@ -74,20 +109,29 @@ export default function App() {
     return () => query.removeEventListener('change', onChange);
   }, [closeDrawer]);
 
-  useEffect(() => {
-    let aspect = canvasAspect();
-    const onResize = () => {
-      const nextAspect = canvasAspect();
-      if (aspect === nextAspect) return;
+  useLayoutEffect(() => {
+    const canvas = document.querySelector<HTMLElement>('.mix-canvas');
+    if (!canvas) return;
+    let aspect: number | null = null;
+    const syncAspect = () => {
+      const bounds = canvas.getBoundingClientRect();
+      // The comparison view hides the canvas after mixing. Do not relayout
+      // settled marks against a guessed ratio while its dimensions are zero.
+      if (bounds.width <= 0 || bounds.height <= 0) return;
+      const nextAspect = bounds.width / bounds.height;
+      if (aspect !== null && Math.abs(aspect - nextAspect) < .001) return;
       aspect = nextAspect;
       if (marksRef.current.length === 0) return;
-      const next = relayoutMarks(marksRef.current, aspect);
+      const next = relayoutMarks(marksRef.current, nextAspect);
       marksRef.current = next;
       setMarks(next);
     };
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
+    syncAspect();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(syncAspect);
+    observer?.observe(canvas);
+    window.addEventListener('resize', syncAspect);
+    return () => { observer?.disconnect(); window.removeEventListener('resize', syncAspect); };
+  }, [mode, experiment, marksRef, setMarks]);
 
   const colors = useMemo(
     () => state.selectedColors.flatMap((item): ResolvedSelection[] => {
@@ -97,6 +141,45 @@ export default function App() {
     [state.selectedColors],
   );
   const selectedIds = useMemo(() => new Set(colors.map(({ presetId }) => presetId)), [colors]);
+
+  const openDrawer = (trigger: HTMLElement) => {
+    drawerTriggerRef.current = trigger;
+    setDrawerOpen(true);
+  };
+
+  const onMode = (next: AppMode) => {
+    if (state.status === 'mixing') return;
+    closeDrawer();
+    setIncoming(null);
+    setPulseId(null);
+    setMode(next);
+  };
+  const onTarget = (id: string) => {
+    if (state.status === 'mixing' || !targetsById.has(id)) return;
+    if (id !== targetId) { setTargetId(id); setCandidateId(null); setExperiment(false); }
+    closeDrawer();
+  };
+  const replaceMarks = (selections: readonly SelectedColor[]) => {
+    let next: PaintMark[] = [];
+    for (const item of selections) next = [...next, placeMark(item.presetId, next, canvasAspect())];
+    marksRef.current = next;
+    setMarks(next);
+    setIncoming(null);
+  };
+  const onLoadRecipe = () => {
+    if (state.status === 'mixing' || !candidate) return;
+    replaceMarks(candidate.selections);
+    recipeDispatch({ type: 'loadRecipe', selectedColors: candidate.selections });
+    setCandidateId(candidate.id);
+    setExperiment(true);
+  };
+  const pickerProps = {
+    group: targetGroup, query: targetQuery, selectedId: targetId, disabled: state.status === 'mixing',
+    scrollPosition: targetScroll, onScroll: setTargetScroll,
+    onGroup: (group: TargetPickerGroup) => { setTargetGroup(group); setTargetQuery(''); setTargetScroll(0); },
+    onQuery: (query: string) => { setTargetQuery(query); if (query) setTargetGroup('all'); setTargetScroll(0); },
+    onSelect: onTarget,
+  };
 
   const onAdd = (presetId: string) => {
     if (state.status === 'mixing') return;
@@ -110,6 +193,9 @@ export default function App() {
       return;
     }
     const next = [...marksRef.current, placeMark(presetId, marksRef.current, canvasAspect())];
+    if (drawerOpen && (colors.length === 4 || drawerTriggerRef.current?.closest('.selection__empty'))) {
+      drawerTriggerRef.current = colors.length === 4 ? mixButtonRef.current : chooseButtonRef.current;
+    }
     marksRef.current = next;
     setMarks(next);
     setIncoming({ id: presetId, key: ++impactSerial.current, delayMs: drawerOpen ? 200 : 0 });
@@ -118,6 +204,7 @@ export default function App() {
   };
 
   const onRemove = (presetId: string) => {
+    if (state.status === 'mixing') return;
     const next = marksRef.current.filter((mark) => mark.presetId !== presetId);
     marksRef.current = next;
     setMarks(next);
@@ -126,6 +213,7 @@ export default function App() {
   };
 
   const onClear = () => {
+    if (state.status === 'mixing') return;
     marksRef.current = [];
     setMarks([]);
     setIncoming(null);
@@ -155,12 +243,7 @@ export default function App() {
 
   const onRestore = (mix: SavedMix) => {
     if (state.status === 'mixing') return;
-    const aspect = canvasAspect();
-    let next: PaintMark[] = [];
-    for (const item of mix.selections) next = [...next, placeMark(item.presetId, next, aspect)];
-    marksRef.current = next;
-    setMarks(next);
-    setIncoming(null);
+    replaceMarks(mix.selections);
     dispatch({ type: 'restore', selectedColors: mix.selections, result: mix.result });
     setActivePanel('selected');
     selectedTabRef.current?.focus();
@@ -215,6 +298,7 @@ export default function App() {
         ? 'もういちど まぜる'
         : 'まぜる！';
   const showResult = (state.status === 'mixed' || state.status === 'amount-dirty') && state.result;
+  const showChooseButton = mode === 'recipe' || colors.length < 5;
   const navProps = {
     activeCategory,
     selectedIds,
@@ -225,26 +309,10 @@ export default function App() {
   };
 
   return (
-    <div className="app-shell">
-      <header className="app-header">
-        <div className="app-header__inner">
-          <button
-            className="menu-button mobile-only"
-            type="button"
-            ref={menuButtonRef}
-            onClick={() => setDrawerOpen(true)}
-            aria-label="色をえらぶメニューを開く"
-            aria-expanded={drawerOpen}
-            aria-controls="color-drawer"
-          >
-            <span /><span /><span />
-          </button>
-        </div>
-      </header>
-
+    <div className={['app-shell', mode === 'recipe' ? 'app-shell--recipe' : '', mode === 'recipe' && showResult ? 'app-shell--compared' : ''].join(' ')}>
       <div className="app-body">
         <aside className="sidebar" aria-label="色のパレット">
-          <ColorNavigation {...navProps} />
+          {mode === 'free' ? <ColorNavigation {...navProps} /> : <TargetColorPicker {...pickerProps} />}
         </aside>
 
         <main className="main-content">
@@ -261,34 +329,46 @@ export default function App() {
                     <span className="about-link__full">このアプリの色について</span>
                     <span className="about-link__short">色について</span>
                   </button>
-                  <p className="mix-guidance">2〜5色を選んで、色をまぜよう</p>
+                  <ModeSwitch mode={mode} disabled={state.status === 'mixing'} onChange={onMode} />
+                  <p className="mix-guidance">{mode === 'free' ? '2〜5色を選んで、色をまぜよう' : 'つくりたい色をえらぶと、まぜ方がわかる'}</p>
                 </div>
-                <MixingCanvas colors={colors} marks={marks} incoming={incoming} result={state.result}
+                {mode === 'recipe' && target && <TargetComparison target={target}
+                  hex={experiment ? (showResult ? state.result?.hex : undefined) : candidate?.predictedHex}
+                  distance={experiment ? (state.status === 'mixed' && state.result ? targetDeltaE(state.result, target) : undefined) : candidate?.targetDeltaE}
+                  label={experiment ? (state.status === 'amount-dirty' ? '前にまぜた色' : 'まぜた色') : 'この配合の色'} />}
+                {mode === 'recipe' && !target && <p className="recipe-empty">つくりたい色をえらんでね</p>}
+                {mode === 'recipe' && !manifest && <p role="status" className="recipe-note">
+                  {manifestError ? '配合データを確認できませんでした。自由にまぜるモードは使えます。' : '配合を確認しています…'}</p>}
+                {(mode === 'free' || experiment) && <MixingCanvas colors={colors} marks={marks} incoming={incoming} result={state.result}
                   pendingResult={state.pendingResult} status={state.status} reducedMotion={!!reducedMotion} />
-                <div className="stage-actions">
-                  {colors.length < 5 && (
-                    <button className="choose-button mobile-only" type="button" onClick={() => setDrawerOpen(true)}>
-                      {colors.length === 0 ? '色をえらぶ' : '色をたす'}
+                }
+                <div className={`stage-actions${showChooseButton ? ' stage-actions--with-choose' : ''}`}>
+                  {showChooseButton && (
+                    <button className="choose-button mobile-only" type="button" disabled={state.status === 'mixing'}
+                      ref={chooseButtonRef} aria-expanded={drawerOpen} aria-controls="color-drawer"
+                      onClick={event => openDrawer(event.currentTarget)}>
+                      {mode === 'recipe' ? 'つくりたい色をえらぶ' : colors.length === 0 ? '色をえらぶ' : '色をたす'}
                     </button>
                   )}
                   <div className="stage-actions__primary">
                     <button
                       className={`mix-button${state.status === 'dirty' || state.status === 'amount-dirty' ? ' mix-button--dirty' : ''}`}
                       type="button"
-                      onClick={onMix}
-                      disabled={colors.length < 2 || state.status === 'mixing'}
+                      ref={mixButtonRef}
+                      onClick={mode === 'recipe' && !experiment ? onLoadRecipe : onMix}
+                      disabled={state.status === 'mixing' || (mode === 'recipe' && !experiment ? !candidate : colors.length < 2)}
                     >
-                      {buttonLabel}
+                      {mode === 'recipe' && !experiment ? 'この配合でためす' : buttonLabel}
                     </button>
-                    <button className="reset-button" type="button" onClick={onClear}
+                    {(mode === 'free' || experiment) && <button className="reset-button" type="button" onClick={onClear}
                       disabled={colors.length === 0 || state.status === 'mixing'}
                       aria-label="さいしょから（えらんだ色をすべて消す）">
                       さいしょから
-                    </button>
+                    </button>}
                   </div>
                 </div>
                 <div className="result-copy" aria-live="polite">
-                  {showResult && (
+                  {(mode === 'free' || experiment) && showResult && (
                     <div className="result-copy__inner" key={state.result?.hex}>
                       {state.status === 'amount-dirty' && <span className="result-copy__stale">前にまぜた色</span>}
                       <strong>{state.result?.nearestName.nameJa}に近い色</strong>
@@ -298,7 +378,8 @@ export default function App() {
                 </div>
               </div>
 
-              <aside className="mix-side-panel" aria-label="色の管理">
+              <aside className="mix-side-panel" aria-label={mode === 'free' ? '色の管理' : '配合の管理'}>
+                {mode === 'free' ? <>
                 <div className="mix-side-panel__tabs" role="tablist" aria-label="色の管理">
                   <button id="mix-tab-selected" ref={selectedTabRef} role="tab" type="button"
                     aria-controls="mix-panel-selected" aria-selected={activePanel === 'selected'}
@@ -317,13 +398,30 @@ export default function App() {
                   aria-labelledby="mix-tab-selected" hidden={activePanel !== 'selected'} tabIndex={0}>
                   <SelectedColorList colors={colors} pulseId={pulseId} disabled={state.status === 'mixing'}
                     onAmount={(presetId: string, amount: DropAmount) => dispatch({ type: 'setAmount', presetId, amount })}
-                    onRemove={onRemove} onChoose={() => setDrawerOpen(true)} />
+                    onRemove={onRemove} onChoose={openDrawer} />
                 </div>
                 <div id="mix-panel-saved" className="mix-side-panel__view mix-side-panel__view--saved" role="tabpanel"
                   aria-labelledby="mix-tab-saved" hidden={activePanel !== 'saved'} tabIndex={0}>
                   <SavedMixList mixes={savedMixes} onRestore={onRestore} onDelete={onDeleteSaved}
                     onExport={onExport} onImport={onImport} />
                 </div>
+                </> : experiment ? <div className="recipe-experiment">
+                  <div className="recipe-experiment__actions">
+                    <button className="recipe-experiment__action recipe-experiment__action--back" type="button" disabled={state.status === 'mixing'} onClick={() => { setExperiment(false); mixButtonRef.current?.focus(); }}>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m10 5-7 7 7 7M3 12h18" /></svg>
+                      ほかのつくり方
+                    </button>
+                    <button className="recipe-experiment__action recipe-experiment__action--restore" type="button" disabled={state.status === 'mixing' || !candidate} onClick={onLoadRecipe}>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 11a8 8 0 1 1 1.3 5.5M4 5v6h6" /></svg>
+                      この配合にもどす
+                    </button>
+                  </div>
+                  <h2>ためす配合</h2>
+                  <SelectedColorList colors={colors} pulseId={pulseId} disabled={state.status === 'mixing'}
+                    onAmount={(presetId, amount) => recipeDispatch({ type: 'setAmount', presetId, amount })}
+                    onRemove={onRemove} onChoose={() => setExperiment(false)} />
+                </div> : <RecipePanel target={manifest ? target : null} candidates={candidates} selected={candidate}
+                  disabled={state.status === 'mixing'} onSelect={setCandidateId} />}
               </aside>
             </div>
           </div>
@@ -332,12 +430,12 @@ export default function App() {
 
       <div className={`drawer-shell${drawerOpen ? ' drawer-shell--open' : ''}`} aria-hidden={!drawerOpen}>
         <button className="drawer-scrim" type="button" onClick={closeDrawer} tabIndex={-1} aria-label="色のメニューを閉じる" />
-        <aside id="color-drawer" className="drawer" role="dialog" aria-modal="true" aria-label="色をえらぶ" ref={drawerRef} inert={!drawerOpen}>
+        <aside id="color-drawer" className="drawer" role="dialog" aria-modal="true" aria-label={mode === 'free' ? '色をえらぶ' : 'つくりたい色をえらぶ'} ref={drawerRef} inert={!drawerOpen}>
           <div className="drawer__top">
             <button className="icon-button" type="button" onClick={closeDrawer} aria-label="色のメニューを閉じる">×</button>
           </div>
-          <ColorNavigation {...navProps} />
-          <button className="drawer__done" type="button" onClick={closeDrawer}>えらんだ色を見る <span aria-hidden="true">→</span></button>
+          {mode === 'free' ? <ColorNavigation {...navProps} /> : <TargetColorPicker {...pickerProps} />}
+          <button className="drawer__done" type="button" onClick={closeDrawer}>{mode === 'free' ? 'えらんだ色を見る' : 'つくり方を見る'} <span aria-hidden="true">→</span></button>
         </aside>
       </div>
 

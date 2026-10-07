@@ -1,0 +1,91 @@
+.mode-switch { display: inline-flex; justify-self: start; align-self: center; grid-column: 1 / -1; gap: 3px; margin: 8px 0 10px; padding: 3px; border-radius: 14px; background: #e9eceb; }
+.mode-switch button { min-height: 44px; padding: 0 14px; border: 0; border-radius: 11px; background: transparent; color: #5e686f; font-size: 13px; font-weight: 700; }
+.mode-switch button[aria-pressed="true"] { background: #fff; color: #25282c; box-shadow: 0 1px 4px #25282c0c; }
+.mode-switch button:disabled { opacity: .6; }
+.target-picker__filters { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 9px; padding: 0 18px 14px; }
+.target-picker__search, .target-picker__group-trigger { display: flex; align-items: center; width: 100%; min-height: 48px; border: 1px solid #d8dfdf; border-radius: 14px; background: #f4f7f6; color: #35414a; box-shadow: inset 0 1px 0 #ffffffb8; }
+.target-picker__search:focus-within, .target-picker__group-trigger:focus-visible { outline: 3px solid #9bb3d2; outline-offset: 2px; border-color: #6686ae; }
+.target-picker__search-icon { flex: none; width: 21px; height: 21px; margin-left: 13px; color: #75848c; }
+.target-picker__search input { flex: 1; min-width: 0; min-height: 46px; padding: 0 9px; border: 0; outline: 0; background: transparent; color: #26353e; font: inherit; font-size: 13px; }
+.target-picker__search input::-webkit-search-cancel-button { display: none; }
+.target-picker__search input::placeholder { color: #77838a; opacity: 1; }
+.target-picker__clear { flex: none; width: 44px; height: 44px; border: 0; background: transparent; color: #53616a; font-size: 22px; }
+.target-picker__clear:hover { color: #202d35; }
+.target-picker__group { position: relative; }
+.target-picker__group-trigger { padding: 0 11px; text-align: left; gap: 10px; font-size: 13px; font-weight: 700; }
+.target-picker__group-trigger > span:nth-child(2) { flex: 1; }
+.target-picker__group-swatch { display: block; flex: none; width: 22px; height: 22px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px #aeb9bb66; }
+.target-picker__chevron { width: 19px; height: 19px; color: #5c6c74; transition: transform .18s ease; }
+.target-picker__group-trigger[aria-expanded="true"] .target-picker__chevron { transform: rotate(180deg); }
+.target-picker__group-list { position: absolute; z-index: 3; top: calc(100% + 6px); right: 0; left: 0; max-height: min(54dvh, 430px); padding: 5px; overflow-y: auto; border: 1px solid #d9e0e1; border-radius: 15px; background: #fff; box-shadow: 0 13px 34px #26343b24; }
+.target-picker__group-option { display: flex; align-items: center; width: 100%; min-height: 43px; padding: 5px 9px; border: 0; border-radius: 10px; background: transparent; color: #35414a; text-align: left; gap: 10px; font-size: 13px; font-weight: 650; }
+.target-picker__group-option:hover, .target-picker__group-option:focus-visible, .target-picker__group-option[aria-selected="true"] { background: #ecf1f0; }
+.target-picker__group-option .target-picker__group-swatch { width: 20px; height: 20px; }
+.target-picker__check { margin-left: auto; color: #4b7082; }
+.target-picker__list { flex: 1; min-height: 0; overflow-y: auto; padding: 0 13px 22px; }
+.target-picker .nav-row[aria-pressed="true"] { background: #e9edf1; }
+.target-picker .nav-row__names { flex: 1; min-width: 0; }
+.target-picker .nav-row__name { white-space: normal; }
+.target-picker__empty { padding: 10px; color: #687078; font-size: 13px; }
+.recipe-empty { width: 100%; min-height: 180px; display: grid; place-items: center; color: #687078; font-size: 15px; }
+.target-comparison { width: 100%; margin-top: 22px; }
+.target-comparison__pair { display: flex; justify-content: center; gap: 16px; }
+.target-comparison figure { flex: 1; min-width: 0; margin: 0; padding: 12px; background: #edf0ee; border-radius: 12px; }
+.target-comparison figure > div { height: 155px; border-radius: 6px; }
+.target-comparison figcaption { min-height: 30px; margin-top: 9px; font-size: 12px; line-height: 1.5; text-align: center; color: #45515a; }
+.target-comparison figcaption span { display: block; font-weight: 700; }
+.target-comparison p { margin: 14px 0 0; text-align: center; font-size: 14px; font-weight: 700; color: #47555e; }
+.recipe-panel h2, .recipe-experiment h2 { margin: 0 0 14px; font-size: 20px; }
+.recipe-panel > p { font-size: 13px; line-height: 1.8; }
+.recipe-options { display: flex; flex-direction: column; gap: 12px; }
+.recipe-option { display: flex; width: 100%; min-height: 52px; padding: 8px 12px; align-items: center; gap: 12px; border: 0; border-radius: 12px; background: #f3f5f3; color: #34424b; text-align: left; }
+.recipe-option strong { flex: 1; font-size: 13px; }
+.recipe-option[aria-pressed="true"] { background: #e8edf0; }
+.recipe-ingredients { list-style: none; display: flex; flex-direction: column; margin: 8px 0 0; padding: 0 4px; gap: 8px; }
+.recipe-ingredients li { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 12px; }
+.recipe-ingredients li > span:not(.swatch) { flex: 1; }
+.recipe-ingredients strong { flex: none; font-size: 11px; color: #66727a; }
+.recipe-note { margin: 18px 0 0; color: #69747b; font-size: 11px; line-height: 1.8; }
+.recipe-experiment { min-height: 0; }
+.recipe-experiment__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.recipe-experiment__action { display: inline-flex; flex: 1 1 146px; align-items: center; justify-content: center; min-width: 0; min-height: 46px; padding: 8px 7px; border: 1px solid #cdd7db; border-radius: 12px; background: #fff; box-shadow: 0 1px 3px #25313a10; color: #344650; font-size: 12px; font-weight: 750; white-space: nowrap; gap: 6px; transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.recipe-experiment__action--back { border-color: #d0e0e6; background: #eaf2f5; color: #284c5d; }
+.recipe-experiment__action svg { flex: none; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+.recipe-experiment__action:hover:not(:disabled) { border-color: #aabdc5; background: #f2f7f8; box-shadow: 0 2px 7px #25313a18; }
+.recipe-experiment__action--back:hover:not(:disabled) { background: #dcebf0; }
+.recipe-experiment__action:disabled { border-color: #e2e6e7; background: #f4f5f5; box-shadow: none; color: #929b9f; }
+.app-shell--recipe .result-copy { min-height: 30px; }
+.app-shell--recipe .mix-side-panel { align-self: stretch; }
+.app-shell--compared .canvas-wrap { display: none; }
+.target-comparison figure:only-child > div { height: 54px; }
+
+@media (max-width: 1279px) {
+  .main-content__inner { padding-bottom: calc(170px + env(safe-area-inset-bottom)); }
+  .stage-actions { position: fixed; z-index: 10; bottom: 0; left: 0; width: 100%; margin: 0; padding: 10px var(--page-gutter) calc(12px + env(safe-area-inset-bottom)); background: #f8f8f6f5; backdrop-filter: blur(10px); }
+  .toast { bottom: calc(138px + env(safe-area-inset-bottom)); }
+  .mix-side-panel { max-height: none; }
+  .app-shell--recipe .mix-side-panel { align-self: center; }
+}
+@media (min-width: 600px) and (max-width: 1279px) {
+  .main-content__inner { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+  .stage-actions--with-choose { display: grid; grid-template-columns: minmax(180px, 30%) minmax(0, 1fr); gap: 12px; }
+  .stage-actions--with-choose .stage-actions__primary { grid-column: 2; }
+}
+@media (max-width: 599px) {
+  .main-content__inner { padding-top: 14px; }
+  .mix-canvas { height: clamp(180px, 30dvh, 260px); aspect-ratio: auto; }
+  .mode-switch { width: 100%; justify-content: center; }
+  .mode-switch button { flex: 1; padding: 0 6px; }
+  .target-comparison { margin-top: 16px; }
+  .target-comparison figure { padding: 10px; }
+  .target-comparison figure > div { height: 95px; }
+  .target-comparison__pair { gap: 12px; }
+}
+@media (orientation: landscape) and (min-width: 900px) {
+  .mode-switch { margin-left: 0; }
+  .app-shell--recipe .mix-canvas { max-height: 215px; }
+}
+@media (orientation: landscape) and (min-width: 1280px) and (min-height: 780px) {
+  .app-shell--recipe .mix-side-panel { overflow-y: auto; }
+  .app-shell--recipe .stage-column { min-height: 0; overflow-y: auto; scrollbar-width: thin; }
+}

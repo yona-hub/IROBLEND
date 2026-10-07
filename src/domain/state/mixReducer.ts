@@ -1,4 +1,5 @@
 import type { DropAmount, MixResult, SelectedColor } from '../colorMixing/types';
+import { legalRecipe } from '../reverseMixing/recipeKey';
 
 export type MixStatus = 'idle' | 'ready' | 'mixing' | 'mixed' | 'dirty' | 'amount-dirty';
 
@@ -15,6 +16,7 @@ export type MixAction =
   | { type: 'setAmount'; presetId: string; amount: number }
   | { type: 'clear' }
   | { type: 'restore'; selectedColors: SelectedColor[]; result: MixResult }
+  | { type: 'loadRecipe'; selectedColors: SelectedColor[] }
   | { type: 'start'; result: MixResult }
   | { type: 'finish' };
 
@@ -66,6 +68,10 @@ export function mixReducer(state: MixState, action: MixAction): MixState {
       if (action.selectedColors.length < 2 || action.selectedColors.length > 5) return state;
       return { selectedColors: action.selectedColors.map((item) => ({ ...item })),
         status: 'mixed', result: action.result, pendingResult: null };
+    case 'loadRecipe':
+      if (!legalRecipe(action.selectedColors)) return state;
+      return { selectedColors: action.selectedColors.map((item) => ({ ...item })),
+        status: 'ready', result: null, pendingResult: null };
     case 'start':
       if (state.selectedColors.length < 2 || state.selectedColors.length > 5) return state;
       return { ...state, status: 'mixing', pendingResult: action.result };
