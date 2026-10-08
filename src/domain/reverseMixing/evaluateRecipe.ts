@@ -6,7 +6,7 @@ import type { MixResult, SelectedColor } from '../colorMixing/types';
 import { legalRecipe } from './recipeKey';
 
 // Application policy measured in the generation audit; no perceptual guarantee.
-export const RECIPE_POLICY = { veryClose: .02, close: .05, simplicitySlack: .005 } as const;
+export const RECIPE_POLICY = { veryClose: .02, close: .05, maxPublishedDeltaE: .06, simplicitySlack: .005 } as const;
 export function targetOklab(target: Pick<TargetColor, 'hex'>): readonly number[] {
   return new Color(target.hex).OKLab;
 }

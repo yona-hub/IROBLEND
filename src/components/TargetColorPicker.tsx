@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
 import { categories } from '../data/colorPresets';
-import { targetCatalog, targetGroups, type TargetGroupId } from '../data/targetCatalog';
+import { targetGroups, type TargetColor, type TargetGroupId } from '../data/targetCatalog';
 
 export const recommendedTargetIds = [
   'brown', 'beige', 'gray', 'chocolate', 'sand-beige', 'teal', 'turquoise', 'olive',
@@ -14,7 +14,8 @@ const groupOptions: readonly { id: TargetPickerGroup; name: string; hex: string 
   ...targetGroups.map(group => ({ id: group.id, name: group.name,
     hex: categories.find(category => category.id === group.id)?.hex ?? (group.id === 'brown' ? '#A67959' : '#8C949B') })),
 ];
-type Props = { group: TargetPickerGroup; query: string; selectedId: string | null; disabled: boolean;
+type Props = { targets: readonly TargetColor[]; loading: boolean; error: boolean;
+  group: TargetPickerGroup; query: string; selectedId: string | null; disabled: boolean;
   scrollPosition: number; onScroll: (position: number) => void;
   onGroup: (group: TargetPickerGroup) => void; onQuery: (query: string) => void; onSelect: (id: string) => void };
 function normalize(value: string) {
@@ -73,7 +74,7 @@ export function TargetColorPicker(props: Props) {
     return () => window.removeEventListener('resize', restorePosition);
   }, [props.scrollPosition]);
   const query = normalize(props.query);
-  const targets = targetCatalog.filter(target => {
+  const targets = props.targets.filter(target => {
     const matches = normalize(target.nameJa + target.nameEn + (aliases[target.id] ?? '')).includes(query);
     return matches && (query || props.group === 'all' || props.group === target.targetGroupId ||
       props.group === 'recommended' && recommendedTargetIds.some(id => id === target.id));
@@ -122,7 +123,10 @@ export function TargetColorPicker(props: Props) {
           <span className="nav-row__sub">{target.nameEn}</span></span>
         {target.id === props.selectedId && <span aria-hidden="true">✓</span>}
       </button>)}
-      {targets.length === 0 && <p className="target-picker__empty">この名前の色は見つかりませんでした</p>}
+      {props.loading ? <p role="status" className="target-picker__empty">配合を確認しています…</p>
+        : props.error ? <p role="status" className="target-picker__empty">配合データを確認できませんでした。</p>
+          : targets.length === 0 && <p className="target-picker__empty">{query
+            ? 'この名前の色は見つかりませんでした' : 'このグループに選べる色はありません'}</p>}
     </div>
   </div>;
 }

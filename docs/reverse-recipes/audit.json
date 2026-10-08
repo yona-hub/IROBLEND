@@ -16,38 +16,39 @@
       "modelFingerprint": "e51e5759f96f891d5cf29a8a97fc2c327b73186493069e131284f045f87c6d66",
       "catalogFingerprint": "8c2dfce3fc0c80bb16991fa6cd621dd772d839dfd9cd1408c85903541e9054de"
     },
+    "policy": {
+      "veryClose": 0.02,
+      "close": 0.05,
+      "maxPublishedDeltaE": 0.06,
+      "simplicitySlack": 0.005
+    },
     "counts": {
       "2": 27189,
       "3": 2852460,
       "bounded": 55269
     },
-    "exhaustiveSeconds": 26.6452843,
-    "totalSeconds": 27.8085058,
+    "exhaustiveSeconds": 121.86629729999999,
+    "totalSeconds": 127.4337821,
     "achieved": {
       "0.01": 88,
       "0.02": 98,
       "0.03": 103,
-      "0.05": 110
+      "0.05": 110,
+      "0.06": 116
     },
     "noCloseCandidate": [
-      "crimson",
-      "carmine",
       "yellow",
       "lemon-yellow",
       "canary-yellow",
-      "green",
       "royal-blue",
-      "white",
       "black",
       "aqua",
-      "cyan",
       "chartreuse",
-      "magenta",
       "fuchsia",
       "blue-violet"
     ],
     "nonMaterialTargets": 71,
-    "nonMaterialClose": 65,
+    "nonMaterialClose": 67,
     "brownClose": 19,
     "grayClose": 9
   },
@@ -400,7 +401,30 @@
         "boundedEvaluations": 4370,
         "bestDeltaE": 0.05434435607692676
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "id": "crimson-1",
+          "targetId": "crimson",
+          "selections": [
+            {
+              "presetId": "hot-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "carrot-orange",
+              "amount": 2
+            },
+            {
+              "presetId": "black",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#C94445",
+          "targetDeltaE": 0.05434435607692676,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        }
+      ],
       "bestFound": {
         "selections": [
           {
@@ -442,7 +466,30 @@
         "boundedEvaluations": 5051,
         "bestDeltaE": 0.05825950574944251
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "id": "carmine-1",
+          "targetId": "carmine",
+          "selections": [
+            {
+              "presetId": "hot-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "carrot-orange",
+              "amount": 2
+            },
+            {
+              "presetId": "black",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#C94445",
+          "targetDeltaE": 0.05825950574944251,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        }
+      ],
       "bestFound": {
         "selections": [
           {
@@ -1176,6 +1223,28 @@
           ],
           "predictedHex": "#E977AE",
           "targetDeltaE": 0.04600943129836268,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "hot-pink-3",
+          "targetId": "hot-pink",
+          "selections": [
+            {
+              "presetId": "red",
+              "amount": 4
+            },
+            {
+              "presetId": "crimson",
+              "amount": 3
+            },
+            {
+              "presetId": "orchid",
+              "amount": 5
+            }
+          ],
+          "predictedHex": "#E375A4",
+          "targetDeltaE": 0.058831997442540786,
           "ingredientCount": 3,
           "searchScope": "exhaustive-up-to-3"
         }
@@ -2284,7 +2353,48 @@
         "boundedEvaluations": 2782,
         "bestDeltaE": 0.053542567221205074
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "id": "green-1",
+          "targetId": "green",
+          "selections": [
+            {
+              "presetId": "lemon-yellow",
+              "amount": 3
+            },
+            {
+              "presetId": "cobalt-blue",
+              "amount": 3
+            }
+          ],
+          "predictedHex": "#55A676",
+          "targetDeltaE": 0.05434606061276365,
+          "ingredientCount": 2,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "green-2",
+          "targetId": "green",
+          "selections": [
+            {
+              "presetId": "lemon-yellow",
+              "amount": 5
+            },
+            {
+              "presetId": "blue",
+              "amount": 5
+            },
+            {
+              "presetId": "dark-slate",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#57A171",
+          "targetDeltaE": 0.0562444176918315,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        }
+      ],
       "bestFound": {
         "selections": [
           {
@@ -2584,6 +2694,28 @@
           "targetDeltaE": 0.049456827575917364,
           "ingredientCount": 3,
           "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "emerald-green-3",
+          "targetId": "emerald-green",
+          "selections": [
+            {
+              "presetId": "lemon-yellow",
+              "amount": 5
+            },
+            {
+              "presetId": "cobalt-blue",
+              "amount": 4
+            },
+            {
+              "presetId": "violet",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#58A27A",
+          "targetDeltaE": 0.056894807743069944,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
         }
       ],
       "bestFound": {
@@ -2861,6 +2993,50 @@
           ],
           "predictedHex": "#3374A4",
           "targetDeltaE": 0.0492655085590417,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "blue-2",
+          "targetId": "blue",
+          "selections": [
+            {
+              "presetId": "green",
+              "amount": 3
+            },
+            {
+              "presetId": "mint-green",
+              "amount": 1
+            },
+            {
+              "presetId": "violet",
+              "amount": 4
+            }
+          ],
+          "predictedHex": "#2D75A3",
+          "targetDeltaE": 0.05027857505091333,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "blue-3",
+          "targetId": "blue",
+          "selections": [
+            {
+              "presetId": "lemon-yellow",
+              "amount": 1
+            },
+            {
+              "presetId": "emerald-green",
+              "amount": 4
+            },
+            {
+              "presetId": "violet",
+              "amount": 5
+            }
+          ],
+          "predictedHex": "#2F75A0",
+          "targetDeltaE": 0.055129115121563266,
           "ingredientCount": 3,
           "searchScope": "exhaustive-up-to-3"
         }
@@ -4228,7 +4404,66 @@
         "boundedEvaluations": 2783,
         "bestDeltaE": 0.0510710666459848
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "id": "white-1",
+          "targetId": "white",
+          "selections": [
+            {
+              "presetId": "baby-pink",
+              "amount": 4
+            },
+            {
+              "presetId": "cream-yellow",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#FFEDDF",
+          "targetDeltaE": 0.0510710666459848,
+          "ingredientCount": 2,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "white-2",
+          "targetId": "white",
+          "selections": [
+            {
+              "presetId": "baby-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "lime-green",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#FFEADA",
+          "targetDeltaE": 0.05930368309498026,
+          "ingredientCount": 2,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "white-3",
+          "targetId": "white",
+          "selections": [
+            {
+              "presetId": "baby-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "cream-yellow",
+              "amount": 2
+            },
+            {
+              "presetId": "lime-green",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#FFEBD7",
+          "targetDeltaE": 0.059959822537516756,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        }
+      ],
       "bestFound": {
         "selections": [
           {
@@ -4283,6 +4518,46 @@
           "predictedHex": "#FFEDDF",
           "targetDeltaE": 0.04738621869040424,
           "ingredientCount": 2,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "snow-white-2",
+          "targetId": "snow-white",
+          "selections": [
+            {
+              "presetId": "baby-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "lime-green",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#FFEADA",
+          "targetDeltaE": 0.055517103338220054,
+          "ingredientCount": 2,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "snow-white-3",
+          "targetId": "snow-white",
+          "selections": [
+            {
+              "presetId": "baby-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "cream-yellow",
+              "amount": 2
+            },
+            {
+              "presetId": "lime-green",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#FFEBD7",
+          "targetDeltaE": 0.05655519511697689,
+          "ingredientCount": 3,
           "searchScope": "exhaustive-up-to-3"
         }
       ],
@@ -4436,6 +4711,46 @@
           ],
           "predictedHex": "#FFEDDF",
           "targetDeltaE": 0.04728087483459774,
+          "ingredientCount": 2,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "milk-white-2",
+          "targetId": "milk-white",
+          "selections": [
+            {
+              "presetId": "baby-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "cream-yellow",
+              "amount": 3
+            },
+            {
+              "presetId": "lime-green",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#FFECD5",
+          "targetDeltaE": 0.05526036299699374,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        },
+        {
+          "id": "milk-white-3",
+          "targetId": "milk-white",
+          "selections": [
+            {
+              "presetId": "baby-pink",
+              "amount": 5
+            },
+            {
+              "presetId": "lime-green",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#FFEADA",
+          "targetDeltaE": 0.055483556602949236,
           "ingredientCount": 2,
           "searchScope": "exhaustive-up-to-3"
         }
@@ -8435,7 +8750,30 @@
         "boundedEvaluations": 4174,
         "bestDeltaE": 0.059427688531911195
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "id": "cyan-1",
+          "targetId": "cyan",
+          "selections": [
+            {
+              "presetId": "green",
+              "amount": 5
+            },
+            {
+              "presetId": "violet",
+              "amount": 5
+            },
+            {
+              "presetId": "snow-white",
+              "amount": 3
+            }
+          ],
+          "predictedHex": "#5F9DCA",
+          "targetDeltaE": 0.059427688531911195,
+          "ingredientCount": 3,
+          "searchScope": "exhaustive-up-to-3"
+        }
+      ],
       "bestFound": {
         "selections": [
           {
@@ -9891,7 +10229,26 @@
         "boundedEvaluations": 2909,
         "bestDeltaE": 0.05573904330199292
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "id": "magenta-1",
+          "targetId": "magenta",
+          "selections": [
+            {
+              "presetId": "carmine",
+              "amount": 5
+            },
+            {
+              "presetId": "lavender",
+              "amount": 1
+            }
+          ],
+          "predictedHex": "#D7457D",
+          "targetDeltaE": 0.058874644261829694,
+          "ingredientCount": 2,
+          "searchScope": "exhaustive-up-to-3"
+        }
+      ],
       "bestFound": {
         "selections": [
           {

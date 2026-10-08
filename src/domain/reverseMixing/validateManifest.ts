@@ -9,7 +9,7 @@ export async function validateManifest(value: unknown): Promise<RecipeManifest> 
   const manifest = value as RecipeManifest;
   const expected = await currentRecipeFingerprints();
   if (manifest.formatVersion !== 1 || manifest.exhaustiveComplete !== true ||
-      manifest.searchConfigVersion !== 'reverse-v3' ||
+      manifest.searchConfigVersion !== 'reverse-v4' ||
       manifest.modelFingerprint !== expected.modelFingerprint ||
       manifest.catalogFingerprint !== expected.catalogFingerprint) throw new Error('Recipe fingerprint mismatch');
   if (!manifest.targets || Object.keys(manifest.targets).length !== targetCatalog.length) throw new Error('Invalid targets');
@@ -34,7 +34,7 @@ export async function validateManifest(value: unknown): Promise<RecipeManifest> 
           (candidate.searchScope === 'exhaustive-up-to-3' && candidate.ingredientCount > 3) ||
           !Number.isFinite(candidate.targetDeltaE) ||
           Math.abs(candidate.targetDeltaE - targetDeltaE) > 1e-12 ||
-          targetDeltaE > RECIPE_POLICY.close) throw new Error('Unverified recipe');
+          targetDeltaE > RECIPE_POLICY.maxPublishedDeltaE) throw new Error('Unverified recipe');
       keys.add(key); materialKeys.add(materialKey); categoryKeys.add(categoryKey); ids.add(candidate.id);
     }
   }

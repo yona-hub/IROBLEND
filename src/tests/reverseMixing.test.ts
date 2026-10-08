@@ -6,7 +6,7 @@ import manifestData from '../data/generated/reverseRecipes.json';
 import { mixPigments, mixPigmentsColor } from '../domain/colorMixing/mixPigments';
 import { validateManifest } from '../domain/reverseMixing/validateManifest';
 import { legalRecipe, recipeCategoryKey, recipeKey, recipeMaterialKey } from '../domain/reverseMixing/recipeKey';
-import { targetDeltaE } from '../domain/reverseMixing/evaluateRecipe';
+import { evaluateRecipe, proximityLabel, RECIPE_POLICY, targetDeltaE } from '../domain/reverseMixing/evaluateRecipe';
 import { recommendedTargetIds } from '../components/TargetColorPicker';
 import { initialMixState, mixReducer } from '../domain/state/mixReducer';
 import type { RecipeManifest } from '../domain/reverseMixing/types';
@@ -39,7 +39,7 @@ describe('reverse recipes', () => {
         const lab = new Color(target.hex).OKLab;
         const independent = Math.hypot(actual.oklab[0] - lab[0]!, actual.oklab[1] - lab[1]!, actual.oklab[2] - lab[2]!);
         expect(recipe.targetDeltaE).toBeCloseTo(independent, 14);
-        expect(independent).toBeLessThanOrEqual(.05);
+        expect(independent).toBeLessThanOrEqual(.06);
         const key = recipeKey(recipe.selections);
         expect(keys.has(key)).toBe(false); keys.add(key);
         const materialKey = recipeMaterialKey(recipe.selections);
@@ -49,13 +49,40 @@ describe('reverse recipes', () => {
       }
     }
     expect(manifestData.targets.black).toEqual([]);
-    expect(manifestData.searchConfigVersion).toBe('reverse-v3');
+    expect(manifestData.searchConfigVersion).toBe('reverse-v4');
     expect(Object.values(manifestData.targets).filter(recipes => recipes.length === 3).length).toBeGreaterThan(100);
     expect(manifestData.targets.orange.length).toBeGreaterThan(0);
     expect(manifestData.targets.orange.some(recipe => {
       const groups = recipe.selections.map(item => presetsById.get(item.presetId)!.category);
       return groups.includes('red') && groups.includes('yellow') && !groups.includes('orange');
     })).toBe(true);
+  });
+  it('accepts newly available colors up to .06 without labeling them as close colors', async () => {
+    expect(RECIPE_POLICY.maxPublishedDeltaE).toBe(.06);
+    for (const id of ['crimson', 'carmine', 'green', 'white', 'cyan', 'magenta']) {
+      const target = targetsById.get(id)!;
+      const recipes = (manifestData as RecipeManifest).targets[id]!;
+      expect(recipes.length).toBeGreaterThan(0);
+      for (const recipe of recipes) {
+        expect(recipe.targetDeltaE).toBeGreaterThan(.05);
+        expect(recipe.targetDeltaE).toBeLessThanOrEqual(.06);
+        expect(proximityLabel(recipe.predictedHex, target, recipe.targetDeltaE)).toBe('少し違う色');
+      }
+    }
+    const target = targetsById.get('brown')!;
+    expect(proximityLabel(target.hex, target, 0)).toBe('画面上では同じ色');
+    expect(proximityLabel('#000000', target, .02)).toBe('とても近い色');
+    expect(proximityLabel('#000000', target, .05)).toBe('近い色');
+    expect(proximityLabel('#000000', target, .050001)).toBe('少し違う色');
+    expect(proximityLabel('#000000', target, .06)).toBe('少し違う色');
+
+    const tooFar = structuredClone(manifestData) as RecipeManifest;
+    const selections: SelectedColor[] = [{ presetId: 'red', amount: 3 }, { presetId: 'blue', amount: 3 }];
+    const { result, targetDeltaE: distance } = evaluateRecipe(selections, targetsById.get('black')!);
+    expect(distance).toBeGreaterThan(.06);
+    tooFar.targets.black = [{ id: 'black-too-far', targetId: 'black', selections,
+      predictedHex: result.hex, targetDeltaE: distance, ingredientCount: 2, searchScope: 'exhaustive-up-to-3' }];
+    await expect(validateManifest(tooFar)).rejects.toThrow('Unverified recipe');
   });
   it('does not substitute the nearest dictionary name distance for target distance', () => {
     const result = mixPigments([{ pigment: presetsById.get('red')!.pigment, amount: 3 },
@@ -77,7 +104,7 @@ describe('reverse recipes', () => {
       await expect(validateManifest(stale)).rejects.toThrow('fingerprint');
     }
     const stalePolicy = structuredClone(manifestData);
-    stalePolicy.searchConfigVersion = 'reverse-v1';
+    stalePolicy.searchConfigVersion = 'reverse-v3';
     await expect(validateManifest(stalePolicy)).rejects.toThrow('fingerprint');
     const badHex = structuredClone(manifestData);
     badHex.targets.brown[0]!.predictedHex = '#000000';

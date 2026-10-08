@@ -21,7 +21,7 @@ import { ModeSwitch, type AppMode } from '../components/ModeSwitch';
 import { TargetColorPicker, type TargetPickerGroup } from '../components/TargetColorPicker';
 import { RecipePanel } from '../components/RecipePanel';
 import { TargetComparison } from '../components/TargetComparison';
-import { targetsById } from '../data/targetCatalog';
+import { targetCatalog, targetsById } from '../data/targetCatalog';
 import { useRecipeManifest } from '../hooks/useRecipeManifest';
 import { targetDeltaE } from '../domain/reverseMixing/evaluateRecipe';
 import type { SelectedColor } from '../domain/colorMixing/types';
@@ -39,6 +39,7 @@ export default function App() {
   const [targetQuery, setTargetQuery] = useState('');
   const [targetScroll, setTargetScroll] = useState(0);
   const { manifest, error: manifestError } = useRecipeManifest(mode === 'recipe');
+  const availableTargets = useMemo(() => targetCatalog.filter(item => (manifest?.targets[item.id]?.length ?? 0) > 0), [manifest]);
   const target = targetId ? targetsById.get(targetId) ?? null : null;
   const candidates = targetId ? manifest?.targets[targetId] ?? [] : [];
   const candidate = candidates.find(item => item.id === candidateId) ?? candidates[0];
@@ -135,7 +136,7 @@ export default function App() {
     setMode(next);
   };
   const onTarget = (id: string) => {
-    if (state.status === 'mixing' || !targetsById.has(id)) return;
+    if (state.status === 'mixing' || !manifest?.targets[id]?.length || !targetsById.has(id)) return;
     if (id !== targetId) { setTargetId(id); setCandidateId(null); setExperiment(false); }
     closeDrawer();
   };
@@ -156,7 +157,8 @@ export default function App() {
     setExperiment(true);
   };
   const pickerProps = {
-    group: targetGroup, query: targetQuery, selectedId: targetId, disabled: state.status === 'mixing',
+    targets: availableTargets, loading: !manifest && !manifestError, error: manifestError,
+    group: targetGroup, query: targetQuery, selectedId: targetId, disabled: state.status === 'mixing' || !manifest,
     scrollPosition: targetScroll, onScroll: setTargetScroll,
     onGroup: (group: TargetPickerGroup) => { setTargetGroup(group); setTargetQuery(''); setTargetScroll(0); },
     onQuery: (query: string) => { setTargetQuery(query); if (query) setTargetGroup('all'); setTargetScroll(0); },

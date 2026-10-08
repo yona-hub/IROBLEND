@@ -35,7 +35,7 @@ function offer(pool: Seed[], selections: SelectedColor[], distance: number, scop
 }
 function offerCategory(pool: Map<string, Seed>, selections: SelectedColor[], distance: number, scope: SearchScope,
   categoryKey = recipeCategoryKey(selections), materialKey = recipeMaterialKey(selections)) {
-  if (distance > RECIPE_POLICY.close) return;
+  if (distance > RECIPE_POLICY.maxPublishedDeltaE) return;
   const previous = pool.get(categoryKey);
   if (previous && (previous.distance < distance ||
       previous.distance === distance && previous.materialKey <= materialKey)) return;
@@ -73,8 +73,12 @@ for (const size of [2, 3] as const) {
           counts[size]++;
           for (const index of eligible) {
             const lab = labs[index]!, targetPool = pools[index]!, pool = targetPool[size];
-            const squared = result.oklab.reduce((sum, value, component) => sum + (value - lab[component]!) ** 2, 0);
-            if (squared <= RECIPE_POLICY.close ** 2) {
+            // This runs for every eligible target in millions of recipes.
+            const lightness = result.oklab[0] - lab[0]!;
+            const greenRed = result.oklab[1] - lab[1]!;
+            const blueYellow = result.oklab[2] - lab[2]!;
+            const squared = lightness ** 2 + greenRed ** 2 + blueYellow ** 2;
+            if (squared <= RECIPE_POLICY.maxPublishedDeltaE ** 2) {
               const previous = targetPool.byCategory.get(categoryKey);
               if (!previous || squared < previous.distance ** 2)
                 offerCategory(targetPool.byCategory, selections, Math.sqrt(squared), 'exhaustive-up-to-3', categoryKey, materialKey);
@@ -159,7 +163,7 @@ const auditTargets = targetCatalog.map((target, i) => {
     const { result, targetDeltaE } = evaluateRecipe(selections, target);
     return { seed, selections, predictedHex: result.hex, targetDeltaE };
   }).sort((a, b) => a.targetDeltaE - b.targetDeltaE || recipeKey(a.selections).localeCompare(recipeKey(b.selections)));
-  const close = evaluated.filter(item => item.targetDeltaE <= RECIPE_POLICY.close);
+  const close = evaluated.filter(item => item.targetDeltaE <= RECIPE_POLICY.maxPublishedDeltaE);
   const best = close[0];
   const chosen: typeof close = [];
   if (best) {
@@ -182,16 +186,16 @@ const auditTargets = targetCatalog.map((target, i) => {
   return { target, search: search[target.id], bestFound: evaluated[0], candidates };
 });
 const fingerprints = await currentRecipeFingerprints();
-const manifest: RecipeManifest = { formatVersion: 1, ...fingerprints, searchConfigVersion: 'reverse-v3',
+const manifest: RecipeManifest = { formatVersion: 1, ...fingerprints, searchConfigVersion: 'reverse-v4',
   generatedAt: new Date().toISOString(), exhaustiveComplete: true, targets, search };
 await validateManifest(manifest);
 mkdirSync('src/data/generated', { recursive: true });
 writeFileSync('src/data/generated/reverseRecipes.json', JSON.stringify(manifest, null, 2) + '\n');
-const achieved = Object.fromEntries([.01, .02, .03, .05].map(threshold =>
+const achieved = Object.fromEntries([.01, .02, .03, .05, RECIPE_POLICY.maxPublishedDeltaE].map(threshold =>
   [threshold, auditTargets.filter(item => (item.candidates[0]?.targetDeltaE ?? Infinity) <= threshold).length]));
 const summary = { materials: colorPresets.length, targets: targetCatalog.length,
   materialPolicy: 'exclude target category, exact material ID, and exact display HEX; distinct ingredient category sets and material IDs across candidates', config, fingerprints,
-  counts, exhaustiveSeconds, totalSeconds: (performance.now() - start) / 1000, achieved,
+  policy: RECIPE_POLICY, counts, exhaustiveSeconds, totalSeconds: (performance.now() - start) / 1000, achieved,
   noCloseCandidate: auditTargets.filter(item => !item.candidates.length).map(item => item.target.id),
   nonMaterialTargets: auditTargets.filter(item => !item.target.materialPresetId).length,
   nonMaterialClose: auditTargets.filter(item => !item.target.materialPresetId && item.candidates.length).length,
@@ -207,5 +211,5 @@ const rows = auditTargets.map(({ target, candidates, search, bestFound }) => {
   return `<section><h2>${escape(target.nameJa)} <small>${target.hex}</small></h2><p>${search!.end} · bounded ${search!.boundedEvaluations}</p>${
     recipes.map((recipe, i) => `<div class="pair"><figure><span style="background:${target.hex}"></span><figcaption>目標 ${target.hex}</figcaption></figure><figure><span style="background:${recipe.predictedHex}"></span><figcaption>${candidates.length ? '候補 ' + (i + 1) : '未掲載・最良探索色'} ${recipe.predictedHex}</figcaption></figure></div><p>ΔEOK ${recipe.targetDeltaE.toFixed(6)} · ${recipe.searchScope}<br>${recipe.selections.map(item => escape(colorPresets.find(p => p.id === item.presetId)!.nameJa) + ' ' + item.amount + '本分').join(' ＋ ')}</p>`).join('')}</section>`;
 }).join('');
-writeFileSync(directory + '/audit.html', `<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IROBLEND 配合監査</title><style>body{font:15px system-ui;margin:24px;background:#f8f8f6;color:#25282c}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}section{padding:18px;background:white}h2{font-size:18px}small,p{font-size:12px}figure{margin:0;flex:1;background:#eee;padding:10px}figure span{display:block;height:80px}figcaption{margin-top:8px}.pair{display:flex;gap:12px}</style><h1>通常混色モデルによる配合監査</h1><p>目標と同じカテゴリ・同一材料・同一HEXの絵の具を除外。2・3色は全正規比率を探索。4・5色は不足目標のみ有界探索。ΔEOK ≤ 0.05だけ掲載。候補どうしは材料とカテゴリ構成を変え、近くない候補で枠を埋めない。実物の絵の具への一致・全体最適を保証しない。</p><pre>${escape(JSON.stringify(summary, null, 2))}</pre><main>${rows}</main></html>`);
+writeFileSync(directory + '/audit.html', `<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IROBLEND 配合監査</title><style>body{font:15px system-ui;margin:24px;background:#f8f8f6;color:#25282c}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}section{padding:18px;background:white}h2{font-size:18px}small,p{font-size:12px}figure{margin:0;flex:1;background:#eee;padding:10px}figure span{display:block;height:80px}figcaption{margin-top:8px}.pair{display:flex;gap:12px}</style><h1>通常混色モデルによる配合監査</h1><p>目標と同じカテゴリ・同一材料・同一HEXの絵の具を除外。2・3色は全正規比率を探索。4・5色は不足目標のみ有界探索。ΔEOK ≤ ${RECIPE_POLICY.maxPublishedDeltaE}だけ掲載（0.05超は「少し違う色」）。候補どうしは材料とカテゴリ構成を変え、近くない候補で枠を埋めない。実物の絵の具への一致・全体最適を保証しない。</p><pre>${escape(JSON.stringify(summary, null, 2))}</pre><main>${rows}</main></html>`);
 console.log(JSON.stringify(summary, null, 2));
