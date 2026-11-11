@@ -12,3 +12,6 @@ coverage/
 *.tsbuildinfo
 .DS_Store
 Thumbs.db
+
+# YONA harness local evidence
+/.harness/runtime/

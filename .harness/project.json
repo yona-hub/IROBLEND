@@ -1,0 +1,53 @@
+{
+  "schema_version": "2.0",
+  "project_id": "IROBLEND",
+  "profile_status": "discovered_not_approved",
+  "stack": [
+    "node",
+    "react",
+    "typescript",
+    "vite"
+  ],
+  "human_constraints": [
+    "README.md と色参照方針に従う。仮想絵の具と実測顔料を区別し、実物への完全一致を保証しない。既存の配合・保存互換性を保持する。"
+  ],
+  "sources_of_truth": {
+    "specs": [
+      "README.md",
+      "docs/color-reference-policy.md",
+      "docs/reverse-recipes/README.md"
+    ],
+    "adr": [],
+    "issues": null,
+    "changelog": null,
+    "artifact_manifest": null
+  },
+  "verification": {
+    "approved_commands": [],
+    "discovered_commands": [
+      "npm run dev",
+      "npm run build",
+      "npm run recipes:generate",
+      "npm run recipes:check",
+      "npm run deploy",
+      "npm run preview",
+      "npm run typecheck",
+      "npm run test",
+      "npm run audit:colors"
+    ],
+    "source_files": [
+      "README.md"
+    ]
+  },
+  "schedule": {
+    "enabled": false
+  },
+  "adoption": {
+    "automatically_approved_change_classes": [],
+    "pinned_core_only": true
+  },
+  "core": {
+    "version": "0.1.0",
+    "sha256": "a96827a435513139460eb9d837794e963a46c2a28c34ed425d6ee0e4ede42f9d"
+  }
+}
